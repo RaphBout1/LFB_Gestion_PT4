@@ -1,7 +1,7 @@
 ﻿
 namespace LFB_gestion
 {
-    partial class Form1
+    partial class Acceuil
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -29,10 +29,17 @@ namespace LFB_gestion
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Acceuil
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Name = "Acceuil";
+            this.Text = "Acceuil";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

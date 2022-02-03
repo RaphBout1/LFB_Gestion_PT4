@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LFB_gestion
 {
-    public partial class Form1 : Form
+    public partial class Acceuil : Form
     {
-        public Form1()
+        public Acceuil()
         {
             InitializeComponent();
         }
