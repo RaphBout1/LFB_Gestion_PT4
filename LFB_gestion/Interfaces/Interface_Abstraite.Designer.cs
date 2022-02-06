@@ -31,14 +31,17 @@ namespace LFB_gestion.Interfaces
         {
             this.nomModuleLabel = new System.Windows.Forms.Label();
             this.panelGeneralGroupBox = new System.Windows.Forms.GroupBox();
-            this.boutonAccueil = new System.Windows.Forms.Button();
-            this.boutonStocks = new System.Windows.Forms.Button();
-            this.boutonClients = new System.Windows.Forms.Button();
             this.boutonPlan = new System.Windows.Forms.Button();
+            this.boutonClients = new System.Windows.Forms.Button();
+            this.boutonStocks = new System.Windows.Forms.Button();
+            this.boutonAccueil = new System.Windows.Forms.Button();
             this.entitesListBox = new System.Windows.Forms.ListBox();
             this.monCompteGroupBox = new System.Windows.Forms.GroupBox();
-            this.nomUtilisateurLabel = new System.Windows.Forms.Label();
             this.deconnexionBouton = new System.Windows.Forms.Button();
+            this.nomUtilisateurLabel = new System.Windows.Forms.Label();
+            this.rechercheTextBox = new System.Windows.Forms.TextBox();
+            this.ajoutBouton = new System.Windows.Forms.Button();
+            this.rechercheBouton = new System.Windows.Forms.Button();
             this.panelGeneralGroupBox.SuspendLayout();
             this.monCompteGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -65,24 +68,15 @@ namespace LFB_gestion.Interfaces
             this.panelGeneralGroupBox.TabStop = false;
             this.panelGeneralGroupBox.Text = "Les flots blancs";
             // 
-            // boutonAccueil
+            // boutonPlan
             // 
-            this.boutonAccueil.Location = new System.Drawing.Point(6, 79);
-            this.boutonAccueil.Name = "boutonAccueil";
-            this.boutonAccueil.Size = new System.Drawing.Size(100, 28);
-            this.boutonAccueil.TabIndex = 0;
-            this.boutonAccueil.Text = "Accueil";
-            this.boutonAccueil.UseVisualStyleBackColor = true;
-            // 
-            // boutonStocks
-            // 
-            this.boutonStocks.Location = new System.Drawing.Point(6, 134);
-            this.boutonStocks.Margin = new System.Windows.Forms.Padding(4);
-            this.boutonStocks.Name = "boutonStocks";
-            this.boutonStocks.Size = new System.Drawing.Size(100, 28);
-            this.boutonStocks.TabIndex = 3;
-            this.boutonStocks.Text = "Stocks";
-            this.boutonStocks.UseVisualStyleBackColor = true;
+            this.boutonPlan.Location = new System.Drawing.Point(6, 247);
+            this.boutonPlan.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonPlan.Name = "boutonPlan";
+            this.boutonPlan.Size = new System.Drawing.Size(100, 28);
+            this.boutonPlan.TabIndex = 5;
+            this.boutonPlan.Text = "Plan";
+            this.boutonPlan.UseVisualStyleBackColor = true;
             // 
             // boutonClients
             // 
@@ -94,15 +88,24 @@ namespace LFB_gestion.Interfaces
             this.boutonClients.Text = "Clients";
             this.boutonClients.UseVisualStyleBackColor = true;
             // 
-            // boutonPlan
+            // boutonStocks
             // 
-            this.boutonPlan.Location = new System.Drawing.Point(6, 247);
-            this.boutonPlan.Margin = new System.Windows.Forms.Padding(4);
-            this.boutonPlan.Name = "boutonPlan";
-            this.boutonPlan.Size = new System.Drawing.Size(100, 28);
-            this.boutonPlan.TabIndex = 5;
-            this.boutonPlan.Text = "Plan";
-            this.boutonPlan.UseVisualStyleBackColor = true;
+            this.boutonStocks.Location = new System.Drawing.Point(6, 134);
+            this.boutonStocks.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonStocks.Name = "boutonStocks";
+            this.boutonStocks.Size = new System.Drawing.Size(100, 28);
+            this.boutonStocks.TabIndex = 3;
+            this.boutonStocks.Text = "Stocks";
+            this.boutonStocks.UseVisualStyleBackColor = true;
+            // 
+            // boutonAccueil
+            // 
+            this.boutonAccueil.Location = new System.Drawing.Point(6, 79);
+            this.boutonAccueil.Name = "boutonAccueil";
+            this.boutonAccueil.Size = new System.Drawing.Size(100, 28);
+            this.boutonAccueil.TabIndex = 0;
+            this.boutonAccueil.Text = "Accueil";
+            this.boutonAccueil.UseVisualStyleBackColor = true;
             // 
             // entitesListBox
             // 
@@ -124,15 +127,6 @@ namespace LFB_gestion.Interfaces
             this.monCompteGroupBox.TabStop = false;
             this.monCompteGroupBox.Text = "Mon compte";
             // 
-            // nomUtilisateurLabel
-            // 
-            this.nomUtilisateurLabel.AutoSize = true;
-            this.nomUtilisateurLabel.Location = new System.Drawing.Point(6, 34);
-            this.nomUtilisateurLabel.Name = "nomUtilisateurLabel";
-            this.nomUtilisateurLabel.Size = new System.Drawing.Size(90, 17);
-            this.nomUtilisateurLabel.TabIndex = 0;
-            this.nomUtilisateurLabel.Text = "Nom Prénom";
-            // 
             // deconnexionBouton
             // 
             this.deconnexionBouton.Location = new System.Drawing.Point(66, 483);
@@ -142,11 +136,48 @@ namespace LFB_gestion.Interfaces
             this.deconnexionBouton.Text = "Déconnexion";
             this.deconnexionBouton.UseVisualStyleBackColor = true;
             // 
+            // nomUtilisateurLabel
+            // 
+            this.nomUtilisateurLabel.AutoSize = true;
+            this.nomUtilisateurLabel.Location = new System.Drawing.Point(6, 34);
+            this.nomUtilisateurLabel.Name = "nomUtilisateurLabel";
+            this.nomUtilisateurLabel.Size = new System.Drawing.Size(90, 17);
+            this.nomUtilisateurLabel.TabIndex = 0;
+            this.nomUtilisateurLabel.Text = "Nom Prénom";
+            // 
+            // rechercheTextBox
+            // 
+            this.rechercheTextBox.Location = new System.Drawing.Point(617, 63);
+            this.rechercheTextBox.Name = "rechercheTextBox";
+            this.rechercheTextBox.Size = new System.Drawing.Size(186, 22);
+            this.rechercheTextBox.TabIndex = 4;
+            // 
+            // ajoutBouton
+            // 
+            this.ajoutBouton.Location = new System.Drawing.Point(579, 63);
+            this.ajoutBouton.Name = "ajoutBouton";
+            this.ajoutBouton.Size = new System.Drawing.Size(32, 23);
+            this.ajoutBouton.TabIndex = 2;
+            this.ajoutBouton.Text = "+";
+            this.ajoutBouton.UseVisualStyleBackColor = true;
+            // 
+            // rechercheBouton
+            // 
+            this.rechercheBouton.Location = new System.Drawing.Point(753, 62);
+            this.rechercheBouton.Name = "rechercheBouton";
+            this.rechercheBouton.Size = new System.Drawing.Size(50, 23);
+            this.rechercheBouton.TabIndex = 5;
+            this.rechercheBouton.Text = "Go";
+            this.rechercheBouton.UseVisualStyleBackColor = true;
+            // 
             // Interface_Abstraite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.rechercheBouton);
+            this.Controls.Add(this.ajoutBouton);
+            this.Controls.Add(this.rechercheTextBox);
             this.Controls.Add(this.monCompteGroupBox);
             this.Controls.Add(this.entitesListBox);
             this.Controls.Add(this.panelGeneralGroupBox);
@@ -173,5 +204,8 @@ namespace LFB_gestion.Interfaces
         private System.Windows.Forms.GroupBox monCompteGroupBox;
         private System.Windows.Forms.Label nomUtilisateurLabel;
         private System.Windows.Forms.Button deconnexionBouton;
+        private System.Windows.Forms.TextBox rechercheTextBox;
+        private System.Windows.Forms.Button ajoutBouton;
+        private System.Windows.Forms.Button rechercheBouton;
     }
 }
