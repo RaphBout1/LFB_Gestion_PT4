@@ -21,5 +21,11 @@ namespace LFB_gestion
         {
 
         }
+
+        private void boutonClients_Click(object sender, EventArgs e)
+        {
+            Form Form1 = new Interfaces.Interface_Clients();
+            Form1.Show();
+        }
     }
 }

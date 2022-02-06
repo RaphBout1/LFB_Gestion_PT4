@@ -38,45 +38,51 @@ namespace LFB_gestion
             // 
             // boutonCompte
             // 
-            this.boutonCompte.Location = new System.Drawing.Point(713, 12);
+            this.boutonCompte.Location = new System.Drawing.Point(951, 15);
+            this.boutonCompte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.boutonCompte.Name = "boutonCompte";
-            this.boutonCompte.Size = new System.Drawing.Size(75, 23);
+            this.boutonCompte.Size = new System.Drawing.Size(100, 28);
             this.boutonCompte.TabIndex = 0;
             this.boutonCompte.Text = "Mon compte";
             this.boutonCompte.UseVisualStyleBackColor = true;
             // 
             // boutonClients
             // 
-            this.boutonClients.Location = new System.Drawing.Point(501, 150);
+            this.boutonClients.Location = new System.Drawing.Point(668, 185);
+            this.boutonClients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.boutonClients.Name = "boutonClients";
-            this.boutonClients.Size = new System.Drawing.Size(75, 23);
+            this.boutonClients.Size = new System.Drawing.Size(100, 28);
             this.boutonClients.TabIndex = 1;
             this.boutonClients.Text = "Clients";
             this.boutonClients.UseVisualStyleBackColor = true;
+            this.boutonClients.Click += new System.EventHandler(this.boutonClients_Click);
             // 
             // boutonStocks
             // 
-            this.boutonStocks.Location = new System.Drawing.Point(348, 150);
+            this.boutonStocks.Location = new System.Drawing.Point(464, 185);
+            this.boutonStocks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.boutonStocks.Name = "boutonStocks";
-            this.boutonStocks.Size = new System.Drawing.Size(75, 23);
+            this.boutonStocks.Size = new System.Drawing.Size(100, 28);
             this.boutonStocks.TabIndex = 2;
             this.boutonStocks.Text = "Stocks";
             this.boutonStocks.UseVisualStyleBackColor = true;
             // 
             // boutonIncidents
             // 
-            this.boutonIncidents.Location = new System.Drawing.Point(195, 150);
+            this.boutonIncidents.Location = new System.Drawing.Point(260, 185);
+            this.boutonIncidents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.boutonIncidents.Name = "boutonIncidents";
-            this.boutonIncidents.Size = new System.Drawing.Size(75, 23);
+            this.boutonIncidents.Size = new System.Drawing.Size(100, 28);
             this.boutonIncidents.TabIndex = 3;
             this.boutonIncidents.Text = "Incidents";
             this.boutonIncidents.UseVisualStyleBackColor = true;
             // 
             // boutonPlan
             // 
-            this.boutonPlan.Location = new System.Drawing.Point(348, 222);
+            this.boutonPlan.Location = new System.Drawing.Point(464, 273);
+            this.boutonPlan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.boutonPlan.Name = "boutonPlan";
-            this.boutonPlan.Size = new System.Drawing.Size(75, 23);
+            this.boutonPlan.Size = new System.Drawing.Size(100, 28);
             this.boutonPlan.TabIndex = 4;
             this.boutonPlan.Text = "Plan";
             this.boutonPlan.UseVisualStyleBackColor = true;
@@ -84,14 +90,15 @@ namespace LFB_gestion
             // 
             // Acceuil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.boutonPlan);
             this.Controls.Add(this.boutonIncidents);
             this.Controls.Add(this.boutonStocks);
             this.Controls.Add(this.boutonClients);
             this.Controls.Add(this.boutonCompte);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Acceuil";
             this.Text = "Acceuil";
             this.ResumeLayout(false);

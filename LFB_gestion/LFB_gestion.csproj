@@ -52,10 +52,25 @@
     <Compile Include="Acceuil.Designer.cs">
       <DependentUpon>Acceuil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Interface_Clients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Clients.Designer.cs">
+      <DependentUpon>Interface_Clients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Abstraite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Abstraite.Designer.cs">
+      <DependentUpon>Interface_Abstraite.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Acceuil.resx">
       <DependentUpon>Acceuil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Interface_Abstraite.resx">
+      <DependentUpon>Interface_Abstraite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
