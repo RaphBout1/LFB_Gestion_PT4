@@ -35,13 +35,13 @@ namespace LFB_gestion.Interfaces
             this.boutonClients = new System.Windows.Forms.Button();
             this.boutonStocks = new System.Windows.Forms.Button();
             this.boutonAccueil = new System.Windows.Forms.Button();
-            this.entitesListBox = new System.Windows.Forms.ListBox();
             this.monCompteGroupBox = new System.Windows.Forms.GroupBox();
             this.deconnexionBouton = new System.Windows.Forms.Button();
             this.nomUtilisateurLabel = new System.Windows.Forms.Label();
             this.rechercheTextBox = new System.Windows.Forms.TextBox();
             this.ajoutBouton = new System.Windows.Forms.Button();
             this.rechercheBouton = new System.Windows.Forms.Button();
+            this.clientsPanel = new System.Windows.Forms.Panel();
             this.panelGeneralGroupBox.SuspendLayout();
             this.monCompteGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -107,15 +107,6 @@ namespace LFB_gestion.Interfaces
             this.boutonAccueil.Text = "Accueil";
             this.boutonAccueil.UseVisualStyleBackColor = true;
             // 
-            // entitesListBox
-            // 
-            this.entitesListBox.FormattingEnabled = true;
-            this.entitesListBox.ItemHeight = 16;
-            this.entitesListBox.Location = new System.Drawing.Point(260, 91);
-            this.entitesListBox.Name = "entitesListBox";
-            this.entitesListBox.Size = new System.Drawing.Size(543, 372);
-            this.entitesListBox.TabIndex = 2;
-            // 
             // monCompteGroupBox
             // 
             this.monCompteGroupBox.Controls.Add(this.deconnexionBouton);
@@ -170,16 +161,23 @@ namespace LFB_gestion.Interfaces
             this.rechercheBouton.Text = "Go";
             this.rechercheBouton.UseVisualStyleBackColor = true;
             // 
+            // clientsPanel
+            // 
+            this.clientsPanel.Location = new System.Drawing.Point(260, 91);
+            this.clientsPanel.Name = "clientsPanel";
+            this.clientsPanel.Size = new System.Drawing.Size(543, 440);
+            this.clientsPanel.TabIndex = 6;
+            // 
             // Interface_Abstraite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.clientsPanel);
             this.Controls.Add(this.rechercheBouton);
             this.Controls.Add(this.ajoutBouton);
             this.Controls.Add(this.rechercheTextBox);
             this.Controls.Add(this.monCompteGroupBox);
-            this.Controls.Add(this.entitesListBox);
             this.Controls.Add(this.panelGeneralGroupBox);
             this.Controls.Add(this.nomModuleLabel);
             this.Name = "Interface_Abstraite";
@@ -200,12 +198,12 @@ namespace LFB_gestion.Interfaces
         private System.Windows.Forms.Button boutonStocks;
         private System.Windows.Forms.Button boutonClients;
         private System.Windows.Forms.Button boutonPlan;
-        protected System.Windows.Forms.ListBox entitesListBox;
         private System.Windows.Forms.GroupBox monCompteGroupBox;
         private System.Windows.Forms.Label nomUtilisateurLabel;
         private System.Windows.Forms.Button deconnexionBouton;
         private System.Windows.Forms.TextBox rechercheTextBox;
         private System.Windows.Forms.Button ajoutBouton;
         private System.Windows.Forms.Button rechercheBouton;
+        protected System.Windows.Forms.Panel clientsPanel;
     }
 }

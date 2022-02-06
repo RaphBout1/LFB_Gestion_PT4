@@ -9,3 +9,4 @@ C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestio
 C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.exe
 C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.pdb
 C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Interfaces.Interface_Abstraite.resources
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Entités.EntiteClient.resources

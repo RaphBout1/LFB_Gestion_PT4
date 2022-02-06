@@ -52,6 +52,12 @@
     <Compile Include="Acceuil.Designer.cs">
       <DependentUpon>Acceuil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entités\EntiteClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entités\EntiteClient.Designer.cs">
+      <DependentUpon>EntiteClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Interface_Clients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Acceuil.resx">
       <DependentUpon>Acceuil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entités\EntiteClient.resx">
+      <DependentUpon>EntiteClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Interface_Abstraite.resx">
       <DependentUpon>Interface_Abstraite.cs</DependentUpon>
