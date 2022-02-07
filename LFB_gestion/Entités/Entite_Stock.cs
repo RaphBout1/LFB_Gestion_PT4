@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LFB_gestion.Entités
 {
-    public partial class EntiteClient : UserControl
+    public partial class Entite_Stock : UserControl
     {
-        public EntiteClient()
+        public Entite_Stock()
         {
             InitializeComponent();
         }

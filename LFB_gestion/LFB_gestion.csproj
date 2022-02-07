@@ -52,11 +52,29 @@
     <Compile Include="Acceuil.Designer.cs">
       <DependentUpon>Acceuil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entités\EntiteClient.cs">
+    <Compile Include="Entités\Entite_Client.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Entités\EntiteClient.Designer.cs">
-      <DependentUpon>EntiteClient.cs</DependentUpon>
+    <Compile Include="Entités\Entite_Client.Designer.cs">
+      <DependentUpon>Entite_Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entités\Entite_Stock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entités\Entite_Stock.Designer.cs">
+      <DependentUpon>Entite_Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entités\Entite_Incident.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entités\Entite_Incident.Designer.cs">
+      <DependentUpon>Entite_Incident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Stocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Stocks.Designer.cs">
+      <DependentUpon>Interface_Stocks.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Interface_Clients.cs">
       <SubType>Form</SubType>
@@ -70,13 +88,31 @@
     <Compile Include="Interfaces\Interface_Abstraite.Designer.cs">
       <DependentUpon>Interface_Abstraite.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Interface_Incidents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Incidents.Designer.cs">
+      <DependentUpon>Interface_Incidents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Reservations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Reservations.Designer.cs">
+      <DependentUpon>Interface_Reservations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Acceuil.resx">
       <DependentUpon>Acceuil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Entités\EntiteClient.resx">
-      <DependentUpon>EntiteClient.cs</DependentUpon>
+    <EmbeddedResource Include="Entités\Entite_Client.resx">
+      <DependentUpon>Entite_Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entités\Entite_Incident.resx">
+      <DependentUpon>Entite_Incident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entités\Entite_Stock.resx">
+      <DependentUpon>Entite_Stock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Interface_Abstraite.resx">
       <DependentUpon>Interface_Abstraite.cs</DependentUpon>

@@ -1,7 +1,7 @@
 ﻿
 namespace LFB_gestion.Entités
 {
-    partial class EntiteClient
+    partial class Entite_Client
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -88,7 +88,7 @@ namespace LFB_gestion.Entités
             this.modifierBouton.Text = "Modifier";
             this.modifierBouton.UseVisualStyleBackColor = false;
             // 
-            // EntiteClient
+            // Entite_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,7 +98,7 @@ namespace LFB_gestion.Entités
             this.Controls.Add(this.reservationLabel);
             this.Controls.Add(this.prenomLabel);
             this.Controls.Add(this.nomLabel);
-            this.Name = "EntiteClient";
+            this.Name = "Entite_Client";
             this.Size = new System.Drawing.Size(462, 102);
             this.ResumeLayout(false);
             this.PerformLayout();
