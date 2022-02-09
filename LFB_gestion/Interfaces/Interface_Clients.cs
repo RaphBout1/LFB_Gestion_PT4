@@ -22,16 +22,16 @@ namespace LFB_gestion.Interfaces
         private void InitialisationClients()
         {
             // Génération de 30 modèles de clients pour tester (à supprimer)
-            List<Entités.EntiteClient> clients = new List<Entités.EntiteClient>();
+            List<Entités.Entite_Client> clients = new List<Entités.Entite_Client>();
             for(int i =0; i<30; i++)
             {
-                Entités.EntiteClient client = new Entités.EntiteClient();
+                Entités.Entite_Client client = new Entités.Entite_Client();
                 clients.Add(client);
             }
 
             // Pour tous les clients présents dans la liste, les afficher
             int y = 0;
-            foreach (Entités.EntiteClient client in clients) {
+            foreach (Entités.Entite_Client client in clients) {
                 if (client == clients[0])
                 {
                     client.Location = new System.Drawing.Point(0, 0);

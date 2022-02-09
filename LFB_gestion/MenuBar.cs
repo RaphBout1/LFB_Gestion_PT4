@@ -24,8 +24,26 @@ namespace LFB_gestion
 
         private void boutonClients_Click(object sender, EventArgs e)
         {
-            Form Form1 = new Interfaces.Interface_Clients();
-            Form1.Show();
+            Form formClients = new Interfaces.Interface_Clients();
+            formClients.Show();
+        }
+
+        private void boutonReservations_Click(object sender, EventArgs e)
+        {
+            Form formRes = new Interfaces.Interface_Reservations();
+            formRes.Show();
+        }
+
+        private void boutonIncidents_Click(object sender, EventArgs e)
+        {
+            Form formIncid = new Interfaces.Interface_Incidents();
+            formIncid.Show();
+        }
+
+        private void boutonStocks_Click(object sender, EventArgs e)
+        {
+            Form formStocks = new Interfaces.Interface_Stocks();
+            formStocks.Show();
         }
     }
 }
