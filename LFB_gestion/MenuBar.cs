@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LFB_gestion
 {
-    public partial class Acceuil : Form
+    public partial class MenuBar : Form
     {
-        public Acceuil()
+        public MenuBar()
         {
             InitializeComponent();
         }
