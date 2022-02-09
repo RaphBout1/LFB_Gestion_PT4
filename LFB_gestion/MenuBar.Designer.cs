@@ -64,6 +64,7 @@ namespace LFB_gestion
             this.boutonClients.TabIndex = 1;
             this.boutonClients.Text = "Clients";
             this.boutonClients.UseVisualStyleBackColor = true;
+            this.boutonClients.Click += new System.EventHandler(this.boutonClients_Click);
             // 
             // boutonStocks
             // 
@@ -184,7 +185,7 @@ namespace LFB_gestion
             this.clientsToolStripMenuItem.Size = new System.Drawing.Size(140, 64);
             this.clientsToolStripMenuItem.Text = "Clients";
             // 
-            // Acceuil
+            // MenuBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,7 +199,7 @@ namespace LFB_gestion
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Acceuil";
+            this.Name = "MenuBar";
             this.Text = "Acceuil";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
