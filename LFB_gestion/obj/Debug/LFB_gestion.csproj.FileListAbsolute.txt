@@ -1,0 +1,10 @@
+C:\Users\Raphael\Documents\S4\PT4\pt4_s4a_groupe2_mrcampo\LFB_gestion\bin\Debug\LFB_gestion.exe.config
+C:\Users\Raphael\Documents\S4\PT4\pt4_s4a_groupe2_mrcampo\LFB_gestion\bin\Debug\LFB_gestion.exe
+C:\Users\Raphael\Documents\S4\PT4\pt4_s4a_groupe2_mrcampo\LFB_gestion\bin\Debug\LFB_gestion.pdb
+C:\Users\Raphael\Documents\S4\PT4\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.csprojAssemblyReference.cache
+C:\Users\Raphael\Documents\S4\PT4\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Acceuil.resources
+C:\Users\Raphael\Documents\S4\PT4\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Properties.Resources.resources
+C:\Users\Raphael\Documents\S4\PT4\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.csproj.GenerateResource.cache
+C:\Users\Raphael\Documents\S4\PT4\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.csproj.CoreCompileInputs.cache
+C:\Users\Raphael\Documents\S4\PT4\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.exe
+C:\Users\Raphael\Documents\S4\PT4\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.pdb
