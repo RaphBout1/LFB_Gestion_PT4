@@ -52,10 +52,34 @@
     <Compile Include="MenuBar.Designer.cs">
       <DependentUpon>MenuBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entités\EntiteClient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entités\EntiteClient.Designer.cs">
+      <DependentUpon>EntiteClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Clients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Clients.Designer.cs">
+      <DependentUpon>Interface_Clients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Abstraite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Abstraite.Designer.cs">
+      <DependentUpon>Interface_Abstraite.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MenuBar.resx">
       <DependentUpon>MenuBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entités\EntiteClient.resx">
+      <DependentUpon>EntiteClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Interface_Abstraite.resx">
+      <DependentUpon>Interface_Abstraite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
