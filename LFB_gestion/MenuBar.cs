@@ -25,7 +25,7 @@ namespace LFB_gestion
 
         private void boutonClients_Click(object sender, EventArgs e)
         {
-            Form formClients = new Interfaces.Interface_Clients();
+            Form formClients = new Formulaires.Form_Client();
             formClients.Show();
         }
 

@@ -38,3 +38,5 @@ C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\D
 \\iut.bx1\Etudiants\Home\sebcandau\Documents\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.csproj.CoreCompileInputs.cache
 \\iut.bx1\Etudiants\Home\sebcandau\Documents\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.exe
 \\iut.bx1\Etudiants\Home\sebcandau\Documents\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.pdb
+\\iut.bx1\Etudiants\Home\sebcandau\Documents\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Formulaires.Form_Stock.resources
+\\iut.bx1\Etudiants\Home\sebcandau\Documents\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Formulaires.Form_Client.resources
