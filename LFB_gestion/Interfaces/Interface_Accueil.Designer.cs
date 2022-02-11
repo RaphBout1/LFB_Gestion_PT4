@@ -1,7 +1,7 @@
 ﻿
 namespace LFB_gestion.Interfaces
 {
-    partial class Interface_Clients
+    partial class Interface_Accueil
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,10 @@ namespace LFB_gestion.Interfaces
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Interface_Clients
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1113, 689);
-            this.Name = "Interface_Clients";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "Form1";
         }
 
         #endregion

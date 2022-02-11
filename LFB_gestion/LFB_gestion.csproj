@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MenuBar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuBar.Designer.cs">
-      <DependentUpon>MenuBar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Entités\Entite_Client.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -69,6 +63,12 @@
     </Compile>
     <Compile Include="Entités\Entite_Incident.Designer.cs">
       <DependentUpon>Entite_Incident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Accueil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Accueil.Designer.cs">
+      <DependentUpon>Interface_Accueil.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Interface_Stocks.cs">
       <SubType>Form</SubType>
@@ -102,8 +102,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MenuBar.resx">
-      <DependentUpon>MenuBar.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\Interface_Clients.resx">
+      <DependentUpon>Interface_Clients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Interface_Incidents.resx">
+      <DependentUpon>Interface_Incidents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Entités\Entite_Client.resx">
       <DependentUpon>Entite_Client.cs</DependentUpon>
@@ -157,6 +160,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconeClients.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondMenuNav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconeResa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondEcran.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondEcran1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondModule.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

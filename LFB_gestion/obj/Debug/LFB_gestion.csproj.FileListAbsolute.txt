@@ -12,7 +12,6 @@ C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\bin\D
 C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\bin\Debug\LFB_gestion.exe
 C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\bin\Debug\LFB_gestion.pdb
 C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.csprojAssemblyReference.cache
-C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.MenuBar.resources
 C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Entités.Entite_Client.resources
 C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Entités.Entite_Incident.resources
 C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Entités.Entite_Stock.resources
@@ -22,3 +21,5 @@ C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\D
 C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.csproj.CoreCompileInputs.cache
 C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.exe
 C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.pdb
+C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Interfaces.Interface_Clients.resources
+C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Interfaces.Interface_Incidents.resources
