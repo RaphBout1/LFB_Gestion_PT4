@@ -19,7 +19,8 @@ namespace LFB_gestion
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Form formReserv = new Interfaces.Interface_Clients();
+            formReserv.Show();
         }
 
         private void boutonClients_Click(object sender, EventArgs e)
