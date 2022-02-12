@@ -16,5 +16,10 @@ namespace LFB_gestion.Formulaires
         {
             InitializeComponent();
         }
+
+        private void validationBouton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

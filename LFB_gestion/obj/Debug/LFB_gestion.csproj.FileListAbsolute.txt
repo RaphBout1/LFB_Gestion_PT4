@@ -40,3 +40,21 @@ C:\Users\Raphael\Documents\S4\PT4\fork\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\D
 \\iut.bx1\Etudiants\Home\sebcandau\Documents\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.pdb
 \\iut.bx1\Etudiants\Home\sebcandau\Documents\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Formulaires.Form_Stock.resources
 \\iut.bx1\Etudiants\Home\sebcandau\Documents\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Formulaires.Form_Client.resources
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\bin\Debug\LFB_gestion.exe.config
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\bin\Debug\LFB_gestion.exe
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\bin\Debug\LFB_gestion.pdb
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.csprojAssemblyReference.cache
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Entités.Entite_Reservation.resources
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Formulaires.Form_Client.resources
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Formulaires.Form_Stock.resources
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.MenuBar.resources
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Entités.Entite_Client.resources
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Entités.Entite_Incident.resources
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Entités.Entite_Stock.resources
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Interfaces.Interface_Abstraite.resources
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Properties.Resources.resources
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.csproj.GenerateResource.cache
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.csproj.CoreCompileInputs.cache
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.exe
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.pdb
+C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Formulaires.Form_Incident.resources

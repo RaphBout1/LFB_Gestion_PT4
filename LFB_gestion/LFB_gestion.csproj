@@ -138,6 +138,9 @@
     <EmbeddedResource Include="Formulaires\Form_Client.resx">
       <DependentUpon>Form_Client.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Form_Incident.resx">
+      <DependentUpon>Form_Incident.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Stock.resx">
       <DependentUpon>Form_Stock.cs</DependentUpon>
     </EmbeddedResource>
