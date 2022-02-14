@@ -141,6 +141,9 @@
     <EmbeddedResource Include="Formulaires\Form_Incident.resx">
       <DependentUpon>Form_Incident.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Form_Reservation.resx">
+      <DependentUpon>Form_Reservation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Stock.resx">
       <DependentUpon>Form_Stock.cs</DependentUpon>
     </EmbeddedResource>

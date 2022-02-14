@@ -46,5 +46,23 @@ namespace LFB_gestion
             Form formStocks = new Interfaces.Interface_Stocks();
             formStocks.Show();
         }
+
+        private void boutonIncidents_Click_1(object sender, EventArgs e)
+        {
+            Form formIncidents = new Formulaires.Form_Incident();
+            formIncidents.Show();
+        }
+
+        private void empalcements_Click(object sender, EventArgs e)
+        {
+            Form formReservation = new Formulaires.Form_Reservation();
+            formReservation.Show();
+        }
+
+        private void stocksBouton_Click(object sender, EventArgs e)
+        {
+            Form formStocks = new Formulaires.Form_Stock();
+            formStocks.Show();
+        }
     }
 }

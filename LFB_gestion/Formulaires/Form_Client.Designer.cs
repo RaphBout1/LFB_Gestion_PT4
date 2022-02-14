@@ -37,7 +37,7 @@
             // creerBouton
             // 
             this.creerBouton.Location = new System.Drawing.Point(199, 319);
-            this.creerBouton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.creerBouton.Margin = new System.Windows.Forms.Padding(4);
             this.creerBouton.Name = "creerBouton";
             this.creerBouton.Size = new System.Drawing.Size(100, 28);
             this.creerBouton.TabIndex = 7;
@@ -48,7 +48,7 @@
             // emailTextBox
             // 
             this.emailTextBox.Location = new System.Drawing.Point(180, 240);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(132, 22);
             this.emailTextBox.TabIndex = 6;
@@ -57,7 +57,7 @@
             // prenomTextBox
             // 
             this.prenomTextBox.Location = new System.Drawing.Point(180, 178);
-            this.prenomTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.prenomTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.prenomTextBox.Name = "prenomTextBox";
             this.prenomTextBox.Size = new System.Drawing.Size(132, 22);
             this.prenomTextBox.TabIndex = 5;
@@ -66,7 +66,7 @@
             // nomTextBox
             // 
             this.nomTextBox.Location = new System.Drawing.Point(180, 112);
-            this.nomTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nomTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nomTextBox.Name = "nomTextBox";
             this.nomTextBox.Size = new System.Drawing.Size(132, 22);
             this.nomTextBox.TabIndex = 4;
@@ -81,7 +81,7 @@
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.prenomTextBox);
             this.Controls.Add(this.nomTextBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Client";
             this.Text = "Form_Client";
             this.ResumeLayout(false);

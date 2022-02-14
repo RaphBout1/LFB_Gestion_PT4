@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LFB_gestion.Formulaires
 {
-    public partial class Form_Incident : Form
+    public partial class Form_Produits : Form
     {
-        public Form_Incident()
+        public Form_Produits()
         {
             InitializeComponent();
         }

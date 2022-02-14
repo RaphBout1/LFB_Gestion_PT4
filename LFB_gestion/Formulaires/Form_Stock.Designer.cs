@@ -28,52 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nomTextBox = new System.Windows.Forms.TextBox();
-            this.prenomTextBox = new System.Windows.Forms.TextBox();
-            this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.creerBouton = new System.Windows.Forms.Button();
+            this.nombreTextBox = new System.Windows.Forms.TextBox();
+            this.montantLabel = new System.Windows.Forms.Label();
+            this.produitsListBox = new System.Windows.Forms.ListBox();
+            this.nouveauProduitBouton = new System.Windows.Forms.Button();
+            this.validerBouton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // nomTextBox
+            // nombreTextBox
             // 
-            this.nomTextBox.Location = new System.Drawing.Point(211, 103);
-            this.nomTextBox.Name = "nomTextBox";
-            this.nomTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nomTextBox.TabIndex = 0;
-            this.nomTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomTextBox_KeyPress);
+            this.nombreTextBox.Location = new System.Drawing.Point(309, 54);
+            this.nombreTextBox.Name = "nombreTextBox";
+            this.nombreTextBox.Size = new System.Drawing.Size(48, 22);
+            this.nombreTextBox.TabIndex = 0;
+            this.nombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreTextBox_KeyPress);
             // 
-            // prenomTextBox
+            // montantLabel
             // 
-            this.prenomTextBox.Location = new System.Drawing.Point(211, 157);
-            this.prenomTextBox.Name = "prenomTextBox";
-            this.prenomTextBox.Size = new System.Drawing.Size(100, 20);
-            this.prenomTextBox.TabIndex = 1;
+            this.montantLabel.AutoSize = true;
+            this.montantLabel.Location = new System.Drawing.Point(237, 57);
+            this.montantLabel.Name = "montantLabel";
+            this.montantLabel.Size = new System.Drawing.Size(67, 17);
+            this.montantLabel.TabIndex = 1;
+            this.montantLabel.Text = "Montant :";
             // 
-            // emailTextBox
+            // produitsListBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(211, 207);
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(100, 20);
-            this.emailTextBox.TabIndex = 2;
+            this.produitsListBox.FormattingEnabled = true;
+            this.produitsListBox.ItemHeight = 16;
+            this.produitsListBox.Location = new System.Drawing.Point(12, 23);
+            this.produitsListBox.Name = "produitsListBox";
+            this.produitsListBox.Size = new System.Drawing.Size(207, 84);
+            this.produitsListBox.TabIndex = 2;
             // 
-            // creerBouton
+            // nouveauProduitBouton
             // 
-            this.creerBouton.Location = new System.Drawing.Point(225, 271);
-            this.creerBouton.Name = "creerBouton";
-            this.creerBouton.Size = new System.Drawing.Size(75, 23);
-            this.creerBouton.TabIndex = 3;
-            this.creerBouton.Text = "Créer";
-            this.creerBouton.UseVisualStyleBackColor = true;
+            this.nouveauProduitBouton.Location = new System.Drawing.Point(25, 113);
+            this.nouveauProduitBouton.Name = "nouveauProduitBouton";
+            this.nouveauProduitBouton.Size = new System.Drawing.Size(165, 32);
+            this.nouveauProduitBouton.TabIndex = 3;
+            this.nouveauProduitBouton.Text = "Nouveau produit";
+            this.nouveauProduitBouton.UseVisualStyleBackColor = true;
+            this.nouveauProduitBouton.Click += new System.EventHandler(this.nouveauProduitBouton_Click);
+            // 
+            // validerBouton
+            // 
+            this.validerBouton.Location = new System.Drawing.Point(110, 194);
+            this.validerBouton.Name = "validerBouton";
+            this.validerBouton.Size = new System.Drawing.Size(165, 32);
+            this.validerBouton.TabIndex = 4;
+            this.validerBouton.Text = "Valider";
+            this.validerBouton.UseVisualStyleBackColor = true;
             // 
             // Form_Stock
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 433);
-            this.Controls.Add(this.creerBouton);
-            this.Controls.Add(this.emailTextBox);
-            this.Controls.Add(this.prenomTextBox);
-            this.Controls.Add(this.nomTextBox);
+            this.ClientSize = new System.Drawing.Size(410, 257);
+            this.Controls.Add(this.validerBouton);
+            this.Controls.Add(this.nouveauProduitBouton);
+            this.Controls.Add(this.produitsListBox);
+            this.Controls.Add(this.montantLabel);
+            this.Controls.Add(this.nombreTextBox);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Stock";
             this.Text = "Form_Stock";
             this.ResumeLayout(false);
@@ -83,9 +100,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox nomTextBox;
-        private System.Windows.Forms.TextBox prenomTextBox;
-        private System.Windows.Forms.TextBox emailTextBox;
-        private System.Windows.Forms.Button creerBouton;
+        private System.Windows.Forms.TextBox nombreTextBox;
+        private System.Windows.Forms.Label montantLabel;
+        private System.Windows.Forms.ListBox produitsListBox;
+        private System.Windows.Forms.Button nouveauProduitBouton;
+        private System.Windows.Forms.Button validerBouton;
     }
 }

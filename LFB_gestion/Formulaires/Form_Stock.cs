@@ -21,5 +21,16 @@ namespace LFB_gestion.Formulaires
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
+
+        private void nombreTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (int)Keys.Back);
+        }
+
+        private void nouveauProduitBouton_Click(object sender, EventArgs e)
+        {
+            Form_Produits nouveauProduit = new Form_Produits();
+            nouveauProduit.Show();
+        }
     }
 }

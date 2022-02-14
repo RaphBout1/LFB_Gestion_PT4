@@ -42,6 +42,9 @@ namespace LFB_gestion
             this.entretienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.empalcements = new System.Windows.Forms.Button();
+            this.stocksBouton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +88,7 @@ namespace LFB_gestion
             this.boutonIncidents.TabIndex = 3;
             this.boutonIncidents.Text = "Incidents";
             this.boutonIncidents.UseVisualStyleBackColor = true;
+            this.boutonIncidents.Click += new System.EventHandler(this.boutonIncidents_Click_1);
             // 
             // boutonPlan
             // 
@@ -119,7 +123,7 @@ namespace LFB_gestion
             // 
             // accueilToolStripMenuItem
             // 
-            this.accueilToolStripMenuItem.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accueilToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accueilToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.accueilToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("accueilToolStripMenuItem.Image")));
             this.accueilToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -127,63 +131,92 @@ namespace LFB_gestion
             this.accueilToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.accueilToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.accueilToolStripMenuItem.Name = "accueilToolStripMenuItem";
-            this.accueilToolStripMenuItem.Size = new System.Drawing.Size(146, 64);
+            this.accueilToolStripMenuItem.Size = new System.Drawing.Size(170, 64);
             this.accueilToolStripMenuItem.Text = "Accueil";
             // 
             // stockToolStripMenuItem
             // 
-            this.stockToolStripMenuItem.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stockToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.stockToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stockToolStripMenuItem.Image")));
             this.stockToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.stockToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(130, 64);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(148, 64);
             this.stockToolStripMenuItem.Text = "Stock";
             // 
             // statistiquesToolStripMenuItem
             // 
-            this.statistiquesToolStripMenuItem.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statistiquesToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statistiquesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.statistiquesToolStripMenuItem.Image = global::LFB_gestion.Properties.Resources.iconeStat;
             this.statistiquesToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.statistiquesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.statistiquesToolStripMenuItem.Name = "statistiquesToolStripMenuItem";
-            this.statistiquesToolStripMenuItem.Size = new System.Drawing.Size(189, 64);
+            this.statistiquesToolStripMenuItem.Size = new System.Drawing.Size(226, 64);
             this.statistiquesToolStripMenuItem.Text = "Statistiques";
             // 
             // entretienToolStripMenuItem
             // 
-            this.entretienToolStripMenuItem.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entretienToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entretienToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.entretienToolStripMenuItem.Image = global::LFB_gestion.Properties.Resources.iconeEntretien;
             this.entretienToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.entretienToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.entretienToolStripMenuItem.Name = "entretienToolStripMenuItem";
-            this.entretienToolStripMenuItem.Size = new System.Drawing.Size(163, 64);
+            this.entretienToolStripMenuItem.Size = new System.Drawing.Size(192, 64);
             this.entretienToolStripMenuItem.Text = "Entretien";
             // 
             // planToolStripMenuItem
             // 
-            this.planToolStripMenuItem.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.planToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.planToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.planToolStripMenuItem.Image = global::LFB_gestion.Properties.Resources.iconePlan;
             this.planToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.planToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.planToolStripMenuItem.Name = "planToolStripMenuItem";
-            this.planToolStripMenuItem.Size = new System.Drawing.Size(118, 64);
+            this.planToolStripMenuItem.Size = new System.Drawing.Size(135, 64);
             this.planToolStripMenuItem.Text = "Plan";
             // 
             // clientsToolStripMenuItem
             // 
-            this.clientsToolStripMenuItem.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.clientsToolStripMenuItem.Image = global::LFB_gestion.Properties.Resources.iconeClients;
             this.clientsToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clientsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
-            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(140, 64);
+            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(165, 64);
             this.clientsToolStripMenuItem.Text = "Clients";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // empalcements
+            // 
+            this.empalcements.Location = new System.Drawing.Point(870, 252);
+            this.empalcements.Name = "empalcements";
+            this.empalcements.Size = new System.Drawing.Size(75, 23);
+            this.empalcements.TabIndex = 7;
+            this.empalcements.Text = "Emplacements";
+            this.empalcements.UseVisualStyleBackColor = true;
+            this.empalcements.Click += new System.EventHandler(this.empalcements_Click);
+            // 
+            // stocksBouton
+            // 
+            this.stocksBouton.Location = new System.Drawing.Point(870, 296);
+            this.stocksBouton.Name = "stocksBouton";
+            this.stocksBouton.Size = new System.Drawing.Size(75, 23);
+            this.stocksBouton.TabIndex = 8;
+            this.stocksBouton.Text = "stocks";
+            this.stocksBouton.UseVisualStyleBackColor = true;
+            this.stocksBouton.Click += new System.EventHandler(this.stocksBouton_Click);
             // 
             // MenuBar
             // 
@@ -191,6 +224,9 @@ namespace LFB_gestion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(1231, 647);
+            this.Controls.Add(this.stocksBouton);
+            this.Controls.Add(this.empalcements);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.boutonPlan);
             this.Controls.Add(this.boutonIncidents);
             this.Controls.Add(this.boutonStocks);
@@ -221,6 +257,9 @@ namespace LFB_gestion
         private System.Windows.Forms.ToolStripMenuItem entretienToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem planToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button empalcements;
+        private System.Windows.Forms.Button stocksBouton;
     }
 }
 

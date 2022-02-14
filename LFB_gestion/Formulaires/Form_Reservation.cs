@@ -16,5 +16,11 @@ namespace LFB_gestion.Formulaires
         {
             InitializeComponent();
         }
+
+        private void nouveauClientBouton_Click(object sender, EventArgs e)
+        {
+            Form_Client formNouveauClient = new Form_Client();
+            formNouveauClient.Show();
+        }
     }
 }
