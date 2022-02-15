@@ -64,5 +64,10 @@ namespace LFB_gestion
             Form formStocks = new Formulaires.Form_Stock();
             formStocks.Show();
         }
+
+        private void MenuBar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

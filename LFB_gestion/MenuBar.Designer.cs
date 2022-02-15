@@ -50,20 +50,18 @@ namespace LFB_gestion
             // 
             // boutonCompte
             // 
-            this.boutonCompte.Location = new System.Drawing.Point(951, 15);
-            this.boutonCompte.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonCompte.Location = new System.Drawing.Point(713, 12);
             this.boutonCompte.Name = "boutonCompte";
-            this.boutonCompte.Size = new System.Drawing.Size(100, 28);
+            this.boutonCompte.Size = new System.Drawing.Size(75, 23);
             this.boutonCompte.TabIndex = 0;
             this.boutonCompte.Text = "Mon compte";
             this.boutonCompte.UseVisualStyleBackColor = true;
             // 
             // boutonClients
             // 
-            this.boutonClients.Location = new System.Drawing.Point(668, 185);
-            this.boutonClients.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonClients.Location = new System.Drawing.Point(501, 150);
             this.boutonClients.Name = "boutonClients";
-            this.boutonClients.Size = new System.Drawing.Size(100, 28);
+            this.boutonClients.Size = new System.Drawing.Size(75, 23);
             this.boutonClients.TabIndex = 1;
             this.boutonClients.Text = "Clients";
             this.boutonClients.UseVisualStyleBackColor = true;
@@ -71,20 +69,18 @@ namespace LFB_gestion
             // 
             // boutonStocks
             // 
-            this.boutonStocks.Location = new System.Drawing.Point(464, 185);
-            this.boutonStocks.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonStocks.Location = new System.Drawing.Point(348, 150);
             this.boutonStocks.Name = "boutonStocks";
-            this.boutonStocks.Size = new System.Drawing.Size(100, 28);
+            this.boutonStocks.Size = new System.Drawing.Size(75, 23);
             this.boutonStocks.TabIndex = 2;
             this.boutonStocks.Text = "Stocks";
             this.boutonStocks.UseVisualStyleBackColor = true;
             // 
             // boutonIncidents
             // 
-            this.boutonIncidents.Location = new System.Drawing.Point(260, 185);
-            this.boutonIncidents.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonIncidents.Location = new System.Drawing.Point(195, 150);
             this.boutonIncidents.Name = "boutonIncidents";
-            this.boutonIncidents.Size = new System.Drawing.Size(100, 28);
+            this.boutonIncidents.Size = new System.Drawing.Size(75, 23);
             this.boutonIncidents.TabIndex = 3;
             this.boutonIncidents.Text = "Incidents";
             this.boutonIncidents.UseVisualStyleBackColor = true;
@@ -92,10 +88,9 @@ namespace LFB_gestion
             // 
             // boutonPlan
             // 
-            this.boutonPlan.Location = new System.Drawing.Point(464, 273);
-            this.boutonPlan.Margin = new System.Windows.Forms.Padding(4);
+            this.boutonPlan.Location = new System.Drawing.Point(348, 222);
             this.boutonPlan.Name = "boutonPlan";
-            this.boutonPlan.Size = new System.Drawing.Size(100, 28);
+            this.boutonPlan.Size = new System.Drawing.Size(75, 23);
             this.boutonPlan.TabIndex = 4;
             this.boutonPlan.Text = "Plan";
             this.boutonPlan.UseVisualStyleBackColor = true;
@@ -115,9 +110,10 @@ namespace LFB_gestion
             this.entretienToolStripMenuItem,
             this.planToolStripMenuItem,
             this.clientsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 579);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 471);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1231, 68);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(923, 55);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -131,7 +127,7 @@ namespace LFB_gestion
             this.accueilToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.accueilToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.accueilToolStripMenuItem.Name = "accueilToolStripMenuItem";
-            this.accueilToolStripMenuItem.Size = new System.Drawing.Size(170, 64);
+            this.accueilToolStripMenuItem.Size = new System.Drawing.Size(143, 51);
             this.accueilToolStripMenuItem.Text = "Accueil";
             // 
             // stockToolStripMenuItem
@@ -142,7 +138,7 @@ namespace LFB_gestion
             this.stockToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.stockToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(148, 64);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(127, 51);
             this.stockToolStripMenuItem.Text = "Stock";
             // 
             // statistiquesToolStripMenuItem
@@ -153,7 +149,7 @@ namespace LFB_gestion
             this.statistiquesToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.statistiquesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.statistiquesToolStripMenuItem.Name = "statistiquesToolStripMenuItem";
-            this.statistiquesToolStripMenuItem.Size = new System.Drawing.Size(226, 64);
+            this.statistiquesToolStripMenuItem.Size = new System.Drawing.Size(185, 51);
             this.statistiquesToolStripMenuItem.Text = "Statistiques";
             // 
             // entretienToolStripMenuItem
@@ -164,7 +160,7 @@ namespace LFB_gestion
             this.entretienToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.entretienToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.entretienToolStripMenuItem.Name = "entretienToolStripMenuItem";
-            this.entretienToolStripMenuItem.Size = new System.Drawing.Size(192, 64);
+            this.entretienToolStripMenuItem.Size = new System.Drawing.Size(159, 51);
             this.entretienToolStripMenuItem.Text = "Entretien";
             // 
             // planToolStripMenuItem
@@ -175,7 +171,7 @@ namespace LFB_gestion
             this.planToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.planToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.planToolStripMenuItem.Name = "planToolStripMenuItem";
-            this.planToolStripMenuItem.Size = new System.Drawing.Size(135, 64);
+            this.planToolStripMenuItem.Size = new System.Drawing.Size(116, 51);
             this.planToolStripMenuItem.Text = "Plan";
             // 
             // clientsToolStripMenuItem
@@ -186,23 +182,25 @@ namespace LFB_gestion
             this.clientsToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clientsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
-            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(165, 64);
+            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(139, 51);
             this.clientsToolStripMenuItem.Text = "Clients";
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(56, 19);
             this.button1.TabIndex = 6;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // empalcements
             // 
-            this.empalcements.Location = new System.Drawing.Point(870, 252);
+            this.empalcements.Location = new System.Drawing.Point(652, 205);
+            this.empalcements.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.empalcements.Name = "empalcements";
-            this.empalcements.Size = new System.Drawing.Size(75, 23);
+            this.empalcements.Size = new System.Drawing.Size(56, 19);
             this.empalcements.TabIndex = 7;
             this.empalcements.Text = "Emplacements";
             this.empalcements.UseVisualStyleBackColor = true;
@@ -210,9 +208,10 @@ namespace LFB_gestion
             // 
             // stocksBouton
             // 
-            this.stocksBouton.Location = new System.Drawing.Point(870, 296);
+            this.stocksBouton.Location = new System.Drawing.Point(652, 240);
+            this.stocksBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.stocksBouton.Name = "stocksBouton";
-            this.stocksBouton.Size = new System.Drawing.Size(75, 23);
+            this.stocksBouton.Size = new System.Drawing.Size(56, 19);
             this.stocksBouton.TabIndex = 8;
             this.stocksBouton.Text = "stocks";
             this.stocksBouton.UseVisualStyleBackColor = true;
@@ -220,10 +219,10 @@ namespace LFB_gestion
             // 
             // MenuBar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
-            this.ClientSize = new System.Drawing.Size(1231, 647);
+            this.ClientSize = new System.Drawing.Size(923, 526);
             this.Controls.Add(this.stocksBouton);
             this.Controls.Add(this.empalcements);
             this.Controls.Add(this.button1);
@@ -234,9 +233,9 @@ namespace LFB_gestion
             this.Controls.Add(this.boutonCompte);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MenuBar";
             this.Text = "Acceuil";
+            this.Load += new System.EventHandler(this.MenuBar_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

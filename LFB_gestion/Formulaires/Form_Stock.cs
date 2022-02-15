@@ -29,7 +29,7 @@ namespace LFB_gestion.Formulaires
 
         private void nouveauProduitBouton_Click(object sender, EventArgs e)
         {
-            Form_Produits nouveauProduit = new Form_Produits();
+            Form_Produit nouveauProduit = new Form_Produit();
             nouveauProduit.Show();
         }
     }

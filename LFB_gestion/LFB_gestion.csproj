@@ -64,6 +64,12 @@
     <Compile Include="Formulaires\Form_Incident.Designer.cs">
       <DependentUpon>Form_Incident.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulaires\Form_Produit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\Form_Produit.Designer.cs">
+      <DependentUpon>Form_Produit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulaires\Form_Reservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Incident.resx">
       <DependentUpon>Form_Incident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Form_Produit.resx">
+      <DependentUpon>Form_Produit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Reservation.resx">
       <DependentUpon>Form_Reservation.cs</DependentUpon>

@@ -59,3 +59,6 @@ C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestio
 C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.pdb
 C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Formulaires.Form_Incident.resources
 C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Formulaires.Form_Reservation.resources
+\\iut.bx1\Etudiants\Home\sebcandau\Documents\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Formulaires.Form_Incident.resources
+\\iut.bx1\Etudiants\Home\sebcandau\Documents\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Formulaires.Form_Produit.resources
+\\iut.bx1\Etudiants\Home\sebcandau\Documents\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Formulaires.Form_Reservation.resources
