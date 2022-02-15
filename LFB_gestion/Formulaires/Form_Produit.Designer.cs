@@ -51,6 +51,7 @@
             this.nomProduitTextBox.Name = "nomProduitTextBox";
             this.nomProduitTextBox.Size = new System.Drawing.Size(100, 20);
             this.nomProduitTextBox.TabIndex = 1;
+            this.nomProduitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomProduitTextBox_KeyPress);
             // 
             // label1
             // 

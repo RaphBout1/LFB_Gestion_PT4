@@ -22,5 +22,9 @@ namespace LFB_gestion.Formulaires
             Form_Client formNouveauClient = new Form_Client();
             formNouveauClient.Show();
         }
+
+        private void validerBouton_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

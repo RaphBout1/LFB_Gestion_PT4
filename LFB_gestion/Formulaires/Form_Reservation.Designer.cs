@@ -36,7 +36,6 @@
             this.dateFinCalendrier = new System.Windows.Forms.MonthCalendar();
             this.dateDebutLabel = new System.Windows.Forms.Label();
             this.dateFinLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.validerBouton = new System.Windows.Forms.Button();
             this.nouveauClientBouton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,92 +43,92 @@
             // clientsListBox
             // 
             this.clientsListBox.FormattingEnabled = true;
-            this.clientsListBox.ItemHeight = 16;
-            this.clientsListBox.Location = new System.Drawing.Point(76, 355);
+            this.clientsListBox.Location = new System.Drawing.Point(57, 288);
+            this.clientsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.clientsListBox.Name = "clientsListBox";
-            this.clientsListBox.Size = new System.Drawing.Size(312, 68);
+            this.clientsListBox.Size = new System.Drawing.Size(235, 56);
             this.clientsListBox.TabIndex = 8;
             // 
             // emplacementsListBox
             // 
             this.emplacementsListBox.FormattingEnabled = true;
-            this.emplacementsListBox.ItemHeight = 16;
-            this.emplacementsListBox.Location = new System.Drawing.Point(76, 471);
+            this.emplacementsListBox.Location = new System.Drawing.Point(57, 383);
+            this.emplacementsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.emplacementsListBox.Name = "emplacementsListBox";
-            this.emplacementsListBox.Size = new System.Drawing.Size(312, 68);
+            this.emplacementsListBox.Size = new System.Drawing.Size(235, 56);
             this.emplacementsListBox.TabIndex = 9;
             // 
             // emplacementLabel
             // 
             this.emplacementLabel.AutoSize = true;
-            this.emplacementLabel.Location = new System.Drawing.Point(73, 451);
+            this.emplacementLabel.Location = new System.Drawing.Point(55, 366);
+            this.emplacementLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.emplacementLabel.Name = "emplacementLabel";
-            this.emplacementLabel.Size = new System.Drawing.Size(101, 17);
+            this.emplacementLabel.Size = new System.Drawing.Size(77, 13);
             this.emplacementLabel.TabIndex = 10;
             this.emplacementLabel.Text = "Emplacement :";
             // 
             // clientLabel
             // 
             this.clientLabel.AutoSize = true;
-            this.clientLabel.Location = new System.Drawing.Point(73, 335);
+            this.clientLabel.Location = new System.Drawing.Point(55, 272);
+            this.clientLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.clientLabel.Name = "clientLabel";
-            this.clientLabel.Size = new System.Drawing.Size(51, 17);
+            this.clientLabel.Size = new System.Drawing.Size(39, 13);
             this.clientLabel.TabIndex = 11;
             this.clientLabel.Text = "Client :";
             // 
             // dateDebutCalendrier
             // 
-            this.dateDebutCalendrier.Location = new System.Drawing.Point(34, 78);
+            this.dateDebutCalendrier.Location = new System.Drawing.Point(26, 63);
+            this.dateDebutCalendrier.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.dateDebutCalendrier.Name = "dateDebutCalendrier";
             this.dateDebutCalendrier.TabIndex = 12;
             // 
             // dateFinCalendrier
             // 
-            this.dateFinCalendrier.Location = new System.Drawing.Point(354, 78);
+            this.dateFinCalendrier.Location = new System.Drawing.Point(266, 63);
+            this.dateFinCalendrier.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.dateFinCalendrier.Name = "dateFinCalendrier";
             this.dateFinCalendrier.TabIndex = 13;
             // 
             // dateDebutLabel
             // 
             this.dateDebutLabel.AutoSize = true;
-            this.dateDebutLabel.Location = new System.Drawing.Point(31, 33);
+            this.dateDebutLabel.Location = new System.Drawing.Point(23, 27);
+            this.dateDebutLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dateDebutLabel.Name = "dateDebutLabel";
-            this.dateDebutLabel.Size = new System.Drawing.Size(106, 17);
+            this.dateDebutLabel.Size = new System.Drawing.Size(81, 13);
             this.dateDebutLabel.TabIndex = 14;
             this.dateDebutLabel.Text = "Date de début :";
             // 
             // dateFinLabel
             // 
             this.dateFinLabel.AutoSize = true;
-            this.dateFinLabel.Location = new System.Drawing.Point(351, 33);
+            this.dateFinLabel.Location = new System.Drawing.Point(263, 27);
+            this.dateFinLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dateFinLabel.Name = "dateFinLabel";
-            this.dateFinLabel.Size = new System.Drawing.Size(85, 17);
+            this.dateFinLabel.Size = new System.Drawing.Size(65, 13);
             this.dateFinLabel.TabIndex = 15;
             this.dateFinLabel.Text = "Date de fin :";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(362, 86);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // validerBouton
             // 
-            this.validerBouton.Location = new System.Drawing.Point(226, 614);
+            this.validerBouton.Location = new System.Drawing.Point(170, 499);
+            this.validerBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.validerBouton.Name = "validerBouton";
-            this.validerBouton.Size = new System.Drawing.Size(152, 56);
+            this.validerBouton.Size = new System.Drawing.Size(114, 46);
             this.validerBouton.TabIndex = 17;
             this.validerBouton.Text = "Valider";
             this.validerBouton.UseVisualStyleBackColor = true;
+            this.validerBouton.Click += new System.EventHandler(this.validerBouton_Click);
             // 
             // nouveauClientBouton
             // 
-            this.nouveauClientBouton.Location = new System.Drawing.Point(415, 375);
+            this.nouveauClientBouton.Location = new System.Drawing.Point(311, 305);
+            this.nouveauClientBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nouveauClientBouton.Name = "nouveauClientBouton";
-            this.nouveauClientBouton.Size = new System.Drawing.Size(143, 33);
+            this.nouveauClientBouton.Size = new System.Drawing.Size(107, 27);
             this.nouveauClientBouton.TabIndex = 18;
             this.nouveauClientBouton.Text = "NouveauClient";
             this.nouveauClientBouton.UseVisualStyleBackColor = true;
@@ -137,12 +136,11 @@
             // 
             // Form_Reservation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 750);
+            this.ClientSize = new System.Drawing.Size(513, 609);
             this.Controls.Add(this.nouveauClientBouton);
             this.Controls.Add(this.validerBouton);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dateFinLabel);
             this.Controls.Add(this.dateDebutLabel);
             this.Controls.Add(this.dateFinCalendrier);
@@ -151,6 +149,7 @@
             this.Controls.Add(this.emplacementLabel);
             this.Controls.Add(this.emplacementsListBox);
             this.Controls.Add(this.clientsListBox);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form_Reservation";
             this.Text = "Form_Reservation";
             this.ResumeLayout(false);
@@ -168,7 +167,6 @@
         private System.Windows.Forms.MonthCalendar dateFinCalendrier;
         private System.Windows.Forms.Label dateDebutLabel;
         private System.Windows.Forms.Label dateFinLabel;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button validerBouton;
         private System.Windows.Forms.Button nouveauClientBouton;
     }

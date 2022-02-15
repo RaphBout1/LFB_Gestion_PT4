@@ -33,7 +33,7 @@ namespace LFB_gestion.Formulaires
         {
         }
 
-        public static bool IsValidEmail(string email)
+        public static bool EmailEstValide(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
                 return false;
@@ -73,8 +73,9 @@ namespace LFB_gestion.Formulaires
 
         private void creerBouton_Click(object sender, EventArgs e)
         {
-            if (IsValidEmail(emailTextBox.Text))
+            if (EmailEstValide(emailTextBox.Text) && !clientDejaPresent())
             {
+                creationDuClient();
                 emailTextBox.Text = "";
                 nomTextBox.Text = "";
                 prenomTextBox.Text = "";
@@ -92,6 +93,26 @@ namespace LFB_gestion.Formulaires
                 prenomTextBox.Text = "";
                 this.Refresh();
             }
+        }
+
+        /* MANIPULATION DE LA BASE */
+
+        /*
+         * Méthode permettant la création du client dans la base
+         * A FAIRE
+         */
+        private void creationDuClient()
+        {
+       
+        }
+
+        /*
+         * Méthode permettant de vérifier si un client est déjà présent dans la base.
+         * A FAIRE
+         */
+        private bool clientDejaPresent()
+        {
+            return false;
         }
     }
 }
