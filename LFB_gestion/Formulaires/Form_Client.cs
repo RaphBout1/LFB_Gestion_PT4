@@ -73,13 +73,12 @@ namespace LFB_gestion.Formulaires
 
         private void creerBouton_Click(object sender, EventArgs e)
         {
-            if (EmailEstValide(emailTextBox.Text) && !clientDejaPresent())
+            if (EmailEstValide(emailTextBox.Text) && !clientDejaPresent() 
+                && !String.IsNullOrEmpty(nomTextBox.Text) && !String.IsNullOrEmpty(prenomTextBox.Text))
             {
                 creationDuClient();
-                emailTextBox.Text = "";
-                nomTextBox.Text = "";
-                prenomTextBox.Text = "";
-                this.Refresh();
+                this.Controls.Clear();
+                InitializeComponent();
                 MessageBox.Show("ajout du nouveau client dans la base");
             } else
             {

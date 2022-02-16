@@ -12,8 +12,10 @@ namespace LFB_gestion.Formulaires
 {
     public partial class Form_Produit : Form
     {
-        public Form_Produit()
+        Form_Stock stock;
+        public Form_Produit(Form_Stock stock)
         {
+            this.stock = stock;
             InitializeComponent();
         }
 
@@ -32,6 +34,36 @@ namespace LFB_gestion.Formulaires
         private void nomProduitTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void validerBouton_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(nomProduitTextBox.Text))
+            {
+                Label nonValideLabel = new Label();
+                nonValideLabel.Size = this.Size;
+                nonValideLabel.Text = "Veuillez entrer un nom pour le produit";
+                nonValideLabel.Location = new Point(validerBouton.Location.X, (validerBouton.Location.Y - 15));
+                this.Controls.Add(nonValideLabel);
+            }
+            else
+            {
+                creationProduit();
+                this.stock.produitsListBox.Items.Add(nomProduitTextBox.Text);
+                this.Controls.Clear();
+                InitializeComponent();
+                MessageBox.Show("Produit ajouté à la base avec succès !");
+            }
+        }
+
+        /* MANIPULATION DE LA BASE */
+
+        /*
+         * Méthode permettant la création d'un produit dans la base
+         * A FAIRE
+         */
+        private void creationProduit()
+        {
         }
     }
 }

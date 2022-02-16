@@ -20,27 +20,22 @@ namespace LFB_gestion.Formulaires
 
         private void validationBouton_Click(object sender, EventArgs e)
         {
-            if(auMoinsUnClientSelectionne() && auMoinsUnEmplacementSelectionne())
+            if(!auMoinsUnClientSelectionne() || !auMoinsUnEmplacementSelectionne())
+            {
+                Label nonValideLabel = new Label();
+                nonValideLabel.Size = this.Size;
+                nonValideLabel.Text = "Veuillez sélectionner un client et un emplacement";
+                nonValideLabel.Location = new Point(clientLabel.Location.X, (clientLabel.Location.Y - 15));
+                this.Controls.Add(nonValideLabel);
+            } 
+            else
             {
                 creationEmplacement();
-                descriptionTextBox.Text = "";
-                statutCheckBox.Checked = false;
+                this.Controls.Clear();
+                InitializeComponent();
+                remplirClientsEtEmplacements();
                 MessageBox.Show("Emplacement créé avec succès !");
-            } else if(auMoinsUnClientSelectionne() && !auMoinsUnEmplacementSelectionne())
-            {
-                Label nonValideLabel = new Label();
-                nonValideLabel.Size = this.Size;
-                nonValideLabel.Text = "Veuillez sélectionner un emplacement";
-                nonValideLabel.Location = new Point(clientLabel.Location.X, (clientLabel.Location.Y - 15));
-                this.Controls.Add(nonValideLabel);
-            } else if(!auMoinsUnClientSelectionne() && auMoinsUnEmplacementSelectionne())
-            {
-                Label nonValideLabel = new Label();
-                nonValideLabel.Size = this.Size;
-                nonValideLabel.Text = "Veuillez sélectionner un client";
-                nonValideLabel.Location = new Point(clientLabel.Location.X, (clientLabel.Location.Y - 15));
-                this.Controls.Add(nonValideLabel);
-            }
+            } 
         }
 
         private bool auMoinsUnEmplacementSelectionne()

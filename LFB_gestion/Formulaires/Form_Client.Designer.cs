@@ -32,6 +32,9 @@
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.prenomTextBox = new System.Windows.Forms.TextBox();
             this.nomTextBox = new System.Windows.Forms.TextBox();
+            this.nomLabel = new System.Windows.Forms.Label();
+            this.prenomLabel = new System.Windows.Forms.Label();
+            this.emailLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // creerBouton
@@ -72,11 +75,41 @@
             this.nomTextBox.TabIndex = 4;
             this.nomTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomTextBox_KeyPress);
             // 
+            // nomLabel
+            // 
+            this.nomLabel.AutoSize = true;
+            this.nomLabel.Location = new System.Drawing.Point(177, 91);
+            this.nomLabel.Name = "nomLabel";
+            this.nomLabel.Size = new System.Drawing.Size(45, 17);
+            this.nomLabel.TabIndex = 8;
+            this.nomLabel.Text = "Nom :";
+            // 
+            // prenomLabel
+            // 
+            this.prenomLabel.AutoSize = true;
+            this.prenomLabel.Location = new System.Drawing.Point(177, 157);
+            this.prenomLabel.Name = "prenomLabel";
+            this.prenomLabel.Size = new System.Drawing.Size(65, 17);
+            this.prenomLabel.TabIndex = 9;
+            this.prenomLabel.Text = "Prénom :";
+            // 
+            // emailLabel
+            // 
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Location = new System.Drawing.Point(177, 219);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(97, 17);
+            this.emailLabel.TabIndex = 10;
+            this.emailLabel.Text = "Adresse mail :";
+            // 
             // Form_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(540, 524);
+            this.Controls.Add(this.emailLabel);
+            this.Controls.Add(this.prenomLabel);
+            this.Controls.Add(this.nomLabel);
             this.Controls.Add(this.creerBouton);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.prenomTextBox);
@@ -95,5 +128,8 @@
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.TextBox prenomTextBox;
         private System.Windows.Forms.TextBox nomTextBox;
+        private System.Windows.Forms.Label nomLabel;
+        private System.Windows.Forms.Label prenomLabel;
+        private System.Windows.Forms.Label emailLabel;
     }
 }
