@@ -63,6 +63,46 @@ namespace LFB_gestion.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondEcran {
+            get {
+                object obj = ResourceManager.GetObject("fondEcran", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondEcran1 {
+            get {
+                object obj = ResourceManager.GetObject("fondEcran1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondMenuNav {
+            get {
+                object obj = ResourceManager.GetObject("fondMenuNav", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondModule {
+            get {
+                object obj = ResourceManager.GetObject("fondModule", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconeAccueil {
             get {
                 object obj = ResourceManager.GetObject("iconeAccueil", resourceCulture);
@@ -103,6 +143,16 @@ namespace LFB_gestion.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconeResa {
+            get {
+                object obj = ResourceManager.GetObject("iconeResa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconeStat {
             get {
                 object obj = ResourceManager.GetObject("iconeStat", resourceCulture);
@@ -116,6 +166,16 @@ namespace LFB_gestion.Properties {
         internal static System.Drawing.Bitmap iconeStock {
             get {
                 object obj = ResourceManager.GetObject("iconeStock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoDuHAut {
+            get {
+                object obj = ResourceManager.GetObject("logoDuHAut", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
