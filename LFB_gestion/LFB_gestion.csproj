@@ -46,6 +46,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entités\Entite_Reservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entités\Entite_Reservation.Designer.cs">
+      <DependentUpon>Entite_Reservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\Form_Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\Form_Client.Designer.cs">
+      <DependentUpon>Form_Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\Form_Incident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\Form_Incident.Designer.cs">
+      <DependentUpon>Form_Incident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\Form_Produit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\Form_Produit.Designer.cs">
+      <DependentUpon>Form_Produit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\Form_Reservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\Form_Reservation.Designer.cs">
+      <DependentUpon>Form_Reservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\Form_Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\Form_Stock.Designer.cs">
+      <DependentUpon>Form_Stock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar.Designer.cs">
+      <DependentUpon>MenuBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entités\Entite_Client.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -63,12 +105,6 @@
     </Compile>
     <Compile Include="Entités\Entite_Incident.Designer.cs">
       <DependentUpon>Entite_Incident.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\Interface_Accueil.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\Interface_Accueil.Designer.cs">
-      <DependentUpon>Interface_Accueil.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Interface_Stocks.cs">
       <SubType>Form</SubType>
@@ -102,11 +138,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Interfaces\Interface_Clients.resx">
-      <DependentUpon>Interface_Clients.cs</DependentUpon>
+    <EmbeddedResource Include="Entités\Entite_Reservation.resx">
+      <DependentUpon>Entite_Reservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Interface_Incidents.resx">
-      <DependentUpon>Interface_Incidents.cs</DependentUpon>
+    <EmbeddedResource Include="Formulaires\Form_Client.resx">
+      <DependentUpon>Form_Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Form_Incident.resx">
+      <DependentUpon>Form_Incident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Form_Produit.resx">
+      <DependentUpon>Form_Produit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Form_Reservation.resx">
+      <DependentUpon>Form_Reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Form_Stock.resx">
+      <DependentUpon>Form_Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar.resx">
+      <DependentUpon>MenuBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Entités\Entite_Client.resx">
       <DependentUpon>Entite_Client.cs</DependentUpon>
@@ -160,24 +211,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconeClients.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fondMenuNav.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\iconeResa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fondEcran.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fondEcran1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fondModule.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logoDuHAut.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
