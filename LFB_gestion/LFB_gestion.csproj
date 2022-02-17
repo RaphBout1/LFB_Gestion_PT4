@@ -52,6 +52,36 @@
     <Compile Include="Entités\Entite_Reservation.Designer.cs">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulaires\Form_Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\Form_Client.Designer.cs">
+      <DependentUpon>Form_Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\Form_Incident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\Form_Incident.Designer.cs">
+      <DependentUpon>Form_Incident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\Form_Produit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\Form_Produit.Designer.cs">
+      <DependentUpon>Form_Produit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\Form_Reservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\Form_Reservation.Designer.cs">
+      <DependentUpon>Form_Reservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\Form_Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\Form_Stock.Designer.cs">
+      <DependentUpon>Form_Stock.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuBar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +140,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Entités\Entite_Reservation.resx">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Form_Client.resx">
+      <DependentUpon>Form_Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Form_Incident.resx">
+      <DependentUpon>Form_Incident.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Form_Produit.resx">
+      <DependentUpon>Form_Produit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Form_Reservation.resx">
+      <DependentUpon>Form_Reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Form_Stock.resx">
+      <DependentUpon>Form_Stock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuBar.resx">
       <DependentUpon>MenuBar.cs</DependentUpon>
