@@ -15,6 +15,7 @@ namespace LFB_gestion.Interfaces
         public Interface_Reservations()
         {
             nomModuleLabel.Text = "Module Réservations";
+            InitialisationReservations();
             InitializeComponent();
         }
 
