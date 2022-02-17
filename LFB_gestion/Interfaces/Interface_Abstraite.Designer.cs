@@ -42,28 +42,35 @@ namespace LFB_gestion.Interfaces
             this.planToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelRecherche = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelRecherche.SuspendLayout();
             this.SuspendLayout();
             // 
             // nomModuleLabel
             // 
             this.nomModuleLabel.AutoSize = true;
-            this.nomModuleLabel.Location = new System.Drawing.Point(257, 60);
+            this.nomModuleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nomModuleLabel.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomModuleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
+            this.nomModuleLabel.Location = new System.Drawing.Point(132, 104);
             this.nomModuleLabel.Name = "nomModuleLabel";
-            this.nomModuleLabel.Size = new System.Drawing.Size(134, 17);
+            this.nomModuleLabel.Size = new System.Drawing.Size(199, 35);
             this.nomModuleLabel.TabIndex = 0;
             this.nomModuleLabel.Text = "Nom_Module_Label";
             // 
             // rechercheTextBox
             // 
-            this.rechercheTextBox.Location = new System.Drawing.Point(617, 63);
+            this.rechercheTextBox.Location = new System.Drawing.Point(38, 7);
             this.rechercheTextBox.Name = "rechercheTextBox";
             this.rechercheTextBox.Size = new System.Drawing.Size(186, 22);
             this.rechercheTextBox.TabIndex = 4;
             // 
             // ajoutBouton
             // 
-            this.ajoutBouton.Location = new System.Drawing.Point(579, 63);
+            this.ajoutBouton.Location = new System.Drawing.Point(0, 7);
             this.ajoutBouton.Name = "ajoutBouton";
             this.ajoutBouton.Size = new System.Drawing.Size(32, 23);
             this.ajoutBouton.TabIndex = 2;
@@ -72,7 +79,7 @@ namespace LFB_gestion.Interfaces
             // 
             // rechercheBouton
             // 
-            this.rechercheBouton.Location = new System.Drawing.Point(753, 62);
+            this.rechercheBouton.Location = new System.Drawing.Point(230, 6);
             this.rechercheBouton.Name = "rechercheBouton";
             this.rechercheBouton.Size = new System.Drawing.Size(50, 23);
             this.rechercheBouton.TabIndex = 5;
@@ -81,10 +88,11 @@ namespace LFB_gestion.Interfaces
             // 
             // clientsPanel
             // 
+            this.clientsPanel.AutoScroll = true;
             this.clientsPanel.BackColor = System.Drawing.Color.Transparent;
             this.clientsPanel.BackgroundImage = global::LFB_gestion.Properties.Resources.fondModule;
             this.clientsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.clientsPanel.Location = new System.Drawing.Point(260, 91);
+            this.clientsPanel.Location = new System.Drawing.Point(128, 140);
             this.clientsPanel.Name = "clientsPanel";
             this.clientsPanel.Size = new System.Drawing.Size(543, 382);
             this.clientsPanel.TabIndex = 6;
@@ -105,9 +113,9 @@ namespace LFB_gestion.Interfaces
             this.planToolStripMenuItem,
             this.reservationsToolStripMenuItem,
             this.clientsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 702);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 969);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1251, 68);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 86);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -121,7 +129,7 @@ namespace LFB_gestion.Interfaces
             this.accueilToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.accueilToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.accueilToolStripMenuItem.Name = "accueilToolStripMenuItem";
-            this.accueilToolStripMenuItem.Size = new System.Drawing.Size(146, 64);
+            this.accueilToolStripMenuItem.Size = new System.Drawing.Size(146, 82);
             this.accueilToolStripMenuItem.Text = "Accueil";
             this.accueilToolStripMenuItem.Click += new System.EventHandler(this.accueilToolStripMenuItem_Click);
             // 
@@ -134,7 +142,7 @@ namespace LFB_gestion.Interfaces
             this.stocksToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.stocksToolStripMenuItem.Name = "stocksToolStripMenuItem";
             this.stocksToolStripMenuItem.ShowShortcutKeys = false;
-            this.stocksToolStripMenuItem.Size = new System.Drawing.Size(130, 64);
+            this.stocksToolStripMenuItem.Size = new System.Drawing.Size(130, 82);
             this.stocksToolStripMenuItem.Text = "Stock";
             this.stocksToolStripMenuItem.Click += new System.EventHandler(this.stocksToolStripMenuItem_Click);
             // 
@@ -146,7 +154,7 @@ namespace LFB_gestion.Interfaces
             this.statistiquesToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.statistiquesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.statistiquesToolStripMenuItem.Name = "statistiquesToolStripMenuItem";
-            this.statistiquesToolStripMenuItem.Size = new System.Drawing.Size(189, 64);
+            this.statistiquesToolStripMenuItem.Size = new System.Drawing.Size(189, 82);
             this.statistiquesToolStripMenuItem.Text = "Statistiques";
             this.statistiquesToolStripMenuItem.Click += new System.EventHandler(this.statistiquesToolStripMenuItem_Click);
             // 
@@ -158,7 +166,7 @@ namespace LFB_gestion.Interfaces
             this.entretienToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.entretienToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.entretienToolStripMenuItem.Name = "entretienToolStripMenuItem";
-            this.entretienToolStripMenuItem.Size = new System.Drawing.Size(163, 64);
+            this.entretienToolStripMenuItem.Size = new System.Drawing.Size(163, 82);
             this.entretienToolStripMenuItem.Text = "Entretien";
             this.entretienToolStripMenuItem.Click += new System.EventHandler(this.entretienToolStripMenuItem_Click);
             // 
@@ -170,7 +178,7 @@ namespace LFB_gestion.Interfaces
             this.planToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.planToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.planToolStripMenuItem.Name = "planToolStripMenuItem";
-            this.planToolStripMenuItem.Size = new System.Drawing.Size(118, 64);
+            this.planToolStripMenuItem.Size = new System.Drawing.Size(118, 82);
             this.planToolStripMenuItem.Text = "Plan";
             this.planToolStripMenuItem.Click += new System.EventHandler(this.planToolStripMenuItem_Click);
             // 
@@ -182,7 +190,7 @@ namespace LFB_gestion.Interfaces
             this.reservationsToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.reservationsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.reservationsToolStripMenuItem.Name = "reservationsToolStripMenuItem";
-            this.reservationsToolStripMenuItem.Size = new System.Drawing.Size(199, 64);
+            this.reservationsToolStripMenuItem.Size = new System.Drawing.Size(199, 82);
             this.reservationsToolStripMenuItem.Text = "Reservations";
             this.reservationsToolStripMenuItem.Click += new System.EventHandler(this.reservationsToolStripMenuItem_Click);
             // 
@@ -194,29 +202,61 @@ namespace LFB_gestion.Interfaces
             this.clientsToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clientsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
-            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(140, 64);
+            this.clientsToolStripMenuItem.Size = new System.Drawing.Size(140, 82);
             this.clientsToolStripMenuItem.Text = "Clients";
             this.clientsToolStripMenuItem.Click += new System.EventHandler(this.clientsToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::LFB_gestion.Properties.Resources.logoDuHAut;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.ErrorImage = global::LFB_gestion.Properties.Resources.logoDuHAut;
+            this.pictureBox1.InitialImage = global::LFB_gestion.Properties.Resources.logoDuHAut;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(245, 71);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panelRecherche
+            // 
+            this.panelRecherche.BackColor = System.Drawing.Color.Transparent;
+            this.panelRecherche.Controls.Add(this.ajoutBouton);
+            this.panelRecherche.Controls.Add(this.rechercheBouton);
+            this.panelRecherche.Controls.Add(this.rechercheTextBox);
+            this.panelRecherche.Location = new System.Drawing.Point(385, 104);
+            this.panelRecherche.Name = "panelRecherche";
+            this.panelRecherche.Size = new System.Drawing.Size(286, 35);
+            this.panelRecherche.TabIndex = 0;
             // 
             // Interface_Abstraite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::LFB_gestion.Properties.Resources.fondEcran1;
+            this.BackgroundImage = global::LFB_gestion.Properties.Resources.fondEcran;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1251, 770);
-            this.Controls.Add(this.clientsPanel);
-            this.Controls.Add(this.rechercheBouton);
-            this.Controls.Add(this.ajoutBouton);
-            this.Controls.Add(this.rechercheTextBox);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.panelRecherche);
             this.Controls.Add(this.nomModuleLabel);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.clientsPanel);
+            this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(1080, 720);
             this.Name = "Interface_Abstraite";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.ResizeBegin += new System.EventHandler(this.Interface_Abstraite_Resize);
+            this.ResizeEnd += new System.EventHandler(this.Interface_Abstraite_Resize);
+            this.SizeChanged += new System.EventHandler(this.Interface_Abstraite_Resize);
+            this.Resize += new System.EventHandler(this.Interface_Abstraite_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelRecherche.ResumeLayout(false);
+            this.panelRecherche.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,5 +277,7 @@ namespace LFB_gestion.Interfaces
         private System.Windows.Forms.ToolStripMenuItem planToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reservationsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelRecherche;
     }
 }

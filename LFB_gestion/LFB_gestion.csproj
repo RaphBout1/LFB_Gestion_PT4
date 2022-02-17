@@ -176,5 +176,8 @@
   <ItemGroup>
     <None Include="Resources\fondModule.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoDuHAut.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

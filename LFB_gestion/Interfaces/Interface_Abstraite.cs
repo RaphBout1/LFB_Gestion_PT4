@@ -16,6 +16,21 @@ namespace LFB_gestion.Interfaces
         {
 
             InitializeComponent();
+            DeftSize();
+        }
+
+        private void DeftSize()
+        {
+            this.clientsPanel.Width = this.ClientSize.Width * 90 / 100;
+            this.clientsPanel.Height = this.ClientSize.Height * 70 / 100;
+            int xlocationPanel = this.ClientSize.Width * 5 / 100;
+            int ylocationPanel = this.ClientSize.Height * 10 / 100;
+            this.clientsPanel.Location = new System.Drawing.Point(xlocationPanel, ylocationPanel);
+            this.nomModuleLabel.Location = new System.Drawing.Point(xlocationPanel+ 180, ylocationPanel -35);
+            this.panelRecherche.Location = new System.Drawing.Point(ClientSize.Width - 380, ylocationPanel - 35);
+
+            this.Update();
+
         }
 
         private void accueilToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,6 +86,11 @@ namespace LFB_gestion.Interfaces
 
             formClients.ShowDialog();
             this.Close();
+        }
+
+        private void Interface_Abstraite_Resize(object sender, EventArgs e)
+        {
+            DeftSize();
         }
     }
 }
