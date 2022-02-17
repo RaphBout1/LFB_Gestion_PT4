@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -82,12 +82,6 @@
     <Compile Include="Formulaires\Form_Stock.Designer.cs">
       <DependentUpon>Form_Stock.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuBar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuBar.Designer.cs">
-      <DependentUpon>MenuBar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Entités\Entite_Client.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,6 +109,13 @@
     <Compile Include="Interfaces\Interface_Clients.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Interfaces\Interface_Accueil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Accueil.Designer.cs">
+      <DependentUpon>Interface_Accueil.cs</DependentUpon>
+    </Compile>
+
     <Compile Include="Interfaces\Interface_Clients.Designer.cs">
       <DependentUpon>Interface_Clients.cs</DependentUpon>
     </Compile>
@@ -155,9 +156,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Stock.resx">
       <DependentUpon>Form_Stock.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuBar.resx">
-      <DependentUpon>MenuBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Entités\Entite_Client.resx">
       <DependentUpon>Entite_Client.cs</DependentUpon>
@@ -212,5 +210,24 @@
   <ItemGroup>
     <None Include="Resources\iconeClients.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondMenuNav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconeResa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondEcran.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondEcran1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondModule.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoDuHAut.png" />
+  </ItemGroup>
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
