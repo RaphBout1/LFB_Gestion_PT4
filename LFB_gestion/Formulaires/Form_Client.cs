@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -14,6 +15,13 @@ namespace LFB_gestion.Formulaires
 {
     public partial class Form_Client : Form
     {
+
+        private static string connexionString = "Data Source=info-joyeux;Initial Catalog=PT4_Camping_S4AE2;User Id=ETD;Password=ETD;";
+
+        private SqlConnection connexion = new SqlConnection(connexionString);
+
+        private int admin = 0;
+
         public Form_Client()
         {
             InitializeComponent();
@@ -102,7 +110,30 @@ namespace LFB_gestion.Formulaires
          */
         private void creationDuClient()
         {
-       
+            try
+            {
+                // Récupération de du dernier id
+                SqlCommand idQuery = new SqlCommand("SELECT id FROM client");
+                SqlDataReader sdr = idQuery.ExecuteReader();
+                /*
+                connexion.Open();
+                string query = "INSERT INTO utilisateur VALUES (@id, @nom, @prenom, @email)";
+                SqlCommand command = new SqlCommand(query, connexion);
+                command.Parameters.AddWithValue("@id", prénom_TextBox.Text.ToLower()[0] + nom_textBox.Text.ToLower());
+                command.Parameters.AddWithValue("@mail", mail_textBox.Text);
+                command.Parameters.AddWithValue("@admin", admin);
+                command.Parameters.AddWithValue("@prenom", prénom_TextBox.Text);
+                command.Parameters.AddWithValue("@nom", nom_textBox.Text);
+                command.Parameters.AddWithValue("@tel", tel_textBox.Text);
+                command.Parameters.AddWithValue("@mdp", crypter(mdp_textBox.Text));
+                command.ExecuteNonQuery();
+                MessageBox.Show("Utilisateur crée avec succés"); */
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         /*
