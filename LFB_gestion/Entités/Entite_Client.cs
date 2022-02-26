@@ -14,15 +14,15 @@ namespace LFB_gestion.Entités
     {
         public String nom;
         public String prenom;
-        public String reservation;
-        public Entite_Client(String nom, String prenom, String reservation)
+        public String email;
+        public Entite_Client(String nom, String prenom, String email)
         {
             this.nom = nom;
             this.prenom = prenom;
-            this.reservation = reservation;
+            this.email = email;
             nomLabel.Text = this.nom;
             prenomLabel.Text = this.prenom;
-            reservationLabel.Text = this.reservation;
+            emailLabel.Text = this.email;
             InitializeComponent();
         }
     }

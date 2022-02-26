@@ -32,15 +32,15 @@ namespace LFB_gestion.Interfaces
             // Remplir la liste this.clients
             // Connexion bdd
             connexion.Open();
-            SqlCommand idQuery = new SqlCommand("SELECT * from clients", connexion);
+            SqlCommand idQuery = new SqlCommand("SELECT * from client", connexion);
             SqlDataReader rd;
             rd = idQuery.ExecuteReader();
             while (rd.Read())
             {
                 String nom = rd["nom"].ToString();
                 String prenom = rd["prenom"].ToString();
-                String reservation = "null";
-                Entités.Entite_Client client = new Entités.Entite_Client(nom, prenom, reservation);
+                String email = rd["email"].ToString();
+                Entités.Entite_Client client = new Entités.Entite_Client(nom, prenom, email);
                 clients.Add(client);
             }
             // Pour tous les clients présents dans la liste, les afficher
