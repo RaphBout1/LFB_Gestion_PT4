@@ -44,22 +44,34 @@ namespace LFB_gestion.Interfaces
                 clients.Add(client);
             }
             // Pour tous les clients présents dans la liste, les afficher
-            int y = 0;
-            foreach (Entités.Entite_Client client in this.clients) {
-                if (client == clients[0])
+            if (clients != null)
+            {
+                int y = 0;
+                foreach (Entités.Entite_Client client in this.clients)
                 {
-                    client.Location = new System.Drawing.Point(0, 0);
+                    if (client == clients[0])
+                    {
+                        client.Location = new System.Drawing.Point(0, 0);
+                    }
+                    else
+                    {
+                        clients[y].Location = new Point(0, y * (client.Height + 10));
+                    }
+                    this.clientsPanel.Controls.Add(client);
+                    clientsPanel.AutoScroll = true;
+                    y++;
                 }
-                else
-                {
-                    clients[y].Location = new Point(0, y * (client.Height + 10));
-                }
-                this.clientsPanel.Controls.Add(client);
-                clientsPanel.AutoScroll = true;
-                y++;
+            }
+            else
+            {
+                MessageBox.Show("Pas de client dans la base");
             }
         }
 
-
+        private void ajoutBouton_Click(object sender, EventArgs e)
+        {
+            Formulaires.Form_Client formClient = new Formulaires.Form_Client();
+            formClient.Show();
+        }
     }
 }

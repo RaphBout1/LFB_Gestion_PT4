@@ -33,20 +33,27 @@ namespace LFB_gestion.Interfaces
             // 
             // nomModuleLabel
             // 
-            this.nomModuleLabel.Location = new System.Drawing.Point(166, 17);
+            this.nomModuleLabel.Location = new System.Drawing.Point(333, 58);
+            this.nomModuleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            // 
+            // ajoutBouton
+            // 
+            this.ajoutBouton.Click += new System.EventHandler(this.ajoutBouton_Click);
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(31, 46);
-            this.clientsPanel.Size = new System.Drawing.Size(563, 318);
+            this.clientsPanel.Location = new System.Drawing.Point(93, 101);
+            this.clientsPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.clientsPanel.Size = new System.Drawing.Size(1697, 711);
             // 
             // Interface_Clients
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 560);
+            this.ClientSize = new System.Drawing.Size(1415, 826);
             this.Location = new System.Drawing.Point(0, 0);
-            this.MinimumSize = new System.Drawing.Size(614, 488);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MinimumSize = new System.Drawing.Size(813, 590);
             this.Name = "Interface_Clients";
             this.ResumeLayout(false);
             this.PerformLayout();
