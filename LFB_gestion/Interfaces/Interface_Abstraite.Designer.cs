@@ -79,7 +79,6 @@ namespace LFB_gestion.Interfaces
             this.ajoutBouton.TabIndex = 2;
             this.ajoutBouton.Text = "+";
             this.ajoutBouton.UseVisualStyleBackColor = true;
-            this.ajoutBouton.Click += new System.EventHandler(this.ajoutBouton_Click);
             // 
             // rechercheBouton
             // 

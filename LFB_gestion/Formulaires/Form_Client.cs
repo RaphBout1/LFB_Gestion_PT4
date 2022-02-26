@@ -112,6 +112,7 @@ namespace LFB_gestion.Formulaires
         {
             try
             {
+                
                 // Récupération de du dernier id
                 SqlCommand idQuery = new SqlCommand("SELECT id FROM client");
                 SqlDataReader sdr = idQuery.ExecuteReader();
