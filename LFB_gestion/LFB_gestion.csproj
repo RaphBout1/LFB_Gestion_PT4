@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -51,6 +51,13 @@
     </Compile>
     <Compile Include="Entités\Entite_Reservation.Designer.cs">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\Outils.cs" />
+    <Compile Include="Formulaires\Connexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\Connexion.Designer.cs">
+      <DependentUpon>Connexion.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulaires\Form_Client.cs">
       <SubType>Form</SubType>
@@ -115,7 +122,6 @@
     <Compile Include="Interfaces\Interface_Accueil.Designer.cs">
       <DependentUpon>Interface_Accueil.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Interfaces\Interface_Clients.Designer.cs">
       <DependentUpon>Interface_Clients.cs</DependentUpon>
     </Compile>
@@ -141,6 +147,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Entités\Entite_Reservation.resx">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Connexion.resx">
+      <DependentUpon>Connexion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Client.resx">
       <DependentUpon>Form_Client.cs</DependentUpon>
@@ -168,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Interface_Abstraite.resx">
       <DependentUpon>Interface_Abstraite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Interface_Reservations.resx">
+      <DependentUpon>Interface_Reservations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -228,6 +240,5 @@
   <ItemGroup>
     <None Include="Resources\logoDuHAut.png" />
   </ItemGroup>
-
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
