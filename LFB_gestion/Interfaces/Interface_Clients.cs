@@ -35,11 +35,12 @@ namespace LFB_gestion.Interfaces
             SqlCommand idQuery = new SqlCommand("SELECT * from client", connexion);
             SqlDataReader rd;
             rd = idQuery.ExecuteReader();
+            clients = new List<Entités.Entite_Client>();
             while (rd.Read())
             {
                 String nom = rd["nom"].ToString();
                 String prenom = rd["prenom"].ToString();
-                String email = rd["email"].ToString();
+                String email = rd["mail"].ToString();
                 Entités.Entite_Client client = new Entités.Entite_Client(nom, prenom, email);
                 clients.Add(client);
             }

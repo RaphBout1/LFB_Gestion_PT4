@@ -12,18 +12,39 @@ namespace LFB_gestion.Entités
 {
     public partial class Entite_Client : UserControl
     {
-        public String nom;
-        public String prenom;
-        public String email;
+        private String nom;
+        private String prenom;
+        private String email;
+       
         public Entite_Client(String nom, String prenom, String email)
         {
             this.nom = nom;
             this.prenom = prenom;
             this.email = email;
-            nomLabel.Text = this.nom;
-            prenomLabel.Text = this.prenom;
-            emailLabel.Text = this.email;
             InitializeComponent();
+            nomLabel.Text = "test";
+            prenomLabel.Text = prenom;
+            emailLabel.Text = email;
+        }
+
+       public String getNom()
+        {
+            return this.nom;
+        }
+
+        public String getEmail()
+        {
+            return this.email;
+        }
+
+        public String getPrenom()
+        {
+            return this.prenom;
+        }
+
+        public void setNom(String nom)
+        {
+            this.nom = nom;
         }
     }
 }
