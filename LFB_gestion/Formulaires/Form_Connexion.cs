@@ -51,30 +51,28 @@ namespace LFB_gestion
                             // Vérifier la correspondance du mot de passe
                             query = "SELECT mdp FROM utilisateur WHERE login = @login";
                             command = new SqlCommand(query, connexion);
-                            command.Parameters.AddWithValue("@login", reader.GetValue(0).ToString());
-                            
+                            string login = reader.GetValue(0).ToString();
+                            command.Parameters.AddWithValue("@login", login);
+                            reader.Close();
                             try
                             {
-                                DbDataReader reader2 = command.ExecuteReader();
+                                reader = command.ExecuteReader();
                                 // Si c'est le mot de passe est valide
-                                if (reader2.HasRows)
+                                if (reader.HasRows)
                                 {
-                                     reader2.Read();
-                                    if (reader2.GetValue(0).ToString() == Outils.crypter(motDePasse_textBox.Text)) // si le mot de passe crypté est égal au mot de passe inséré puis crypté
+                                    reader.Read();
+                                    if (reader.GetValue(0).ToString() == Outils.crypter(motDePasse_textBox.Text)) // si le mot de passe crypté est égal au mot de passe inséré puis crypté
                                     {
 
 
-                                        Classes.Utilisateur u = Classes.Utilisateur.CreationUtilisateur(reader.GetValue(0).ToString());
+                                        Classes.Utilisateur u = Classes.Utilisateur.CreationUtilisateur(login);
                                         MessageBox.Show(u.login + " " + u.mail + " " + u.mdp);
-                                        
+
                                         this.Hide();
                                         Form formAcceuil = new Interfaces.Interface_Accueil();
 
                                         formAcceuil.ShowDialog();
                                         this.Close();
-
-                                        reader.Close();
-                                        reader2.Close();
                                     }
                                     else
                                     {
@@ -106,7 +104,6 @@ namespace LFB_gestion
                     MessageBox.Show("Veuillez remplir tous les champs");
                 }
                 connexion.Close();
-                
             }
             catch (Exception ex)
             {
