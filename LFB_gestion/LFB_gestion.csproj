@@ -52,6 +52,12 @@
     <Compile Include="Entités\Entite_Reservation.Designer.cs">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulaires\CréerEmployé.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\CréerEmployé.Designer.cs">
+      <DependentUpon>CréerEmployé.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulaires\Outils.cs" />
     <Compile Include="Formulaires\Connexion.cs">
       <SubType>Form</SubType>

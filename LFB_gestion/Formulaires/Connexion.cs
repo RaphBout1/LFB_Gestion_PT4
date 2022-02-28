@@ -64,7 +64,11 @@ namespace LFB_gestion
                                     if (reader.GetValue(0).ToString() == Outils.crypter(motDePasse_textBox.Text)) // si le mot de passe crypté est égal au mot de passe inséré puis crypté
                                     {
                                         //TODO
-                                        MessageBox.Show("Login et mot de passe trouvés, redirection vers la page d'accueil...");
+                                        this.Hide();
+                                        Form formAcceuil = new Interfaces.Interface_Accueil();
+
+                                        formAcceuil.ShowDialog();
+                                        this.Close();
                                     }
                                     else
                                     {
