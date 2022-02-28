@@ -31,7 +31,6 @@ namespace LFB_gestion.Interfaces
         {
             this.nomModuleLabel = new System.Windows.Forms.Label();
             this.rechercheTextBox = new System.Windows.Forms.TextBox();
-            this.ajoutBouton = new System.Windows.Forms.Button();
             this.rechercheBouton = new System.Windows.Forms.Button();
             this.clientsPanel = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -166,16 +165,28 @@ namespace LFB_gestion.Interfaces
             // 
             // stocksToolStripMenuItem
             // 
-            this.stocksToolStripMenuItem.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stocksToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stocksToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.stocksToolStripMenuItem.Image = global::LFB_gestion.Properties.Resources.iconeStock;
             this.stocksToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.stocksToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.stocksToolStripMenuItem.Name = "stocksToolStripMenuItem";
             this.stocksToolStripMenuItem.ShowShortcutKeys = false;
-            this.stocksToolStripMenuItem.Size = new System.Drawing.Size(130, 82);
+            this.stocksToolStripMenuItem.Size = new System.Drawing.Size(127, 66);
             this.stocksToolStripMenuItem.Text = "Stock";
             this.stocksToolStripMenuItem.Click += new System.EventHandler(this.stocksToolStripMenuItem_Click);
+            // 
+            // statistiquesToolStripMenuItem
+            // 
+            this.statistiquesToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statistiquesToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
+            this.statistiquesToolStripMenuItem.Image = global::LFB_gestion.Properties.Resources.iconeStat;
+            this.statistiquesToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.statistiquesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.statistiquesToolStripMenuItem.Name = "statistiquesToolStripMenuItem";
+            this.statistiquesToolStripMenuItem.Size = new System.Drawing.Size(185, 66);
+            this.statistiquesToolStripMenuItem.Text = "Statistiques";
+            this.statistiquesToolStripMenuItem.Click += new System.EventHandler(this.statistiquesToolStripMenuItem_Click);
             // 
             // entretienToolStripMenuItem
             // 
@@ -243,7 +254,6 @@ namespace LFB_gestion.Interfaces
             // panelRecherche
             // 
             this.panelRecherche.BackColor = System.Drawing.Color.Transparent;
-            this.panelRecherche.Controls.Add(this.ajoutBouton);
             this.panelRecherche.Controls.Add(this.rechercheBouton);
             this.panelRecherche.Controls.Add(this.rechercheTextBox);
             this.panelRecherche.Location = new System.Drawing.Point(289, 84);

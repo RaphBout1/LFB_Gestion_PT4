@@ -44,7 +44,7 @@
             // 
             this.clientsListBox.FormattingEnabled = true;
             this.clientsListBox.Location = new System.Drawing.Point(57, 288);
-            this.clientsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clientsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.clientsListBox.Name = "clientsListBox";
             this.clientsListBox.Size = new System.Drawing.Size(235, 56);
             this.clientsListBox.TabIndex = 8;
@@ -53,7 +53,7 @@
             // 
             this.emplacementsListBox.FormattingEnabled = true;
             this.emplacementsListBox.Location = new System.Drawing.Point(57, 383);
-            this.emplacementsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emplacementsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.emplacementsListBox.Name = "emplacementsListBox";
             this.emplacementsListBox.Size = new System.Drawing.Size(235, 56);
             this.emplacementsListBox.TabIndex = 9;
@@ -81,14 +81,15 @@
             // dateDebutCalendrier
             // 
             this.dateDebutCalendrier.Location = new System.Drawing.Point(26, 63);
-            this.dateDebutCalendrier.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dateDebutCalendrier.Margin = new System.Windows.Forms.Padding(7);
+            this.dateDebutCalendrier.MaxSelectionCount = 365;
             this.dateDebutCalendrier.Name = "dateDebutCalendrier";
             this.dateDebutCalendrier.TabIndex = 12;
             // 
             // dateFinCalendrier
             // 
             this.dateFinCalendrier.Location = new System.Drawing.Point(266, 63);
-            this.dateFinCalendrier.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.dateFinCalendrier.Margin = new System.Windows.Forms.Padding(7);
             this.dateFinCalendrier.Name = "dateFinCalendrier";
             this.dateFinCalendrier.TabIndex = 13;
             // 
@@ -115,7 +116,7 @@
             // validerBouton
             // 
             this.validerBouton.Location = new System.Drawing.Point(170, 499);
-            this.validerBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.validerBouton.Margin = new System.Windows.Forms.Padding(2);
             this.validerBouton.Name = "validerBouton";
             this.validerBouton.Size = new System.Drawing.Size(114, 46);
             this.validerBouton.TabIndex = 17;
@@ -126,7 +127,7 @@
             // nouveauClientBouton
             // 
             this.nouveauClientBouton.Location = new System.Drawing.Point(311, 305);
-            this.nouveauClientBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nouveauClientBouton.Margin = new System.Windows.Forms.Padding(2);
             this.nouveauClientBouton.Name = "nouveauClientBouton";
             this.nouveauClientBouton.Size = new System.Drawing.Size(107, 27);
             this.nouveauClientBouton.TabIndex = 18;
@@ -149,7 +150,7 @@
             this.Controls.Add(this.emplacementLabel);
             this.Controls.Add(this.emplacementsListBox);
             this.Controls.Add(this.clientsListBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_Reservation";
             this.Text = "Form_Reservation";
             this.ResumeLayout(false);
