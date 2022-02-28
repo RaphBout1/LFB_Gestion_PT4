@@ -42,6 +42,7 @@ namespace LFB_gestion.Interfaces
             this.planToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilisateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelRecherche = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
@@ -107,8 +108,9 @@ namespace LFB_gestion.Interfaces
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.accueilToolStripMenuItem,
-            this.stocksToolStripMenuItem,
+            this.utilisateursToolStripMenuItem,
             this.statistiquesToolStripMenuItem,
+            this.stocksToolStripMenuItem,
             this.entretienToolStripMenuItem,
             this.planToolStripMenuItem,
             this.reservationsToolStripMenuItem,
@@ -206,6 +208,17 @@ namespace LFB_gestion.Interfaces
             this.clientsToolStripMenuItem.Text = "Clients";
             this.clientsToolStripMenuItem.Click += new System.EventHandler(this.clientsToolStripMenuItem_Click);
             // 
+            // utilisateursToolStripMenuItem
+            // 
+            this.utilisateursToolStripMenuItem.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.utilisateursToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
+            this.utilisateursToolStripMenuItem.Image = global::LFB_gestion.Properties.Resources.iconeUtilisateur;
+            this.utilisateursToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.utilisateursToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.utilisateursToolStripMenuItem.Name = "utilisateursToolStripMenuItem";
+            this.utilisateursToolStripMenuItem.Size = new System.Drawing.Size(116, 82);
+            this.utilisateursToolStripMenuItem.Text = "Utilisateurs";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -279,5 +292,6 @@ namespace LFB_gestion.Interfaces
         private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelRecherche;
+        private System.Windows.Forms.ToolStripMenuItem utilisateursToolStripMenuItem;
     }
 }

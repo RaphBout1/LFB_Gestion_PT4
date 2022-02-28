@@ -14,7 +14,6 @@ namespace LFB_gestion
 {
     public partial class Connexion : Form
     {
-        static string connexionString = "Data Source=info-joyeux;Initial Catalog=PT4_Camping_S4AE2;User Id=ETD;Password=ETD";
 
         SqlConnection connexion;
 
@@ -32,7 +31,7 @@ namespace LFB_gestion
         /// <param name="e"></param>
         private void seConnecter_button_Click(object sender, EventArgs e)
         {
-            connexion = new SqlConnection(connexionString);
+            connexion = Outils.Connexion();
             //Se connecter à la base de données
             try
             {
@@ -53,22 +52,29 @@ namespace LFB_gestion
                             query = "SELECT mdp FROM utilisateur WHERE login = @login";
                             command = new SqlCommand(query, connexion);
                             command.Parameters.AddWithValue("@login", reader.GetValue(0).ToString());
-                            reader.Close();
+                            
                             try
                             {
-                                reader = command.ExecuteReader();
+                                DbDataReader reader2 = command.ExecuteReader();
                                 // Si c'est le mot de passe est valide
-                                if (reader.HasRows)
+                                if (reader2.HasRows)
                                 {
-                                    reader.Read();
-                                    if (reader.GetValue(0).ToString() == Outils.crypter(motDePasse_textBox.Text)) // si le mot de passe crypté est égal au mot de passe inséré puis crypté
+                                     reader2.Read();
+                                    if (reader2.GetValue(0).ToString() == Outils.crypter(motDePasse_textBox.Text)) // si le mot de passe crypté est égal au mot de passe inséré puis crypté
                                     {
-                                        //TODO
+
+
+                                        Classes.Utilisateur u = Classes.Utilisateur.CreationUtilisateur(reader.GetValue(0).ToString());
+                                        MessageBox.Show(u.login + " " + u.mail + " " + u.mdp);
+                                        
                                         this.Hide();
                                         Form formAcceuil = new Interfaces.Interface_Accueil();
 
                                         formAcceuil.ShowDialog();
                                         this.Close();
+
+                                        reader.Close();
+                                        reader2.Close();
                                     }
                                     else
                                     {
@@ -100,6 +106,7 @@ namespace LFB_gestion
                     MessageBox.Show("Veuillez remplir tous les champs");
                 }
                 connexion.Close();
+                
             }
             catch (Exception ex)
             {

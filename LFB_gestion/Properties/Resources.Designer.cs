@@ -173,6 +173,16 @@ namespace LFB_gestion.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconeUtilisateur {
+            get {
+                object obj = ResourceManager.GetObject("iconeUtilisateur", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logoDuHAut {
             get {
                 object obj = ResourceManager.GetObject("logoDuHAut", resourceCulture);
