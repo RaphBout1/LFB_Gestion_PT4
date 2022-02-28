@@ -246,7 +246,7 @@ namespace LFB_gestion.Interfaces
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(1080, 720);
             this.Name = "Interface_Abstraite";
-            this.Text = "Form1";
+            this.Text = "Connexion";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResizeBegin += new System.EventHandler(this.Interface_Abstraite_Resize);
             this.ResizeEnd += new System.EventHandler(this.Interface_Abstraite_Resize);
