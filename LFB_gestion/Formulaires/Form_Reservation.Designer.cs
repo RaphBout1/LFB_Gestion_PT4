@@ -32,8 +32,7 @@
             this.emplacementsListBox = new System.Windows.Forms.ListBox();
             this.emplacementLabel = new System.Windows.Forms.Label();
             this.clientLabel = new System.Windows.Forms.Label();
-            this.dateDebutCalendrier = new System.Windows.Forms.MonthCalendar();
-            this.dateFinCalendrier = new System.Windows.Forms.MonthCalendar();
+            this.calendrier = new System.Windows.Forms.MonthCalendar();
             this.dateDebutLabel = new System.Windows.Forms.Label();
             this.dateFinLabel = new System.Windows.Forms.Label();
             this.validerBouton = new System.Windows.Forms.Button();
@@ -78,20 +77,14 @@
             this.clientLabel.TabIndex = 11;
             this.clientLabel.Text = "Client :";
             // 
-            // dateDebutCalendrier
+            // calendrier
             // 
-            this.dateDebutCalendrier.Location = new System.Drawing.Point(26, 63);
-            this.dateDebutCalendrier.Margin = new System.Windows.Forms.Padding(7);
-            this.dateDebutCalendrier.MaxSelectionCount = 365;
-            this.dateDebutCalendrier.Name = "dateDebutCalendrier";
-            this.dateDebutCalendrier.TabIndex = 12;
-            // 
-            // dateFinCalendrier
-            // 
-            this.dateFinCalendrier.Location = new System.Drawing.Point(266, 63);
-            this.dateFinCalendrier.Margin = new System.Windows.Forms.Padding(7);
-            this.dateFinCalendrier.Name = "dateFinCalendrier";
-            this.dateFinCalendrier.TabIndex = 13;
+            this.calendrier.Location = new System.Drawing.Point(144, 75);
+            this.calendrier.Margin = new System.Windows.Forms.Padding(7);
+            this.calendrier.MaxSelectionCount = 365;
+            this.calendrier.Name = "calendrier";
+            this.calendrier.TabIndex = 12;
+            this.calendrier.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendrier_DateChanged);
             // 
             // dateDebutLabel
             // 
@@ -144,8 +137,7 @@
             this.Controls.Add(this.validerBouton);
             this.Controls.Add(this.dateFinLabel);
             this.Controls.Add(this.dateDebutLabel);
-            this.Controls.Add(this.dateFinCalendrier);
-            this.Controls.Add(this.dateDebutCalendrier);
+            this.Controls.Add(this.calendrier);
             this.Controls.Add(this.clientLabel);
             this.Controls.Add(this.emplacementLabel);
             this.Controls.Add(this.emplacementsListBox);
@@ -164,8 +156,7 @@
         private System.Windows.Forms.ListBox emplacementsListBox;
         private System.Windows.Forms.Label emplacementLabel;
         private System.Windows.Forms.Label clientLabel;
-        private System.Windows.Forms.MonthCalendar dateDebutCalendrier;
-        private System.Windows.Forms.MonthCalendar dateFinCalendrier;
+        private System.Windows.Forms.MonthCalendar calendrier;
         private System.Windows.Forms.Label dateDebutLabel;
         private System.Windows.Forms.Label dateFinLabel;
         private System.Windows.Forms.Button validerBouton;
