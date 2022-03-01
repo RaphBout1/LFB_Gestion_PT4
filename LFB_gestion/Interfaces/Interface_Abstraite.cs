@@ -17,13 +17,31 @@ namespace LFB_gestion.Interfaces
         public Interface_Abstraite()
         {
 
-
+            Admin();
             InitializeComponent();
             DeftSize();
+
+
+        }
+        private void Admin()
+        {   //si l'utilisateur courant est un admin alors rendre visible les fonctions admin
+            if (Utilisateur.getUtilisateurCourant().admin == 1){
+                utilisateursToolStripMenuItem.Visible = true;
+                statistiquesToolStripMenuItem.Visible = true;
+
+            }
+            //Au contraire les caché
+            else
+            {
+                utilisateursToolStripMenuItem.Visible = false;
+                statistiquesToolStripMenuItem.Visible = false;
+            }
         }
 
+        //Fonction qui définie l'emplacement des élément en fonction de la taille de l'interface
         private void DeftSize()
         {
+            
             this.clientsPanel.Width = this.ClientSize.Width * 90 / 100;
             this.clientsPanel.Height = this.ClientSize.Height * 70 / 100;
             int xlocationPanel = this.ClientSize.Width * 5 / 100;
