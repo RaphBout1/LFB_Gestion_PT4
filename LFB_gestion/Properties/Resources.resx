@@ -121,9 +121,6 @@
   <data name="fondEcran" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondEcran.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconePlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconePlan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="fondEcran1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondEcran1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,17 +133,17 @@
   <data name="iconeAccueil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconeAccueil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconeResa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconeResa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconeUtilisateur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconeUtilisateur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconeClients" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconeClients.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconeResa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconeResa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logoDuHAut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logoDuHAut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconeUtilisateur" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconeUtilisateur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondModule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -159,5 +156,11 @@
   </data>
   <data name="fondConnexion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondConnexion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconePlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconePlan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondBouton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondBouton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

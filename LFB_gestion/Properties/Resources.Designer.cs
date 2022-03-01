@@ -63,6 +63,16 @@ namespace LFB_gestion.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondBouton {
+            get {
+                object obj = ResourceManager.GetObject("fondBouton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondConnexion {
             get {
                 object obj = ResourceManager.GetObject("fondConnexion", resourceCulture);
