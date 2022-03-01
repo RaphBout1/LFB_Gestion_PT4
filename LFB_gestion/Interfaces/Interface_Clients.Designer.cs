@@ -33,27 +33,31 @@ namespace LFB_gestion.Interfaces
             // 
             // nomModuleLabel
             // 
-            this.nomModuleLabel.Location = new System.Drawing.Point(333, 58);
-            this.nomModuleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nomModuleLabel.Location = new System.Drawing.Point(175, 26);
+            this.nomModuleLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             // 
             // ajoutBouton
             // 
             this.ajoutBouton.Click += new System.EventHandler(this.ajoutBouton_Click);
             // 
+            // rechercheBouton
+            // 
+            this.rechercheBouton.Click += new System.EventHandler(this.rechercheBouton_Click);
+            // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(93, 101);
-            this.clientsPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.clientsPanel.Size = new System.Drawing.Size(1697, 711);
+            this.clientsPanel.Location = new System.Drawing.Point(40, 54);
+            this.clientsPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clientsPanel.Size = new System.Drawing.Size(716, 381);
             // 
             // Interface_Clients
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1415, 826);
+            this.ClientSize = new System.Drawing.Size(1061, 671);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.MinimumSize = new System.Drawing.Size(813, 590);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(614, 487);
             this.Name = "Interface_Clients";
             this.ResumeLayout(false);
             this.PerformLayout();

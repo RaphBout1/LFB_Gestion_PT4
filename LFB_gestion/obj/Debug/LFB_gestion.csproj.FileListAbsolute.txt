@@ -101,3 +101,4 @@ C:\Users\tyoulmetov\Source\Repos\pt4_s4a_groupe2_mrcampo\LFB_gestion\bin\Debug\L
 \\iut.bx1\Etudiants\Home\raboutin\Documents\S4\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.pdb
 C:\Users\scall\OneDrive\Bureau\Seb - info\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Interfaces.Interface_Clients.resources
 \\iut.bx1\Etudiants\Home\sebcandau\Documents\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.Interfaces.Interface_Clients.resources
+\\iut.bx1\Etudiants\Home\sebcandau\Documents\git\pt4_s4a_groupe2_mrcampo\LFB_gestion\obj\Debug\LFB_gestion.csproj.SuggestedBindingRedirects.cache

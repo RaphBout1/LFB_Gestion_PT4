@@ -16,15 +16,15 @@ namespace LFB_gestion.Entités
         private String prenom;
         private String email;
        
-        public Entite_Client(String nom, String prenom, String email)
+        public Entite_Client(String nom, String prenom, String mail)
         {
             this.nom = nom;
             this.prenom = prenom;
-            this.email = email;
+            this.email = mail;
             InitializeComponent();
-            nomLabel.Text = "test";
+            nomLabel.Text = nom;
             prenomLabel.Text = prenom;
-            emailLabel.Text = email;
+            emailLabel.Text = mail;
         }
 
        public String getNom()
@@ -45,6 +45,16 @@ namespace LFB_gestion.Entités
         public void setNom(String nom)
         {
             this.nom = nom;
+        }
+
+        public void setPrenom(String prenom)
+        {
+            this.prenom = prenom;
+        }
+
+        public void setEmail(String nom)
+        {
+            this.email = email;
         }
     }
 }

@@ -22,30 +22,15 @@ namespace LFB_gestion.Interfaces
         public Interface_Clients()
         {
             nomModuleLabel.Text = "Module Clients";
-            InitialisationClients();
+            clients = new List<Entités.Entite_Client>();
+            affichageClients();
             InitializeComponent();
         }
 
-        private void InitialisationClients()
+        private void affichageClients()
         {
-
-            // Remplir la liste this.clients
-            // Connexion bdd
-            connexion.Open();
-            SqlCommand idQuery = new SqlCommand("SELECT * from client", connexion);
-            SqlDataReader rd;
-            rd = idQuery.ExecuteReader();
-            clients = new List<Entités.Entite_Client>();
-            while (rd.Read())
-            {
-                String nom = rd["nom"].ToString();
-                String prenom = rd["prenom"].ToString();
-                String email = rd["mail"].ToString();
-                Entités.Entite_Client client = new Entités.Entite_Client(nom, prenom, email);
-                clients.Add(client);
-            }
             // Pour tous les clients présents dans la liste, les afficher
-            if (clients != null)
+            if (this.clients != null)
             {
                 int y = 0;
                 foreach (Entités.Entite_Client client in this.clients)
@@ -56,7 +41,7 @@ namespace LFB_gestion.Interfaces
                     }
                     else
                     {
-                        clients[y].Location = new Point(0, y * (client.Height + 10));
+                        clients[y].Location = new Point(0, y * (client.Height + 30));
                     }
                     this.clientsPanel.Controls.Add(client);
                     clientsPanel.AutoScroll = true;
@@ -67,12 +52,58 @@ namespace LFB_gestion.Interfaces
             {
                 MessageBox.Show("Pas de client dans la base");
             }
+            connexion.Close();
         }
+
+        private List<Entités.Entite_Client> initialisationToutLesClients()
+        {
+            // Remplir la liste this.clients
+            // Connexion bdd
+            connexion.Open();
+            SqlCommand idQuery = new SqlCommand("SELECT * from client", connexion);
+            SqlDataReader rd;
+            rd = idQuery.ExecuteReader();
+            List < Entités.Entite_Client > listeClients = new List<Entités.Entite_Client> ();
+            while (rd.Read())
+            {
+                String nom = rd["nom"].ToString();
+                String prenom = rd["prenom"].ToString();
+                String email = rd["mail"].ToString();
+                Entités.Entite_Client client = new Entités.Entite_Client(nom, prenom, email);
+                listeClients.Add(client);
+            }
+            connexion.Close();
+            return listeClients;
+        }
+
+        // Système de recherche
+        private void rechercheBouton_Click(object sender, EventArgs e)
+        {
+            connexion.Open();
+            // On récupère le texte dans le label rechercheLabel
+            String txt = rechercheTextBox.Text;
+            // Connexion bdd
+            SqlCommand idQuery = new SqlCommand("SELECT * from client where nom like '" + txt + "%" + "'", connexion);
+            SqlDataReader rd;
+            rd = idQuery.ExecuteReader();
+            while (rd.Read())
+            {
+                String nom = rd["nom"].ToString();
+                String prenom = rd["prenom"].ToString();
+                String email = rd["mail"].ToString();
+                Entités.Entite_Client client = new Entités.Entite_Client(nom, prenom, email);
+                this.clients.Add(client);
+            }
+            affichageClients();
+            this.clients.Clear();
+        }
+
 
         private void ajoutBouton_Click(object sender, EventArgs e)
         {
             Formulaires.Form_Client formClient = new Formulaires.Form_Client();
             formClient.Show();
         }
+
     }
 }

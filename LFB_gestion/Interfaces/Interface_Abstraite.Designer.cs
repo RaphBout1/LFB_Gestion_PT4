@@ -274,9 +274,9 @@ namespace LFB_gestion.Interfaces
         #endregion
 
         protected System.Windows.Forms.Label nomModuleLabel;
-        private System.Windows.Forms.TextBox rechercheTextBox;
+        protected System.Windows.Forms.TextBox rechercheTextBox;
         public System.Windows.Forms.Button ajoutBouton;
-        private System.Windows.Forms.Button rechercheBouton;
+        public System.Windows.Forms.Button rechercheBouton;
         protected System.Windows.Forms.Panel clientsPanel;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem accueilToolStripMenuItem;
