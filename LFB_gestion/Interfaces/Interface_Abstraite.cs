@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LFB_gestion.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,10 @@ namespace LFB_gestion.Interfaces
 {
     public partial class Interface_Abstraite : Form
     {
+        private Utilisateur u;
         public Interface_Abstraite()
         {
+
 
             InitializeComponent();
             DeftSize();

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LFB_gestion.Classes
 {
-    class Utilisateur
+    public class Utilisateur
 
     {
         public string login;
@@ -17,7 +17,8 @@ namespace LFB_gestion.Classes
         public int admin;
         public string nom;
         public string prenom;
-        public int tel;
+        public string tel;
+        public static Utilisateur courant;
 
         public static Utilisateur CreationUtilisateur(string login)
         {
@@ -33,17 +34,21 @@ namespace LFB_gestion.Classes
             Utilisateur courant = new Utilisateur
             {
                 login = login,
-                mdp = reader.GetValue(1).ToString(),
-                mail = "cool",
-                admin =1,
-                nom = "cool",
-                prenom = "cool",
-                tel = 12345
+                mdp = reader.GetValue(7).ToString(),
+                mail = reader.GetValue(2).ToString(),
+                admin = (int)reader.GetValue(3),
+                nom = reader.GetValue(5).ToString(),
+                prenom = reader.GetValue(4).ToString(),
+                tel = reader.GetValue(6).ToString()
             };
 
 
 
             reader.Close();
+            return courant;
+        }
+        public static Utilisateur getUtilisateurCourant()
+        {
             return courant;
         }
 

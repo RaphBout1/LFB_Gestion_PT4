@@ -66,7 +66,6 @@ namespace LFB_gestion
 
 
                                         Classes.Utilisateur u = Classes.Utilisateur.CreationUtilisateur(login);
-                                        MessageBox.Show(u.login + " " + u.mail + " " + u.mdp);
 
                                         this.Hide();
                                         Form formAcceuil = new Interfaces.Interface_Accueil();
