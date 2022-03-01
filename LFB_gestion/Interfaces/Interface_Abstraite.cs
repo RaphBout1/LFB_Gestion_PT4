@@ -17,8 +17,9 @@ namespace LFB_gestion.Interfaces
         public Interface_Abstraite()
         {
 
-            Admin();
+          
             InitializeComponent();
+            Admin();
             DeftSize();
 
 

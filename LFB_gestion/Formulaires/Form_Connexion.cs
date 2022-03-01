@@ -66,6 +66,8 @@ namespace LFB_gestion
 
 
                                         Classes.Utilisateur u = Classes.Utilisateur.CreationUtilisateur(login);
+                                        Classes.Utilisateur.courant = u;
+
 
                                         this.Hide();
                                         Form formAcceuil = new Interfaces.Interface_Accueil();
