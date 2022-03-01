@@ -22,6 +22,8 @@ namespace LFB_gestion.Classes
         public static Utilisateur CreationUtilisateur(string login)
         {
             SqlConnection connexion = Outils.Connexion();
+            connexion.Open();
+
             string query = "SELECT * FROM utilisateur WHERE login = @login";
             SqlCommand command = new SqlCommand(query, connexion);
             command.Parameters.AddWithValue("@login", login);
@@ -38,7 +40,6 @@ namespace LFB_gestion.Classes
                 prenom = "cool",
                 tel = 12345
             };
-            // Chercher le mdp dans la base de données
 
 
 

@@ -46,6 +46,7 @@ namespace LFB_gestion
         public static SqlConnection Connexion()
         {
             SqlConnection connexion = new SqlConnection(connexionString);
+
             return connexion;
         }
 
