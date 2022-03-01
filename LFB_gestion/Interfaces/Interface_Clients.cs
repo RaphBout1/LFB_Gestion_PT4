@@ -13,27 +13,33 @@ namespace LFB_gestion.Interfaces
 {
     public partial class Interface_Clients : Interface_Abstraite
     {
-        List<Entités.Entite_Client> clients;
+        // Connexion à la base
         private static string connexionString = "Data Source=info-joyeux;Initial Catalog=PT4_Camping_S4AE2;User Id=ETD;Password=ETD;";
-
         private SqlConnection connexion = new SqlConnection(connexionString);
-
         private int admin = 0;
+
+
         public Interface_Clients()
         {
+            // On redéfini le nom du module
             nomModuleLabel.Text = "Module Clients";
-            clients = new List<Entités.Entite_Client>();
-            affichageClients();
+            // On initialise les clients présents dans la base et on les affiche
+            initialisationToutLesClients();
             InitializeComponent();
         }
 
-        private void affichageClients()
+        /*
+         * Méthode affichant la liste de clients qu'elle reçoit en paramètres.
+         */
+        private void affichageClients(List<Entités.Entite_Client> clients)
         {
+            clientsPanel.Controls.Clear();
+
             // Pour tous les clients présents dans la liste, les afficher
-            if (this.clients != null)
+            if (clients != null)
             {
                 int y = 0;
-                foreach (Entités.Entite_Client client in this.clients)
+                foreach (Entités.Entite_Client client in clients)
                 {
                     if (client == clients[0])
                     {
@@ -55,7 +61,11 @@ namespace LFB_gestion.Interfaces
             connexion.Close();
         }
 
-        private List<Entités.Entite_Client> initialisationToutLesClients()
+        /*
+         * Méthode permettant de créer une liste de tout les clients présents dans la base
+         * Elle appelle ensuite le méthode d'affichage en passant cette liste en paramètres
+         */
+        private void initialisationToutLesClients()
         {
             // Remplir la liste this.clients
             // Connexion bdd
@@ -73,12 +83,18 @@ namespace LFB_gestion.Interfaces
                 listeClients.Add(client);
             }
             connexion.Close();
-            return listeClients;
+            affichageClients(listeClients);
         }
 
-        // Système de recherche
+        /*
+         * Méthode permettant de construire une liste de clients présents dans la base en fonction 
+         * d'une chaine de caractères.
+         * 
+         * Elle appelle ensuite le méthode d'affichage en passant cette liste en paramètres
+         */
         private void rechercheBouton_Click(object sender, EventArgs e)
         {
+            List<Entités.Entite_Client> clients = new List<Entités.Entite_Client>();
             connexion.Open();
             // On récupère le texte dans le label rechercheLabel
             String txt = rechercheTextBox.Text;
@@ -92,10 +108,9 @@ namespace LFB_gestion.Interfaces
                 String prenom = rd["prenom"].ToString();
                 String email = rd["mail"].ToString();
                 Entités.Entite_Client client = new Entités.Entite_Client(nom, prenom, email);
-                this.clients.Add(client);
+                clients.Add(client);
             }
-            affichageClients();
-            this.clients.Clear();
+            affichageClients(clients);
         }
 
 
