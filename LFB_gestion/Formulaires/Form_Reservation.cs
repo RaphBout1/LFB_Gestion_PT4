@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,10 +14,15 @@ namespace LFB_gestion.Formulaires
 {
     public partial class Form_Reservation : Form
     {
+
+        private static string connexionString = "Data Source=info-joyeux;Initial Catalog=PT4_Camping_S4AE2;User Id=ETD;Password=ETD;";
+
+        private SqlConnection connexion = new SqlConnection(connexionString);
+
         public Form_Reservation()
         {
             InitializeComponent();
-            remplirClientsEtEmplacements();
+            remplirClients();
         }
 
         private void nouveauClientBouton_Click(object sender, EventArgs e)
@@ -39,14 +46,14 @@ namespace LFB_gestion.Formulaires
                 creationEmplacement();
                 this.Controls.Clear();
                 InitializeComponent();
-                remplirClientsEtEmplacements();
+                remplirClients();
                 MessageBox.Show("Réservation ajoutée à la base avec succès !");
             }
         }
 
         private bool dateLogiques()
         {
-            return dateDebutCalendrier.SelectionEnd != dateDebutCalendrier.SelectionStart;
+            return calendrier.SelectionEnd != calendrier.SelectionStart;
         }
 
         private bool auMoinsUnEmplacementSelectionne()
@@ -78,19 +85,26 @@ namespace LFB_gestion.Formulaires
         /* MANIPULATION DE LA BASE */
 
 
-        /*
-        * Méthode permettant de remplir les listes clients et emplacements
-        * A MODIFIER AVEC LA BASE DE DONNEES
-        */
-        private void remplirClientsEtEmplacements()
+        /// <summary>
+        /// Rempli la listBox avec les clients existant dans la basede données
+        /// </summary>
+        private void remplirClients()
         {
-            for (int i = 0; i < 30; i++)
-            {
-                clientsListBox.Items.Add("client " + i);
-                emplacementsListBox.Items.Add("emplacement " + i);
-            }
-        }
+            string query = "SELECT prenom, nom FROM client";
+            SqlCommand command = new SqlCommand(query, connexion);
+            connexion.Open();
+            DbDataReader reader = command.ExecuteReader();
 
+            if (reader.HasRows) //S'il existe des clients
+            {
+                while (reader.Read())
+                {
+                    clientsListBox.Items.Add(reader.GetString(0) + " " + reader.GetString(1));
+                }
+                reader.Close();
+            }
+            connexion.Close();
+        }
 
         /*
          * Méthode permettant la création d'un emplacement dans la base
@@ -98,6 +112,21 @@ namespace LFB_gestion.Formulaires
          */
         private void creationEmplacement()
         {
+        }
+
+        /// <summary>
+        /// Selon les dates selectionnées ça va afficher les emplacements disponibles
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void calendrier_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            string query = "select emplacement.id from emplacement " +
+                "left outer join reservation on emplacement.id = reservation.id_emplacement " +
+                "and '2022-02-10' not between date_debut and date_fin";
+            SqlCommand command = new SqlCommand(query, connexion);
+            command.Parameters.AddWithValue("", null);
+
         }
     }
 }
