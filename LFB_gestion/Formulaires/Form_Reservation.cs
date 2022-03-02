@@ -23,8 +23,14 @@ namespace LFB_gestion.Formulaires
         {
             InitializeComponent();
             remplirClients();
+            emplacementsListBox.Items.Add("Sélectionnez les dates");
         }
-
+        #region Événements
+        /// <summary>
+        /// Bouton créer un nouveau client
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void nouveauClientBouton_Click(object sender, EventArgs e)
         {
             Form_Client formNouveauClient = new Form_Client();
@@ -35,87 +41,35 @@ namespace LFB_gestion.Formulaires
             }
         }
 
+        /// <summary>
+        /// Bouton pour créer la réservation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void validerBouton_Click(object sender, EventArgs e)
         {
-            if (!auMoinsUnClientSelectionne() || !auMoinsUnEmplacementSelectionne() || !dateLogiques())
+            if (auMoinsUnClientSelectionne())
             {
-                Label nonValideLabel = new Label();
-                nonValideLabel.Size = this.Size;
-                nonValideLabel.Text = "Les champs du formulaires ont mal été remplis";
-                nonValideLabel.Location = new Point(validerBouton.Location.X, (validerBouton.Location.Y - 15));
-                this.Controls.Add(nonValideLabel);
-            }
-            else
-            {
-                creationEmplacement();
-                this.Controls.Clear();
-                InitializeComponent();
-                remplirClients();
-                MessageBox.Show("Réservation ajoutée à la base avec succès !");
-            }
-        }
-
-        private bool dateLogiques()
-        {
-            return calendrier.SelectionEnd != calendrier.SelectionStart;
-        }
-
-        private bool auMoinsUnEmplacementSelectionne()
-        {
-            if (emplacementsListBox.SelectedItems.Count == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        private bool auMoinsUnClientSelectionne()
-        {
-            if (clientsListBox.SelectedItems.Count == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-
-
-        /* MANIPULATION DE LA BASE */
-
-
-        /// <summary>
-        /// Rempli la listBox avec les clients existant dans la basede données
-        /// </summary>
-        private void remplirClients()
-        {
-            string query = "SELECT prenom, nom FROM client";
-            SqlCommand command = new SqlCommand(query, connexion);
-            connexion.Open();
-            DbDataReader reader = command.ExecuteReader();
-
-            if (reader.HasRows) //S'il existe des clients
-            {
-                while (reader.Read())
+                if (auMoinsUnEmplacementSelectionne())
                 {
-                    clientsListBox.Items.Add(reader.GetString(0) + " " + reader.GetString(1));
+                    if (datesLogiques())
+                    {
+                        ajouterRéservation(calendrier.SelectionRange, (Classes.Client)clientsListBox.SelectedItem, emplacementsListBox.SelectedItems);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Les dates sélectionnées ne sont pas logiques");
+                    }
                 }
-                reader.Close();
+                else
+                {
+                    MessageBox.Show("Veuillez selectionner un emplacement.");
+                }
             }
-            connexion.Close();
-        }
-
-        /*
-         * Méthode permettant la création d'un emplacement dans la base
-         * A FAIRE
-         */
-        private void creationEmplacement()
-        {
+            else
+            {
+                MessageBox.Show("Veuillez selectionner un client.");
+            }
         }
 
         /// <summary>
@@ -127,14 +81,15 @@ namespace LFB_gestion.Formulaires
         {
             emplacementsListBox.Items.Clear();
             connexion.Open();
-            string query = "select emplacement.nom " +
+            string query = "select emplacement.id " +
                 "from emplacement " +
                 "left outer join reservation on emplacement.id = reservation.id_emplacement " +
                 "where @dateDebut not between reservation.date_debut and reservation.date_fin " +
                 "and   @dateFin not between reservation.date_debut and reservation.date_fin " +
                 "and reservation.date_debut not between @dateDebut and @dateFin " +
                 "and reservation.date_fin not between @dateDebut and @dateFin " +
-                "or date_debut is null";
+                "or date_debut is null " +
+                "group by emplacement.id";
             SqlCommand command = new SqlCommand(query, connexion);
             command.Parameters.AddWithValue("@dateDebut", calendrier.SelectionRange.Start.ToString("dd-MM-yyyy"));
             command.Parameters.AddWithValue("@dateFin", calendrier.SelectionRange.End.ToString("dd-MM-yyyy"));
@@ -143,11 +98,91 @@ namespace LFB_gestion.Formulaires
             {
                 while (reader.Read())
                 {
-                    emplacementsListBox.Items.Add(reader.GetString(0));
+                    emplacementsListBox.Items.Add(reader.GetInt32(0));
                 }
             }
             reader.Close();
             connexion.Close();
         }
+        #endregion
+
+        #region Fonctions
+        private void ajouterRéservation(SelectionRange dates, Classes.Client client, ListBox.SelectedObjectCollection emplacements)
+        {
+            string s = "";   //Créer un string (pour l'afficher dans la confirmation) avec les numéros d'emplacements réservés au cas où il y ait plusieurs emplacements
+            connexion.Open();
+            foreach (int emplacement in emplacements)
+            {
+                s += emplacement + " ";
+                string query = "select max(id) from reservation";
+                SqlCommand command = new SqlCommand(query, connexion);
+                DbDataReader reader = command.ExecuteReader();
+                int id = 0;
+                if (reader.Read())
+                {
+                    id = reader.GetInt32(0);
+                    id++;
+                }
+                reader.Close();
+                query = "insert into reservation  values (@id, @emplacement, @client, @dateDebut, @dateFin)";
+                command = new SqlCommand(query, connexion);
+                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@emplacement", emplacement);
+                command.Parameters.AddWithValue("@client", client.id);
+                command.Parameters.AddWithValue("@dateDebut", dates.Start);
+                command.Parameters.AddWithValue("@dateFin", dates.End);
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            MessageBox.Show("Réservation des emplacements " + s + " effectuée au nom de " + client.ToString());
+            connexion.Close();
+        }
+
+        private bool datesLogiques()
+        {
+            return calendrier.SelectionEnd != calendrier.SelectionStart;
+        }
+
+        private bool auMoinsUnEmplacementSelectionne()
+        {
+            return emplacementsListBox.SelectedItem != null;
+        }
+
+        private bool auMoinsUnClientSelectionne()
+        {
+            return clientsListBox.SelectedItem != null;
+        }
+
+        /// <summary>
+        /// Rempli la listBox avec les clients existant dans la basede données
+        /// </summary>
+        private void remplirClients()
+        {
+            connexion.Open();
+            string query = "SELECT * from client";
+            SqlCommand command = new SqlCommand(query, connexion);
+            DbDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows) //S'il existe des clients
+            {
+                while (reader.Read())
+                {
+                    Classes.Client client = new Classes.Client(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
+                    clientsListBox.Items.Add(client);
+                }
+                reader.Close();
+            }
+            connexion.Close();
+        }
+        #endregion
+
+
+
     }
 }

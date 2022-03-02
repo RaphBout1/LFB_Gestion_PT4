@@ -53,8 +53,6 @@ namespace LFB_gestion.Formulaires
                     if (!clientDejaPresent(prenomTextBox.Text, nomTextBox.Text))
                     {
                         creationDuClient(nomTextBox.Text, prenomTextBox.Text, emailTextBox.Text);
-                        /*this.Controls.Clear();
-                        InitializeComponent();*/
                     }
                     else
                     {

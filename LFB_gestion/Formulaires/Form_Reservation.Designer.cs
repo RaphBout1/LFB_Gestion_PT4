@@ -54,6 +54,7 @@
             this.emplacementsListBox.Location = new System.Drawing.Point(57, 383);
             this.emplacementsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.emplacementsListBox.Name = "emplacementsListBox";
+            this.emplacementsListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.emplacementsListBox.Size = new System.Drawing.Size(235, 56);
             this.emplacementsListBox.TabIndex = 9;
             // 
