@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Utilisateur.cs" />
+    <Compile Include="Entités\Entite_Utilisateur.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entités\Entite_Utilisateur.Designer.cs">
+      <DependentUpon>Entite_Utilisateur.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entités\Entite_Reservation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -149,6 +155,12 @@
     </Compile>
     <Compile Include="Interfaces\Interface_Reservations.Designer.cs">
       <DependentUpon>Interface_Reservations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Utilisateurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Utilisateurs.Designer.cs">
+      <DependentUpon>Interface_Utilisateurs.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
