@@ -31,7 +31,6 @@
             this.loginLabel = new System.Windows.Forms.Label();
             this.modifierBouton = new System.Windows.Forms.Button();
             this.supprimerBouton = new System.Windows.Forms.Button();
-            this.reservationLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -39,7 +38,7 @@
             // 
             this.loginLabel.AutoSize = true;
             this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginLabel.Location = new System.Drawing.Point(2, 35);
+            this.loginLabel.Location = new System.Drawing.Point(26, 35);
             this.loginLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(43, 17);
@@ -70,22 +69,11 @@
             this.supprimerBouton.Text = "Supprimer";
             this.supprimerBouton.UseVisualStyleBackColor = false;
             // 
-            // reservationLabel
-            // 
-            this.reservationLabel.AutoSize = true;
-            this.reservationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reservationLabel.Location = new System.Drawing.Point(116, 35);
-            this.reservationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.reservationLabel.Name = "reservationLabel";
-            this.reservationLabel.Size = new System.Drawing.Size(84, 17);
-            this.reservationLabel.TabIndex = 7;
-            this.reservationLabel.Text = "Réservation";
-            // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(43, 35);
+            this.passwordLabel.Location = new System.Drawing.Point(113, 35);
             this.passwordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(69, 17);
@@ -98,7 +86,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.Controls.Add(this.passwordLabel);
-            this.Controls.Add(this.reservationLabel);
             this.Controls.Add(this.supprimerBouton);
             this.Controls.Add(this.modifierBouton);
             this.Controls.Add(this.loginLabel);
@@ -116,7 +103,6 @@
         private System.Windows.Forms.Label loginLabel;
         private System.Windows.Forms.Button modifierBouton;
         private System.Windows.Forms.Button supprimerBouton;
-        private System.Windows.Forms.Label reservationLabel;
         private System.Windows.Forms.Label passwordLabel;
     }
 }

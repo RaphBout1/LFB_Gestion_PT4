@@ -167,6 +167,9 @@
     <EmbeddedResource Include="Entités\Entite_Reservation.resx">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Entités\Entite_Utilisateur.resx">
+      <DependentUpon>Entite_Utilisateur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Connexion.resx">
       <DependentUpon>Form_Connexion.cs</DependentUpon>
     </EmbeddedResource>

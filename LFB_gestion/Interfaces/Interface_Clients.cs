@@ -15,9 +15,8 @@ namespace LFB_gestion.Interfaces
     public partial class Interface_Clients : Interface_Abstraite
     {
         // Connexion à la base
-        private static string connexionString = "Data Source=info-joyeux;Initial Catalog=PT4_Camping_S4AE2;User Id=ETD;Password=ETD;";
-        private SqlConnection connexion = new SqlConnection(connexionString);
-        private int admin = 0;
+
+        private SqlConnection connexion = Outils.Connexion();
 
 
         public Interface_Clients()
