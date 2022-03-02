@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -14,6 +16,11 @@ namespace LFB_gestion.Formulaires
 {
     public partial class Form_Client : Form
     {
+
+        private static string connexionString = "Data Source=info-joyeux;Initial Catalog=PT4_Camping_S4AE2;User Id=ETD;Password=ETD;";
+
+        private SqlConnection connexion = new SqlConnection(connexionString);
+
         public Form_Client()
         {
             InitializeComponent();
@@ -33,85 +40,105 @@ namespace LFB_gestion.Formulaires
         {
         }
 
-        public static bool EmailEstValide(string email)
-        {
-            if (string.IsNullOrWhiteSpace(email))
-                return false;
-
-            try
-            {
-                email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
-                                      RegexOptions.None, TimeSpan.FromMilliseconds(200));
-
-                string DomainMapper(Match match)
-                {
-                    var idn = new IdnMapping();
-                    string domainName = idn.GetAscii(match.Groups[2].Value);
-                    return match.Groups[1].Value + domainName;
-                }
-            }
-            catch (RegexMatchTimeoutException e)
-            {
-                return false;
-            }
-            catch (ArgumentException e)
-            {
-                return false;
-            }
-
-            try
-            {
-                return Regex.IsMatch(email,
-                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
-                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
-            }
-            catch (RegexMatchTimeoutException)
-            {
-                return false;
-            }
-        }
+        
 
         private void creerBouton_Click(object sender, EventArgs e)
         {
-            if (EmailEstValide(emailTextBox.Text) && !clientDejaPresent() 
-                && !String.IsNullOrEmpty(nomTextBox.Text) && !String.IsNullOrEmpty(prenomTextBox.Text))
+            if (!String.IsNullOrEmpty(prenomTextBox.Text) && !String.IsNullOrEmpty(nomTextBox.Text) && !String.IsNullOrEmpty(emailTextBox.Text))
             {
-                creationDuClient();
-                this.Controls.Clear();
-                InitializeComponent();
-                MessageBox.Show("ajout du nouveau client dans la base");
-            } else
+                if (Outils.isValidMail(emailTextBox.Text))
+                {
+                    if (!clientDejaPresent(prenomTextBox.Text, nomTextBox.Text))
+                    {
+                        creationDuClient(nomTextBox.Text, prenomTextBox.Text, emailTextBox.Text);
+                        /*this.Controls.Clear();
+                        InitializeComponent();*/
+                    }
+                    else
+                    {
+                        MessageBox.Show("Le client existe déjà");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Email non valide.");
+                }
+            }
+            else
             {
-                Label nonValideLabel = new Label();
-                nonValideLabel.Size = this.Size; 
-                nonValideLabel.Text = "Adresse mail non valide";
-                nonValideLabel.Location = new Point(emailTextBox.Location.X, (emailTextBox.Location.Y - 15));
-                this.Controls.Add(nonValideLabel);
-                emailTextBox.Text = "";
-                nomTextBox.Text = "";
-                prenomTextBox.Text = "";
-                this.Refresh();
+                MessageBox.Show("Remplissez tous les champs.");
             }
         }
 
-        /* MANIPULATION DE LA BASE */
-
-        /*
-         * Méthode permettant la création du client dans la base
-         * A FAIRE
-         */
-        private void creationDuClient()
+        private void creationDuClient(string nom, string prenom, string mail)
         {
-       
+            connexion.Open();
+            int id = 0;
+            string query = "select max (id) from client";
+            SqlCommand command = new SqlCommand(query, connexion);
+            DbDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                id = reader.GetInt32(0);
+                id++;
+                reader.Close();
+            }
+            try
+            {
+                query = "insert into client values (@id, @nom, @prenom, @mail)";
+                command = new SqlCommand(query, connexion);
+                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@nom", nom);
+                command.Parameters.AddWithValue("@prenom", prenom);
+                command.Parameters.AddWithValue("@mail", mail);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Client bien ajouté");
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            connexion.Close();
         }
 
-        /*
-         * Méthode permettant de vérifier si un client est déjà présent dans la base.
-         * A FAIRE
-         */
-        private bool clientDejaPresent()
+        /// <summary>
+        /// Vérifie si le client qu'on veut créer n'existe pas déjà dans la base de données par le nom et le prénom
+        /// </summary>
+        /// <param name="prenom"></param>
+        /// <param name="nom"></param>
+        /// <returns></returns>
+        private bool clientDejaPresent(string prenom, string nom)
         {
-            return false;
+            bool present = false;
+            connexion.Open();
+            string query = "select prenom, nom from client where prenom = @prenom and nom = @nom";
+            SqlCommand command = new SqlCommand(query, connexion);
+            command.Parameters.AddWithValue("@prenom", prenom);
+            command.Parameters.AddWithValue("@nom", nom);
+            DbDataReader reader = null;
+            try
+            {
+                reader = command.ExecuteReader();
+                if (reader.HasRows)
+                    present = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            connexion.Close();
+            return present;
+        }
+
+        private void emailTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!Outils.isValidMail(emailTextBox.Text))
+            {
+                emailTextBox.ForeColor = Color.Red;
+            }
+            else
+            {
+                emailTextBox.ForeColor = Color.Black;
+            }
         }
     }
 }
