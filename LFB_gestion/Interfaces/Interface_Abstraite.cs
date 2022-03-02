@@ -25,17 +25,19 @@ namespace LFB_gestion.Interfaces
 
         }
         private void Admin()
-        {   //si l'utilisateur courant est un admin alors rendre visible les fonctions admin
-            if (Utilisateur.getUtilisateurCourant().admin == 1){
-                utilisateursToolStripMenuItem.Visible = true;
-                statistiquesToolStripMenuItem.Visible = true;
 
-            }
+        {   
+            if(Utilisateur.getUtilisateurCourant() != null) { 
+            //si l'utilisateur courant est un admin alors rendre visible les fonctions admin
+                if (Utilisateur.getUtilisateurCourant().admin == 1){
+                    utilisateursToolStripMenuItem.Visible = true;
+                    statistiquesToolStripMenuItem.Visible = true;
+                }
             //Au contraire les caché
-            else
-            {
-                utilisateursToolStripMenuItem.Visible = false;
-                statistiquesToolStripMenuItem.Visible = false;
+                else{
+                    utilisateursToolStripMenuItem.Visible = false;
+                    statistiquesToolStripMenuItem.Visible = false;
+                }
             }
         }
 
