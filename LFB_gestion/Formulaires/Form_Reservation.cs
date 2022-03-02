@@ -28,7 +28,11 @@ namespace LFB_gestion.Formulaires
         private void nouveauClientBouton_Click(object sender, EventArgs e)
         {
             Form_Client formNouveauClient = new Form_Client();
-            formNouveauClient.Show();
+            if (formNouveauClient.ShowDialog() == DialogResult.OK)
+            {
+                clientsListBox.Items.Clear();
+                remplirClients();
+            }
         }
 
         private void validerBouton_Click(object sender, EventArgs e)
@@ -121,12 +125,29 @@ namespace LFB_gestion.Formulaires
         /// <param name="e"></param>
         private void calendrier_DateChanged(object sender, DateRangeEventArgs e)
         {
-            string query = "select emplacement.id from emplacement " +
+            emplacementsListBox.Items.Clear();
+            connexion.Open();
+            string query = "select emplacement.nom " +
+                "from emplacement " +
                 "left outer join reservation on emplacement.id = reservation.id_emplacement " +
-                "and '2022-02-10' not between date_debut and date_fin";
+                "where @dateDebut not between reservation.date_debut and reservation.date_fin " +
+                "and   @dateFin not between reservation.date_debut and reservation.date_fin " +
+                "and reservation.date_debut not between @dateDebut and @dateFin " +
+                "and reservation.date_fin not between @dateDebut and @dateFin " +
+                "or date_debut is null";
             SqlCommand command = new SqlCommand(query, connexion);
-            command.Parameters.AddWithValue("", null);
-
+            command.Parameters.AddWithValue("@dateDebut", calendrier.SelectionRange.Start.ToString("dd-MM-yyyy"));
+            command.Parameters.AddWithValue("@dateFin", calendrier.SelectionRange.End.ToString("dd-MM-yyyy"));
+            DbDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    emplacementsListBox.Items.Add(reader.GetString(0));
+                }
+            }
+            reader.Close();
+            connexion.Close();
         }
     }
 }
