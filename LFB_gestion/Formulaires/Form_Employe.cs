@@ -10,9 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LFB_gestion
+namespace LFB_gestion.Formulaires
 {
-    public partial class CréerEmployé : Form
+    public partial class Form_Employe : Form
     {
         private static string connexionString = "Data Source=info-joyeux;Initial Catalog=PT4_Camping_S4AE2;User Id=ETD;Password=ETD;";
 
@@ -20,7 +20,7 @@ namespace LFB_gestion
 
         private int admin = 0;
 
-        public CréerEmployé()
+        public Form_Employe()
         {
             InitializeComponent();
         }

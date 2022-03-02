@@ -56,10 +56,39 @@ namespace LFB_gestion.Interfaces
 
         private void InitialisationToutUtilisateurs()
         {
-            // Remplir la liste this.clients
+            // Remplir la liste this.utilisateur
             // Connexion bdd
             connexion.Open();
             SqlCommand idQuery = new SqlCommand("SELECT * from utilisateur", connexion);
+            reader(idQuery);
+            connexion.Close();
+            
+        }
+          /*
+          * Méthode permettant de construire une liste d'utilisateur présents dans la base en fonction 
+          * d'une chaine de caractères.
+          * 
+          * Elle appelle ensuite le méthode d'affichage en passant cette liste en paramètres
+          */
+        private void rechercheBouton_Click(object sender, EventArgs e)
+        {
+
+            connexion.Open();
+            // On récupère le texte dans le label rechercheLabel
+            String txt = rechercheTextBox.Text;
+            // Connexion bdd
+            SqlCommand idQuery = new SqlCommand("SELECT * from utilisateur where login like '" + txt + "%" + "'", connexion);
+            reader(idQuery);
+            connexion.Close();
+        }
+
+        /*
+         * Méthode permettant de créer une liste d'utilisateur selon une requète
+         * 
+         * 
+         */
+        private void reader(SqlCommand idQuery)
+        {
             SqlDataReader rd;
             rd = idQuery.ExecuteReader();
             List<Entités.Entite_Utilisateur> listeUtilisateur = new List<Entités.Entite_Utilisateur>();
@@ -71,11 +100,21 @@ namespace LFB_gestion.Interfaces
                 String mdp = rd["mdp"].ToString();
                 String email = rd["mail"].ToString();
                 String tel = rd["telephone"].ToString();
-                Entités.Entite_Utilisateur utilisateur = new Entités.Entite_Utilisateur(login,mdp,email,nom,prenom,tel);
+                Entités.Entite_Utilisateur utilisateur = new Entités.Entite_Utilisateur(login, mdp, email, nom, prenom, tel);
                 listeUtilisateur.Add(utilisateur);
             }
-            connexion.Close();
             affichageUtilisateur(listeUtilisateur);
+
         }
+
+
+        private void ajoutBouton_Click(object sender, EventArgs e)
+        {
+            Formulaires.Form_Employe formEmploye = new Formulaires.Form_Employe();
+            formEmploye.Show();
+        }
+
+
+
     }
 }
