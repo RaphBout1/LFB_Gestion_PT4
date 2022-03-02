@@ -107,6 +107,12 @@ namespace LFB_gestion.Formulaires
         #endregion
 
         #region Fonctions
+        /// <summary>
+        /// Créer une réservation
+        /// </summary>
+        /// <param name="dates">dates auxquelles le client veut réserver un ou des emplacements</param>
+        /// <param name="client">le client qui veut réserver</param>
+        /// <param name="emplacements">le(s) emplacement(s) que le client veut réserver</param>
         private void ajouterRéservation(SelectionRange dates, Classes.Client client, ListBox.SelectedObjectCollection emplacements)
         {
             string s = "";   //Créer un string (pour l'afficher dans la confirmation) avec les numéros d'emplacements réservés au cas où il y ait plusieurs emplacements
@@ -144,9 +150,13 @@ namespace LFB_gestion.Formulaires
             connexion.Close();
         }
 
+        /// <summary>
+        /// Vérifie si on a pas selectionné qu'un seul jour car c'est pas possible et si la date de fin est supérieur à la date de début de réservation
+        /// </summary>
+        /// <returns>retourne vrai si les dates sont logiques</returns>
         private bool datesLogiques()
         {
-            return calendrier.SelectionEnd != calendrier.SelectionStart;
+            return calendrier.SelectionEnd != calendrier.SelectionStart && calendrier.SelectionRange.Start < calendrier.SelectionRange.End;
         }
 
         private bool auMoinsUnEmplacementSelectionne()
@@ -181,8 +191,6 @@ namespace LFB_gestion.Formulaires
             connexion.Close();
         }
         #endregion
-
-
 
     }
 }
