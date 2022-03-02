@@ -31,7 +31,7 @@ namespace LFB_gestion.Entités
         {
             this.nomLabel = new System.Windows.Forms.Label();
             this.prenomLabel = new System.Windows.Forms.Label();
-            this.reservationLabel = new System.Windows.Forms.Label();
+            this.emailLabel = new System.Windows.Forms.Label();
             this.supprimerBouton = new System.Windows.Forms.Button();
             this.modifierBouton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -40,7 +40,8 @@ namespace LFB_gestion.Entités
             // 
             this.nomLabel.AutoSize = true;
             this.nomLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomLabel.Location = new System.Drawing.Point(3, 45);
+            this.nomLabel.Location = new System.Drawing.Point(2, 37);
+            this.nomLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nomLabel.Name = "nomLabel";
             this.nomLabel.Size = new System.Drawing.Size(44, 20);
             this.nomLabel.TabIndex = 0;
@@ -50,29 +51,32 @@ namespace LFB_gestion.Entités
             // 
             this.prenomLabel.AutoSize = true;
             this.prenomLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prenomLabel.Location = new System.Drawing.Point(53, 45);
+            this.prenomLabel.Location = new System.Drawing.Point(40, 37);
+            this.prenomLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.prenomLabel.Name = "prenomLabel";
             this.prenomLabel.Size = new System.Drawing.Size(67, 20);
             this.prenomLabel.TabIndex = 1;
             this.prenomLabel.Text = "Prénom";
             // 
-            // reservationLabel
+            // emailLabel
             // 
-            this.reservationLabel.AutoSize = true;
-            this.reservationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reservationLabel.Location = new System.Drawing.Point(149, 45);
-            this.reservationLabel.Name = "reservationLabel";
-            this.reservationLabel.Size = new System.Drawing.Size(98, 20);
-            this.reservationLabel.TabIndex = 2;
-            this.reservationLabel.Text = "Réservation";
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLabel.Location = new System.Drawing.Point(134, 37);
+            this.emailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(138, 20);
+            this.emailLabel.TabIndex = 2;
+            this.emailLabel.Text = "email@email.test";
             // 
             // supprimerBouton
             // 
             this.supprimerBouton.BackColor = System.Drawing.Color.Red;
             this.supprimerBouton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.supprimerBouton.Location = new System.Drawing.Point(359, 53);
+            this.supprimerBouton.Location = new System.Drawing.Point(373, 44);
+            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.supprimerBouton.Name = "supprimerBouton";
-            this.supprimerBouton.Size = new System.Drawing.Size(91, 46);
+            this.supprimerBouton.Size = new System.Drawing.Size(88, 37);
             this.supprimerBouton.TabIndex = 3;
             this.supprimerBouton.Text = "Supprimer";
             this.supprimerBouton.UseVisualStyleBackColor = false;
@@ -81,25 +85,27 @@ namespace LFB_gestion.Entités
             // 
             this.modifierBouton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.modifierBouton.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.modifierBouton.Location = new System.Drawing.Point(272, 53);
+            this.modifierBouton.Location = new System.Drawing.Point(308, 44);
+            this.modifierBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.modifierBouton.Name = "modifierBouton";
-            this.modifierBouton.Size = new System.Drawing.Size(81, 46);
+            this.modifierBouton.Size = new System.Drawing.Size(61, 37);
             this.modifierBouton.TabIndex = 4;
             this.modifierBouton.Text = "Modifier";
             this.modifierBouton.UseVisualStyleBackColor = false;
             // 
             // Entite_Client
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.Controls.Add(this.modifierBouton);
             this.Controls.Add(this.supprimerBouton);
-            this.Controls.Add(this.reservationLabel);
+            this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.prenomLabel);
             this.Controls.Add(this.nomLabel);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Entite_Client";
-            this.Size = new System.Drawing.Size(462, 102);
+            this.Size = new System.Drawing.Size(463, 83);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,7 +115,7 @@ namespace LFB_gestion.Entités
 
         private System.Windows.Forms.Label nomLabel;
         private System.Windows.Forms.Label prenomLabel;
-        private System.Windows.Forms.Label reservationLabel;
+        private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Button supprimerBouton;
         private System.Windows.Forms.Button modifierBouton;
     }
