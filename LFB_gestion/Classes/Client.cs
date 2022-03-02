@@ -14,7 +14,7 @@ namespace LFB_gestion.Classes
 
         public string prenom;
 
-        public string mail;
+        string mail;
 
         public Client(int id, string nom, string prenom, string mail)
         {
@@ -24,6 +24,9 @@ namespace LFB_gestion.Classes
             this.mail = mail;
         }
         
+        /// <summary>
+        /// Affiche le prénom et le nom du client
+        /// </summary>
         public override string ToString()
         {
             return prenom + " " + nom;
