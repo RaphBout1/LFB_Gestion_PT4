@@ -52,6 +52,19 @@
     <Compile Include="Entités\Entite_Reservation.Designer.cs">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulaires\CréerEmployé.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\CréerEmployé.Designer.cs">
+      <DependentUpon>CréerEmployé.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\Outils.cs" />
+    <Compile Include="Formulaires\Connexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\Connexion.Designer.cs">
+      <DependentUpon>Connexion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulaires\Form_Client.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +153,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Entités\Entite_Reservation.resx">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Connexion.resx">
+      <DependentUpon>Connexion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Client.resx">
       <DependentUpon>Form_Client.cs</DependentUpon>

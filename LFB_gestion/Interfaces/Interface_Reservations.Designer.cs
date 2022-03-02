@@ -29,10 +29,28 @@ namespace LFB_gestion.Interfaces
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // nomModuleLabel
+            // 
+            this.nomModuleLabel.Location = new System.Drawing.Point(233, 32);
+            // 
+            // clientsPanel
+            // 
+            this.clientsPanel.Location = new System.Drawing.Point(53, 67);
+            this.clientsPanel.Size = new System.Drawing.Size(955, 471);
+            // 
+            // Interface_Reservations
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1062, 673);
+            this.Location = new System.Drawing.Point(0, 0);
+            this.Name = "Interface_Reservations";
             this.Text = "Interface_Reservations";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
