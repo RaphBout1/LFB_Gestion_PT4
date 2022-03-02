@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -10,6 +11,10 @@ namespace LFB_gestion
     internal class Outils
     {
         private static string Key = "ENGn*fa}T&39.349&tgS";
+
+        static string connexionString = "Data Source=info-joyeux;Initial Catalog=PT4_Camping_S4AE2;User Id=ETD;Password=ETD";
+
+
 
         /// <summary>
         /// Crypte un string
@@ -37,6 +42,15 @@ namespace LFB_gestion
             res = res.Substring(0, res.Length - Key.Length);
             return res;
         }
+
+        public static SqlConnection Connexion()
+        {
+            SqlConnection connexion = new SqlConnection(connexionString);
+
+            return connexion;
+        }
+
+        
 
     }
 }

@@ -46,24 +46,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Utilisateur.cs" />
+    <Compile Include="Entités\Entite_Utilisateur.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entités\Entite_Utilisateur.Designer.cs">
+      <DependentUpon>Entite_Utilisateur.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entités\Entite_Reservation.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Entités\Entite_Reservation.Designer.cs">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulaires\CréerEmployé.cs">
+    <Compile Include="Formulaires\Form_Employe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulaires\CréerEmployé.Designer.cs">
-      <DependentUpon>CréerEmployé.cs</DependentUpon>
+    <Compile Include="Formulaires\Form_Employe.Designer.cs">
+      <DependentUpon>Form_Employe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulaires\Outils.cs" />
-    <Compile Include="Formulaires\Connexion.cs">
+    <Compile Include="Classes\Outils.cs" />
+    <Compile Include="Formulaires\Form_Connexion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulaires\Connexion.Designer.cs">
-      <DependentUpon>Connexion.cs</DependentUpon>
+    <Compile Include="Formulaires\Form_Connexion.Designer.cs">
+      <DependentUpon>Form_Connexion.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulaires\Form_Client.cs">
       <SubType>Form</SubType>
@@ -149,13 +156,19 @@
     <Compile Include="Interfaces\Interface_Reservations.Designer.cs">
       <DependentUpon>Interface_Reservations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Interface_Utilisateurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Utilisateurs.Designer.cs">
+      <DependentUpon>Interface_Utilisateurs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Entités\Entite_Reservation.resx">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulaires\Connexion.resx">
-      <DependentUpon>Connexion.cs</DependentUpon>
+    <EmbeddedResource Include="Formulaires\Form_Connexion.resx">
+      <DependentUpon>Form_Connexion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Client.resx">
       <DependentUpon>Form_Client.cs</DependentUpon>
@@ -245,6 +258,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logoDuHAut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconeUtilisateur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondConnexion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondBouton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

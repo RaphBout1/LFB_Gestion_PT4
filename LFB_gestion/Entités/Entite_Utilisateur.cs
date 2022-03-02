@@ -1,5 +1,4 @@
-﻿using LFB_gestion.Classes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LFB_gestion.Interfaces
+namespace LFB_gestion.Entités
 {
-    public partial class Interface_Accueil : Interface_Abstraite
+    public partial class Entite_Utilisateur : UserControl
     {
-        public Interface_Accueil()
+        public Entite_Utilisateur()
         {
             InitializeComponent();
+        }
+
+        private void Entite_Utilisateur_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

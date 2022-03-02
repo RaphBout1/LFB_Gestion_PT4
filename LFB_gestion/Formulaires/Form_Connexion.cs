@@ -14,7 +14,6 @@ namespace LFB_gestion
 {
     public partial class Connexion : Form
     {
-        static string connexionString = "Data Source=info-joyeux;Initial Catalog=PT4_Camping_S4AE2;User Id=ETD;Password=ETD";
 
         SqlConnection connexion;
 
@@ -32,7 +31,7 @@ namespace LFB_gestion
         /// <param name="e"></param>
         private void seConnecter_button_Click(object sender, EventArgs e)
         {
-            connexion = new SqlConnection(connexionString);
+            connexion = Outils.Connexion();
             //Se connecter à la base de données
             try
             {
@@ -52,7 +51,8 @@ namespace LFB_gestion
                             // Vérifier la correspondance du mot de passe
                             query = "SELECT mdp FROM utilisateur WHERE login = @login";
                             command = new SqlCommand(query, connexion);
-                            command.Parameters.AddWithValue("@login", reader.GetValue(0).ToString());
+                            string login = reader.GetValue(0).ToString();
+                            command.Parameters.AddWithValue("@login", login);
                             reader.Close();
                             try
                             {
@@ -63,7 +63,12 @@ namespace LFB_gestion
                                     reader.Read();
                                     if (reader.GetValue(0).ToString() == Outils.crypter(motDePasse_textBox.Text)) // si le mot de passe crypté est égal au mot de passe inséré puis crypté
                                     {
-                                        //TODO
+
+
+                                        Classes.Utilisateur u = Classes.Utilisateur.CreationUtilisateur(login);
+                                        Classes.Utilisateur.courant = u;
+
+
                                         this.Hide();
                                         Form formAcceuil = new Interfaces.Interface_Accueil();
 

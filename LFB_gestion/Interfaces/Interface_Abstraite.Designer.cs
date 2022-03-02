@@ -36,8 +36,9 @@ namespace LFB_gestion.Interfaces
             this.clientsPanel = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.accueilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stocksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilisateursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statistiquesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stocksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entretienToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -112,8 +113,9 @@ namespace LFB_gestion.Interfaces
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.accueilToolStripMenuItem,
-            this.stocksToolStripMenuItem,
+            this.utilisateursToolStripMenuItem,
             this.statistiquesToolStripMenuItem,
+            this.stocksToolStripMenuItem,
             this.entretienToolStripMenuItem,
             this.planToolStripMenuItem,
             this.reservationsToolStripMenuItem,
@@ -139,18 +141,16 @@ namespace LFB_gestion.Interfaces
             this.accueilToolStripMenuItem.Text = "Accueil";
             this.accueilToolStripMenuItem.Click += new System.EventHandler(this.accueilToolStripMenuItem_Click);
             // 
-            // stocksToolStripMenuItem
+            // utilisateursToolStripMenuItem
             // 
-            this.stocksToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stocksToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
-            this.stocksToolStripMenuItem.Image = global::LFB_gestion.Properties.Resources.iconeStock;
-            this.stocksToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.stocksToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.stocksToolStripMenuItem.Name = "stocksToolStripMenuItem";
-            this.stocksToolStripMenuItem.ShowShortcutKeys = false;
-            this.stocksToolStripMenuItem.Size = new System.Drawing.Size(127, 66);
-            this.stocksToolStripMenuItem.Text = "Stock";
-            this.stocksToolStripMenuItem.Click += new System.EventHandler(this.stocksToolStripMenuItem_Click);
+            this.utilisateursToolStripMenuItem.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.utilisateursToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
+            this.utilisateursToolStripMenuItem.Image = global::LFB_gestion.Properties.Resources.iconeUtilisateur;
+            this.utilisateursToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.utilisateursToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.utilisateursToolStripMenuItem.Name = "utilisateursToolStripMenuItem";
+            this.utilisateursToolStripMenuItem.Size = new System.Drawing.Size(184, 82);
+            this.utilisateursToolStripMenuItem.Text = "Utilisateurs";
             // 
             // statistiquesToolStripMenuItem
             // 
@@ -163,6 +163,19 @@ namespace LFB_gestion.Interfaces
             this.statistiquesToolStripMenuItem.Size = new System.Drawing.Size(185, 66);
             this.statistiquesToolStripMenuItem.Text = "Statistiques";
             this.statistiquesToolStripMenuItem.Click += new System.EventHandler(this.statistiquesToolStripMenuItem_Click);
+            // 
+            // stocksToolStripMenuItem
+            // 
+            this.stocksToolStripMenuItem.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stocksToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
+            this.stocksToolStripMenuItem.Image = global::LFB_gestion.Properties.Resources.iconeStock;
+            this.stocksToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.stocksToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.stocksToolStripMenuItem.Name = "stocksToolStripMenuItem";
+            this.stocksToolStripMenuItem.ShowShortcutKeys = false;
+            this.stocksToolStripMenuItem.Size = new System.Drawing.Size(130, 82);
+            this.stocksToolStripMenuItem.Text = "Stock";
+            this.stocksToolStripMenuItem.Click += new System.EventHandler(this.stocksToolStripMenuItem_Click);
             // 
             // entretienToolStripMenuItem
             // 
@@ -214,6 +227,7 @@ namespace LFB_gestion.Interfaces
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::LFB_gestion.Properties.Resources.logoDuHAut;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -288,5 +302,6 @@ namespace LFB_gestion.Interfaces
         private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelRecherche;
+        private System.Windows.Forms.ToolStripMenuItem utilisateursToolStripMenuItem;
     }
 }
