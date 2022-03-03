@@ -16,8 +16,7 @@ namespace LFB_gestion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Interfaces.Interface_Reservations());
-            //Application.Run(new CréerEmployé());
+            Application.Run(new Connexion());
         }
     }
 }
