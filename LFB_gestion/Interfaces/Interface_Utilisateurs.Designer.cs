@@ -34,10 +34,6 @@
             // 
             this.nomModuleLabel.Location = new System.Drawing.Point(220, 20);
             // 
-            // ajoutBouton
-            // 
-            this.ajoutBouton.Click += new System.EventHandler(this.ajoutBouton_Click);
-            // 
             // rechercheBouton
             // 
             this.rechercheBouton.Click += new System.EventHandler(this.rechercheBouton_Click);
