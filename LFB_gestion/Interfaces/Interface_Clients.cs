@@ -15,9 +15,8 @@ namespace LFB_gestion.Interfaces
     public partial class Interface_Clients : Interface_Abstraite
     {
         // Connexion à la base
-        private static string connexionString = "Data Source=info-joyeux;Initial Catalog=PT4_Camping_S4AE2;User Id=ETD;Password=ETD;";
-        private SqlConnection connexion = new SqlConnection(connexionString);
-        private int admin = 0;
+
+        private SqlConnection connexion = Outils.Connexion();
 
 
         public Interface_Clients()
@@ -72,20 +71,11 @@ namespace LFB_gestion.Interfaces
             // Connexion bdd
             connexion.Open();
             SqlCommand idQuery = new SqlCommand("SELECT * from client", connexion);
-            SqlDataReader rd;
-            rd = idQuery.ExecuteReader();
-            List < Entités.Entite_Client > listeClients = new List<Entités.Entite_Client> ();
-            while (rd.Read())
-            {
-                String nom = rd["nom"].ToString();
-                String prenom = rd["prenom"].ToString();
-                String email = rd["mail"].ToString();
-                Entités.Entite_Client client = new Entités.Entite_Client(nom, prenom, email);
-                listeClients.Add(client);
-            }
+            reader(idQuery);
             connexion.Close();
-            affichageClients(listeClients);
+
         }
+        
 
         /*
          * Méthode permettant de construire une liste de clients présents dans la base en fonction 
@@ -95,23 +85,36 @@ namespace LFB_gestion.Interfaces
          */
         private void rechercheBouton_Click(object sender, EventArgs e)
         {
-            List<Entités.Entite_Client> clients = new List<Entités.Entite_Client>();
+            
             connexion.Open();
             // On récupère le texte dans le label rechercheLabel
             String txt = rechercheTextBox.Text;
             // Connexion bdd
             SqlCommand idQuery = new SqlCommand("SELECT * from client where nom like '" + txt + "%" + "'", connexion);
+            reader(idQuery);
+            connexion.Close();
+        }
+
+        /*
+         * Méthode permettant de créer l=une liste de client selon une requète
+         * 
+         * 
+         */
+        private void reader(SqlCommand idQuery)
+        {
             SqlDataReader rd;
             rd = idQuery.ExecuteReader();
+            List<Entités.Entite_Client> listeClients = new List<Entités.Entite_Client>();
             while (rd.Read())
             {
                 String nom = rd["nom"].ToString();
                 String prenom = rd["prenom"].ToString();
                 String email = rd["mail"].ToString();
                 Entités.Entite_Client client = new Entités.Entite_Client(nom, prenom, email);
-                clients.Add(client);
+                listeClients.Add(client);
             }
-            affichageClients(clients);
+            affichageClients(listeClients);
+
         }
 
 

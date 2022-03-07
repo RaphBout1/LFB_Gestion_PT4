@@ -10,11 +10,34 @@ using System.Windows.Forms;
 
 namespace LFB_gestion.Entités
 {
+
+
+
     public partial class Entite_Utilisateur : UserControl
     {
-        public Entite_Utilisateur()
+        private String login;
+        private String mdp;
+        private String mail;
+        private int admin;
+        private String nom;
+        private String prenom;
+        private String tel;
+        public Entite_Utilisateur(String login, String mdp, String mail, String nom, String prenom, String tel)
         {
             InitializeComponent();
+            
+            this.login = login;
+            this.mdp = mdp; 
+            this.mail = mail;   
+            this.nom = nom; 
+            this.prenom = prenom;
+            this.tel = tel;
+
+            prenomLabel.Text = prenom;
+            nomLabel.Text = nom;
+
+
+             
         }
 
         private void Entite_Utilisateur_Load(object sender, EventArgs e)

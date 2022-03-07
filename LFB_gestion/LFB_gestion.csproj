@@ -169,6 +169,9 @@
     <EmbeddedResource Include="Entités\Entite_Reservation.resx">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Entités\Entite_Utilisateur.resx">
+      <DependentUpon>Entite_Utilisateur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Connexion.resx">
       <DependentUpon>Form_Connexion.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Interface_Clients.resx">
       <DependentUpon>Interface_Clients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Interface_Utilisateurs.resx">
+      <DependentUpon>Interface_Utilisateurs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -269,6 +275,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondBouton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oeilOuvert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oeilFermer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

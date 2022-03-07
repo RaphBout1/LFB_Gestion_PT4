@@ -116,5 +116,14 @@ namespace LFB_gestion.Interfaces
         {
             DeftSize();
         }
+
+        private void utilisateursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formUtilisateur = new Interfaces.Interface_Utilisateurs();
+
+            formUtilisateur.ShowDialog();
+            this.Close();
+        }
     }
 }

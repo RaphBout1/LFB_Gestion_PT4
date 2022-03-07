@@ -1,6 +1,6 @@
-﻿namespace LFB_gestion
+﻿namespace LFB_gestion.Formulaires
 {
-    partial class CréerEmployé
+    partial class Form_Employe
     {
         /// <summary>
         /// Required designer variable.
@@ -212,7 +212,7 @@
             this.admin_checkBox.UseVisualStyleBackColor = true;
             this.admin_checkBox.CheckedChanged += new System.EventHandler(this.admin_checkBox_CheckedChanged);
             // 
-            // CréerEmployé
+            // Form_Employe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -236,7 +236,7 @@
             this.Controls.Add(this.nom_textBox);
             this.Controls.Add(this.prénom_label);
             this.Controls.Add(this.prénom_TextBox);
-            this.Name = "CréerEmployé";
+            this.Name = "Form_Employe";
             this.Text = "Créer un nouvel utilisateur";
             this.ResumeLayout(false);
             this.PerformLayout();

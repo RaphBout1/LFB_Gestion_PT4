@@ -133,14 +133,15 @@ namespace LFB_gestion.Interfaces
             // 
             // utilisateursToolStripMenuItem
             // 
-            this.utilisateursToolStripMenuItem.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.utilisateursToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.utilisateursToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.utilisateursToolStripMenuItem.Image = global::LFB_gestion.Properties.Resources.iconeUtilisateur;
             this.utilisateursToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.utilisateursToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.utilisateursToolStripMenuItem.Name = "utilisateursToolStripMenuItem";
-            this.utilisateursToolStripMenuItem.Size = new System.Drawing.Size(184, 82);
+            this.utilisateursToolStripMenuItem.Size = new System.Drawing.Size(180, 66);
             this.utilisateursToolStripMenuItem.Text = "Utilisateurs";
+            this.utilisateursToolStripMenuItem.Click += new System.EventHandler(this.utilisateursToolStripMenuItem_Click);
             // 
             // statistiquesToolStripMenuItem
             // 
@@ -229,7 +230,6 @@ namespace LFB_gestion.Interfaces
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::LFB_gestion.Properties.Resources.logoDuHAut;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -238,7 +238,7 @@ namespace LFB_gestion.Interfaces
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(184, 58);
+            this.pictureBox1.Size = new System.Drawing.Size(205, 65);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
@@ -258,17 +258,17 @@ namespace LFB_gestion.Interfaces
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LFB_gestion.Properties.Resources.fondEcran;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1443, 802);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelRecherche);
             this.Controls.Add(this.nomModuleLabel);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.clientsPanel);
-            this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MinimumSize = new System.Drawing.Size(814, 592);
+            this.MinimumSize = new System.Drawing.Size(813, 591);
             this.Name = "Interface_Abstraite";
             this.Text = "Connexion";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
