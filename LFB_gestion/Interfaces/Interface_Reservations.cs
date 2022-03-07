@@ -1,4 +1,4 @@
-﻿using LFB_gestion.Classes;
+﻿using LFB_gestion.Formulaires;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +46,17 @@ namespace LFB_gestion.Interfaces
                 clientsPanel.AutoScroll = true;
                 y++;
             }
+        }
+
+        /// <summary>
+        /// bouton pour créer une nouvelle réservation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ajouter_button_Click(object sender, EventArgs e)
+        {
+            Form_Reservation reservation = new Form_Reservation();
+            reservation.Show();
         }
     }
 }

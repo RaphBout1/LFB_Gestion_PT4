@@ -38,7 +38,7 @@ namespace LFB_gestion
             {
                 if (tel_textBox.Text.Length > 9)
                 {
-                    if (isValidMail(mail_textBox.Text))
+                    if (Outils.isValidMail(mail_textBox.Text))
                     {
                         try
                         {
@@ -110,6 +110,7 @@ namespace LFB_gestion
         /// <param name="e"></param>
         private void nom_textBox_TextChanged(object sender, EventArgs e)
         {
+
             if (nom_textBox.Text != "")
             {
                 loginValue_label.Text = prénom_TextBox.Text.ToLower()[0] + nom_textBox.Text.ToLower();
@@ -123,7 +124,7 @@ namespace LFB_gestion
         /// <param name="e"></param>
         private void mail_textBox_TextChanged(object sender, EventArgs e)
         {
-            if (!isValidMail(mail_textBox.Text))
+            if (!Outils.isValidMail(mail_textBox.Text))
             {
                 mail_textBox.ForeColor = Color.Red;
             }
@@ -133,26 +134,5 @@ namespace LFB_gestion
             }
         }
         #endregion
-
-        /// <summary>
-        /// Vérifie si une adresse mail contient un '.' après un '@'
-        /// </summary>
-        /// <param name="eMail"></param>
-        /// <returns>renvoie vrai si l'adresse mail est valide</returns>
-        bool isValidMail(string eMail)
-        {
-            bool Result = false;
-            try
-            {
-                var eMailValidator = new System.Net.Mail.MailAddress(eMail);
-
-                Result = (eMail.LastIndexOf(".") > eMail.LastIndexOf("@"));
-            }
-            catch
-            {
-                Result = false;
-            };
-            return Result;
-        }
     }
 }

@@ -39,74 +39,75 @@
             // 
             // creerBouton
             // 
-            this.creerBouton.Location = new System.Drawing.Point(199, 319);
-            this.creerBouton.Margin = new System.Windows.Forms.Padding(4);
+            this.creerBouton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.creerBouton.Location = new System.Drawing.Point(149, 259);
             this.creerBouton.Name = "creerBouton";
-            this.creerBouton.Size = new System.Drawing.Size(100, 28);
-            this.creerBouton.TabIndex = 7;
+            this.creerBouton.Size = new System.Drawing.Size(75, 23);
+            this.creerBouton.TabIndex = 3;
             this.creerBouton.Text = "Créer";
             this.creerBouton.UseVisualStyleBackColor = true;
             this.creerBouton.Click += new System.EventHandler(this.creerBouton_Click);
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(180, 240);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.emailTextBox.Location = new System.Drawing.Point(135, 195);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(132, 22);
-            this.emailTextBox.TabIndex = 6;
+            this.emailTextBox.Size = new System.Drawing.Size(100, 20);
+            this.emailTextBox.TabIndex = 2;
+            this.emailTextBox.TextChanged += new System.EventHandler(this.emailTextBox_TextChanged);
             this.emailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.emailTextBox_KeyPress);
             // 
             // prenomTextBox
             // 
-            this.prenomTextBox.Location = new System.Drawing.Point(180, 178);
-            this.prenomTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.prenomTextBox.Location = new System.Drawing.Point(135, 90);
             this.prenomTextBox.Name = "prenomTextBox";
-            this.prenomTextBox.Size = new System.Drawing.Size(132, 22);
-            this.prenomTextBox.TabIndex = 5;
+            this.prenomTextBox.Size = new System.Drawing.Size(100, 20);
+            this.prenomTextBox.TabIndex = 0;
             this.prenomTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.prenomTextBox_KeyPress);
             // 
             // nomTextBox
             // 
-            this.nomTextBox.Location = new System.Drawing.Point(180, 112);
-            this.nomTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nomTextBox.Location = new System.Drawing.Point(135, 144);
             this.nomTextBox.Name = "nomTextBox";
-            this.nomTextBox.Size = new System.Drawing.Size(132, 22);
-            this.nomTextBox.TabIndex = 4;
+            this.nomTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nomTextBox.TabIndex = 1;
             this.nomTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nomTextBox_KeyPress);
             // 
             // nomLabel
             // 
             this.nomLabel.AutoSize = true;
-            this.nomLabel.Location = new System.Drawing.Point(177, 91);
+            this.nomLabel.Location = new System.Drawing.Point(133, 127);
+            this.nomLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nomLabel.Name = "nomLabel";
-            this.nomLabel.Size = new System.Drawing.Size(45, 17);
+            this.nomLabel.Size = new System.Drawing.Size(35, 13);
             this.nomLabel.TabIndex = 8;
             this.nomLabel.Text = "Nom :";
             // 
             // prenomLabel
             // 
             this.prenomLabel.AutoSize = true;
-            this.prenomLabel.Location = new System.Drawing.Point(177, 157);
+            this.prenomLabel.Location = new System.Drawing.Point(133, 73);
+            this.prenomLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.prenomLabel.Name = "prenomLabel";
-            this.prenomLabel.Size = new System.Drawing.Size(65, 17);
+            this.prenomLabel.Size = new System.Drawing.Size(49, 13);
             this.prenomLabel.TabIndex = 9;
             this.prenomLabel.Text = "Prénom :";
             // 
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(177, 219);
+            this.emailLabel.Location = new System.Drawing.Point(133, 178);
+            this.emailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(97, 17);
+            this.emailLabel.Size = new System.Drawing.Size(72, 13);
             this.emailLabel.TabIndex = 10;
             this.emailLabel.Text = "Adresse mail :";
             // 
             // Form_Client
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 524);
+            this.ClientSize = new System.Drawing.Size(405, 426);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.prenomLabel);
             this.Controls.Add(this.nomLabel);
@@ -114,7 +115,6 @@
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.prenomTextBox);
             this.Controls.Add(this.nomTextBox);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Client";
             this.Text = "Form_Client";
             this.ResumeLayout(false);

@@ -17,8 +17,6 @@ namespace LFB_gestion
 
         SqlConnection connexion;
 
-
-
         public Connexion()
         {
             InitializeComponent();
@@ -97,7 +95,7 @@ namespace LFB_gestion
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Utilisateur introuvable");
+                        MessageBox.Show("Utilisateur introuvable" + ex.Message);
                     }
                 }
                 else

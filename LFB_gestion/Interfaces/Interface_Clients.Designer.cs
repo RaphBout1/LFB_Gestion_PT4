@@ -35,10 +35,7 @@ namespace LFB_gestion.Interfaces
             // 
             this.nomModuleLabel.Location = new System.Drawing.Point(175, 26);
             this.nomModuleLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            // 
-            // ajoutBouton
-            // 
-            this.ajoutBouton.Click += new System.EventHandler(this.ajoutBouton_Click);
+
             // 
             // rechercheBouton
             // 
