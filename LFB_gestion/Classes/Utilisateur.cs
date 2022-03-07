@@ -20,6 +20,17 @@ namespace LFB_gestion.Classes
         public string tel;
         public static Utilisateur courant;
 
+        public Utilisateur(string login, string mdp, string mail, int admin, string nom, string prenom, string tel)
+        {
+            this.login = login;
+            this.mdp = mdp;
+            this.mail = mail;
+            this.admin = admin;
+            this.nom = nom;
+            this.prenom = prenom;
+            this.tel = tel;
+        }
+
         public static Utilisateur CreationUtilisateur(string login)
         {
             SqlConnection connexion = Outils.Connexion();
@@ -31,18 +42,14 @@ namespace LFB_gestion.Classes
             DbDataReader reader = command.ExecuteReader();
             reader.Read();
 
-            Utilisateur courant = new Utilisateur
-            {
-                login = login,
-                mdp = reader.GetValue(7).ToString(),
-                mail = reader.GetValue(2).ToString(),
-                admin = (int)reader.GetValue(3),
-                nom = reader.GetValue(5).ToString(),
-                prenom = reader.GetValue(4).ToString(),
-                tel = reader.GetValue(6).ToString()
-            };
+            string mdp = reader.GetString(7);
+            string mail = reader.GetString(2);
+            int admin = reader.GetInt32(3);
+            string nom = reader.GetString(5);
+            string prenom = reader.GetString(4);
+            string tel = reader.GetString(6);
 
-
+            Utilisateur courant = new Utilisateur(login, mdp, mail, admin, nom, prenom, tel);
 
             reader.Close();
             return courant;
@@ -51,7 +58,6 @@ namespace LFB_gestion.Classes
         {
             return courant;
         }
-
 
     }
 }
