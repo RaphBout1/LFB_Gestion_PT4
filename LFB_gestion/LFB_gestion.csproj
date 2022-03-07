@@ -120,6 +120,12 @@
     <Compile Include="Entités\Entite_Incident.Designer.cs">
       <DependentUpon>Entite_Incident.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Interface_Statistiques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Statistiques.Designer.cs">
+      <DependentUpon>Interface_Statistiques.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Interface_Stocks.cs">
       <SubType>Form</SubType>
     </Compile>
