@@ -33,8 +33,8 @@ namespace LFB_gestion.Entités
             this.prenom = prenom;
             this.tel = tel;
 
-            prenomLabel.Text = login;
-            nomLabel.Text = mdp;
+            prenomLabel.Text = prenom;
+            nomLabel.Text = nom;
 
 
              

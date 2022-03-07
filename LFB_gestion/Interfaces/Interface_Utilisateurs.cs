@@ -19,32 +19,7 @@ namespace LFB_gestion.Interfaces
         {
 
             nomModuleLabel.Text = "Module Utilisateurs";
-            //InitialisationToutUtilisateurs();
-
-                        List<Entités.Entite_Utilisateur> reservations = new List<Entités.Entite_Utilisateur>();
-            for (int i = 0; i < 30; i++)
-            {
-                Entités.Entite_Utilisateur reservation = new Entités.Entite_Utilisateur("cool","cool","cool","cool","cool","cool");
-                reservations.Add(reservation);
-            }
-
-            // Pour tous les clients présents dans la liste, les afficher
-            int y = 0;
-            foreach (Entités.Entite_Utilisateur reservation in reservations)
-            {
-                if (reservation == reservations[0])
-                {
-                    reservation.Location = new System.Drawing.Point(0, 0);
-                }
-                else
-                {
-                    reservations[y].Location = new Point(0, y * (reservation.Height + 10));
-                }
-                reservation.Width = this.clientsPanel.Width;
-                this.clientsPanel.Controls.Add(reservation);
-                clientsPanel.AutoScroll = true;
-                y++;
-            }
+            InitialisationToutUtilisateurs();
             InitializeComponent();
         }
 
