@@ -69,16 +69,7 @@ namespace LFB_gestion.Interfaces
             this.rechercheTextBox.Name = "rechercheTextBox";
             this.rechercheTextBox.Size = new System.Drawing.Size(140, 20);
             this.rechercheTextBox.TabIndex = 4;
-            // 
-            // ajoutBouton
-            // 
-            this.ajoutBouton.Location = new System.Drawing.Point(0, 6);
-            this.ajoutBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.ajoutBouton.Name = "ajoutBouton";
-            this.ajoutBouton.Size = new System.Drawing.Size(24, 19);
-            this.ajoutBouton.TabIndex = 2;
-            this.ajoutBouton.Text = "+";
-            this.ajoutBouton.UseVisualStyleBackColor = true;
+            
             // 
             // rechercheBouton
             // 

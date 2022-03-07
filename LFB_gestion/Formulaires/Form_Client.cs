@@ -171,6 +171,8 @@ namespace LFB_gestion.Formulaires
         private bool clientDejaPresent()
         {
             return false;
+        }
+
         private void emailTextBox_TextChanged(object sender, EventArgs e)
         {
             if (!Outils.isValidMail(emailTextBox.Text))

@@ -48,13 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Utilisateur.cs" />
+	<Compile Include="Classes\Client.cs" />
     <Compile Include="Entités\Entite_Utilisateur.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Entités\Entite_Utilisateur.Designer.cs">
       <DependentUpon>Entite_Utilisateur.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Client.cs" />
     <Compile Include="Entités\Entite_Reservation.cs">
       <SubType>UserControl</SubType>
     </Compile>
