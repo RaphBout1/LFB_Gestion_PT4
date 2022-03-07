@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Utilisateur.cs" />
-	<Compile Include="Classes\Client.cs" />
+    <Compile Include="Classes\Client.cs" />
     <Compile Include="Entités\Entite_Utilisateur.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -281,6 +281,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\oeilFermer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondEcran2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondEcran3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
