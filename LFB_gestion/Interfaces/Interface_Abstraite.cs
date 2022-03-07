@@ -45,10 +45,10 @@ namespace LFB_gestion.Interfaces
         private void DeftSize()
         {
             
-            this.clientsPanel.Width = this.ClientSize.Width * 90 / 100;
+            this.clientsPanel.Width = this.ClientSize.Width * 86 / 100;
             this.clientsPanel.Height = this.ClientSize.Height * 70 / 100;
-            int xlocationPanel = this.ClientSize.Width * 5 / 100;
-            int ylocationPanel = this.ClientSize.Height * 10 / 100;
+            int xlocationPanel = this.ClientSize.Width * 8 / 100;
+            int ylocationPanel = this.ClientSize.Height * 17 / 100;
             this.clientsPanel.Location = new System.Drawing.Point(xlocationPanel, ylocationPanel);
             this.nomModuleLabel.Location = new System.Drawing.Point(xlocationPanel+ 180, ylocationPanel -35);
             this.panelRecherche.Location = new System.Drawing.Point(ClientSize.Width - 380, ylocationPanel - 35);
@@ -124,6 +124,11 @@ namespace LFB_gestion.Interfaces
 
             formUtilisateur.ShowDialog();
             this.Close();
+        }
+
+        private void Interface_Abstraite_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
