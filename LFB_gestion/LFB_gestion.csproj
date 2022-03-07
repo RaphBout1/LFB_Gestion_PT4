@@ -274,5 +274,11 @@
   <ItemGroup>
     <None Include="Resources\fondBouton.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oeilOuvert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oeilFermer.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

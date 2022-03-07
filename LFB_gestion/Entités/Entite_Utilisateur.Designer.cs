@@ -28,70 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.loginLabel = new System.Windows.Forms.Label();
+            this.prenomLabel = new System.Windows.Forms.Label();
             this.modifierBouton = new System.Windows.Forms.Button();
             this.supprimerBouton = new System.Windows.Forms.Button();
-            this.passwordLabel = new System.Windows.Forms.Label();
+            this.nomLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // loginLabel
+            // prenomLabel
             // 
-            this.loginLabel.AutoSize = true;
-            this.loginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginLabel.Location = new System.Drawing.Point(26, 35);
-            this.loginLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(43, 17);
-            this.loginLabel.TabIndex = 1;
-            this.loginLabel.Text = "Login";
+            this.prenomLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.prenomLabel.AutoSize = true;
+            this.prenomLabel.BackColor = System.Drawing.Color.Maroon;
+            this.prenomLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prenomLabel.Location = new System.Drawing.Point(3, 43);
+            this.prenomLabel.Name = "prenomLabel";
+            this.prenomLabel.Size = new System.Drawing.Size(65, 20);
+            this.prenomLabel.TabIndex = 1;
+            this.prenomLabel.Text = "prénom";
             // 
             // modifierBouton
             // 
+            this.modifierBouton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.modifierBouton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.modifierBouton.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.modifierBouton.Location = new System.Drawing.Point(204, 35);
-            this.modifierBouton.Margin = new System.Windows.Forms.Padding(2);
+            this.modifierBouton.Location = new System.Drawing.Point(272, 30);
+            this.modifierBouton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.modifierBouton.Name = "modifierBouton";
-            this.modifierBouton.Size = new System.Drawing.Size(61, 37);
+            this.modifierBouton.Size = new System.Drawing.Size(81, 46);
             this.modifierBouton.TabIndex = 5;
             this.modifierBouton.Text = "Modifier";
             this.modifierBouton.UseVisualStyleBackColor = false;
             // 
             // supprimerBouton
             // 
+            this.supprimerBouton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.supprimerBouton.BackColor = System.Drawing.Color.Red;
             this.supprimerBouton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.supprimerBouton.Location = new System.Drawing.Point(269, 35);
-            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(2);
+            this.supprimerBouton.Location = new System.Drawing.Point(359, 30);
+            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.supprimerBouton.Name = "supprimerBouton";
-            this.supprimerBouton.Size = new System.Drawing.Size(68, 37);
+            this.supprimerBouton.Size = new System.Drawing.Size(91, 46);
             this.supprimerBouton.TabIndex = 6;
             this.supprimerBouton.Text = "Supprimer";
             this.supprimerBouton.UseVisualStyleBackColor = false;
             // 
-            // passwordLabel
+            // nomLabel
             // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordLabel.Location = new System.Drawing.Point(113, 35);
-            this.passwordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(69, 17);
-            this.passwordLabel.TabIndex = 8;
-            this.passwordLabel.Text = "Password";
+            this.nomLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.nomLabel.AutoSize = true;
+            this.nomLabel.BackColor = System.Drawing.Color.DarkRed;
+            this.nomLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomLabel.Location = new System.Drawing.Point(122, 43);
+            this.nomLabel.Name = "nomLabel";
+            this.nomLabel.Size = new System.Drawing.Size(41, 20);
+            this.nomLabel.TabIndex = 8;
+            this.nomLabel.Text = "nom";
             // 
             // Entite_Utilisateur
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.Controls.Add(this.passwordLabel);
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.Controls.Add(this.nomLabel);
             this.Controls.Add(this.supprimerBouton);
             this.Controls.Add(this.modifierBouton);
-            this.Controls.Add(this.loginLabel);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Controls.Add(this.prenomLabel);
+            this.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.Name = "Entite_Utilisateur";
-            this.Size = new System.Drawing.Size(346, 83);
+            this.Size = new System.Drawing.Size(461, 100);
             this.Load += new System.EventHandler(this.Entite_Utilisateur_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -100,9 +104,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label loginLabel;
+        private System.Windows.Forms.Label prenomLabel;
         private System.Windows.Forms.Button modifierBouton;
         private System.Windows.Forms.Button supprimerBouton;
-        private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.Label nomLabel;
     }
 }

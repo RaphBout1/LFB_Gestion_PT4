@@ -16,6 +16,7 @@ namespace LFB_gestion
     {
 
         SqlConnection connexion;
+        Boolean motDePassVisible = false;
 
 
 
@@ -115,6 +116,21 @@ namespace LFB_gestion
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void visionMDP_Click(object sender, EventArgs e)
+        {
+            motDePasse_textBox.UseSystemPasswordChar = !motDePasse_textBox.UseSystemPasswordChar;
+            if (motDePassVisible == true)
+            {
+                motDePassVisible = false;
+                visionMDP.BackgroundImage = Properties.Resources.oeilFermer;
+            }
+            else
+            {
+                motDePassVisible = true;
+                visionMDP.BackgroundImage = Properties.Resources.oeilOuvert;
+            }
         }
     }
 }

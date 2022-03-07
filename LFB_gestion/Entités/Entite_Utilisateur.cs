@@ -25,6 +25,7 @@ namespace LFB_gestion.Entités
         public Entite_Utilisateur(String login, String mdp, String mail, String nom, String prenom, String tel)
         {
             InitializeComponent();
+            
             this.login = login;
             this.mdp = mdp; 
             this.mail = mail;   
@@ -32,8 +33,8 @@ namespace LFB_gestion.Entités
             this.prenom = prenom;
             this.tel = tel;
 
-            loginLabel.Text = login;
-            passwordLabel.Text = mdp;
+            prenomLabel.Text = login;
+            nomLabel.Text = mdp;
 
 
              
