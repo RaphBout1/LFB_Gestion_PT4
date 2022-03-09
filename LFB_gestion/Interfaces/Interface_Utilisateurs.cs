@@ -117,7 +117,11 @@ namespace LFB_gestion.Interfaces
             formEmploye.Show();
         }
 
+        private void ajoutBouton_Click_1(object sender, EventArgs e)
+        {
+            Form formUtilisateur = new Formulaires.Form_Employe();
 
-
+            formUtilisateur.ShowDialog();
+        }
     }
 }

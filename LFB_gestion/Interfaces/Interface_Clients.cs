@@ -124,5 +124,13 @@ namespace LFB_gestion.Interfaces
             formClient.Show();
         }
 
+        private void ajoutBouton_Click_1(object sender, EventArgs e)
+        {
+
+            Form formClient = new Formulaires.Form_Client();
+
+            formClient.ShowDialog();
+
+        }
     }
 }

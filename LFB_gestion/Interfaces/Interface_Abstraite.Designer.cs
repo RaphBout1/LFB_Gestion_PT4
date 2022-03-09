@@ -1,5 +1,4 @@
-﻿
-namespace LFB_gestion.Interfaces
+﻿namespace LFB_gestion.Interfaces
 {
     partial class Interface_Abstraite
     {
@@ -44,39 +43,50 @@ namespace LFB_gestion.Interfaces
             this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelRecherche = new System.Windows.Forms.Panel();
+            this.panelNomModule = new System.Windows.Forms.Panel();
+            this.ajoutBouton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelRecherche.SuspendLayout();
+            this.panelNomModule.SuspendLayout();
             this.SuspendLayout();
             // 
             // nomModuleLabel
             // 
+            this.nomModuleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nomModuleLabel.AutoSize = true;
             this.nomModuleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.nomModuleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomModuleLabel.Font = new System.Drawing.Font("Barlow Condensed", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomModuleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.nomModuleLabel.Location = new System.Drawing.Point(133, 128);
+            this.nomModuleLabel.Location = new System.Drawing.Point(3, 2);
             this.nomModuleLabel.Name = "nomModuleLabel";
-            this.nomModuleLabel.Size = new System.Drawing.Size(269, 32);
+            this.nomModuleLabel.Size = new System.Drawing.Size(231, 41);
             this.nomModuleLabel.TabIndex = 0;
             this.nomModuleLabel.Text = "Nom_Module_Label";
             // 
             // rechercheTextBox
             // 
-            this.rechercheTextBox.Location = new System.Drawing.Point(37, 7);
+            this.rechercheTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
+            this.rechercheTextBox.Location = new System.Drawing.Point(3, 11);
             this.rechercheTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rechercheTextBox.Name = "rechercheTextBox";
-            this.rechercheTextBox.Size = new System.Drawing.Size(185, 22);
+            this.rechercheTextBox.Size = new System.Drawing.Size(313, 22);
             this.rechercheTextBox.TabIndex = 4;
             // 
             // rechercheBouton
             // 
-            this.rechercheBouton.Location = new System.Drawing.Point(229, 6);
+            this.rechercheBouton.BackColor = System.Drawing.Color.Transparent;
+            this.rechercheBouton.BackgroundImage = global::LFB_gestion.Properties.Resources.loupe;
+            this.rechercheBouton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.rechercheBouton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rechercheBouton.FlatAppearance.BorderSize = 0;
+            this.rechercheBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rechercheBouton.ForeColor = System.Drawing.Color.Transparent;
+            this.rechercheBouton.Location = new System.Drawing.Point(322, 2);
             this.rechercheBouton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rechercheBouton.Name = "rechercheBouton";
-            this.rechercheBouton.Size = new System.Drawing.Size(51, 23);
+            this.rechercheBouton.Size = new System.Drawing.Size(43, 41);
             this.rechercheBouton.TabIndex = 5;
-            this.rechercheBouton.Text = "Go";
             this.rechercheBouton.UseVisualStyleBackColor = true;
             // 
             // clientsPanel
@@ -232,24 +242,46 @@ namespace LFB_gestion.Interfaces
             this.panelRecherche.BackColor = System.Drawing.Color.Transparent;
             this.panelRecherche.Controls.Add(this.rechercheBouton);
             this.panelRecherche.Controls.Add(this.rechercheTextBox);
-            this.panelRecherche.Location = new System.Drawing.Point(397, 126);
+            this.panelRecherche.Location = new System.Drawing.Point(575, 113);
             this.panelRecherche.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelRecherche.Name = "panelRecherche";
-            this.panelRecherche.Size = new System.Drawing.Size(285, 34);
+            this.panelRecherche.Size = new System.Drawing.Size(381, 45);
             this.panelRecherche.TabIndex = 0;
+            // 
+            // panelNomModule
+            // 
+            this.panelNomModule.BackColor = System.Drawing.Color.Transparent;
+            this.panelNomModule.Controls.Add(this.ajoutBouton);
+            this.panelNomModule.Controls.Add(this.nomModuleLabel);
+            this.panelNomModule.Location = new System.Drawing.Point(32, 113);
+            this.panelNomModule.Name = "panelNomModule";
+            this.panelNomModule.Size = new System.Drawing.Size(375, 45);
+            this.panelNomModule.TabIndex = 8;
+            // 
+            // ajoutBouton
+            // 
+            this.ajoutBouton.BackgroundImage = global::LFB_gestion.Properties.Resources.plusIcone;
+            this.ajoutBouton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ajoutBouton.FlatAppearance.BorderSize = 0;
+            this.ajoutBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ajoutBouton.Location = new System.Drawing.Point(259, 0);
+            this.ajoutBouton.Name = "ajoutBouton";
+            this.ajoutBouton.Size = new System.Drawing.Size(56, 45);
+            this.ajoutBouton.TabIndex = 1;
+            this.ajoutBouton.UseVisualStyleBackColor = true;
             // 
             // Interface_Abstraite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::LFB_gestion.Properties.Resources.fondEcran3;
+            this.BackgroundImage = global::LFB_gestion.Properties.Resources.fondEcran4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 987);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panelNomModule);
             this.Controls.Add(this.panelRecherche);
-            this.Controls.Add(this.nomModuleLabel);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.clientsPanel);
+            this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -267,8 +299,9 @@ namespace LFB_gestion.Interfaces
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelRecherche.ResumeLayout(false);
             this.panelRecherche.PerformLayout();
+            this.panelNomModule.ResumeLayout(false);
+            this.panelNomModule.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -276,8 +309,6 @@ namespace LFB_gestion.Interfaces
 
         protected System.Windows.Forms.Label nomModuleLabel;
         protected System.Windows.Forms.TextBox rechercheTextBox;
-        public System.Windows.Forms.Button ajoutBouton;
-        public System.Windows.Forms.Button rechercheBouton;
         protected System.Windows.Forms.Panel clientsPanel;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem accueilToolStripMenuItem;
@@ -290,5 +321,10 @@ namespace LFB_gestion.Interfaces
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelRecherche;
         private System.Windows.Forms.ToolStripMenuItem utilisateursToolStripMenuItem;
+        private System.Windows.Forms.Panel panelNomModule;
+        public System.Windows.Forms.Button ajoutBouton;
+        public System.Windows.Forms.Button rechercheBouton;
     }
 }
+
+

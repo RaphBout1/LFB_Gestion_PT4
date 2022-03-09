@@ -15,7 +15,7 @@ namespace LFB_gestion.Interfaces
     {
         public Interface_Reservations()
         {
-            nomModuleLabel.Text = "Module Réservations";
+            nomModuleLabel.Text = "Réservations";
             InitialisationReservations();
             InitializeComponent();
         }
@@ -57,6 +57,13 @@ namespace LFB_gestion.Interfaces
         {
             Form_Reservation reservation = new Form_Reservation();
             reservation.Show();
+        }
+
+        private void ajoutBouton_Click(object sender, EventArgs e)
+        {
+            Form formResa = new Formulaires.Form_Reservation();
+
+            formResa.ShowDialog();
         }
     }
 }
