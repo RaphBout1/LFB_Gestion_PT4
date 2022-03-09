@@ -30,8 +30,7 @@ namespace LFB_gestion.Formulaires
 
         private void nouveauProduitBouton_Click(object sender, EventArgs e)
         {
-            Form_Produit nouveauProduit = new Form_Produit(this);
-            nouveauProduit.Show();
+            panelNewProduit.Visible = true;
         }
 
         private bool auMoinsUnProduitSelectionne()
@@ -82,6 +81,52 @@ namespace LFB_gestion.Formulaires
             {
                 produitsListBox.Items.Add("produit " + i);
             }
+        }
+          private void imageBouton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                
+                Image img = new Bitmap(openFileDialog1.FileName);
+                Image img1 = (new Bitmap(img, new Size(90, 90)));
+                imagePictureBox.Image = img1;
+            }
+        }
+
+        private void nomProduitTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void validerBoutonProduit_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(nomProduitTextBox.Text))
+            {
+                Label nonValideLabel = new Label();
+                nonValideLabel.Size = this.Size;
+                nonValideLabel.Text = "Veuillez entrer un nom pour le produit";
+                nonValideLabel.Location = new Point(validerBouton.Location.X, (validerBouton.Location.Y - 15));
+                this.Controls.Add(nonValideLabel);
+            }
+            else
+            {
+                creationProduit();
+               // this.stock.produitsListBox.Items.Add(nomProduitTextBox.Text);
+                this.Controls.Clear();
+                InitializeComponent();
+                MessageBox.Show("Produit ajouté à la base avec succès !");
+            }
+        }
+
+        /* MANIPULATION DE LA BASE */
+
+        /*
+         * Méthode permettant la création d'un produit dans la base
+         * A FAIRE
+         */
+        private void creationProduit()
+        {
         }
     }
 }

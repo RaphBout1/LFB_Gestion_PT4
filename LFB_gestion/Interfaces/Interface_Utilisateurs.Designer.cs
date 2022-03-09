@@ -32,27 +32,40 @@
             // 
             // nomModuleLabel
             // 
-            this.nomModuleLabel.Location = new System.Drawing.Point(220, 20);
+            this.nomModuleLabel.Location = new System.Drawing.Point(293, 25);
+            this.nomModuleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // 
-            // rechercheBouton
+            // rechercheTextBox
             // 
-            this.rechercheBouton.Click += new System.EventHandler(this.rechercheBouton_Click);
+            this.rechercheTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(40, 55);
-            this.clientsPanel.Size = new System.Drawing.Size(720, 387);
+            this.clientsPanel.Location = new System.Drawing.Point(151, 172);
+            this.clientsPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.clientsPanel.Size = new System.Drawing.Size(1581, 690);
+            // 
+            // ajoutBouton
+            // 
+            this.ajoutBouton.FlatAppearance.BorderSize = 0;
+            this.ajoutBouton.Click += new System.EventHandler(this.ajoutBouton_Click_1);
+            // 
+            // rechercheBouton
+            // 
+            this.rechercheBouton.FlatAppearance.BorderSize = 0;
+            this.rechercheBouton.Click += new System.EventHandler(this.rechercheBouton_Click);
             // 
             // Interface_Utilisateurs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 553);
+            this.ClientSize = new System.Drawing.Size(1413, 825);
             this.Location = new System.Drawing.Point(0, 0);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MinimumSize = new System.Drawing.Size(1431, 872);
             this.Name = "Interface_Utilisateurs";
             this.Text = "Interface_Utilisateurs";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
