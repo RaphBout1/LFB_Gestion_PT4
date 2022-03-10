@@ -12,6 +12,16 @@ namespace LFB_gestion.Entités
 {
     public partial class Entite_Reservation : UserControl
     {
+
+        private string nomClient;
+
+        private int empalcement;
+
+        DateTime début;
+
+        DateTime fin;
+
+
         public Entite_Reservation()
         {
             InitializeComponent();

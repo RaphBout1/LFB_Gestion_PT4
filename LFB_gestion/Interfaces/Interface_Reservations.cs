@@ -1,51 +1,49 @@
 ﻿using LFB_gestion.Formulaires;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace LFB_gestion.Interfaces
 {
     public partial class Interface_Reservations : Interface_Abstraite
     {
+
+        private SqlConnection connexion = Outils.Connexion();
+
+        List<Entités.Entite_Reservation> reservations = new List<Entités.Entite_Reservation>();
+
         public Interface_Reservations()
         {
             nomModuleLabel.Text = "Module Réservations";
-            InitialisationReservations();
+            AllReservations();
             InitializeComponent();
         }
 
-        private void InitialisationReservations()
+        private void AllReservations()
         {
-            // Génération de 30 modèles de clients pour tester (à supprimer)
+            connexion.Open();
+            SqlCommand cmd = new SqlCommand("select * from reservation");
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                reservations.Add();
+            }
+        }
+        private void reader(SqlCommand cmd)
+        {
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
             List<Entités.Entite_Reservation> reservations = new List<Entités.Entite_Reservation>();
-            for (int i = 0; i < 30; i++)
+            while (reader.Read())
             {
-                Entités.Entite_Reservation reservation = new Entités.Entite_Reservation();
-                reservations.Add(reservation);
+                String nom = reader["nom"].ToString();
+                String prenom = reader["prenom"].ToString();
+                String email = reader["mail"].ToString();
+                Entités.Entite_Reservation reservations= new Entités.Entite_Reservation(nom, prenom, email);
+                reservations.Add(client);
             }
+            affichageReservations(listeClients);
 
-            // Pour tous les clients présents dans la liste, les afficher
-            int y = 0;
-            foreach (Entités.Entite_Reservation reservation in reservations)
-            {
-                if (reservation == reservations[0])
-                {
-                    reservation.Location = new System.Drawing.Point(0, 0);
-                }
-                else
-                {
-                    reservations[y].Location = new Point(0, y * (reservation.Height + 10));
-                }
-                this.clientsPanel.Controls.Add(reservation);
-                clientsPanel.AutoScroll = true;
-                y++;
-            }
         }
 
         /// <summary>

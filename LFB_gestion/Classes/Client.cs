@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LFB_gestion.Classes
 {
-    internal class Client
+    public class Client
     {
         public int id;
 

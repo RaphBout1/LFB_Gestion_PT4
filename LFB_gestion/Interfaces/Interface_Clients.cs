@@ -14,17 +14,15 @@ namespace LFB_gestion.Interfaces
 {
     public partial class Interface_Clients : Interface_Abstraite
     {
-        // Connexion à la base
 
         private SqlConnection connexion = Outils.Connexion();
-
 
         public Interface_Clients()
         {
             // On redéfini le nom du module
             nomModuleLabel.Text = "Module Clients";
             // On initialise les clients présents dans la base et on les affiche
-            initialisationToutLesClients();
+            defaultClients();
             InitializeComponent();
         }
 
@@ -65,7 +63,7 @@ namespace LFB_gestion.Interfaces
          * Méthode permettant de créer une liste de tout les clients présents dans la base
          * Elle appelle ensuite le méthode d'affichage en passant cette liste en paramètres
          */
-        private void initialisationToutLesClients()
+        private void defaultClients()
         {
             // Remplir la liste this.clients
             // Connexion bdd
@@ -73,7 +71,6 @@ namespace LFB_gestion.Interfaces
             SqlCommand idQuery = new SqlCommand("SELECT * from client", connexion);
             reader(idQuery);
             connexion.Close();
-
         }
         
 
@@ -114,7 +111,6 @@ namespace LFB_gestion.Interfaces
                 listeClients.Add(client);
             }
             affichageClients(listeClients);
-
         }
 
 
