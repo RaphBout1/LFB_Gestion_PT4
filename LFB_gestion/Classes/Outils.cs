@@ -48,9 +48,7 @@ namespace LFB_gestion
 
         public static SqlConnection Connexion()
         {
-            SqlConnection connexion = new SqlConnection(connexionString);
-
-            return connexion;
+            return new SqlConnection(connexionString);
         }
 
         /// <summary>
