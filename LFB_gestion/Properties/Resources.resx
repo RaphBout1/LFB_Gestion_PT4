@@ -118,14 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="iconeStat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconeStat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fondEcran" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondEcran.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconePlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconePlan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconeEntretien" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconeEntretien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondBouton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondBouton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondEcran1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondEcran1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plusIcone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plusIcone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconeStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconeStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,17 +142,14 @@
   <data name="iconeUtilisateur" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconeUtilisateur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loupe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loupe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fondEcran4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondEcran4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="oeilFermer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\oeilFermer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondEcran2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondEcran2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fondModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondModule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="oeilOuvert" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\oeilOuvert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,25 +169,22 @@
   <data name="iconeAccueil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconeAccueil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fondModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondModule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loupe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loupe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fondMenuNav" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondMenuNav.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fondBouton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondBouton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconeStat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconeStat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iconeEntretien" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconeEntretien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondConnexion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondConnexion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fondEcran4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondEcran4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconePlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconePlan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="plusIcone" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plusIcone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Nouveau projet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Nouveau projet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -41,6 +41,8 @@
             // 
             // clientsListBox
             // 
+            this.clientsListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
+            this.clientsListBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
             this.clientsListBox.FormattingEnabled = true;
             this.clientsListBox.Location = new System.Drawing.Point(57, 267);
             this.clientsListBox.Margin = new System.Windows.Forms.Padding(2);
@@ -50,12 +52,15 @@
             // 
             // emplacementsListBox
             // 
+            this.emplacementsListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
+            this.emplacementsListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.emplacementsListBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
             this.emplacementsListBox.FormattingEnabled = true;
             this.emplacementsListBox.Location = new System.Drawing.Point(58, 371);
             this.emplacementsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.emplacementsListBox.Name = "emplacementsListBox";
             this.emplacementsListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.emplacementsListBox.Size = new System.Drawing.Size(226, 56);
+            this.emplacementsListBox.Size = new System.Drawing.Size(226, 52);
             this.emplacementsListBox.TabIndex = 9;
             // 
             // emplacementLabel
@@ -86,6 +91,8 @@
             // 
             // calendrier
             // 
+            this.calendrier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
+            this.calendrier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
             this.calendrier.Location = new System.Drawing.Point(57, 52);
             this.calendrier.Margin = new System.Windows.Forms.Padding(7);
             this.calendrier.MaxSelectionCount = 365;
@@ -146,17 +153,16 @@
             // infoDate
             // 
             this.infoDate.BackColor = System.Drawing.Color.Transparent;
-            this.infoDate.BackgroundImage = global::LFB_gestion.Properties.Resources.fondBouton;
+            this.infoDate.BackgroundImage = global::LFB_gestion.Properties.Resources.Nouveau_projet;
             this.infoDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.infoDate.FlatAppearance.BorderSize = 0;
             this.infoDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.infoDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.infoDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
-            this.infoDate.Location = new System.Drawing.Point(233, 22);
+            this.infoDate.Location = new System.Drawing.Point(233, 26);
             this.infoDate.Name = "infoDate";
-            this.infoDate.Size = new System.Drawing.Size(25, 23);
+            this.infoDate.Size = new System.Drawing.Size(22, 20);
             this.infoDate.TabIndex = 19;
-            this.infoDate.Text = "button1";
             this.infoDate.UseVisualStyleBackColor = true;
             this.infoDate.Click += new System.EventHandler(this.infoDate_Click);
             // 
@@ -166,7 +172,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LFB_gestion.Properties.Resources.fondEcran;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(341, 544);
+            this.ClientSize = new System.Drawing.Size(341, 524);
             this.Controls.Add(this.infoDate);
             this.Controls.Add(this.nouveauClientBouton);
             this.Controls.Add(this.validerBouton);
