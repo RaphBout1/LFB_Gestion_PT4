@@ -74,7 +74,7 @@ namespace LFB_gestion.Interfaces
         /// <param name="utilisateurs"></param>
         private void affichageUtilisateur(List<Entités.Entite_Utilisateur> utilisateurs)
         {
-            clientsPanel.Controls.Clear();
+            //clientsPanel.Controls.Clear();
 
             // Pour tous les utilisateur présents dans la liste, les afficher
             if (utilisateurs != null)
@@ -92,7 +92,7 @@ namespace LFB_gestion.Interfaces
                         utilisateurs[y].Location = new Point(0, y * (utilisateur.Height + 30));
                     }
 
-                    utilisateur.Width = this.clientsPanel.Width;
+                   utilisateur.Width = this.ClientSize.Width ;
                     this.clientsPanel.Controls.Add(utilisateur);
                     clientsPanel.AutoScroll = true;
                     y++;
