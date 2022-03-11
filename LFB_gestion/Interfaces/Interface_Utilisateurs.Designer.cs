@@ -41,9 +41,9 @@
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(63, 93);
+            this.clientsPanel.Location = new System.Drawing.Point(84, 115);
             this.clientsPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.clientsPanel.Size = new System.Drawing.Size(668, 374);
+            this.clientsPanel.Size = new System.Drawing.Size(891, 460);
             // 
             // ajoutBouton
             // 
