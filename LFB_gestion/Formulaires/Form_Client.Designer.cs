@@ -69,7 +69,6 @@
             this.emailTextBox.Size = new System.Drawing.Size(268, 31);
             this.emailTextBox.TabIndex = 2;
             this.emailTextBox.TextChanged += new System.EventHandler(this.emailTextBox_TextChanged);
-            this.emailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.emailTextBox_KeyPress);
             // 
             // prenomTextBox
             // 

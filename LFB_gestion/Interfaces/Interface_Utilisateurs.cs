@@ -1,19 +1,14 @@
-﻿using System;
+﻿using LFB_gestion.Entités;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LFB_gestion.Interfaces
 {
     public partial class Interface_Utilisateurs : Interface_Abstraite
     {
-
         private SqlConnection connexion = Outils.Connexion();
         public Interface_Utilisateurs()
         {
@@ -22,16 +17,7 @@ namespace LFB_gestion.Interfaces
             InitializeComponent();
         }
 
-        
-
-        /// <summary>
-        /// Appelle la fonction qui affichera tous les utilisateurs
-        /// </summary>
-        private void afficherUsers()
-        {
-            reader(null);
-        }
-        
+        #region Événements
         /// <summary>
         /// Méthode permettant de construire une liste d'utilisateurs présents dans la base en fonction d'une chaine de caractères. Elle appelle ensuite le méthode d'affichage en passant cette liste en paramètres
         /// </summary>
@@ -45,13 +31,35 @@ namespace LFB_gestion.Interfaces
         }
 
         /// <summary>
+        /// Ouvre un formulaire pour créer un nouvel utilisateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ajoutBouton_Click_1(object sender, EventArgs e)
+        {
+            Form formUtilisateur = new Formulaires.Form_Employe();
+
+            formUtilisateur.ShowDialog();
+        }
+        #endregion
+
+        #region fonctions
+        /// <summary>
+        /// Appelle la fonction qui affichera tous les utilisateurs
+        /// </summary>
+        private void afficherUsers()
+        {
+            reader(null);
+        }
+
+        /// <summary>
         /// Permet de créer une liste d'Entités_Utilisateur selon un identifiant recherché et appelle la fonction qui les affiche
         /// </summary>
         /// <param name="idQuery"></param>
         private void reader(string recherche)
         {
-            List<Entités.Entite_Utilisateur> listeUtilisateur = new List<Entités.Entite_Utilisateur>();
-            foreach (Classes.Utilisateur user in Interface_Accueil.users)
+            List<Entite_Utilisateur> listeUtilisateur = new List<Entite_Utilisateur>();
+            foreach (Entite_Utilisateur user in Interface_Accueil.users)
             {
                 if (user.login == recherche || recherche == null || recherche == "")
                 {
@@ -60,8 +68,9 @@ namespace LFB_gestion.Interfaces
                     string login = user.login;
                     string mdp = user.mdp;
                     string mail = user.mail;
+                    int admin = user.admin;
                     string tel = user.tel;
-                    Entités.Entite_Utilisateur utilisateur = new Entités.Entite_Utilisateur(login, mdp, mail, nom, prenom, tel);
+                    Entite_Utilisateur utilisateur = new Entite_Utilisateur(login, mdp, mail, admin, nom, prenom, tel);
                     listeUtilisateur.Add(utilisateur);
                 }
             }
@@ -92,7 +101,7 @@ namespace LFB_gestion.Interfaces
                         utilisateurs[y].Location = new Point(0, y * (utilisateur.Height + 30));
                     }
 
-                   utilisateur.Width = this.ClientSize.Width ;
+                    utilisateur.Width = this.ClientSize.Width;
                     this.clientsPanel.Controls.Add(utilisateur);
                     clientsPanel.AutoScroll = true;
                     y++;
@@ -104,14 +113,6 @@ namespace LFB_gestion.Interfaces
             }
             connexion.Close();
         }
-
-        private void ajoutBouton_Click_1(object sender, EventArgs e)
-        {
-            Form formUtilisateur = new Formulaires.Form_Employe();
-
-            formUtilisateur.ShowDialog();
-        }
-
-
+        #endregion
     }
 }

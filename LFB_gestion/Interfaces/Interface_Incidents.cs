@@ -1,12 +1,6 @@
-﻿using LFB_gestion.Classes;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LFB_gestion.Interfaces
@@ -20,6 +14,23 @@ namespace LFB_gestion.Interfaces
             InitializeComponent();
         }
 
+        #region Événements
+        /// <summary>
+        /// Ouvre un formulaire pour créer un nouveau incident
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ajoutBouton_Click(object sender, EventArgs e)
+        {
+            Form formIncident = new Formulaires.Form_Incident();
+            formIncident.ShowDialog();
+        }
+        #endregion
+
+        #region Fonctions
+        /// <summary>
+        /// Affiche tous les incidents et les clients
+        /// </summary>
         private void InitialisationIncidents()
         {
             // Génération de 30 modèles de clients pour tester (à supprimer)
@@ -47,12 +58,10 @@ namespace LFB_gestion.Interfaces
                 y++;
             }
         }
+        #endregion
 
-        private void ajoutBouton_Click(object sender, EventArgs e)
-        {
-            Form formIncident = new Formulaires.Form_Incident();
 
-            formIncident.ShowDialog();
-        }
+
+        
     }
 }

@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using LFB_gestion.Entités;
+using System;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LFB_gestion.Formulaires
@@ -25,6 +19,7 @@ namespace LFB_gestion.Formulaires
             remplirClients();
             emplacementsListBox.Items.Add("Sélectionner les dates");
         }
+
         #region Événements
         /// <summary>
         /// Bouton créer un nouveau client
@@ -54,7 +49,7 @@ namespace LFB_gestion.Formulaires
                 {
                     if (datesLogiques())
                     {
-                        ajouterRéservation(calendrier.SelectionRange, (Classes.Client)clientsListBox.SelectedItem, emplacementsListBox.SelectedItems);
+                        ajouterRéservation(calendrier.SelectionRange, (Entite_Client)clientsListBox.SelectedItem, emplacementsListBox.SelectedItems);
                     }
                     else
                     {
@@ -104,6 +99,16 @@ namespace LFB_gestion.Formulaires
             reader.Close();
             connexion.Close();
         }
+
+        /// <summary>
+        /// Aide pour sélectionner une date de réservation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void infoDate_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Pour sélectionner cliquer sur la date de début et faite glisser la souris tout en maintenant le clique sur la date de fin");
+        }
         #endregion
 
         #region Fonctions
@@ -113,7 +118,7 @@ namespace LFB_gestion.Formulaires
         /// <param name="dates">dates auxquelles le client veut réserver un ou des emplacements</param>
         /// <param name="client">le client qui veut réserver</param>
         /// <param name="emplacements">le(s) emplacement(s) que le client veut réserver</param>
-        private void ajouterRéservation(SelectionRange dates, Classes.Client client, ListBox.SelectedObjectCollection emplacements)
+        private void ajouterRéservation(SelectionRange dates, Entite_Client client, ListBox.SelectedObjectCollection emplacements)
         {
             string s = "";   //Créer un string (pour l'afficher dans la confirmation) avec les numéros d'emplacements réservés au cas où il y ait plusieurs emplacements
             connexion.Open();
@@ -159,11 +164,19 @@ namespace LFB_gestion.Formulaires
             return calendrier.SelectionEnd != calendrier.SelectionStart && calendrier.SelectionRange.Start < calendrier.SelectionRange.End;
         }
 
+        /// <summary>
+        /// Vérifie si au moins un emplacement est sélectionné pour la réservation
+        /// </summary>
+        /// <returns>renvoie vrai si au moins un emplacement est sélectionné</returns>
         private bool auMoinsUnEmplacementSelectionne()
         {
             return emplacementsListBox.SelectedItem != null;
         }
 
+        /// <summary>
+        /// Vérifie si au moins un client est sélectionné pour la réservation
+        /// </summary>
+        /// <returns>renvoie vrai si au moins un emplacement est sélectionné</returns>
         private bool auMoinsUnClientSelectionne()
         {
             return clientsListBox.SelectedItem != null;
@@ -183,7 +196,7 @@ namespace LFB_gestion.Formulaires
             {
                 while (reader.Read())
                 {
-                    Classes.Client client = new Classes.Client(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
+                    Entite_Client client = new Entite_Client(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
                     clientsListBox.Items.Add(client);
                 }
                 reader.Close();
@@ -192,9 +205,6 @@ namespace LFB_gestion.Formulaires
         }
         #endregion
 
-        private void infoDate_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Pour sélectionner cliquer sur la date de début et faite glisser la souris tout en maintenant le clique sur la date de fin");
-        }
+        
     }
 }
