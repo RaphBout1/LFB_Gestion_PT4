@@ -156,7 +156,7 @@ namespace LFB_gestion.Interfaces
             string txt = rechercheTextBox.Text;
             string[] tab = txt.Split(' ');
             int id = 0;
-            foreach (Client client in Interface_Accueil.clients)
+            foreach (Entite_Client client in Interface_Accueil.clients)
             {
                 // L'utilisateur doit tapper le prénom + le nom en entier
                 if (tab[0] == client.prenom && tab[1] == client.nom) // client trouvé

@@ -13,16 +13,16 @@ namespace LFB_gestion.Entités
     public partial class Entite_Client : UserControl
     {
         public int id;
-        private string nom;
-        private string prenom;
-        private string email;
+        public string nom;
+        public string prenom;
+        public string mail;
        
         public Entite_Client(int id, string nom, string prenom, string mail)
         {
             this.id = id;
             this.nom = nom;
             this.prenom = prenom;
-            this.email = mail;
+            this.mail = mail;
             InitializeComponent();
             nomLabel.Text = nom;
             prenomLabel.Text = prenom;

@@ -1,4 +1,5 @@
 ﻿using LFB_gestion.Classes;
+using LFB_gestion.Entités;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -92,22 +93,22 @@ namespace LFB_gestion.Interfaces
             connexion.Close();
         }
 
-        /*
-         * Méthode permettant de créer l=une liste de client selon une requète
-         * 
-         * 
-         */
+        /// <summary>
+        /// Méthode permettant de créer l=une liste de client selon une requète
+        /// </summary>
+        /// <param name="idQuery"></param>
         private void reader(SqlCommand idQuery)
         {
             SqlDataReader rd;
             rd = idQuery.ExecuteReader();
-            List<Entités.Entite_Client> listeClients = new List<Entités.Entite_Client>();
+            List<Entite_Client> listeClients = new List<Entite_Client>();
             while (rd.Read())
             {
-                String nom = rd["nom"].ToString();
-                String prenom = rd["prenom"].ToString();
-                String email = rd["mail"].ToString();
-                Entités.Entite_Client client = new Entités.Entite_Client(nom, prenom, email);
+                int id = rd.GetInt32(0);
+                string nom = rd["nom"].ToString();
+                string prenom = rd["prenom"].ToString();
+                string email = rd["mail"].ToString();
+                Entite_Client client = new Entite_Client(id, nom, prenom, email);
                 listeClients.Add(client);
             }
             affichageClients(listeClients);
@@ -116,11 +117,8 @@ namespace LFB_gestion.Interfaces
 
         private void ajoutBouton_Click_1(object sender, EventArgs e)
         {
-
             Form formClient = new Formulaires.Form_Client();
-
             formClient.ShowDialog();
-
         }
     }
 }

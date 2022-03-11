@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LFB_gestion.Entités;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -54,7 +55,7 @@ namespace LFB_gestion.Formulaires
                 {
                     if (datesLogiques())
                     {
-                        ajouterRéservation(calendrier.SelectionRange, (Classes.Client)clientsListBox.SelectedItem, emplacementsListBox.SelectedItems);
+                        ajouterRéservation(calendrier.SelectionRange, (Entite_Client)clientsListBox.SelectedItem, emplacementsListBox.SelectedItems);
                     }
                     else
                     {
@@ -113,7 +114,7 @@ namespace LFB_gestion.Formulaires
         /// <param name="dates">dates auxquelles le client veut réserver un ou des emplacements</param>
         /// <param name="client">le client qui veut réserver</param>
         /// <param name="emplacements">le(s) emplacement(s) que le client veut réserver</param>
-        private void ajouterRéservation(SelectionRange dates, Classes.Client client, ListBox.SelectedObjectCollection emplacements)
+        private void ajouterRéservation(SelectionRange dates, Entite_Client client, ListBox.SelectedObjectCollection emplacements)
         {
             string s = "";   //Créer un string (pour l'afficher dans la confirmation) avec les numéros d'emplacements réservés au cas où il y ait plusieurs emplacements
             connexion.Open();
@@ -183,7 +184,7 @@ namespace LFB_gestion.Formulaires
             {
                 while (reader.Read())
                 {
-                    Classes.Client client = new Classes.Client(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
+                    Entite_Client client = new Entite_Client(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
                     clientsListBox.Items.Add(client);
                 }
                 reader.Close();

@@ -34,7 +34,7 @@ namespace LFB_gestion.Entités
             this.fin = fin;
             InitializeComponent();
             string nomClient = "Error";
-            foreach (Client client in Interface_Accueil.clients)
+            foreach (Entite_Client client in Interface_Accueil.clients)
             {
                 if (client.id == this.idClient)
                     nomClient = client.prenom + " " + client.nom;

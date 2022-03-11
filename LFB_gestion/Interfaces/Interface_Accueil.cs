@@ -1,4 +1,5 @@
 ﻿using LFB_gestion.Classes;
+using LFB_gestion.Entités;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace LFB_gestion.Interfaces
     {
         private SqlConnection connexion = Outils.Connexion();
 
-        public static List<Client> clients = new List<Client>();
+        public static List<Entite_Client> clients = new List<Entite_Client>();
 
         public static List<Utilisateur> users = new List<Utilisateur>();
 
@@ -37,7 +38,7 @@ namespace LFB_gestion.Interfaces
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                clients.Add(new Client(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3)));
+                clients.Add(new Entite_Client(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3)));
             }
             reader.Close();
             connexion.Close();
@@ -61,7 +62,7 @@ namespace LFB_gestion.Interfaces
                 string prenom = reader.GetString(4);
                 string tel = reader.GetString(6);
 
-                users.Add(new Classes.Utilisateur(login, mdp, mail, admin, nom, prenom, tel));
+                users.Add(new Utilisateur(login, mdp, mail, admin, nom, prenom, tel));
             }
             reader.Close();
             connexion.Close();

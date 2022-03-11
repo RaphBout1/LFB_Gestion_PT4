@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Utilisateur.cs" />
-    <Compile Include="Classes\Client.cs" />
     <Compile Include="Entités\Entite_Utilisateur.cs">
       <SubType>UserControl</SubType>
     </Compile>
