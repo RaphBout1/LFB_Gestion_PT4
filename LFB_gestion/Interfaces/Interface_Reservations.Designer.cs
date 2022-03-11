@@ -29,48 +29,36 @@ namespace LFB_gestion.Interfaces
         /// </summary>
         private void InitializeComponent()
         {
-            this.ajouter_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // nomModuleLabel
-            // 
-            this.nomModuleLabel.Location = new System.Drawing.Point(219, 20);
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(39, 55);
-            this.clientsPanel.Size = new System.Drawing.Size(718, 387);
+            this.clientsPanel.Location = new System.Drawing.Point(113, 140);
+            this.clientsPanel.Size = new System.Drawing.Size(1186, 561);
             // 
-            // ajouter_button
+            // ajoutBouton
             // 
-            this.ajouter_button.Location = new System.Drawing.Point(671, 24);
-            this.ajouter_button.Name = "ajouter_button";
-            this.ajouter_button.Size = new System.Drawing.Size(75, 23);
-            this.ajouter_button.TabIndex = 8;
-            this.ajouter_button.Text = "+";
-            this.ajouter_button.UseVisualStyleBackColor = true;
-            this.ajouter_button.Click += new System.EventHandler(this.ajouter_button_Click);
+            this.ajoutBouton.FlatAppearance.BorderSize = 0;
+            this.ajoutBouton.Click += new System.EventHandler(this.ajoutBouton_Click);
+            // 
+            // rechercheBouton
+            // 
+            this.rechercheBouton.FlatAppearance.BorderSize = 0;
             // 
             // Interface_Reservations
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 553);
-            this.Controls.Add(this.ajouter_button);
+            this.ClientSize = new System.Drawing.Size(1413, 825);
             this.Location = new System.Drawing.Point(0, 0);
-            this.MinimumSize = new System.Drawing.Size(614, 488);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MinimumSize = new System.Drawing.Size(813, 590);
             this.Name = "Interface_Reservations";
             this.Text = "Interface_Reservations";
-            this.Controls.SetChildIndex(this.clientsPanel, 0);
-            this.Controls.SetChildIndex(this.nomModuleLabel, 0);
-            this.Controls.SetChildIndex(this.ajouter_button, 0);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button ajouter_button;
     }
 }

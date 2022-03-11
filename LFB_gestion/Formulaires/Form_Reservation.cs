@@ -23,7 +23,7 @@ namespace LFB_gestion.Formulaires
         {
             InitializeComponent();
             remplirClients();
-            emplacementsListBox.Items.Add("Sélectionnez les dates");
+            emplacementsListBox.Items.Add("Sélectionner les dates");
         }
         #region Événements
         /// <summary>
@@ -192,5 +192,9 @@ namespace LFB_gestion.Formulaires
         }
         #endregion
 
+        private void infoDate_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Pour sélectionner cliquer sur la date de début et faite glisser la souris tout en maintenant le clique sur la date de fin");
+        }
     }
 }

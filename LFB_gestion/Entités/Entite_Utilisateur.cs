@@ -44,5 +44,10 @@ namespace LFB_gestion.Entités
         {
 
         }
+
+        private void supprimerBouton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(this.prenom, this.nom);
+        }
     }
 }

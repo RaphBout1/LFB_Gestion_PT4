@@ -33,19 +33,28 @@ namespace LFB_gestion.Interfaces
             // 
             // nomModuleLabel
             // 
-            this.nomModuleLabel.Location = new System.Drawing.Point(175, 26);
+            this.nomModuleLabel.Location = new System.Drawing.Point(3, 3);
             this.nomModuleLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-
             // 
-            // rechercheBouton
+            // rechercheTextBox
             // 
-            this.rechercheBouton.Click += new System.EventHandler(this.rechercheBouton_Click);
+            this.rechercheTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(40, 54);
+            this.clientsPanel.Location = new System.Drawing.Point(63, 93);
             this.clientsPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.clientsPanel.Size = new System.Drawing.Size(716, 381);
+            this.clientsPanel.Size = new System.Drawing.Size(668, 370);
+            // 
+            // ajoutBouton
+            // 
+            this.ajoutBouton.FlatAppearance.BorderSize = 0;
+            this.ajoutBouton.Click += new System.EventHandler(this.ajoutBouton_Click_1);
+            // 
+            // rechercheBouton
+            // 
+            this.rechercheBouton.FlatAppearance.BorderSize = 0;
+            this.rechercheBouton.Click += new System.EventHandler(this.rechercheBouton_Click);
             // 
             // Interface_Clients
             // 
@@ -54,10 +63,9 @@ namespace LFB_gestion.Interfaces
             this.ClientSize = new System.Drawing.Size(1061, 671);
             this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(614, 487);
+            this.MinimumSize = new System.Drawing.Size(614, 486);
             this.Name = "Interface_Clients";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

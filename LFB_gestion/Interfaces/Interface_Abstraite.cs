@@ -17,7 +17,7 @@ namespace LFB_gestion.Interfaces
         public Interface_Abstraite()
         {
 
-          
+
             InitializeComponent();
             Admin();
             DeftSize();
@@ -26,15 +26,18 @@ namespace LFB_gestion.Interfaces
         }
         private void Admin()
 
-        {   
-            if(Utilisateur.getUtilisateurCourant() != null) { 
-            //si l'utilisateur courant est un admin alors rendre visible les fonctions admin
-                if (Utilisateur.getUtilisateurCourant().admin == 1){
+        {
+            if (Utilisateur.getUtilisateurCourant() != null)
+            {
+                //si l'utilisateur courant est un admin alors rendre visible les fonctions admin
+                if (Utilisateur.getUtilisateurCourant().admin == 1)
+                {
                     utilisateursToolStripMenuItem.Visible = true;
                     statistiquesToolStripMenuItem.Visible = true;
                 }
-            //Au contraire les caché
-                else{
+                //Au contraire les caché
+                else
+                {
                     utilisateursToolStripMenuItem.Visible = false;
                     statistiquesToolStripMenuItem.Visible = false;
                 }
@@ -44,14 +47,28 @@ namespace LFB_gestion.Interfaces
         //Fonction qui définie l'emplacement des élément en fonction de la taille de l'interface
         private void DeftSize()
         {
-            
-            this.clientsPanel.Width = this.ClientSize.Width * 90 / 100;
-            this.clientsPanel.Height = this.ClientSize.Height * 70 / 100;
-            int xlocationPanel = this.ClientSize.Width * 5 / 100;
-            int ylocationPanel = this.ClientSize.Height * 10 / 100;
+
+            this.clientsPanel.Width = this.ClientSize.Width * 84 / 100;
+            this.clientsPanel.Height = this.ClientSize.Height * 68 / 100;
+            int xlocationPanel = this.ClientSize.Width * 8 / 100;
+            int ylocationPanel = this.ClientSize.Height * 17 / 100;
             this.clientsPanel.Location = new System.Drawing.Point(xlocationPanel, ylocationPanel);
-            this.nomModuleLabel.Location = new System.Drawing.Point(xlocationPanel+ 180, ylocationPanel -35);
-            this.panelRecherche.Location = new System.Drawing.Point(ClientSize.Width - 380, ylocationPanel - 35);
+            this.panelNomModule.Location = new System.Drawing.Point(xlocationPanel, ylocationPanel - 44);
+            this.panelRecherche.Location = new System.Drawing.Point(this.ClientSize.Width - 500, ylocationPanel - 44);
+            if (this.ClientSize.Height < 550)
+            {
+                this.pictureBox1.Location = new System.Drawing.Point(ClientSize.Width / 2 - 136, 0);
+                if (this.ClientSize.Width < 900)
+                {
+                    this.pictureBox1.Visible = false;
+                }
+
+            }
+            else
+            {
+                this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+                this.pictureBox1.Visible = true;
+            }
 
             this.Update();
 
@@ -124,6 +141,11 @@ namespace LFB_gestion.Interfaces
 
             formUtilisateur.ShowDialog();
             this.Close();
+        }
+
+        private void Interface_Abstraite_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

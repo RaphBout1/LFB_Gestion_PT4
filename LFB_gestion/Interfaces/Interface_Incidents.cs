@@ -47,5 +47,12 @@ namespace LFB_gestion.Interfaces
                 y++;
             }
         }
+
+        private void ajoutBouton_Click(object sender, EventArgs e)
+        {
+            Form formIncident = new Formulaires.Form_Incident();
+
+            formIncident.ShowDialog();
+        }
     }
 }
