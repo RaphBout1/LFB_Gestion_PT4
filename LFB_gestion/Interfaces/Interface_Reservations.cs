@@ -1,7 +1,10 @@
-﻿using LFB_gestion.Formulaires;
+﻿using LFB_gestion.Entités;
+using LFB_gestion.Formulaires;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace LFB_gestion.Interfaces
 {
@@ -9,8 +12,6 @@ namespace LFB_gestion.Interfaces
     {
 
         private SqlConnection connexion = Outils.Connexion();
-
-        List<Entités.Entite_Reservation> reservations = new List<Entités.Entite_Reservation>();
 
         public Interface_Reservations()
         {
@@ -21,29 +22,57 @@ namespace LFB_gestion.Interfaces
 
         private void AllReservations()
         {
-            connexion.Open();
-            SqlCommand cmd = new SqlCommand("select * from reservation");
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                reservations.Add();
-            }
+            SqlCommand cmd = new SqlCommand("select * from reservation", connexion);
+            reader(cmd);
         }
+
         private void reader(SqlCommand cmd)
         {
+            connexion.Open();
             SqlDataReader reader;
             reader = cmd.ExecuteReader();
-            List<Entités.Entite_Reservation> reservations = new List<Entités.Entite_Reservation>();
+            List<Entite_Reservation> réservations = new List<Entite_Reservation>();
             while (reader.Read())
             {
-                String nom = reader["nom"].ToString();
-                String prenom = reader["prenom"].ToString();
-                String email = reader["mail"].ToString();
-                Entités.Entite_Reservation reservations= new Entités.Entite_Reservation(nom, prenom, email);
-                reservations.Add(client);
+                int id = reader.GetInt32(0);
+                int idEmplacement = reader.GetInt32(1);
+                int idClient = reader.GetInt32(2);
+                DateTime début = reader.GetDateTime(3);
+                DateTime fin = reader.GetDateTime(4);
+                Entite_Reservation réservation= new Entite_Reservation(id, idEmplacement, idClient, début, fin);
+                réservations.Add(réservation);
             }
-            affichageReservations(listeClients);
+            affichageReservations(réservations);
+        }
 
+        private void affichageReservations(List<Entite_Reservation> réservations)
+        {
+            clientsPanel.Controls.Clear();
+
+            // Pour tous les clients présents dans la liste, les afficher
+            if (réservations != null)
+            {
+                int y = 0;
+                foreach (Entite_Reservation réservation in réservations)
+                {
+                    if (réservation == réservations[0])
+                    {
+                        réservation.Location = new System.Drawing.Point(0, 0);
+                    }
+                    else
+                    {
+                        réservations[y].Location = new Point(0, y * (réservation.Height + 30));
+                    }
+                    this.clientsPanel.Controls.Add(réservation);
+                    clientsPanel.AutoScroll = true;
+                    y++;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Pas de réservations dans la base");
+            }
+            connexion.Close();
         }
 
         /// <summary>

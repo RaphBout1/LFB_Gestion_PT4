@@ -52,7 +52,7 @@ namespace LFB_gestion.Entités
             this.prenom = prenom;
         }
 
-        public void setEmail(String nom)
+        public void setEmail(String email)
         {
             this.email = email;
         }

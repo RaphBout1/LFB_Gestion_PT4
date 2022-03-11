@@ -14,7 +14,7 @@ namespace LFB_gestion.Classes
 
         public string prenom;
 
-        string mail;
+        public string mail;
 
         public Client(int id, string nom, string prenom, string mail)
         {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +14,59 @@ namespace LFB_gestion.Entités
 {
     public partial class Entite_Reservation : UserControl
     {
+        private int id;
 
-        private string nomClient;
+        private int idClient;
 
-        private int empalcement;
+        private int emplacement;
 
-        DateTime début;
+        private DateTime début;
 
-        DateTime fin;
+        private DateTime fin;
 
 
-        public Entite_Reservation()
+        public Entite_Reservation(int id, int idClient, int emplacement, DateTime début, DateTime fin)
         {
+            this.id = id;
+            this.idClient = idClient;
+            this.emplacement = emplacement;
+            this.début = début;
+            this.fin = fin;
             InitializeComponent();
+            string nomClient = "Error";
+            foreach (Client client in Interface_Accueil.clients)
+            {
+                if (client.id == this.idClient)
+                    nomClient = client.prenom + " " + client.nom;
+            }
+            nomClientLabel.Text = nomClient;
+            emplacementLabel.Text = this.emplacement.ToString();
+            debutLabel.Text = this.début.ToString("dd/MM/yyyy");
+            finLabel.Text = this.fin.ToString("dd/MM/yyyy");
+        }
+
+        public int getid()
+        {
+            return id;
+        }
+        public int getIdEmplacement()
+        {
+            return emplacement;
+        }
+
+        public int getIdClient()
+        {
+            return idClient;
+        }
+
+        public DateTime getDébut()
+        {
+            return début;
+        }
+
+        public  DateTime getfin()
+        {
+            return fin;
         }
     }
 }
