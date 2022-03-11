@@ -304,5 +304,14 @@
   <ItemGroup>
     <None Include="Resources\iconneSupp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconePoubelleStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconeModiStock.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

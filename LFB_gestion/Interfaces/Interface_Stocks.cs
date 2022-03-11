@@ -54,6 +54,7 @@ namespace LFB_gestion.Interfaces
                     stocks[y].Location = new Point(0, y * (stock.Height + 10));
                 }
                 this.clientsPanel.Controls.Add(stock);
+                
                 clientsPanel.AutoScroll = true;
                 y++;
             }
