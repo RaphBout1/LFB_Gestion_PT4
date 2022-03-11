@@ -1,28 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using LFB_gestion.Entités;
+using System;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LFB_gestion
 {
     public partial class Connexion : Form
     {
-
         SqlConnection connexion;
-        Boolean motDePassVisible = false;
+        bool motDePassVisible = false;
 
         public Connexion()
         {
             InitializeComponent();
         }
 
+        #region Événements
         /// <summary>
         /// Bouton se connecter
         /// </summary>
@@ -64,8 +58,8 @@ namespace LFB_gestion
                                     {
 
 
-                                        Classes.Utilisateur u = Classes.Utilisateur.CreationUtilisateur(login);
-                                        Classes.Utilisateur.courant = u;
+                                        Entite_Utilisateur user = Entite_Utilisateur.setUtilisateurCourant(login);
+                                        Entite_Utilisateur.courant = user;
 
 
                                         this.Hide();
@@ -111,11 +105,11 @@ namespace LFB_gestion
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Voir le mot de passe caché
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void visionMDP_Click(object sender, EventArgs e)
         {
             motDePasse_textBox.UseSystemPasswordChar = !motDePasse_textBox.UseSystemPasswordChar;
@@ -130,5 +124,12 @@ namespace LFB_gestion
                 visionMDP.BackgroundImage = Properties.Resources.oeilOuvert;
             }
         }
+        #endregion
+
+        #region Fonctions
+
+        #endregion
+
+
     }
 }

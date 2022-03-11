@@ -1,15 +1,6 @@
-﻿using LFB_gestion.Classes;
-using LFB_gestion.Entités;
-using System;
+﻿using LFB_gestion.Entités;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace LFB_gestion.Interfaces
 {
@@ -19,7 +10,7 @@ namespace LFB_gestion.Interfaces
 
         public static List<Entite_Client> clients = new List<Entite_Client>();
 
-        public static List<Utilisateur> users = new List<Utilisateur>();
+        public static List<Entite_Utilisateur> users = new List<Entite_Utilisateur>();
 
         public Interface_Accueil()
         {
@@ -28,6 +19,13 @@ namespace LFB_gestion.Interfaces
             InitializeComponent();
         }
 
+        #region Événements
+
+
+
+        #endregion
+
+        #region Fonctions
         /// <summary>
         /// charge tous les clients depuis la base de données
         /// </summary>
@@ -62,10 +60,14 @@ namespace LFB_gestion.Interfaces
                 string prenom = reader.GetString(4);
                 string tel = reader.GetString(6);
 
-                users.Add(new Utilisateur(login, mdp, mail, admin, nom, prenom, tel));
+                users.Add(new Entite_Utilisateur(login, mdp, mail, admin, nom, prenom, tel));
             }
             reader.Close();
             connexion.Close();
         }
+        #endregion
+
+
+
     }
 }

@@ -1,14 +1,7 @@
 ﻿using LFB_gestion.Entités;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LFB_gestion.Formulaires
@@ -26,6 +19,7 @@ namespace LFB_gestion.Formulaires
             remplirClients();
             emplacementsListBox.Items.Add("Sélectionner les dates");
         }
+
         #region Événements
         /// <summary>
         /// Bouton créer un nouveau client
@@ -105,6 +99,16 @@ namespace LFB_gestion.Formulaires
             reader.Close();
             connexion.Close();
         }
+
+        /// <summary>
+        /// Aide pour sélectionner une date de réservation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void infoDate_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Pour sélectionner cliquer sur la date de début et faite glisser la souris tout en maintenant le clique sur la date de fin");
+        }
         #endregion
 
         #region Fonctions
@@ -160,11 +164,19 @@ namespace LFB_gestion.Formulaires
             return calendrier.SelectionEnd != calendrier.SelectionStart && calendrier.SelectionRange.Start < calendrier.SelectionRange.End;
         }
 
+        /// <summary>
+        /// Vérifie si au moins un emplacement est sélectionné pour la réservation
+        /// </summary>
+        /// <returns>renvoie vrai si au moins un emplacement est sélectionné</returns>
         private bool auMoinsUnEmplacementSelectionne()
         {
             return emplacementsListBox.SelectedItem != null;
         }
 
+        /// <summary>
+        /// Vérifie si au moins un client est sélectionné pour la réservation
+        /// </summary>
+        /// <returns>renvoie vrai si au moins un emplacement est sélectionné</returns>
         private bool auMoinsUnClientSelectionne()
         {
             return clientsListBox.SelectedItem != null;
@@ -193,9 +205,6 @@ namespace LFB_gestion.Formulaires
         }
         #endregion
 
-        private void infoDate_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Pour sélectionner cliquer sur la date de début et faite glisser la souris tout en maintenant le clique sur la date de fin");
-        }
+        
     }
 }

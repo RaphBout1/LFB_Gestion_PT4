@@ -1,14 +1,8 @@
-﻿using LFB_gestion.Classes;
-using LFB_gestion.Entités;
+﻿using LFB_gestion.Entités;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LFB_gestion.Interfaces
@@ -27,9 +21,43 @@ namespace LFB_gestion.Interfaces
             InitializeComponent();
         }
 
-        /*
-         * Méthode affichant la liste de clients qu'elle reçoit en paramètres.
-         */
+
+        #region Événements
+        /// <summary>
+        /// Méthode permettant de construire une liste de clients présents dans la base en fonction d'une chaine de caractères.
+        /// Elle appelle ensuite le méthode d'affichage en passant cette liste en paramètres
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rechercheBouton_Click(object sender, EventArgs e)
+        {
+
+            connexion.Open();
+            // On récupère le texte dans le label rechercheLabel
+            String txt = rechercheTextBox.Text;
+            // Connexion bdd
+            SqlCommand idQuery = new SqlCommand("SELECT * from client where nom like '" + txt + "%" + "'", connexion);
+            reader(idQuery);
+            connexion.Close();
+        }
+
+        /// <summary>
+        /// Lance le formulaire pour créer un nouveau client
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ajoutBouton_Click_1(object sender, EventArgs e)
+        {
+            Form formClient = new Formulaires.Form_Client();
+            formClient.ShowDialog();
+        }
+        #endregion
+
+        #region Fonctions
+        /// <summary>
+        /// Méthode affichant la liste de clients qu'elle reçoit en paramètres.
+        /// </summary>
+        /// <param name="clients"></param>
         private void affichageClients(List<Entités.Entite_Client> clients)
         {
             clientsPanel.Controls.Clear();
@@ -60,10 +88,10 @@ namespace LFB_gestion.Interfaces
             connexion.Close();
         }
 
-        /*
-         * Méthode permettant de créer une liste de tout les clients présents dans la base
-         * Elle appelle ensuite le méthode d'affichage en passant cette liste en paramètres
-         */
+        /// <summary>
+        /// Méthode permettant de créer une liste de tous les clients présents dans la base
+        /// Elle appelle ensuite le méthode d'affichage en passant cette liste en paramètres
+        /// </summary>
         private void defaultClients()
         {
             // Remplir la liste this.clients
@@ -73,28 +101,9 @@ namespace LFB_gestion.Interfaces
             reader(idQuery);
             connexion.Close();
         }
-        
-
-        /*
-         * Méthode permettant de construire une liste de clients présents dans la base en fonction 
-         * d'une chaine de caractères.
-         * 
-         * Elle appelle ensuite le méthode d'affichage en passant cette liste en paramètres
-         */
-        private void rechercheBouton_Click(object sender, EventArgs e)
-        {
-            
-            connexion.Open();
-            // On récupère le texte dans le label rechercheLabel
-            String txt = rechercheTextBox.Text;
-            // Connexion bdd
-            SqlCommand idQuery = new SqlCommand("SELECT * from client where nom like '" + txt + "%" + "'", connexion);
-            reader(idQuery);
-            connexion.Close();
-        }
 
         /// <summary>
-        /// Méthode permettant de créer l=une liste de client selon une requète
+        /// Méthode permettant de créer une liste de client selon une requète
         /// </summary>
         /// <param name="idQuery"></param>
         private void reader(SqlCommand idQuery)
@@ -113,12 +122,17 @@ namespace LFB_gestion.Interfaces
             }
             affichageClients(listeClients);
         }
+        #endregion
 
 
-        private void ajoutBouton_Click_1(object sender, EventArgs e)
-        {
-            Form formClient = new Formulaires.Form_Client();
-            formClient.ShowDialog();
-        }
+
+
+
+
+
+
+
+
+
     }
 }

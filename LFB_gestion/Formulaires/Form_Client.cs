@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LFB_gestion.Formulaires
@@ -28,21 +20,26 @@ namespace LFB_gestion.Formulaires
             InitializeComponent();
         }
 
+        #region Événements
+        /// <summary>
+        /// Autorise à mettre que des caractères dans la textBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void nomTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
+        /// <summary>
+        /// Autorise à mettre que des caractères dans la textBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void prenomTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
-
-        private void emailTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-        }
-
-        
 
         private void creerBouton_Click(object sender, EventArgs e)
         {
@@ -70,6 +67,31 @@ namespace LFB_gestion.Formulaires
             }
         }
 
+        /// <summary>
+        /// Affiche le teste écrit en rouge si le mail n'est pas valide
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void emailTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!Outils.isValidMail(emailTextBox.Text))
+            {
+                emailTextBox.ForeColor = Color.Red;
+            }
+            else
+            {
+                emailTextBox.ForeColor = Color.Black;
+            }
+        }
+        #endregion
+
+        #region Fonctions
+        /// <summary>
+        /// Création d'un nouveau client
+        /// </summary>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        /// <param name="mail"></param>
         private void creationDuClient(string nom, string prenom, string mail)
         {
             connexion.Open();
@@ -93,7 +115,8 @@ namespace LFB_gestion.Formulaires
                 command.Parameters.AddWithValue("@mail", mail);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Client bien ajouté");
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -128,61 +151,6 @@ namespace LFB_gestion.Formulaires
             connexion.Close();
             return present;
         }
-
-        /* MANIPULATION DE LA BASE */
-
-        /*
-         * Méthode permettant la création du client dans la base
-         * A FAIRE
-         */
-        private void creationDuClient()
-        {
-            try
-            {
-                
-                // Récupération de du dernier id
-                SqlCommand idQuery = new SqlCommand("SELECT id FROM client");
-                SqlDataReader sdr = idQuery.ExecuteReader();
-                /*
-                connexion.Open();
-                string query = "INSERT INTO utilisateur VALUES (@id, @nom, @prenom, @email)";
-                SqlCommand command = new SqlCommand(query, connexion);
-                command.Parameters.AddWithValue("@id", prénom_TextBox.Text.ToLower()[0] + nom_textBox.Text.ToLower());
-                command.Parameters.AddWithValue("@mail", mail_textBox.Text);
-                command.Parameters.AddWithValue("@admin", admin);
-                command.Parameters.AddWithValue("@prenom", prénom_TextBox.Text);
-                command.Parameters.AddWithValue("@nom", nom_textBox.Text);
-                command.Parameters.AddWithValue("@tel", tel_textBox.Text);
-                command.Parameters.AddWithValue("@mdp", crypter(mdp_textBox.Text));
-                command.ExecuteNonQuery();
-                MessageBox.Show("Utilisateur crée avec succés"); */
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        /*
-         * Méthode permettant de vérifier si un client est déjà présent dans la base.
-         * A FAIRE
-         */
-        private bool clientDejaPresent()
-        {
-            return false;
-        }
-
-        private void emailTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (!Outils.isValidMail(emailTextBox.Text))
-            {
-                emailTextBox.ForeColor = Color.Red;
-            }
-            else
-            {
-                emailTextBox.ForeColor = Color.Black;
-            }
-        }
+        #endregion
     }
 }
