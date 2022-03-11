@@ -12,12 +12,14 @@ namespace LFB_gestion.Entités
 {
     public partial class Entite_Client : UserControl
     {
-        private String nom;
-        private String prenom;
-        private String email;
+        public int id;
+        private string nom;
+        private string prenom;
+        private string email;
        
-        public Entite_Client(String nom, String prenom, String mail)
+        public Entite_Client(int id, string nom, string prenom, string mail)
         {
+            this.id = id;
             this.nom = nom;
             this.prenom = prenom;
             this.email = mail;
@@ -27,34 +29,12 @@ namespace LFB_gestion.Entités
             emailLabel.Text = mail;
         }
 
-       public String getNom()
+        /// <summary>
+        /// Affiche le prénom et le nom du client
+        /// </summary>
+        public override string ToString()
         {
-            return this.nom;
-        }
-
-        public String getEmail()
-        {
-            return this.email;
-        }
-
-        public String getPrenom()
-        {
-            return this.prenom;
-        }
-
-        public void setNom(String nom)
-        {
-            this.nom = nom;
-        }
-
-        public void setPrenom(String prenom)
-        {
-            this.prenom = prenom;
-        }
-
-        public void setEmail(String email)
-        {
-            this.email = email;
+            return prenom + " " + nom;
         }
     }
 }

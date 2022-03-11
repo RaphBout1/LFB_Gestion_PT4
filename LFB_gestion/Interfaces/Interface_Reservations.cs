@@ -22,18 +22,28 @@ namespace LFB_gestion.Interfaces
             InitializeComponent();
         }
 
+        /// <summary>
+        /// placeholder prénom nom pour la recherche de réservations
+        /// </summary>
         private void placeHolder()
         {
             rechercheTextBox.ForeColor = Color.Gray;
             rechercheTextBox.Text = "prénom nom";
         }
 
+        /// <summary>
+        /// requête pour toutes les réservations qui appelel une fonction qui permet de les afficher
+        /// </summary>
         private void AllReservations()
         {
             SqlCommand cmd = new SqlCommand("select * from reservation", connexion);
             reader(cmd);
         }
 
+        /// <summary>
+        /// appelle une fonction qui va afficher des réservations selon une requête précisée
+        /// </summary>
+        /// <param name="cmd">la requête pour chercher des réservations</param>
         private void reader(SqlCommand cmd)
         {
             connexion.Open();
@@ -53,6 +63,10 @@ namespace LFB_gestion.Interfaces
             affichageReservations(réservations);
         }
 
+        /// <summary>
+        /// gère l'affichage d'une liste de réservations avec l'entité réservation
+        /// </summary>
+        /// <param name="réservations">une liste de réservations</param>
         private void affichageReservations(List<Entite_Reservation> réservations)
         {
             clientsPanel.Controls.Clear();
@@ -88,12 +102,6 @@ namespace LFB_gestion.Interfaces
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ajouter_button_Click(object sender, EventArgs e)
-        {
-            Form_Reservation reservation = new Form_Reservation();
-            reservation.Show();
-        }
-
         private void ajoutBouton_Click(object sender, EventArgs e)
         {
             Form formResa = new Formulaires.Form_Reservation();
@@ -101,6 +109,11 @@ namespace LFB_gestion.Interfaces
             formResa.ShowDialog();
         }
 
+        /// <summary>
+        /// Permet de ne pas avoir le focus sur la textbox de recherche dès l'ouverture de l'onglet réservation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Interface_Reservations_Load(object sender, EventArgs e)
         {
             nomModuleLabel.Select();
@@ -108,41 +121,57 @@ namespace LFB_gestion.Interfaces
             rechercheTextBox.GotFocus += rechercheTextBox_GotFocus;
         }
 
+        /// <summary>
+        /// Passer en mode écriture dans la textBox et non placeholder
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rechercheTextBox_GotFocus(object sender, EventArgs e)
         {
             rechercheTextBox.ForeColor = Color.Black;
             rechercheTextBox.Text = "";
         }
 
+        /// <summary>
+        /// revenir en mode placeholder si la textbox est vide
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rechercheTextBox_LostFocus(object sender, EventArgs e)
         {
-            rechercheTextBox.ForeColor = Color.Gray;
-            rechercheTextBox.Text = "prénom nom";
-        }
-
-        private void rechercheBouton_Click(object sender, EventArgs e)
-        {
-            if (rechercheTextBox.Text == null)
+            if (rechercheTextBox.Text == "")
             {
                 placeHolder();
             }
-            else
-            {
-                string txt = rechercheTextBox.Text;
-                string[] tab = txt.Split(' ');
-                int id = 0;
-                foreach (Client client in Interface_Accueil.clients)
-                {
-                    // L'utilisateur doit tapper le prénom + le nom en entier
-                    if (tab[0] == client.prenom && tab[1] == client.nom) // client trouvé
-                        id = client.id;
-                }
-                SqlCommand cmd = new SqlCommand("SELECT * from reservation where id_client = @id", connexion);
-                cmd.Parameters.AddWithValue("id", id);
-                reader(cmd);
-            }
         }
 
+        /// <summary>
+        /// rechercher dans la base de données les réservations avec le prénom et nom tapés dans la textBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rechercheBouton_Click(object sender, EventArgs e)
+        {
+            clientsPanel.Controls.Clear();
+            string txt = rechercheTextBox.Text;
+            string[] tab = txt.Split(' ');
+            int id = 0;
+            foreach (Client client in Interface_Accueil.clients)
+            {
+                // L'utilisateur doit tapper le prénom + le nom en entier
+                if (tab[0] == client.prenom && tab[1] == client.nom) // client trouvé
+                    id = client.id;
+            }
+            SqlCommand cmd = new SqlCommand("SELECT * from reservation where id_client = @id", connexion);
+            cmd.Parameters.AddWithValue("id", id);
+            reader(cmd);
+        }
+
+        /// <summary>
+        /// Permet de valider la recherche en appuyant sur "entrer" au lieu de cliquer sur le bouton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rechercheTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
