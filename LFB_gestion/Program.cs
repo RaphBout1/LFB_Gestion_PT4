@@ -16,7 +16,7 @@ namespace LFB_gestion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Formulaires.Form_Client());
+            Application.Run(new Interfaces.Interface_Utilisateurs());
         }
     }
 }

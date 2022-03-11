@@ -12,6 +12,8 @@ namespace LFB_gestion.Formulaires
 {
     public partial class Form_Stock : Form
     {
+
+
         public Form_Stock()
         {
             InitializeComponent();
@@ -30,7 +32,8 @@ namespace LFB_gestion.Formulaires
 
         private void nouveauProduitBouton_Click(object sender, EventArgs e)
         {
-            panelNewProduit.Visible = true;
+            panelNewProduit.Visible = !panelNewProduit.Visible;
+            validerBouton.Visible = !validerBouton.Visible; 
         }
 
         private bool auMoinsUnProduitSelectionne()
