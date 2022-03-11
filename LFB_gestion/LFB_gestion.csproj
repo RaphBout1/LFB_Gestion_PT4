@@ -108,6 +108,12 @@
     <Compile Include="Entités\Entite_Client.Designer.cs">
       <DependentUpon>Entite_Client.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entités\Entite_Produit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entités\Entite_Produit.Designer.cs">
+      <DependentUpon>Entite_Produit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entités\Entite_Stock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Entités\Entite_Produit.resx">
+      <DependentUpon>Entite_Produit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Entités\Entite_Reservation.resx">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Interface_Clients.resx">
       <DependentUpon>Interface_Clients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Interface_Statistiques.resx">
+      <DependentUpon>Interface_Statistiques.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

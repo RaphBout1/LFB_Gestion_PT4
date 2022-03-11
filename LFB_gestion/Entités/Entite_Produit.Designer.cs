@@ -31,11 +31,14 @@ namespace LFB_gestion.Entités
         {
             this.produitPictureBox = new System.Windows.Forms.PictureBox();
             this.nomProduitLabel = new System.Windows.Forms.Label();
+            this.venteLabel = new System.Windows.Forms.Label();
+            this.nbVenteLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.produitPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // produitPictureBox
             // 
+            this.produitPictureBox.BackColor = System.Drawing.Color.Silver;
             this.produitPictureBox.Location = new System.Drawing.Point(25, 14);
             this.produitPictureBox.Name = "produitPictureBox";
             this.produitPictureBox.Size = new System.Drawing.Size(100, 88);
@@ -51,13 +54,35 @@ namespace LFB_gestion.Entités
             this.nomProduitLabel.TabIndex = 1;
             this.nomProduitLabel.Text = "label1";
             // 
+            // venteLabel
+            // 
+            this.venteLabel.AutoSize = true;
+            this.venteLabel.Location = new System.Drawing.Point(54, 161);
+            this.venteLabel.Name = "venteLabel";
+            this.venteLabel.Size = new System.Drawing.Size(19, 13);
+            this.venteLabel.TabIndex = 2;
+            this.venteLabel.Text = "12";
+            // 
+            // nbVenteLabel
+            // 
+            this.nbVenteLabel.AutoSize = true;
+            this.nbVenteLabel.Location = new System.Drawing.Point(22, 139);
+            this.nbVenteLabel.Name = "nbVenteLabel";
+            this.nbVenteLabel.Size = new System.Drawing.Size(93, 13);
+            this.nbVenteLabel.TabIndex = 3;
+            this.nbVenteLabel.Text = "nombre de vente :";
+            // 
             // Entite_Produit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
+            this.Controls.Add(this.nbVenteLabel);
+            this.Controls.Add(this.venteLabel);
             this.Controls.Add(this.nomProduitLabel);
             this.Controls.Add(this.produitPictureBox);
             this.Name = "Entite_Produit";
+            this.Size = new System.Drawing.Size(150, 211);
             ((System.ComponentModel.ISupportInitialize)(this.produitPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -68,5 +93,7 @@ namespace LFB_gestion.Entités
 
         public System.Windows.Forms.PictureBox produitPictureBox;
         public System.Windows.Forms.Label nomProduitLabel;
+        private System.Windows.Forms.Label venteLabel;
+        private System.Windows.Forms.Label nbVenteLabel;
     }
 }
