@@ -1,4 +1,5 @@
-﻿using LFB_gestion.Entités;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Entités;
 using LFB_gestion.Formulaires;
 using System;
 using System.Collections.Generic;
@@ -16,8 +17,15 @@ namespace LFB_gestion.Interfaces
         public Interface_Reservations()
         {
             nomModuleLabel.Text = "Module Réservations";
+            placeHolder();
             AllReservations();
             InitializeComponent();
+        }
+
+        private void placeHolder()
+        {
+            rechercheTextBox.ForeColor = Color.Gray;
+            rechercheTextBox.Text = "prénom nom";
         }
 
         private void AllReservations()
@@ -91,6 +99,54 @@ namespace LFB_gestion.Interfaces
             Form formResa = new Formulaires.Form_Reservation();
 
             formResa.ShowDialog();
+        }
+
+        private void Interface_Reservations_Load(object sender, EventArgs e)
+        {
+            nomModuleLabel.Select();
+            rechercheTextBox.LostFocus += rechercheTextBox_LostFocus;
+            rechercheTextBox.GotFocus += rechercheTextBox_GotFocus;
+        }
+
+        private void rechercheTextBox_GotFocus(object sender, EventArgs e)
+        {
+            rechercheTextBox.ForeColor = Color.Black;
+            rechercheTextBox.Text = "";
+        }
+
+        private void rechercheTextBox_LostFocus(object sender, EventArgs e)
+        {
+            rechercheTextBox.ForeColor = Color.Gray;
+            rechercheTextBox.Text = "prénom nom";
+        }
+
+        private void rechercheBouton_Click(object sender, EventArgs e)
+        {
+            if (rechercheTextBox.Text == null)
+            {
+                placeHolder();
+            }
+            else
+            {
+                string txt = rechercheTextBox.Text;
+                string[] tab = txt.Split(' ');
+                int id = 0;
+                foreach (Client client in Interface_Accueil.clients)
+                {
+                    // L'utilisateur doit tapper le prénom + le nom en entier
+                    if (tab[0] == client.prenom && tab[1] == client.nom) // client trouvé
+                        id = client.id;
+                }
+                SqlCommand cmd = new SqlCommand("SELECT * from reservation where id_client = @id", connexion);
+                cmd.Parameters.AddWithValue("id", id);
+                reader(cmd);
+            }
+        }
+
+        private void rechercheTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                rechercheBouton_Click(sender, e);
         }
     }
 }
