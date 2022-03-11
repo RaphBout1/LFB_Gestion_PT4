@@ -53,8 +53,8 @@
             this.modifierBouton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.modifierBouton.BackColor = System.Drawing.Color.WhiteSmoke;
             this.modifierBouton.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.modifierBouton.Location = new System.Drawing.Point(204, 24);
-            this.modifierBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modifierBouton.Location = new System.Drawing.Point(172, 24);
+            this.modifierBouton.Margin = new System.Windows.Forms.Padding(2);
             this.modifierBouton.Name = "modifierBouton";
             this.modifierBouton.Size = new System.Drawing.Size(61, 37);
             this.modifierBouton.TabIndex = 5;
@@ -67,7 +67,7 @@
             this.supprimerBouton.BackColor = System.Drawing.Color.Red;
             this.supprimerBouton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.supprimerBouton.Location = new System.Drawing.Point(269, 24);
-            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(2);
             this.supprimerBouton.Name = "supprimerBouton";
             this.supprimerBouton.Size = new System.Drawing.Size(68, 37);
             this.supprimerBouton.TabIndex = 6;
