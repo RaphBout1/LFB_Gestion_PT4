@@ -193,6 +193,16 @@ namespace LFB_gestion.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconeIncident {
+            get {
+                object obj = ResourceManager.GetObject("iconeIncident", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IconeModiStock {
             get {
                 object obj = ResourceManager.GetObject("IconeModiStock", resourceCulture);

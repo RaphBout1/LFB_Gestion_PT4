@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Connexion));
             this.nomUtilisateur_textBox = new System.Windows.Forms.TextBox();
             this.motDePasse_textBox = new System.Windows.Forms.TextBox();
             this.seConnecter_button = new System.Windows.Forms.Button();
@@ -39,7 +40,7 @@
             this.nomUtilisateur_textBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nomUtilisateur_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nomUtilisateur_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomUtilisateur_textBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.nomUtilisateur_textBox.ForeColor = System.Drawing.SystemColors.InfoText;
             this.nomUtilisateur_textBox.Location = new System.Drawing.Point(392, 300);
             this.nomUtilisateur_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.nomUtilisateur_textBox.Name = "nomUtilisateur_textBox";
@@ -52,7 +53,7 @@
             this.motDePasse_textBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.motDePasse_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.motDePasse_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.motDePasse_textBox.ForeColor = System.Drawing.Color.Black;
+            this.motDePasse_textBox.ForeColor = System.Drawing.SystemColors.InfoText;
             this.motDePasse_textBox.Location = new System.Drawing.Point(392, 372);
             this.motDePasse_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.motDePasse_textBox.Name = "motDePasse_textBox";
@@ -110,6 +111,7 @@
             this.Controls.Add(this.nomUtilisateur_textBox);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Black;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Connexion";
             this.Text = "Connexion";

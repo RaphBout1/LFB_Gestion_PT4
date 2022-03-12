@@ -10,7 +10,7 @@ namespace LFB_gestion.Interfaces
         public Interface_Stocks()
         {
             InitialisationStocks();
-            nomModuleLabel.Text = "Module Stocks";
+            nomModuleLabel.Text = "Stocks";
             InitializeComponent();
         }
 
@@ -43,20 +43,35 @@ namespace LFB_gestion.Interfaces
 
             // Pour tous les clients présents dans la liste, les afficher
             int y = 0;
+            int x = 0;
+
             foreach (Entités.Entite_Stock stock in stocks)
             {
                 if (stock == stocks[0])
                 {
                     stock.Location = new System.Drawing.Point(0, 0);
+                    
+                    
                 }
                 else
                 {
-                    stocks[y].Location = new Point(0, y * (stock.Height + 10));
+                    if ((x*stock.Width+ 170) + stock.Width + 170 < clientsPanel.Width)
+                    {
+                        stock.Location = new Point(x*(stock.Width +170) + stock.Width + 170, y* (stock.Height + 100));
+                        x++;                    }
+                    else
+                    {
+                        y++;
+                        stock.Location = new Point(0, y*(stock.Height + 100));
+
+                        x = 0;
+                    }
+
                 }
                 this.clientsPanel.Controls.Add(stock);
-                
+
                 clientsPanel.AutoScroll = true;
-                y++;
+
             }
         }
         #endregion

@@ -14,6 +14,7 @@ namespace LFB_gestion.Interfaces
 
         public Interface_Reservations()
         {
+            nomModuleLabel.Text = "Réservations";
             nomModuleLabel.Text = "Module Réservations";
             placeHolder();
             AllReservations();
@@ -166,6 +167,7 @@ namespace LFB_gestion.Interfaces
                     {
                         réservations[y].Location = new Point(0, y * (réservation.Height + 30));
                     }
+                    réservation.Width = this.clientsPanel.Width;
                     this.clientsPanel.Controls.Add(réservation);
                     clientsPanel.AutoScroll = true;
                     y++;

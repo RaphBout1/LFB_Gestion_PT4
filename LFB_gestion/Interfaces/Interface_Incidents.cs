@@ -10,7 +10,7 @@ namespace LFB_gestion.Interfaces
         public Interface_Incidents()
         {
             InitialisationIncidents();
-            nomModuleLabel.Text = "Module Incidents";
+            nomModuleLabel.Text = "Incidents";
             InitializeComponent();
         }
 
@@ -53,6 +53,7 @@ namespace LFB_gestion.Interfaces
                 {
                     incidents[y].Location = new Point(0, y * (incident.Height + 10));
                 }
+                incident.Width = this.clientsPanel.Width;
                 this.clientsPanel.Controls.Add(incident);
                 clientsPanel.AutoScroll = true;
                 y++;

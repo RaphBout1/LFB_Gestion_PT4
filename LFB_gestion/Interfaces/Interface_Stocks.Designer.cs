@@ -49,6 +49,7 @@ namespace LFB_gestion.Interfaces
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::LFB_gestion.Properties.Resources.fondEcran;
             this.ClientSize = new System.Drawing.Size(1060, 670);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Interface_Stocks";
