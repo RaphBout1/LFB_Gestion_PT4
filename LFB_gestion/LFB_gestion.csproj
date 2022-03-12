@@ -315,5 +315,8 @@
   <ItemGroup>
     <None Include="Resources\IconeModiStock.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconeIncident.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

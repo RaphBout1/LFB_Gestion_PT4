@@ -99,11 +99,7 @@ namespace LFB_gestion.Interfaces
 
         private void entretienToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form formEntretien = new Interfaces.Interface_Incidents();
-
-            formEntretien.ShowDialog();
-            this.Close();
+          
         }
 
         private void planToolStripMenuItem_Click(object sender, EventArgs e)
@@ -146,6 +142,15 @@ namespace LFB_gestion.Interfaces
         private void Interface_Abstraite_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void incidentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formEntretien = new Interfaces.Interface_Incidents();
+
+            formEntretien.ShowDialog();
+            this.Close();
         }
     }
 }

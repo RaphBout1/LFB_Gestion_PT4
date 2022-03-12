@@ -20,10 +20,20 @@ namespace LFB_gestion.Interfaces
         public Interface_Clients()
         {
             // On redéfini le nom du module
-            nomModuleLabel.Text = "Module Clients";
+            nomModuleLabel.Text = "Clients";
             // On initialise les clients présents dans la base et on les affiche
-            defaultClients();
+            //defaultClients();
             InitializeComponent();
+
+            // Génération de 30 modèles de clients pour tester (à supprimer)
+            List<Entités.Entite_Client> incidents = new List<Entités.Entite_Client>();
+            for (int i = 0; i < 30; i++)
+            {
+                Entités.Entite_Client incident = new Entités.Entite_Client("coucou","coucou","coucoumail");
+                incidents.Add(incident);
+            }
+            affichageClients(incidents);
+
         }
 
         /*
@@ -47,6 +57,7 @@ namespace LFB_gestion.Interfaces
                     {
                         clients[y].Location = new Point(0, y * (client.Height + 30));
                     }
+                    client.Width = this.ClientSize.Width;
                     this.clientsPanel.Controls.Add(client);
                     clientsPanel.AutoScroll = true;
                     y++;
