@@ -15,11 +15,13 @@ namespace LFB_gestion.Interfaces
         public Interface_Clients()
         {
             // On redéfini le nom du module
-            nomModuleLabel.Text = "Module Clients";
+            nomModuleLabel.Text = "Clients";
             // On initialise les clients présents dans la base et on les affiche
             defaultClients();
             InitializeComponent();
         }
+
+
 
 
         #region Événements
@@ -76,6 +78,7 @@ namespace LFB_gestion.Interfaces
                     {
                         clients[y].Location = new Point(0, y * (client.Height + 30));
                     }
+                    client.Width = this.ClientSize.Width;
                     this.clientsPanel.Controls.Add(client);
                     clientsPanel.AutoScroll = true;
                     y++;
@@ -135,4 +138,5 @@ namespace LFB_gestion.Interfaces
 
 
     }
+
 }
