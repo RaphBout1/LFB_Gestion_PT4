@@ -105,7 +105,6 @@
             this.Margin = new System.Windows.Forms.Padding(20, 2, 3, 2);
             this.Name = "Entite_Utilisateur";
             this.Size = new System.Drawing.Size(461, 100);
-            this.Load += new System.EventHandler(this.Entite_Utilisateur_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

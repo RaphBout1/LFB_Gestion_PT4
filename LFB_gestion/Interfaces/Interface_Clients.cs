@@ -21,7 +21,7 @@ namespace LFB_gestion.Interfaces
             InitializeComponent();
         }
 
-        }
+
 
 
         #region Événements
@@ -138,4 +138,5 @@ namespace LFB_gestion.Interfaces
 
 
     }
+
 }

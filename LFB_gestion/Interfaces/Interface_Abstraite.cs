@@ -195,19 +195,11 @@ namespace LFB_gestion.Interfaces
         {
             this.Hide();
             Form formEntretien = new Interfaces.Interface_Incidents();
+            formEntretien.ShowDialog();
+            this.Close();
 
         }
 
-        private void incidentsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formEntretien = new Interfaces.Interface_Incidents();
-
-            formEntretien.ShowDialog();
-            this.Close();
-            formEntretien.ShowDialog();
-            this.Close();
-        }
         #endregion
     }
 }
