@@ -1,5 +1,12 @@
 ﻿using LFB_gestion.Entités;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LFB_gestion.Interfaces
@@ -189,6 +196,15 @@ namespace LFB_gestion.Interfaces
             this.Hide();
             Form formEntretien = new Interfaces.Interface_Incidents();
 
+        }
+
+        private void incidentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formEntretien = new Interfaces.Interface_Incidents();
+
+            formEntretien.ShowDialog();
+            this.Close();
             formEntretien.ShowDialog();
             this.Close();
         }
