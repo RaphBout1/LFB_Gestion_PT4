@@ -12,7 +12,7 @@ namespace LFB_gestion.Interfaces
         private SqlConnection connexion = Outils.Connexion();
         public Interface_Utilisateurs()
         {
-            nomModuleLabel.Text = "Module Utilisateurs";
+            nomModuleLabel.Text = "Utilisateurs";
             afficherUsers();
             InitializeComponent();
         }
@@ -83,7 +83,7 @@ namespace LFB_gestion.Interfaces
         /// <param name="utilisateurs"></param>
         private void affichageUtilisateur(List<Entités.Entite_Utilisateur> utilisateurs)
         {
-            //clientsPanel.Controls.Clear();
+            clientsPanel.Controls.Clear();
 
             // Pour tous les utilisateur présents dans la liste, les afficher
             if (utilisateurs != null)
@@ -101,7 +101,7 @@ namespace LFB_gestion.Interfaces
                         utilisateurs[y].Location = new Point(0, y * (utilisateur.Height + 30));
                     }
 
-                    utilisateur.Width = this.ClientSize.Width;
+                    utilisateur.Width = this.clientsPanel.Width;
                     this.clientsPanel.Controls.Add(utilisateur);
                     clientsPanel.AutoScroll = true;
                     y++;

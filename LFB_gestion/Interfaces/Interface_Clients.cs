@@ -78,7 +78,7 @@ namespace LFB_gestion.Interfaces
                     {
                         clients[y].Location = new Point(0, y * (client.Height + 30));
                     }
-                    client.Width = this.ClientSize.Width;
+                    client.Width = this.clientsPanel.Width;
                     this.clientsPanel.Controls.Add(client);
                     clientsPanel.AutoScroll = true;
                     y++;
