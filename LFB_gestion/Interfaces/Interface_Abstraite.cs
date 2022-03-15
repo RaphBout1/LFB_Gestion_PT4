@@ -165,38 +165,39 @@ namespace LFB_gestion.Interfaces
         private void DeftSize()
         {
 
-            this.clientsPanel.Width = this.ClientSize.Width * 84 / 100;
-            this.clientsPanel.Height = this.ClientSize.Height * 68 / 100;
-            int xlocationPanel = this.ClientSize.Width * 8 / 100;
-            int ylocationPanel = this.ClientSize.Height * 17 / 100;
-            this.clientsPanel.Location = new System.Drawing.Point(xlocationPanel, ylocationPanel);
-            this.panelNomModule.Location = new System.Drawing.Point(xlocationPanel, ylocationPanel - 44);
-            this.panelRecherche.Location = new System.Drawing.Point(this.ClientSize.Width - 500, ylocationPanel - 44);
-            if (this.ClientSize.Height < 550)
+            clientsPanel.Width = ClientSize.Width * 84 / 100;
+            clientsPanel.Height = ClientSize.Height * 68 / 100;
+            int xlocationPanel = ClientSize.Width * 8 / 100;
+            int ylocationPanel = ClientSize.Height * 17 / 100;
+            clientsPanel.Location = new Point(xlocationPanel, ylocationPanel);
+            panelNomModule.Location = new Point(xlocationPanel, ylocationPanel - 44);
+            panelRecherche.Location = new Point(ClientSize.Width - 500, ylocationPanel - 44);
+            if (ClientSize.Height < 550)
             {
-                this.pictureBox1.Location = new System.Drawing.Point(ClientSize.Width / 2 - 136, 0);
-                if (this.ClientSize.Width < 900)
+                pictureBox1.Location = new Point(ClientSize.Width / 2 - 136, 0);
+                if (ClientSize.Width < 900)
                 {
-                    this.pictureBox1.Visible = false;
+                   pictureBox1.Visible = false;
                 }
 
             }
             else
             {
-                this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-                this.pictureBox1.Visible = true;
+                pictureBox1.Location = new Point(0, 0);
+               pictureBox1.Visible = true;
             }
 
-            this.Update();
+            Update();
+
 
         }
 
         private void incidentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form formEntretien = new Interfaces.Interface_Incidents();
+            Hide();
+            Form formEntretien = new Interface_Incidents();
             formEntretien.ShowDialog();
-            this.Close();
+            Close();
 
         }
 
