@@ -160,14 +160,14 @@ namespace LFB_gestion.Interfaces
                 {
                     if (réservation == réservations[0])
                     {
-                        réservation.Location = new System.Drawing.Point(0, 0);
+                        réservation.Location = new Point(0, 0);
                     }
                     else
                     {
                         réservations[y].Location = new Point(0, y * (réservation.Height + 30));
                     }
-                    réservation.Width = this.clientsPanel.Width;
-                    this.clientsPanel.Controls.Add(réservation);
+                    réservation.Width = clientsPanel.Width;
+                    clientsPanel.Controls.Add(réservation);
                     clientsPanel.AutoScroll = true;
                     y++;
                 }
