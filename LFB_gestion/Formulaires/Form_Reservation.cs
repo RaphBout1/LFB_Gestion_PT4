@@ -9,14 +9,13 @@ namespace LFB_gestion.Formulaires
     public partial class Form_Reservation : Form
     {
 
-        private static string connexionString = "Data Source=info-joyeux;Initial Catalog=PT4_Camping_S4AE2;User Id=ETD;Password=ETD;";
 
-        private SqlConnection connexion = new SqlConnection(connexionString);
+        private SqlConnection connexion = Outils.Connexion();
 
         public Form_Reservation()
         {
             InitializeComponent();
-            remplirClients();
+            Outils.remplirClients(clientsListBox);
             emplacementsListBox.Items.Add("Sélectionner les dates");
         }
 
@@ -32,7 +31,7 @@ namespace LFB_gestion.Formulaires
             if (formNouveauClient.ShowDialog() == DialogResult.OK)
             {
                 clientsListBox.Items.Clear();
-                remplirClients();
+                Outils.remplirClients(clientsListBox);
             }
         }
 
@@ -214,6 +213,6 @@ namespace LFB_gestion.Formulaires
         }
         #endregion
 
-        
+
     }
 }

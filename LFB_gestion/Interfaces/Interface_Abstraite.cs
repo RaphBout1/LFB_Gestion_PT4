@@ -73,7 +73,11 @@ namespace LFB_gestion.Interfaces
         /// <param name="e"></param>
         private void entretienToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
+            this.Hide();
+            Form formEntretien = new Interface_Entretien();
+
+            formEntretien.ShowDialog();
+            this.Close();
         }
 
         /// <summary>

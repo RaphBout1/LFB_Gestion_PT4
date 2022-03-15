@@ -24,6 +24,11 @@ namespace LFB_gestion
         /// <param name="e"></param>
         private void seConnecter_button_Click(object sender, EventArgs e)
         {
+            seConnecter();
+        }
+
+        private void seConnecter()
+        {
             connexion = Outils.Connexion();
             //Se connecter à la base de données
             try
@@ -124,12 +129,19 @@ namespace LFB_gestion
                 visionMDP.BackgroundImage = Properties.Resources.oeilOuvert;
             }
         }
+
         #endregion
 
         #region Fonctions
 
         #endregion
 
-
+        private void Connexion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                seConnecter();
+            }
+        }
     }
 }
