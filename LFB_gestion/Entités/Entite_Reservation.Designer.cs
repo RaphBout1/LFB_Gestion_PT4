@@ -93,7 +93,7 @@
             this.supprimerBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.supprimerBouton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.supprimerBouton.Location = new System.Drawing.Point(567, 21);
-            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(2);
             this.supprimerBouton.Name = "supprimerBouton";
             this.supprimerBouton.Size = new System.Drawing.Size(44, 37);
             this.supprimerBouton.TabIndex = 1;
@@ -120,7 +120,7 @@
             this.modifierBouton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modifierBouton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.modifierBouton.Location = new System.Drawing.Point(480, 21);
-            this.modifierBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modifierBouton.Margin = new System.Windows.Forms.Padding(2);
             this.modifierBouton.Name = "modifierBouton";
             this.modifierBouton.Size = new System.Drawing.Size(61, 37);
             this.modifierBouton.TabIndex = 0;
@@ -136,12 +136,13 @@
             this.buttonFacturer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFacturer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
             this.buttonFacturer.Location = new System.Drawing.Point(634, 21);
-            this.buttonFacturer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonFacturer.Margin = new System.Windows.Forms.Padding(2);
             this.buttonFacturer.Name = "buttonFacturer";
             this.buttonFacturer.Size = new System.Drawing.Size(103, 37);
             this.buttonFacturer.TabIndex = 13;
             this.buttonFacturer.Text = "Facturer >";
             this.buttonFacturer.UseVisualStyleBackColor = false;
+            this.buttonFacturer.Click += new System.EventHandler(this.buttonFacturer_Click);
             // 
             // labelAu
             // 
