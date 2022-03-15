@@ -42,7 +42,7 @@ namespace LFB_gestion.Entités
             }
 
             nomClientLabel.Text = nomClient;
-            emplacementLabel.Text = this.emplacement.ToString();
+            emplacementLabel.Text = "emplacement " + this.emplacement.ToString();
             debutLabel.Text = this.début.ToString("dd/MM/yyyy");
             finLabel.Text = this.fin.ToString("dd/MM/yyyy");
         }
