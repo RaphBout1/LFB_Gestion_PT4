@@ -12,9 +12,13 @@ namespace LFB_gestion.Formulaires
 {
     public partial class Form_Entretien : Form
     {
-        public Form_Entretien()
+        public Form_Entretien(Entités.Entite_Entretien entretien)
         {
             InitializeComponent();
+            if (entretien != null)
+            {
+                descriptionTextBox.Text = entretien.description;
+            }
         }
     }
 }
