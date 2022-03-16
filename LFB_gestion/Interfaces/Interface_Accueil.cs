@@ -36,7 +36,16 @@ namespace LFB_gestion.Interfaces
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                clients.Add(new Entite_Client(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3)));
+                clients.Add(new Entite_Client(
+                        (int)reader["id"],
+                        reader["nom"].ToString(),
+                        reader["prenom"].ToString(),
+                        reader["adresse"].ToString(),
+                        reader["codePostal"].ToString(),
+                        reader["ville"].ToString(),
+                        reader["telephone"].ToString(),
+                        reader["mail"].ToString()
+                    ));
             }
             reader.Close();
             connexion.Close();

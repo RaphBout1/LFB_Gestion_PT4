@@ -10,6 +10,14 @@ namespace LFB_gestion.Entités
 
         public string prenom;
 
+        public string adresse;
+
+        public string codePostal;
+
+        public string ville;
+
+        public string tel;
+
         public string mail;
        
         /// <summary>
@@ -19,11 +27,15 @@ namespace LFB_gestion.Entités
         /// <param name="nom"></param>
         /// <param name="prenom"></param>
         /// <param name="mail"></param>
-        public Entite_Client(int id, string nom, string prenom, string mail)
+        public Entite_Client(int id, string nom, string prenom, string adresse, string codePostal, string ville, string tel, string mail)
         {
             this.id = id;
             this.nom = nom;
             this.prenom = prenom;
+            this.adresse = adresse;
+            this.codePostal = codePostal;
+            this.ville = ville;
+            this.tel = tel;
             this.mail = mail;
             ToString();
             InitializeComponent();

@@ -78,6 +78,12 @@
     <Compile Include="Formulaires\Form_Client.Designer.cs">
       <DependentUpon>Form_Client.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulaires\Form_Facture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\Form_Facture.Designer.cs">
+      <DependentUpon>Form_Facture.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulaires\Form_Incident.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Entités\Entite_Reservation.resx">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Entités\Entite_Utilisateur.resx">
       <DependentUpon>Entite_Utilisateur.cs</DependentUpon>
@@ -188,6 +195,9 @@
     <EmbeddedResource Include="Formulaires\Form_Employe.resx">
       <DependentUpon>Form_Employe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Form_Facture.resx">
+      <DependentUpon>Form_Facture.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Incident.resx">
       <DependentUpon>Form_Incident.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,9 +209,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Entités\Entite_Client.resx">
       <DependentUpon>Entite_Client.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Entités\Entite_Incident.resx">
       <DependentUpon>Entite_Incident.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Entités\Entite_Stock.resx">
       <DependentUpon>Entite_Stock.cs</DependentUpon>
