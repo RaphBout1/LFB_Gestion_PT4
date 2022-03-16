@@ -22,7 +22,7 @@ namespace LFB_gestion.Interfaces
         /// <param name="e"></param>
         private void ajoutBouton_Click(object sender, EventArgs e)
         {
-            Form formEntretien = new Formulaires.Form_Entretien();
+            Form formEntretien = new Formulaires.Form_Entretien(null);
             formEntretien.ShowDialog();
         }
         #endregion
@@ -37,7 +37,7 @@ namespace LFB_gestion.Interfaces
             List<Entités.Entite_Entretien> incidents = new List<Entités.Entite_Entretien>();
             for (int i = 0; i < 30; i++)
             {
-                Entités.Entite_Entretien incident = new Entités.Entite_Entretien();
+                Entités.Entite_Entretien incident = new Entités.Entite_Entretien(2, new DateTime(1985, 6, 20),"coucouuuuuu","emplacement 4",new Entités.Entite_Utilisateur("coucou", "coucou", "coucou",1, "coucou", "coucou", "coucou") ;
                 incidents.Add(incident);
             }
 

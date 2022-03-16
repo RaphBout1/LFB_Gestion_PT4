@@ -46,12 +46,13 @@ namespace LFB_gestion.Entités
             this.modifierBouton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modifierBouton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.modifierBouton.Location = new System.Drawing.Point(403, 35);
-            this.modifierBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modifierBouton.Margin = new System.Windows.Forms.Padding(2);
             this.modifierBouton.Name = "modifierBouton";
             this.modifierBouton.Size = new System.Drawing.Size(61, 37);
             this.modifierBouton.TabIndex = 5;
             this.modifierBouton.Text = "Modifier";
             this.modifierBouton.UseVisualStyleBackColor = false;
+            this.modifierBouton.Click += new System.EventHandler(this.modifierBouton_Click);
             // 
             // nomEmplacementLabel
             // 
@@ -90,7 +91,7 @@ namespace LFB_gestion.Entités
             this.checkBoxRésolu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxRésolu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
             this.checkBoxRésolu.Location = new System.Drawing.Point(576, 39);
-            this.checkBoxRésolu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxRésolu.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxRésolu.Name = "checkBoxRésolu";
             this.checkBoxRésolu.Size = new System.Drawing.Size(64, 29);
             this.checkBoxRésolu.TabIndex = 11;
@@ -136,7 +137,7 @@ namespace LFB_gestion.Entités
             this.Controls.Add(this.nomEmployeeLabel);
             this.Controls.Add(this.modifierBouton);
             this.Controls.Add(this.supprimerBouton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Entite_Entretien";
             this.Size = new System.Drawing.Size(656, 110);
             this.ResumeLayout(false);
