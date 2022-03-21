@@ -44,13 +44,13 @@
             this.clientVilleLabel = new System.Windows.Forms.Label();
             this.clientAdresseLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.numFactureTextBox = new System.Windows.Forms.TextBox();
             this.dateTextBox = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.adresseTextBox = new System.Windows.Forms.TextBox();
+            this.clientTextBox = new System.Windows.Forms.TextBox();
+            this.telTextBox = new System.Windows.Forms.TextBox();
+            this.villeTextBox = new System.Windows.Forms.TextBox();
+            this.mailTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.emplacementTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -62,6 +62,10 @@
             this.tvaLabel = new System.Windows.Forms.Label();
             this.ttcLabel = new System.Windows.Forms.Label();
             this.acompteCheckBox = new System.Windows.Forms.CheckBox();
+            this.codePostalTextBox = new System.Windows.Forms.TextBox();
+            this.C = new System.Windows.Forms.Label();
+            this.débutTextBox = new System.Windows.Forms.TextBox();
+            this.finTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // factureLabel
@@ -148,7 +152,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(198, 156);
+            this.label3.Location = new System.Drawing.Point(188, 156);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(19, 13);
             this.label3.TabIndex = 10;
@@ -166,7 +170,7 @@
             // clientMailLabel
             // 
             this.clientMailLabel.AutoSize = true;
-            this.clientMailLabel.Location = new System.Drawing.Point(611, 205);
+            this.clientMailLabel.Location = new System.Drawing.Point(611, 231);
             this.clientMailLabel.Name = "clientMailLabel";
             this.clientMailLabel.Size = new System.Drawing.Size(32, 13);
             this.clientMailLabel.TabIndex = 15;
@@ -175,7 +179,7 @@
             // clientTelLabel
             // 
             this.clientTelLabel.AutoSize = true;
-            this.clientTelLabel.Location = new System.Drawing.Point(585, 179);
+            this.clientTelLabel.Location = new System.Drawing.Point(585, 205);
             this.clientTelLabel.Name = "clientTelLabel";
             this.clientTelLabel.Size = new System.Drawing.Size(58, 13);
             this.clientTelLabel.TabIndex = 14;
@@ -184,11 +188,11 @@
             // clientVilleLabel
             // 
             this.clientVilleLabel.AutoSize = true;
-            this.clientVilleLabel.Location = new System.Drawing.Point(548, 156);
+            this.clientVilleLabel.Location = new System.Drawing.Point(617, 180);
             this.clientVilleLabel.Name = "clientVilleLabel";
-            this.clientVilleLabel.Size = new System.Drawing.Size(95, 13);
+            this.clientVilleLabel.Size = new System.Drawing.Size(26, 13);
             this.clientVilleLabel.TabIndex = 13;
-            this.clientVilleLabel.Text = "Code Postal + Ville";
+            this.clientVilleLabel.Text = "Ville";
             // 
             // clientAdresseLabel
             // 
@@ -208,12 +212,12 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "Location du";
             // 
-            // textBox1
+            // numFactureTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(649, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 17;
+            this.numFactureTextBox.Location = new System.Drawing.Point(649, 36);
+            this.numFactureTextBox.Name = "numFactureTextBox";
+            this.numFactureTextBox.Size = new System.Drawing.Size(100, 20);
+            this.numFactureTextBox.TabIndex = 17;
             // 
             // dateTextBox
             // 
@@ -222,40 +226,40 @@
             this.dateTextBox.Size = new System.Drawing.Size(100, 20);
             this.dateTextBox.TabIndex = 18;
             // 
-            // textBox3
+            // adresseTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(649, 125);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 20;
+            this.adresseTextBox.Location = new System.Drawing.Point(649, 125);
+            this.adresseTextBox.Name = "adresseTextBox";
+            this.adresseTextBox.Size = new System.Drawing.Size(186, 20);
+            this.adresseTextBox.TabIndex = 20;
             // 
-            // textBox4
+            // clientTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(649, 100);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 19;
+            this.clientTextBox.Location = new System.Drawing.Point(649, 100);
+            this.clientTextBox.Name = "clientTextBox";
+            this.clientTextBox.Size = new System.Drawing.Size(186, 20);
+            this.clientTextBox.TabIndex = 19;
             // 
-            // textBox5
+            // telTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(649, 176);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 22;
+            this.telTextBox.Location = new System.Drawing.Point(649, 202);
+            this.telTextBox.Name = "telTextBox";
+            this.telTextBox.Size = new System.Drawing.Size(100, 20);
+            this.telTextBox.TabIndex = 22;
             // 
-            // textBox6
+            // villeTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(649, 151);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 21;
+            this.villeTextBox.Location = new System.Drawing.Point(649, 177);
+            this.villeTextBox.Name = "villeTextBox";
+            this.villeTextBox.Size = new System.Drawing.Size(186, 20);
+            this.villeTextBox.TabIndex = 21;
             // 
-            // textBox7
+            // mailTextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(649, 202);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 23;
+            this.mailTextBox.Location = new System.Drawing.Point(649, 228);
+            this.mailTextBox.Name = "mailTextBox";
+            this.mailTextBox.Size = new System.Drawing.Size(186, 20);
+            this.mailTextBox.TabIndex = 23;
             // 
             // label2
             // 
@@ -352,11 +356,45 @@
             this.acompteCheckBox.UseVisualStyleBackColor = true;
             this.acompteCheckBox.CheckedChanged += new System.EventHandler(this.acompteCheckBox_CheckedChanged);
             // 
+            // codePostalTextBox
+            // 
+            this.codePostalTextBox.Location = new System.Drawing.Point(649, 151);
+            this.codePostalTextBox.Name = "codePostalTextBox";
+            this.codePostalTextBox.Size = new System.Drawing.Size(100, 20);
+            this.codePostalTextBox.TabIndex = 40;
+            // 
+            // C
+            // 
+            this.C.AutoSize = true;
+            this.C.Location = new System.Drawing.Point(580, 156);
+            this.C.Name = "C";
+            this.C.Size = new System.Drawing.Size(63, 13);
+            this.C.TabIndex = 39;
+            this.C.Text = "Code postal";
+            // 
+            // débutTextBox
+            // 
+            this.débutTextBox.Location = new System.Drawing.Point(82, 153);
+            this.débutTextBox.Name = "débutTextBox";
+            this.débutTextBox.Size = new System.Drawing.Size(100, 20);
+            this.débutTextBox.TabIndex = 41;
+            // 
+            // finTextBox
+            // 
+            this.finTextBox.Location = new System.Drawing.Point(213, 153);
+            this.finTextBox.Name = "finTextBox";
+            this.finTextBox.Size = new System.Drawing.Size(100, 20);
+            this.finTextBox.TabIndex = 42;
+            // 
             // Form_Facture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1005, 450);
+            this.Controls.Add(this.finTextBox);
+            this.Controls.Add(this.débutTextBox);
+            this.Controls.Add(this.codePostalTextBox);
+            this.Controls.Add(this.C);
             this.Controls.Add(this.acompteCheckBox);
             this.Controls.Add(this.ttcLabel);
             this.Controls.Add(this.tvaLabel);
@@ -368,13 +406,13 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.emplacementTextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.mailTextBox);
+            this.Controls.Add(this.telTextBox);
+            this.Controls.Add(this.villeTextBox);
+            this.Controls.Add(this.adresseTextBox);
+            this.Controls.Add(this.clientTextBox);
             this.Controls.Add(this.dateTextBox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.numFactureTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.clientMailLabel);
             this.Controls.Add(this.clientTelLabel);
@@ -416,13 +454,13 @@
         private System.Windows.Forms.Label clientVilleLabel;
         private System.Windows.Forms.Label clientAdresseLabel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox numFactureTextBox;
         private System.Windows.Forms.TextBox dateTextBox;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox adresseTextBox;
+        private System.Windows.Forms.TextBox clientTextBox;
+        private System.Windows.Forms.TextBox telTextBox;
+        private System.Windows.Forms.TextBox villeTextBox;
+        private System.Windows.Forms.TextBox mailTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox emplacementTextBox;
         private System.Windows.Forms.Label label5;
@@ -434,5 +472,9 @@
         private System.Windows.Forms.Label tvaLabel;
         private System.Windows.Forms.Label ttcLabel;
         private System.Windows.Forms.CheckBox acompteCheckBox;
+        private System.Windows.Forms.TextBox codePostalTextBox;
+        private System.Windows.Forms.Label C;
+        private System.Windows.Forms.TextBox débutTextBox;
+        private System.Windows.Forms.TextBox finTextBox;
     }
 }
