@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LFB_gestion.Entités;
+using LFB_gestion.Interfaces;
+using System;
 using System.Data.SqlClient;
 using System.Text;
 
@@ -65,5 +67,20 @@ namespace LFB_gestion
             return Result;
         }
 
+        /// <summary>
+        /// trouve le client de la liste dans l'interface d'accueil à partir d'un id
+        /// </summary>
+        /// <param name="idClient"></param>
+        /// <returns>Renvoie l'entité client correspondant à l'id</returns>
+        public static Entite_Client findClient(int idClient)
+        {
+            Entite_Client res = null;
+            foreach (Entite_Client client in Interface_Accueil.clients)
+            {
+                if (client.id == idClient)
+                    res = client;
+            }
+            return res;
+        }
     }
 }

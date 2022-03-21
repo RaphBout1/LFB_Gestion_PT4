@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LFB_gestion.Interfaces;
+using System;
 using System.Windows.Forms;
 
 namespace LFB_gestion
@@ -13,7 +14,8 @@ namespace LFB_gestion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Connexion());
+            //Application.Run(new Connexion());
+            Application.Run(new Interface_Accueil());
         }
     }
 }
