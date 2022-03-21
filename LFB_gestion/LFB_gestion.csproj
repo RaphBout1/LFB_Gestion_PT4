@@ -218,6 +218,9 @@
     <EmbeddedResource Include="Interfaces\Interface_Reservations.resx">
       <DependentUpon>Interface_Reservations.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Interface_Statistiques.resx">
+      <DependentUpon>Interface_Statistiques.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Interface_Stocks.resx">
       <DependentUpon>Interface_Stocks.cs</DependentUpon>
     </EmbeddedResource>

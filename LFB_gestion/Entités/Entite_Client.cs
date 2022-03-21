@@ -25,6 +25,7 @@ namespace LFB_gestion.Entités
             this.nom = nom;
             this.prenom = prenom;
             this.mail = mail;
+            ToString();
             InitializeComponent();
             nomLabel.Text = nom;
             prenomLabel.Text = prenom;
