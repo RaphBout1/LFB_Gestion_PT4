@@ -113,16 +113,25 @@ namespace LFB_gestion.Interfaces
         /// <param name="idQuery"></param>
         private void reader(SqlCommand idQuery)
         {
-            SqlDataReader rd;
-            rd = idQuery.ExecuteReader();
+            SqlDataReader reader;
+            reader = idQuery.ExecuteReader();
             List<Entite_Client> listeClients = new List<Entite_Client>();
-            while (rd.Read())
+            while (reader.Read())
             {
-                int id = rd.GetInt32(0);
-                string nom = rd["nom"].ToString();
-                string prenom = rd["prenom"].ToString();
-                string email = rd["mail"].ToString();
-                Entite_Client client = new Entite_Client(id, nom, prenom, email);
+                int id = reader.GetInt32(0);
+                string nom = reader["nom"].ToString();
+                string prenom = reader["prenom"].ToString();
+                string email = reader["mail"].ToString();
+                Entite_Client client = new Entite_Client(
+                        (int)reader["id"],
+                        reader["nom"].ToString(),
+                        reader["prenom"].ToString(),
+                        reader["adresse"].ToString(),
+                        reader["codePostal"].ToString(),
+                        reader["ville"].ToString(),
+                        reader["telephone"].ToString(),
+                        reader["mail"].ToString()
+                    );
                 listeClients.Add(client);
             }
             affichageClients(listeClients);

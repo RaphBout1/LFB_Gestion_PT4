@@ -1,6 +1,8 @@
 ﻿using LFB_gestion.Entités;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace LFB_gestion.Interfaces
 {
@@ -36,7 +38,16 @@ namespace LFB_gestion.Interfaces
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                clients.Add(new Entite_Client(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3)));
+                clients.Add(new Entite_Client(
+                        (int)reader["id"],
+                        reader["nom"].ToString(),
+                        reader["prenom"].ToString(),
+                        reader["adresse"].ToString(),
+                        reader["codePostal"].ToString(),
+                        reader["ville"].ToString(),
+                        reader["telephone"].ToString(),
+                        reader["mail"].ToString()
+                    ));
             }
             reader.Close();
             connexion.Close();
@@ -52,15 +63,21 @@ namespace LFB_gestion.Interfaces
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                string login = reader.GetString(0);
-                string mdp = reader.GetString(7);
-                string mail = reader.GetString(2);
-                int admin = reader.GetInt32(3);
-                string nom = reader.GetString(5);
-                string prenom = reader.GetString(4);
-                string tel = reader.GetString(6);
-
-                users.Add(new Entite_Utilisateur(login, mdp, mail, admin, nom, prenom, tel));
+                try
+                {
+                    string login = (string)reader["login"];
+                    string mdp = (string)reader["mdp"];
+                    string mail = (string)reader["mail"];
+                    int admin = (int)reader["admin"];
+                    string nom = (string)reader["nom"];
+                    string prenom = (string)reader["prenom"];
+                    string tel = (string)reader["telephone"];
+                    users.Add(new Entite_Utilisateur(login, mdp, mail, admin, nom, prenom, tel));
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
             }
             reader.Close();
             connexion.Close();

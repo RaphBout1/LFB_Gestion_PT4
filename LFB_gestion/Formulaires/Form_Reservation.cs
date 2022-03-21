@@ -196,7 +196,16 @@ namespace LFB_gestion.Formulaires
             {
                 while (reader.Read())
                 {
-                    Entite_Client client = new Entite_Client(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
+                    Entite_Client client = new Entite_Client(
+                        (int)reader["id"],
+                        reader["nom"].ToString(),
+                        reader["prenom"].ToString(),
+                        reader["adresse"].ToString(),
+                        reader["codePostal"].ToString(),
+                        reader["ville"].ToString(),
+                        reader["telephone"].ToString(),
+                        reader["mail"].ToString()
+                    );
                     clientsListBox.Items.Add(client);
                 }
                 reader.Close();

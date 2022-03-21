@@ -1,4 +1,5 @@
-﻿using LFB_gestion.Interfaces;
+﻿using LFB_gestion.Formulaires;
+using LFB_gestion.Interfaces;
 using System;
 using System.Windows.Forms;
 
@@ -45,6 +46,12 @@ namespace LFB_gestion.Entités
             emplacementLabel.Text = "emplacement " + this.emplacement.ToString();
             debutLabel.Text = this.début.ToString("dd/MM/yyyy");
             finLabel.Text = this.fin.ToString("dd/MM/yyyy");
+        }
+
+        private void buttonFacturer_Click(object sender, EventArgs e)
+        {
+            Form_Facture facture = new Form_Facture(this);
+            facture.ShowDialog();
         }
     }
 }
