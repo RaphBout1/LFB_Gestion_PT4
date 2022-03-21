@@ -30,11 +30,39 @@
         {
             this.SuspendLayout();
             // 
+            // nomModuleLabel
+            // 
+            this.nomModuleLabel.Location = new System.Drawing.Point(3, 2);
+            this.nomModuleLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            // 
+            // rechercheTextBox
+            // 
+            this.rechercheTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            // 
+            // clientsPanel
+            // 
+            this.clientsPanel.Location = new System.Drawing.Point(84, 115);
+            this.clientsPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clientsPanel.Size = new System.Drawing.Size(891, 460);
+            // 
+            // ajoutBouton
+            // 
+            this.ajoutBouton.FlatAppearance.BorderSize = 0;
+            this.ajoutBouton.Click += new System.EventHandler(this.ajoutBouton_Click_1);
+            // 
+            // rechercheBouton
+            // 
+            this.rechercheBouton.FlatAppearance.BorderSize = 0;
+            this.rechercheBouton.Click += new System.EventHandler(this.rechercheBouton_Click);
+            // 
             // Interface_Utilisateurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1061, 677);
+            this.Location = new System.Drawing.Point(0, 0);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1077, 716);
             this.Name = "Interface_Utilisateurs";
             this.Text = "Interface_Utilisateurs";
             this.ResumeLayout(false);

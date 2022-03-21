@@ -1,50 +1,118 @@
-﻿using System;
+﻿using LFB_gestion.Entités;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LFB_gestion.Interfaces
 {
     public partial class Interface_Utilisateurs : Interface_Abstraite
     {
+        private SqlConnection connexion = Outils.Connexion();
         public Interface_Utilisateurs()
         {
-            nomModuleLabel.Text = "Module Utilisateurs";
-            InitialisationUtilisateurs();
+            nomModuleLabel.Text = "Utilisateurs";
+            afficherUsers();
             InitializeComponent();
         }
 
-        private void InitialisationUtilisateurs()
+        #region Événements
+        /// <summary>
+        /// Méthode permettant de construire une liste d'utilisateurs présents dans la base en fonction d'une chaine de caractères. Elle appelle ensuite le méthode d'affichage en passant cette liste en paramètres
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rechercheBouton_Click(object sender, EventArgs e)
         {
-            // Génération de 30 modèles d'utilisateurs pour tester (à supprimer)
-            List<Entités.Entite_Utilisateur> utilisateurs = new List<Entités.Entite_Utilisateur>();
-            for (int i = 0; i < 30; i++)
-            {
-                Entités.Entite_Utilisateur utilisateur = new Entités.Entite_Utilisateur();
-                utilisateurs.Add(utilisateur);
-            }
-
-            // Pour tous les utilisateurs présents dans la liste, les afficher
-            int y = 0;
-            foreach (Entités.Entite_Utilisateur utilisateur in utilisateurs)
-            {
-                if (utilisateur == utilisateurs[0])
-                {
-                    utilisateur.Location = new System.Drawing.Point(0, 0);
-                }
-                else
-                {
-                    utilisateurs[y].Location = new Point(0, y * (utilisateur.Height + 10));
-                }
-                this.clientsPanel.Controls.Add(utilisateur);
-                clientsPanel.AutoScroll = true;
-                y++;
-            }
+            connexion.Open();
+            reader(rechercheTextBox.Text);
+            connexion.Close();
         }
+
+        /// <summary>
+        /// Ouvre un formulaire pour créer un nouvel utilisateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ajoutBouton_Click_1(object sender, EventArgs e)
+        {
+            Form formUtilisateur = new Formulaires.Form_Employe();
+
+            formUtilisateur.ShowDialog();
+        }
+        #endregion
+
+        #region fonctions
+        /// <summary>
+        /// Appelle la fonction qui affichera tous les utilisateurs
+        /// </summary>
+        private void afficherUsers()
+        {
+            reader(null);
+        }
+
+        /// <summary>
+        /// Permet de créer une liste d'Entités_Utilisateur selon un identifiant recherché et appelle la fonction qui les affiche
+        /// </summary>
+        /// <param name="idQuery"></param>
+        private void reader(string recherche)
+        {
+            List<Entite_Utilisateur> listeUtilisateur = new List<Entite_Utilisateur>();
+            foreach (Entite_Utilisateur user in Interface_Accueil.users)
+            {
+                if (user.login == recherche || recherche == null || recherche == "")
+                {
+                    string nom = user.nom;
+                    string prenom = user.prenom;
+                    string login = user.login;
+                    string mdp = user.mdp;
+                    string mail = user.mail;
+                    int admin = user.admin;
+                    string tel = user.tel;
+                    Entite_Utilisateur utilisateur = new Entite_Utilisateur(login, mdp, mail, admin, nom, prenom, tel);
+                    listeUtilisateur.Add(utilisateur);
+                }
+            }
+            affichageUtilisateur(listeUtilisateur);
+        }
+
+        /// <summary>
+        /// affiche les entités utilisateur dans l'interface
+        /// </summary>
+        /// <param name="utilisateurs"></param>
+        private void affichageUtilisateur(List<Entités.Entite_Utilisateur> utilisateurs)
+        {
+            clientsPanel.Controls.Clear();
+
+            // Pour tous les utilisateur présents dans la liste, les afficher
+            if (utilisateurs != null)
+            {
+                int y = 0;
+                foreach (Entités.Entite_Utilisateur utilisateur in utilisateurs)
+                {
+                    if (utilisateur == utilisateurs[0])
+                    {
+                        utilisateur.Location = new System.Drawing.Point(0, 0);
+
+                    }
+                    else
+                    {
+                        utilisateurs[y].Location = new Point(0, y * (utilisateur.Height + 30));
+                    }
+
+                    utilisateur.Width = this.clientsPanel.Width;
+                    this.clientsPanel.Controls.Add(utilisateur);
+                    clientsPanel.AutoScroll = true;
+                    y++;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Pas de clients dans la base");
+            }
+            connexion.Close();
+        }
+        #endregion
     }
 }

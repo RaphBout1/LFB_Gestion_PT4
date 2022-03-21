@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LFB_gestion.Formulaires
@@ -18,16 +12,23 @@ namespace LFB_gestion.Formulaires
             remplirClientsEtEmplacements();
         }
 
+
+        #region Événements
+        /// <summary>
+        /// Valider l'incident
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void validationBouton_Click(object sender, EventArgs e)
         {
-            if(!auMoinsUnClientSelectionne() || !auMoinsUnEmplacementSelectionne())
+            if (!auMoinsUnClientSelectionne() || !auMoinsUnEmplacementSelectionne())
             {
                 Label nonValideLabel = new Label();
                 nonValideLabel.Size = this.Size;
                 nonValideLabel.Text = "Veuillez sélectionner un client et un emplacement";
                 nonValideLabel.Location = new Point(clientLabel.Location.X, (clientLabel.Location.Y - 15));
                 this.Controls.Add(nonValideLabel);
-            } 
+            }
             else
             {
                 creationEmplacement();
@@ -35,32 +36,29 @@ namespace LFB_gestion.Formulaires
                 InitializeComponent();
                 remplirClientsEtEmplacements();
                 MessageBox.Show("Emplacement créé avec succès !");
-            } 
+            }
         }
+        #endregion
 
+        #region Fonctions
+        /// <summary>
+        /// vérifie si au moins un emplacement est sélectionné
+        /// </summary>
+        /// <returns>renvoie vrai si au moins un emplacement est selectionné</returns>
         private bool auMoinsUnEmplacementSelectionne()
         {
-            if (emplacementsListBox.SelectedItems.Count == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return emplacementsListBox.SelectedItems.Count == 0;
         }
 
+        /// <summary>
+        /// Vérifie si au moins un client est sélectionné
+        /// </summary>
+        /// <returns></returns>
         private bool auMoinsUnClientSelectionne()
         {
-            if(clientsListBox.SelectedItems.Count == 0)
-            {
-                return false;
-            } else
-            {
-                return true;
-            }
+            return clientsListBox.SelectedItems.Count == 0;
         }
-
+        #endregion
 
         /* MANIPULATION DE LA BASE */
 

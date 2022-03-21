@@ -33,23 +33,41 @@ namespace LFB_gestion.Interfaces
             // 
             // nomModuleLabel
             // 
-            this.nomModuleLabel.Location = new System.Drawing.Point(233, 32);
+            this.nomModuleLabel.TabIndex = 1;
+            // 
+            // rechercheTextBox
+            // 
+            this.rechercheTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.rechercheTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rechercheTextBox_KeyDown);
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(53, 67);
-            this.clientsPanel.Size = new System.Drawing.Size(955, 471);
+            this.clientsPanel.Location = new System.Drawing.Point(84, 113);
+            this.clientsPanel.Size = new System.Drawing.Size(890, 455);
+            // 
+            // ajoutBouton
+            // 
+            this.ajoutBouton.FlatAppearance.BorderSize = 0;
+            this.ajoutBouton.TabIndex = 2;
+            this.ajoutBouton.Click += new System.EventHandler(this.ajoutBouton_Click);
+            // 
+            // rechercheBouton
+            // 
+            this.rechercheBouton.FlatAppearance.BorderSize = 0;
+            this.rechercheBouton.Click += new System.EventHandler(this.rechercheBouton_Click);
             // 
             // Interface_Reservations
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 673);
+            this.ClientSize = new System.Drawing.Size(1060, 670);
             this.Location = new System.Drawing.Point(0, 0);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(614, 487);
             this.Name = "Interface_Reservations";
             this.Text = "Interface_Reservations";
+            this.Load += new System.EventHandler(this.Interface_Reservations_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

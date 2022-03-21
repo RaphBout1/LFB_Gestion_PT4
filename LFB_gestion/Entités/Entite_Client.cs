@@ -1,60 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace LFB_gestion.Entités
 {
     public partial class Entite_Client : UserControl
     {
-        private String nom;
-        private String prenom;
-        private String email;
+        public int id;
+
+        public string nom;
+
+        public string prenom;
+
+        public string mail;
        
-        public Entite_Client(String nom, String prenom, String mail)
+        /// <summary>
+        /// Constructeur
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nom"></param>
+        /// <param name="prenom"></param>
+        /// <param name="mail"></param>
+        public Entite_Client(int id, string nom, string prenom, string mail)
         {
+            this.id = id;
             this.nom = nom;
             this.prenom = prenom;
-            this.email = mail;
+            this.mail = mail;
             InitializeComponent();
             nomLabel.Text = nom;
             prenomLabel.Text = prenom;
             emailLabel.Text = mail;
         }
 
-       public String getNom()
+        /// <summary>
+        /// Affiche le prénom et le nom du client
+        /// </summary>
+        public override string ToString()
         {
-            return this.nom;
-        }
-
-        public String getEmail()
-        {
-            return this.email;
-        }
-
-        public String getPrenom()
-        {
-            return this.prenom;
-        }
-
-        public void setNom(String nom)
-        {
-            this.nom = nom;
-        }
-
-        public void setPrenom(String prenom)
-        {
-            this.prenom = prenom;
-        }
-
-        public void setEmail(String nom)
-        {
-            this.email = email;
+            return prenom + " " + nom;
         }
     }
 }

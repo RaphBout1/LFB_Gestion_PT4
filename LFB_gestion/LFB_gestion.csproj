@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Utilisateur.cs" />
     <Compile Include="Entités\Entite_Utilisateur.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -83,12 +83,6 @@
     </Compile>
     <Compile Include="Formulaires\Form_Incident.Designer.cs">
       <DependentUpon>Form_Incident.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulaires\Form_Produit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulaires\Form_Produit.Designer.cs">
-      <DependentUpon>Form_Produit.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulaires\Form_Reservation.cs">
       <SubType>Form</SubType>
@@ -182,17 +176,20 @@
     <EmbeddedResource Include="Entités\Entite_Reservation.resx">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Entités\Entite_Utilisateur.resx">
+      <DependentUpon>Entite_Utilisateur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Connexion.resx">
       <DependentUpon>Form_Connexion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Client.resx">
       <DependentUpon>Form_Client.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Form_Employe.resx">
+      <DependentUpon>Form_Employe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Incident.resx">
       <DependentUpon>Form_Incident.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulaires\Form_Produit.resx">
-      <DependentUpon>Form_Produit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Reservation.resx">
       <DependentUpon>Form_Reservation.cs</DependentUpon>
@@ -215,8 +212,17 @@
     <EmbeddedResource Include="Interfaces\Interface_Clients.resx">
       <DependentUpon>Interface_Clients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\Interface_Statistiques.resx">
-      <DependentUpon>Interface_Statistiques.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\Interface_Incidents.resx">
+      <DependentUpon>Interface_Incidents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Interface_Reservations.resx">
+      <DependentUpon>Interface_Reservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Interface_Stocks.resx">
+      <DependentUpon>Interface_Stocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Interface_Utilisateurs.resx">
+      <DependentUpon>Interface_Utilisateurs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -285,6 +291,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondBouton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oeilOuvert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oeilFermer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondEcran2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondEcran3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondEcran4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plusIcone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nouveau projet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconneSupp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconePoubelleStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconeModiStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconeIncident.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

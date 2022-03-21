@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace LFB_gestion
 {
@@ -45,12 +41,29 @@ namespace LFB_gestion
 
         public static SqlConnection Connexion()
         {
-            SqlConnection connexion = new SqlConnection(connexionString);
-
-            return connexion;
+            return new SqlConnection(connexionString);
         }
 
-        
+        /// <summary>
+        /// Vérifie si une adresse mail contient un '.' après un '@'
+        /// </summary>
+        /// <param name="eMail"></param>
+        /// <returns>renvoie vrai si l'adresse mail est valide</returns>
+        public static bool isValidMail(string eMail)
+        {
+            bool Result = false;
+            try
+            {
+                var eMailValidator = new System.Net.Mail.MailAddress(eMail);
+
+                Result = (eMail.LastIndexOf(".") > eMail.LastIndexOf("@"));
+            }
+            catch
+            {
+                Result = false;
+            };
+            return Result;
+        }
 
     }
 }

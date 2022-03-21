@@ -1,37 +1,67 @@
-﻿using LFB_gestion.Classes;
+﻿using LFB_gestion.Entités;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LFB_gestion.Interfaces
 {
     public partial class Interface_Clients : Interface_Abstraite
     {
-        // Connexion à la base
-        private static string connexionString = "Data Source=info-joyeux;Initial Catalog=PT4_Camping_S4AE2;User Id=ETD;Password=ETD;";
-        private SqlConnection connexion = new SqlConnection(connexionString);
-        private int admin = 0;
 
+        private SqlConnection connexion = Outils.Connexion();
 
         public Interface_Clients()
         {
             // On redéfini le nom du module
-            nomModuleLabel.Text = "Module Clients";
+            nomModuleLabel.Text = "Clients";
             // On initialise les clients présents dans la base et on les affiche
-            initialisationToutLesClients();
-            InitializeComponent();
+            InitializeComponent();            
+            defaultClients();
+            Refresh();
+
         }
 
-        /*
-         * Méthode affichant la liste de clients qu'elle reçoit en paramètres.
-         */
+
+
+
+        #region Événements
+        /// <summary>
+        /// Méthode permettant de construire une liste de clients présents dans la base en fonction d'une chaine de caractères.
+        /// Elle appelle ensuite le méthode d'affichage en passant cette liste en paramètres
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rechercheBouton_Click(object sender, EventArgs e)
+        {
+
+            connexion.Open();
+            // On récupère le texte dans le label rechercheLabel
+            String txt = rechercheTextBox.Text;
+            // Connexion bdd
+            SqlCommand idQuery = new SqlCommand("SELECT * from client where nom like '" + txt + "%" + "'", connexion);
+            reader(idQuery);
+            connexion.Close();
+        }
+
+        /// <summary>
+        /// Lance le formulaire pour créer un nouveau client
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ajoutBouton_Click_1(object sender, EventArgs e)
+        {
+            Form formClient = new Formulaires.Form_Client();
+            formClient.ShowDialog();
+        }
+        #endregion
+
+        #region Fonctions
+        /// <summary>
+        /// Méthode affichant la liste de clients qu'elle reçoit en paramètres.
+        /// </summary>
+        /// <param name="clients"></param>
         private void affichageClients(List<Entités.Entite_Client> clients)
         {
             clientsPanel.Controls.Clear();
@@ -50,7 +80,8 @@ namespace LFB_gestion.Interfaces
                     {
                         clients[y].Location = new Point(0, y * (client.Height + 30));
                     }
-                    this.clientsPanel.Controls.Add(client);
+                    client.Width = clientsPanel.Width;
+                    clientsPanel.Controls.Add(client);
                     clientsPanel.AutoScroll = true;
                     y++;
                 }
@@ -62,64 +93,52 @@ namespace LFB_gestion.Interfaces
             connexion.Close();
         }
 
-        /*
-         * Méthode permettant de créer une liste de tout les clients présents dans la base
-         * Elle appelle ensuite le méthode d'affichage en passant cette liste en paramètres
-         */
-        private void initialisationToutLesClients()
+        /// <summary>
+        /// Méthode permettant de créer une liste de tous les clients présents dans la base
+        /// Elle appelle ensuite le méthode d'affichage en passant cette liste en paramètres
+        /// </summary>
+        private void defaultClients()
         {
             // Remplir la liste this.clients
             // Connexion bdd
             connexion.Open();
             SqlCommand idQuery = new SqlCommand("SELECT * from client", connexion);
+            reader(idQuery);
+            connexion.Close();
+        }
+
+        /// <summary>
+        /// Méthode permettant de créer une liste de client selon une requète
+        /// </summary>
+        /// <param name="idQuery"></param>
+        private void reader(SqlCommand idQuery)
+        {
             SqlDataReader rd;
             rd = idQuery.ExecuteReader();
-            List < Entités.Entite_Client > listeClients = new List<Entités.Entite_Client> ();
+            List<Entite_Client> listeClients = new List<Entite_Client>();
             while (rd.Read())
             {
-                String nom = rd["nom"].ToString();
-                String prenom = rd["prenom"].ToString();
-                String email = rd["mail"].ToString();
-                Entités.Entite_Client client = new Entités.Entite_Client(nom, prenom, email);
+                int id = rd.GetInt32(0);
+                string nom = rd["nom"].ToString();
+                string prenom = rd["prenom"].ToString();
+                string email = rd["mail"].ToString();
+                Entite_Client client = new Entite_Client(id, nom, prenom, email);
                 listeClients.Add(client);
             }
-            connexion.Close();
             affichageClients(listeClients);
         }
-
-        /*
-         * Méthode permettant de construire une liste de clients présents dans la base en fonction 
-         * d'une chaine de caractères.
-         * 
-         * Elle appelle ensuite le méthode d'affichage en passant cette liste en paramètres
-         */
-        private void rechercheBouton_Click(object sender, EventArgs e)
-        {
-            List<Entités.Entite_Client> clients = new List<Entités.Entite_Client>();
-            connexion.Open();
-            // On récupère le texte dans le label rechercheLabel
-            String txt = rechercheTextBox.Text;
-            // Connexion bdd
-            SqlCommand idQuery = new SqlCommand("SELECT * from client where nom like '" + txt + "%" + "'", connexion);
-            SqlDataReader rd;
-            rd = idQuery.ExecuteReader();
-            while (rd.Read())
-            {
-                String nom = rd["nom"].ToString();
-                String prenom = rd["prenom"].ToString();
-                String email = rd["mail"].ToString();
-                Entités.Entite_Client client = new Entités.Entite_Client(nom, prenom, email);
-                clients.Add(client);
-            }
-            affichageClients(clients);
-        }
+        #endregion
 
 
-        private void ajoutBouton_Click(object sender, EventArgs e)
-        {
-            Formulaires.Form_Client formClient = new Formulaires.Form_Client();
-            formClient.Show();
-        }
+
+
+
+
+
+
+
+
 
     }
+
 }

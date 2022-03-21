@@ -103,6 +103,36 @@ namespace LFB_gestion.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondEcran2 {
+            get {
+                object obj = ResourceManager.GetObject("fondEcran2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondEcran3 {
+            get {
+                object obj = ResourceManager.GetObject("fondEcran3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondEcran4 {
+            get {
+                object obj = ResourceManager.GetObject("fondEcran4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondMenuNav {
             get {
                 object obj = ResourceManager.GetObject("fondMenuNav", resourceCulture);
@@ -116,6 +146,16 @@ namespace LFB_gestion.Properties {
         internal static System.Drawing.Bitmap fondModule {
             get {
                 object obj = ResourceManager.GetObject("fondModule", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondStock {
+            get {
+                object obj = ResourceManager.GetObject("fondStock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +193,39 @@ namespace LFB_gestion.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconeIncident {
+            get {
+                object obj = ResourceManager.GetObject("iconeIncident", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconeModiStock {
+            get {
+                object obj = ResourceManager.GetObject("IconeModiStock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconePlan {
             get {
                 object obj = ResourceManager.GetObject("iconePlan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconePoubelleStock {
+            get {
+                object obj = ResourceManager.GetObject("iconePoubelleStock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +273,69 @@ namespace LFB_gestion.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconneSupp {
+            get {
+                object obj = ResourceManager.GetObject("iconneSupp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logoDuHAut {
             get {
                 object obj = ResourceManager.GetObject("logoDuHAut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loupe {
+            get {
+                object obj = ResourceManager.GetObject("loupe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Nouveau_projet {
+            get {
+                object obj = ResourceManager.GetObject("Nouveau projet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap oeilFermer {
+            get {
+                object obj = ResourceManager.GetObject("oeilFermer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap oeilOuvert {
+            get {
+                object obj = ResourceManager.GetObject("oeilOuvert", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plusIcone {
+            get {
+                object obj = ResourceManager.GetObject("plusIcone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

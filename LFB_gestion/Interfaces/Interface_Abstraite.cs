@@ -1,4 +1,4 @@
-﻿using LFB_gestion.Classes;
+﻿using LFB_gestion.Entités;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,68 +13,50 @@ namespace LFB_gestion.Interfaces
 {
     public partial class Interface_Abstraite : Form
     {
-        private Utilisateur u;
+        private Entite_Utilisateur u;
+
         public Interface_Abstraite()
         {
-
-          
             InitializeComponent();
             Admin();
             DeftSize();
-
-
-        }
-        private void Admin()
-
-        {   
-            if(Utilisateur.getUtilisateurCourant() != null) { 
-            //si l'utilisateur courant est un admin alors rendre visible les fonctions admin
-                if (Utilisateur.getUtilisateurCourant().admin == 1){
-                    utilisateursToolStripMenuItem.Visible = true;
-                    statistiquesToolStripMenuItem.Visible = true;
-                }
-            //Au contraire les caché
-                else{
-                    utilisateursToolStripMenuItem.Visible = false;
-                    statistiquesToolStripMenuItem.Visible = false;
-                }
-            }
         }
 
-        //Fonction qui définie l'emplacement des élément en fonction de la taille de l'interface
-        private void DeftSize()
-        {
-            
-            this.clientsPanel.Width = this.ClientSize.Width * 90 / 100;
-            this.clientsPanel.Height = this.ClientSize.Height * 70 / 100;
-            int xlocationPanel = this.ClientSize.Width * 5 / 100;
-            int ylocationPanel = this.ClientSize.Height * 10 / 100;
-            this.clientsPanel.Location = new System.Drawing.Point(xlocationPanel, ylocationPanel);
-            this.nomModuleLabel.Location = new System.Drawing.Point(xlocationPanel+ 180, ylocationPanel -35);
-            this.panelRecherche.Location = new System.Drawing.Point(ClientSize.Width - 380, ylocationPanel - 35);
-
-            this.Update();
-
-        }
-
+        #region Événements
+        #region Onglets
+        /// <summary>
+        /// Ouvrir l'onglet accueil
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void accueilToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formAccueil = new Interfaces.Interface_Accueil();
+            Form formAccueil = new Interface_Accueil();
 
             formAccueil.ShowDialog();
             this.Close();
         }
 
+        /// <summary>
+        /// Ouvrir l'onglet stocks
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void stocksToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formStocks = new Interfaces.Interface_Stocks();
+            Form formStocks = new Interface_Stocks();
 
             formStocks.ShowDialog();
             this.Close();
         }
 
+        /// <summary>
+        /// Ouvrir l'onglet statistiques
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void statistiquesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -84,41 +66,145 @@ namespace LFB_gestion.Interfaces
             this.Close();
         }
 
+        /// <summary>
+        /// Ouvrir l'onglet entretien
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void entretienToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form formEntretien = new Interfaces.Interface_Incidents();
-
-            formEntretien.ShowDialog();
-            this.Close();
+          
         }
 
+        /// <summary>
+        /// ouvrir l'onglet plan intéractif
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void planToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Ouvrir l'onglet réservations
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void reservationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formReservation = new Interfaces.Interface_Reservations();
+            Form formReservation = new Interface_Reservations();
 
             formReservation.ShowDialog();
             this.Close();
         }
 
+        /// <summary>
+        /// Ouvrir l'onglet clients
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void clientsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formClients = new Interfaces.Interface_Clients();
+            Form formClients = new Interface_Clients();
 
             formClients.ShowDialog();
             this.Close();
         }
 
+        /// <summary>
+        /// Ouvrir l'onglet utilisateurs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void utilisateursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formUtilisateur = new Interface_Utilisateurs();
+
+            formUtilisateur.ShowDialog();
+            this.Close();
+        }
+        #endregion
+
+        /// <summary>
+        /// Événement appelant une fonction qui replace esthétiquement les éléments selon al taille de la fenêtre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Interface_Abstraite_Resize(object sender, EventArgs e)
         {
             DeftSize();
         }
+        #endregion
+
+        #region Fonctions
+        /// <summary>
+        /// Rend visible des fonctionnalités si l'utilisateur connecté est un admin
+        /// </summary>
+        private void Admin()
+        {
+            if (Entite_Utilisateur.courant != null)
+            {
+                //si l'utilisateur courant est un admin alors rendre visible les fonctions admin
+                if (Entite_Utilisateur.courant.admin == 1)
+                {
+                    utilisateursToolStripMenuItem.Visible = true;
+                    statistiquesToolStripMenuItem.Visible = true;
+                }
+                //Au contraire les caché
+                else
+                {
+                    utilisateursToolStripMenuItem.Visible = false;
+                    statistiquesToolStripMenuItem.Visible = false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Fonction qui définie l'emplacement des éléments en fonction de la taille de l'interface
+        /// </summary>
+        private void DeftSize()
+        {
+
+            clientsPanel.Width = ClientSize.Width * 84 / 100;
+            clientsPanel.Height = ClientSize.Height * 68 / 100;
+            int xlocationPanel = ClientSize.Width * 8 / 100;
+            int ylocationPanel = ClientSize.Height * 17 / 100;
+            clientsPanel.Location = new Point(xlocationPanel, ylocationPanel);
+            panelNomModule.Location = new Point(xlocationPanel, ylocationPanel - 44);
+            panelRecherche.Location = new Point(ClientSize.Width - 500, ylocationPanel - 44);
+            if (ClientSize.Height < 550)
+            {
+                pictureBox1.Location = new Point(ClientSize.Width / 2 - 136, 0);
+                if (ClientSize.Width < 900)
+                {
+                   pictureBox1.Visible = false;
+                }
+
+            }
+            else
+            {
+                pictureBox1.Location = new Point(0, 0);
+               pictureBox1.Visible = true;
+            }
+
+            Update();
+
+
+        }
+
+        private void incidentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Form formEntretien = new Interface_Incidents();
+            formEntretien.ShowDialog();
+            Close();
+
+        }
+
+        #endregion
     }
 }
