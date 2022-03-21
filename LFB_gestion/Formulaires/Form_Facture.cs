@@ -1,10 +1,13 @@
-﻿using LFB_gestion.Entités;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using LFB_gestion.Entités;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -104,6 +107,32 @@ namespace LFB_gestion.Formulaires
             {
                 acompteCheckBox.Text = "Facture";
             }
+        }
+
+        private void validerButton_Click(object sender, EventArgs e)
+        {
+            //Création du document
+            string outFile = Environment.CurrentDirectory + "/facture.pdf";
+            Document doc = new Document();
+            PdfWriter.GetInstance(doc, new FileStream(outFile, FileMode.Create));
+            doc.Open();
+
+            //Palette de couleurs
+            BaseColor blue = new BaseColor(0, 75, 155);
+            BaseColor gris = new BaseColor(240, 240, 240);
+            BaseColor blanc = new BaseColor(255, 255, 255);
+            //Fonts
+            Font policeTitre = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20f, iTextSharp.text.Font.BOLD, blue);
+            Font policeTh = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16f, 1, blanc);
+
+            //Page
+            Paragraph camping = new Paragraph(CampingName.Text + "\n\n", policeTitre);
+            camping.Alignment = Element.ALIGN_LEFT;
+            doc.Add(camping);
+
+            //Finish
+            doc.Close();
+            Process.Start(@"cmd.exe ", @"/c" + outFile);
         }
     }
 }

@@ -66,6 +66,7 @@
             this.C = new System.Windows.Forms.Label();
             this.débutTextBox = new System.Windows.Forms.TextBox();
             this.finTextBox = new System.Windows.Forms.TextBox();
+            this.validerButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // factureLabel
@@ -386,11 +387,22 @@
             this.finTextBox.Size = new System.Drawing.Size(100, 20);
             this.finTextBox.TabIndex = 42;
             // 
+            // validerButton
+            // 
+            this.validerButton.Location = new System.Drawing.Point(402, 415);
+            this.validerButton.Name = "validerButton";
+            this.validerButton.Size = new System.Drawing.Size(75, 23);
+            this.validerButton.TabIndex = 43;
+            this.validerButton.Text = "Valider";
+            this.validerButton.UseVisualStyleBackColor = true;
+            this.validerButton.Click += new System.EventHandler(this.validerButton_Click);
+            // 
             // Form_Facture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1005, 450);
+            this.Controls.Add(this.validerButton);
             this.Controls.Add(this.finTextBox);
             this.Controls.Add(this.débutTextBox);
             this.Controls.Add(this.codePostalTextBox);
@@ -476,5 +488,6 @@
         private System.Windows.Forms.Label C;
         private System.Windows.Forms.TextBox débutTextBox;
         private System.Windows.Forms.TextBox finTextBox;
+        private System.Windows.Forms.Button validerButton;
     }
 }
