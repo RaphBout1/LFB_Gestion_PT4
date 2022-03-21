@@ -102,6 +102,12 @@
     <Compile Include="Entités\Entite_Client.Designer.cs">
       <DependentUpon>Entite_Client.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entités\Entite_Produit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entités\Entite_Produit.Designer.cs">
+      <DependentUpon>Entite_Produit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entités\Entite_Stock.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,6 +119,12 @@
     </Compile>
     <Compile Include="Entités\Entite_Incident.Designer.cs">
       <DependentUpon>Entite_Incident.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Statistiques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Statistiques.Designer.cs">
+      <DependentUpon>Interface_Statistiques.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Interface_Stocks.cs">
       <SubType>Form</SubType>
@@ -158,6 +170,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Entités\Entite_Produit.resx">
+      <DependentUpon>Entite_Produit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Entités\Entite_Reservation.resx">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
     </EmbeddedResource>

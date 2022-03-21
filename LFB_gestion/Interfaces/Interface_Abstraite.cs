@@ -59,7 +59,11 @@ namespace LFB_gestion.Interfaces
         /// <param name="e"></param>
         private void statistiquesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Form formStat = new Interfaces.Interface_Statistiques();
 
+            formStat.ShowDialog();
+            this.Close();
         }
 
         /// <summary>
