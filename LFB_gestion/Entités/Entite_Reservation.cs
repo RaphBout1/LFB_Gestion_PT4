@@ -32,16 +32,7 @@ namespace LFB_gestion.Entités
             this.début = début;
             this.fin = fin;
             InitializeComponent();
-
-            // Trouver le nom du client avec un id
-            string nomClient = "Error";
-            foreach (Entite_Client client in Interface_Accueil.clients)
-            {
-                if (client.id == this.idClient)
-                    nomClient = client.prenom + " " + client.nom;
-            }
-
-            nomClientLabel.Text = nomClient;
+            nomClientLabel.Text = Outils.afficherClient(idClient).ToString();
             emplacementLabel.Text = "emplacement " + this.emplacement.ToString();
             debutLabel.Text = this.début.ToString("dd/MM/yyyy");
             finLabel.Text = this.fin.ToString("dd/MM/yyyy");

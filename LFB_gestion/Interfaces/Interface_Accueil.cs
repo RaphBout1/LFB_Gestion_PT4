@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace LFB_gestion.Interfaces
 {
@@ -16,6 +17,7 @@ namespace LFB_gestion.Interfaces
         public static List<Entite_Entretien> entretiens = new List<Entite_Entretien>();
 
         public static List<Entite_Incident> incidents = new List<Entite_Incident>();
+        public static List<Entite_Reservation> reservations = new List<Entite_Reservation>();
 
 
         public Interface_Accueil()
@@ -23,6 +25,8 @@ namespace LFB_gestion.Interfaces
             selectClients();
             selectUsers();
             selectEntretien();
+            selectIncident();
+            selectReservation();
             InitializeComponent();
         }
 
@@ -53,7 +57,7 @@ namespace LFB_gestion.Interfaces
                 string tel = (string)reader["telephone"];
                 string ville = (string)reader["ville"];
 
-                clients.Add(new Entite_Client(id,nom, prenom, mail, adresse, codePostal, ville, tel));
+                clients.Add(new Entite_Client(id, nom, prenom, mail, adresse, codePostal, ville, tel));
             }
             reader.Close();
             connexion.Close();
@@ -95,14 +99,21 @@ namespace LFB_gestion.Interfaces
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                int id = (int)reader["id"];
-                DateTime date = (DateTime)reader["date"];
-                string description = (string)reader["description"];
-                string user = (string)reader["login_user"];
-                int emplacement = (int)reader["id_emplacement"];
+                try
+                {
+                    int id = (int)reader["id"];
+                    DateTime date = (DateTime)reader["date"];
+                    string description = (string)reader["description"];
+                    string user = (string)reader["login_user"];
+                    int emplacement = (int)reader["id_emplacement"];
 
 
-                entretiens.Add(new Entite_Entretien(id, date, description, emplacement, user));
+                    entretiens.Add(new Entite_Entretien(id, date, description, emplacement, user));
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
             }
             reader.Close();
             connexion.Close();
@@ -110,24 +121,63 @@ namespace LFB_gestion.Interfaces
 
 
         /// <summary>
-        /// Charge tous les entretiens depuis la base de données dans la liste users
+        /// Charge tous les incidents depuis la base de données dans la liste users
         /// </summary>
         private void selectIncident()
         {
-            entretiens.Clear();
+            incidents.Clear();
             connexion.Open();
             SqlCommand command = new SqlCommand("SELECT * FROM incident", connexion);
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                int id = (int)reader["id"];
-                DateTime date = (DateTime)reader["date"];
-                string description = (string)reader["description"];
-                string user = (string)reader["login_user"];
-                int emplacement = (int)reader["id_emplacement"];
+                try
+                {
+                    int id = (int)reader["id"];
+                    DateTime date = (DateTime)reader["date"];
+                    string description = (string)reader["description"];
+                    var status = reader["status"];
+                    int client = (int)reader["id_client"];
+                    int emplacement = (int)reader["id_emplacement"];
 
 
-                entretiens.Add(new Entite_Entretien(id, date, description, emplacement, user));
+                    incidents.Add(new Entite_Incident(id, description, Convert.ToBoolean(status), client, emplacement, date));
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+            reader.Close();
+            connexion.Close();
+        }
+
+        /// <summary>
+        /// Charge tous les réservations depuis la base de données dans la liste users
+        /// </summary>
+        private void selectReservation()
+        {
+            reservations.Clear();
+            connexion.Open();
+            SqlCommand command = new SqlCommand("SELECT * FROM reservation", connexion);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                try
+                {
+                    int id = (int)reader["id"];
+                    DateTime dateDebut = (DateTime)reader["date_debut"];
+                    DateTime dateFin = (DateTime)reader["date_fin"];
+                    int client = (int)reader["id_client"];
+                    int emplacement = (int)reader["id_emplacement"];
+
+
+                    reservations.Add(new Entite_Reservation(id,emplacement, client, dateDebut, dateFin));
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
             }
             reader.Close();
             connexion.Close();

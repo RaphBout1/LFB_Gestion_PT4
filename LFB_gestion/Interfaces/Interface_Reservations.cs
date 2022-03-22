@@ -16,10 +16,18 @@ namespace LFB_gestion.Interfaces
         {
             nomModuleLabel.Text = "Réservations";
             placeHolder();
-            AllReservations();
+            afficherReservations();
             InitializeComponent();
         }
         #region Événements
+
+        /// <summary>
+        /// Affiche tout les incidents
+        /// </summary>
+        private void afficherReservations()
+        {
+            reader("");
+        }
         /// <summary>
         /// bouton pour créer une nouvelle réservation
         /// </summary>
@@ -69,25 +77,16 @@ namespace LFB_gestion.Interfaces
         }
 
         /// <summary>
-        /// rechercher dans la base de données les réservations avec le prénom et nom tapés dans la textBox
+        /// rechercher les réservations avec le prénom et nom tapés dans la textBox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void rechercheBouton_Click(object sender, EventArgs e)
         {
             clientsPanel.Controls.Clear();
-            string txt = rechercheTextBox.Text;
-            string[] tab = txt.Split(' ');
-            int id = 0;
-            foreach (Entite_Client client in Interface_Accueil.clients)
-            {
-                // L'utilisateur doit tapper le prénom + le nom en entier
-                if (tab[0] == client.prenom && tab[1] == client.nom) // client trouvé
-                    id = client.id;
-            }
-            SqlCommand cmd = new SqlCommand("SELECT * from reservation where id_client = @id", connexion);
-            cmd.Parameters.AddWithValue("id", id);
-            reader(cmd);
+            connexion.Open();
+            reader(rechercheTextBox.Text);
+            connexion.Close();
         }
 
         /// <summary>
@@ -112,36 +111,29 @@ namespace LFB_gestion.Interfaces
             rechercheTextBox.Text = "prénom nom";
         }
 
-        /// <summary>
-        /// requête pour toutes les réservations qui appelel une fonction qui permet de les afficher
-        /// </summary>
-        private void AllReservations()
-        {
-            SqlCommand cmd = new SqlCommand("select * from reservation", connexion);
-            reader(cmd);
-        }
 
         /// <summary>
         /// appelle une fonction qui va afficher des réservations selon une requête précisée
         /// </summary>
         /// <param name="cmd">la requête pour chercher des réservations</param>
-        private void reader(SqlCommand cmd)
+        private void reader(string recherche)
         {
-            connexion.Open();
-            SqlDataReader reader;
-            reader = cmd.ExecuteReader();
-            List<Entite_Reservation> réservations = new List<Entite_Reservation>();
-            while (reader.Read())
+            List<Entite_Reservation> listeréservations = new List<Entite_Reservation>();
+            foreach (Entite_Reservation reservation in Interface_Accueil.reservations)
             {
-                int id = reader.GetInt32(0);
-                int idEmplacement = reader.GetInt32(1);
-                int idClient = reader.GetInt32(2);
-                DateTime début = reader.GetDateTime(3);
-                DateTime fin = reader.GetDateTime(4);
-                Entite_Reservation réservation = new Entite_Reservation(id, idEmplacement, idClient, début, fin);
-                réservations.Add(réservation);
+                if (Outils.afficherClient(reservation.idClient).ToString().Contains(recherche) || recherche == null || recherche == "")
+                {
+                    int id = reservation.id;
+                    int idEmplacement = reservation.emplacement;
+                    int idClient = reservation.idClient;
+                    DateTime début = reservation.début;
+                    DateTime fin = reservation.fin;
+                    Entite_Reservation resa = new Entite_Reservation(id, idEmplacement, idClient, début, fin);
+                    listeréservations.Add(resa);
+                }
             }
-            affichageReservations(réservations);
+          
+            affichageReservations(listeréservations);
         }
 
         /// <summary>
@@ -176,7 +168,6 @@ namespace LFB_gestion.Interfaces
             {
                 MessageBox.Show("Pas de réservations dans la base");
             }
-            connexion.Close();
         }
         #endregion
     }
