@@ -84,7 +84,7 @@ namespace LFB_gestion.Interfaces
         /// affiche les entités utilisateur dans l'interface
         /// </summary>
         /// <param name="utilisateurs"></param>
-        private void affichageUtilisateur(List<Entités.Entite_Utilisateur> utilisateurs)
+        private void affichageUtilisateur(List<Entite_Utilisateur> utilisateurs)
         {
             clientsPanel.Controls.Clear();
 
@@ -92,11 +92,11 @@ namespace LFB_gestion.Interfaces
             if (utilisateurs != null)
             {
                 int y = 0;
-                foreach (Entités.Entite_Utilisateur utilisateur in utilisateurs)
+                foreach (Entite_Utilisateur utilisateur in utilisateurs)
                 {
                     if (utilisateur == utilisateurs[0])
                     {
-                        utilisateur.Location = new System.Drawing.Point(0, 0);
+                        utilisateur.Location = new Point(0, 0);
 
                     }
                     else
@@ -112,9 +112,8 @@ namespace LFB_gestion.Interfaces
             }
             else
             {
-                MessageBox.Show("Pas de clients dans la base");
+                MessageBox.Show("Pas d'utilisateur dans la base");
             }
-            connexion.Close();
         }
         #endregion
     }
