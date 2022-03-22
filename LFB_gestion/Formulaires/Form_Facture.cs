@@ -119,20 +119,65 @@ namespace LFB_gestion.Formulaires
 
             //Palette de couleurs
             BaseColor blue = new BaseColor(0, 75, 155);
+            BaseColor red = BaseColor.RED;
             BaseColor gris = new BaseColor(240, 240, 240);
             BaseColor blanc = new BaseColor(255, 255, 255);
+            BaseColor noir = BaseColor.BLACK;
             //Fonts
-            Font policeTitre = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20f, iTextSharp.text.Font.BOLD, blue);
+            Font titre = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20f, iTextSharp.text.Font.BOLD, blue);
+            Font titreRed = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20f, iTextSharp.text.Font.BOLD, red);
             Font policeTh = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16f, 1, blanc);
+            Font normal = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 14f, 1, noir);
+
 
             //Page
-            Paragraph camping = new Paragraph(CampingName.Text + "\n\n", policeTitre);
-            camping.Alignment = Element.ALIGN_LEFT;
-            doc.Add(camping);
+            //Titre
+            Paragraph facture = new Paragraph("Facture\n\n", titre);
+            facture.Alignment = Element.ALIGN_CENTER;
+            doc.Add(facture);
 
-            //Finish
+            #region Données entreprise
+            List<Paragraph> tabE = new List<Paragraph>();
+            tabE.Add(addParagraph(CampingName.Text, titre));
+            tabE.Add(addParagraph(adresseLabel.Text, normal));
+            tabE.Add(addParagraph(villeLabel.Text, normal));
+            tabE.Add(addParagraph(telLabel.Text, normal));
+            tabE.Add(addParagraph(mailLabel.Text, normal));
+            tabE.Add(addParagraph(siretLabel.Text, normal));
+
+            foreach (Paragraph p in tabE)
+            {
+                p.Alignment = Element.ALIGN_LEFT;
+                doc.Add(p);
+            }
+            #endregion
+
+            #region Données client
+            List<Paragraph> tabCl = new List<Paragraph>();
+            tabCl.Add(addParagraph(clientTextBox.Text, titreRed));
+            tabCl.Add(addParagraph(adresseTextBox.Text, normal));
+            tabCl.Add(addParagraph(codePostalTextBox.Text, normal));
+            tabCl.Add(addParagraph(villeTextBox.Text, normal));
+            tabCl.Add(addParagraph(telTextBox.Text, normal));
+            tabCl.Add(addParagraph(mailTextBox.Text, normal));
+
+            foreach (Paragraph p in tabCl)
+            {
+                p.Alignment = Element.ALIGN_RIGHT;
+                doc.Add(p);
+            }
+            #endregion
+
+            #region Désignations
+            Paragraph loc = new Paragraph();
+            #endregion
+
             doc.Close();
-            Process.Start(@"cmd.exe ", @"/c" + outFile);
+        }
+
+        private Paragraph addParagraph(string s, Font font)
+        {
+            return new Paragraph(s + "\n", font);
         }
     }
 }
