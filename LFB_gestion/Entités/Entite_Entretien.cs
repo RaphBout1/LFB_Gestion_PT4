@@ -19,21 +19,22 @@ namespace LFB_gestion.Entités
 
         public string description;
 
-        public string emplacement;
+        public int emplacement;
 
-        public Entite_Utilisateur user;
+        public string user;
 
-        public Entite_Entretien(int id,DateTime date ,string description, string emplacement, Entite_Utilisateur user )
+        public Entite_Entretien(int id,DateTime date ,string description, int emplacement, string user )
         {
             this.id = id;
             this.date = date;
             this.description = description;
-            this.emplacement = emplacement;
+           
             this.user = user;
+            this.emplacement = emplacement;
 
             descriptionLabel.Text = description;
             nomEmployeeLabel.Text = user.ToString();
-            nomEmplacementLabel.Text = emplacement;
+            nomEmplacementLabel.Text = emplacement.ToString();
 
             InitializeComponent();
         }
