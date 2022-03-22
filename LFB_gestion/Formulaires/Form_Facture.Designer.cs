@@ -67,6 +67,10 @@
             this.débutTextBox = new System.Windows.Forms.TextBox();
             this.finTextBox = new System.Windows.Forms.TextBox();
             this.validerButton = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.désignation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // factureLabel
@@ -110,45 +114,45 @@
             this.adresseLabel.AutoSize = true;
             this.adresseLabel.Location = new System.Drawing.Point(13, 68);
             this.adresseLabel.Name = "adresseLabel";
-            this.adresseLabel.Size = new System.Drawing.Size(45, 13);
+            this.adresseLabel.Size = new System.Drawing.Size(112, 13);
             this.adresseLabel.TabIndex = 4;
-            this.adresseLabel.Text = "Adresse";
+            this.adresseLabel.Text = "2721 Route du Littoral";
             // 
             // villeLabel
             // 
             this.villeLabel.AutoSize = true;
             this.villeLabel.Location = new System.Drawing.Point(13, 81);
             this.villeLabel.Name = "villeLabel";
-            this.villeLabel.Size = new System.Drawing.Size(95, 13);
+            this.villeLabel.Size = new System.Drawing.Size(79, 13);
             this.villeLabel.TabIndex = 5;
-            this.villeLabel.Text = "Code Postal + Ville";
+            this.villeLabel.Text = "83310 Grimaud";
             // 
             // telLabel
             // 
             this.telLabel.AutoSize = true;
             this.telLabel.Location = new System.Drawing.Point(13, 94);
             this.telLabel.Name = "telLabel";
-            this.telLabel.Size = new System.Drawing.Size(58, 13);
+            this.telLabel.Size = new System.Drawing.Size(79, 13);
             this.telLabel.TabIndex = 6;
-            this.telLabel.Text = "Téléphone";
+            this.telLabel.Text = "05 99 99 99 99";
             // 
             // mailLabel
             // 
             this.mailLabel.AutoSize = true;
             this.mailLabel.Location = new System.Drawing.Point(13, 107);
             this.mailLabel.Name = "mailLabel";
-            this.mailLabel.Size = new System.Drawing.Size(32, 13);
+            this.mailLabel.Size = new System.Drawing.Size(128, 13);
             this.mailLabel.TabIndex = 7;
-            this.mailLabel.Text = "Email";
+            this.mailLabel.Text = "lesflotsblancs@gmail.com";
             // 
             // siretLabel
             // 
             this.siretLabel.AutoSize = true;
             this.siretLabel.Location = new System.Drawing.Point(13, 120);
             this.siretLabel.Name = "siretLabel";
-            this.siretLabel.Size = new System.Drawing.Size(37, 13);
+            this.siretLabel.Size = new System.Drawing.Size(130, 13);
             this.siretLabel.TabIndex = 8;
-            this.siretLabel.Text = "Siret : ";
+            this.siretLabel.Text = "Siret : 123 456 789 00015";
             // 
             // label3
             // 
@@ -281,7 +285,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(92, 270);
+            this.label5.Location = new System.Drawing.Point(600, 478);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 26;
@@ -289,7 +293,7 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(141, 267);
+            this.textBox8.Location = new System.Drawing.Point(649, 475);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
             this.textBox8.TabIndex = 28;
@@ -297,7 +301,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(92, 296);
+            this.label6.Location = new System.Drawing.Point(600, 504);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 13);
             this.label6.TabIndex = 29;
@@ -305,7 +309,7 @@
             // 
             // régléTextBox
             // 
-            this.régléTextBox.Location = new System.Drawing.Point(141, 356);
+            this.régléTextBox.Location = new System.Drawing.Point(649, 564);
             this.régléTextBox.Name = "régléTextBox";
             this.régléTextBox.Size = new System.Drawing.Size(100, 20);
             this.régléTextBox.TabIndex = 32;
@@ -313,7 +317,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(92, 359);
+            this.label7.Location = new System.Drawing.Point(600, 567);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 31;
@@ -322,7 +326,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(92, 322);
+            this.label8.Location = new System.Drawing.Point(600, 530);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 13);
             this.label8.TabIndex = 33;
@@ -331,7 +335,7 @@
             // tvaLabel
             // 
             this.tvaLabel.AutoSize = true;
-            this.tvaLabel.Location = new System.Drawing.Point(141, 294);
+            this.tvaLabel.Location = new System.Drawing.Point(649, 502);
             this.tvaLabel.Name = "tvaLabel";
             this.tvaLabel.Size = new System.Drawing.Size(13, 13);
             this.tvaLabel.TabIndex = 36;
@@ -340,7 +344,7 @@
             // ttcLabel
             // 
             this.ttcLabel.AutoSize = true;
-            this.ttcLabel.Location = new System.Drawing.Point(141, 322);
+            this.ttcLabel.Location = new System.Drawing.Point(649, 530);
             this.ttcLabel.Name = "ttcLabel";
             this.ttcLabel.Size = new System.Drawing.Size(48, 13);
             this.ttcLabel.TabIndex = 37;
@@ -389,7 +393,7 @@
             // 
             // validerButton
             // 
-            this.validerButton.Location = new System.Drawing.Point(402, 415);
+            this.validerButton.Location = new System.Drawing.Point(402, 678);
             this.validerButton.Name = "validerButton";
             this.validerButton.Size = new System.Drawing.Size(75, 23);
             this.validerButton.TabIndex = 43;
@@ -397,11 +401,34 @@
             this.validerButton.UseVisualStyleBackColor = true;
             this.validerButton.Click += new System.EventHandler(this.validerButton_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.désignation,
+            this.montant});
+            this.dataGridView1.Location = new System.Drawing.Point(65, 308);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(544, 150);
+            this.dataGridView1.TabIndex = 44;
+            // 
+            // désignation
+            // 
+            this.désignation.HeaderText = "Désignation";
+            this.désignation.Name = "désignation";
+            this.désignation.Width = 400;
+            // 
+            // montant
+            // 
+            this.montant.HeaderText = "Montant HT";
+            this.montant.Name = "montant";
+            // 
             // Form_Facture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 450);
+            this.ClientSize = new System.Drawing.Size(1005, 713);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.validerButton);
             this.Controls.Add(this.finTextBox);
             this.Controls.Add(this.débutTextBox);
@@ -443,6 +470,7 @@
             this.Controls.Add(this.factureLabel);
             this.Name = "Form_Facture";
             this.Text = "Form_Facture";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -489,5 +517,8 @@
         private System.Windows.Forms.TextBox débutTextBox;
         private System.Windows.Forms.TextBox finTextBox;
         private System.Windows.Forms.Button validerButton;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn désignation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn montant;
     }
 }
