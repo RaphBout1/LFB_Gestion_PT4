@@ -33,8 +33,8 @@ namespace LFB_gestion.Interfaces
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(75, 105);
-            this.clientsPanel.Size = new System.Drawing.Size(792, 420);
+            this.clientsPanel.Location = new System.Drawing.Point(148, 172);
+            this.clientsPanel.Size = new System.Drawing.Size(1557, 688);
             // 
             // ajoutBouton
             // 
@@ -49,7 +49,7 @@ namespace LFB_gestion.Interfaces
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 618);
+            this.ClientSize = new System.Drawing.Size(1854, 1012);
             this.Location = new System.Drawing.Point(0, 0);
             this.MinimumSize = new System.Drawing.Size(613, 487);
             this.Name = "Interface_Incidents";

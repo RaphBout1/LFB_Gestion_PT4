@@ -104,5 +104,21 @@ namespace LFB_gestion
             }
         }
 
+        public static Entités.Entite_Client afficherClient(int idRecherche)
+        {
+            foreach (Entités.Entite_Client client in Interfaces.Interface_Accueil.clients)
+            {
+                if (client.id == idRecherche)
+                {
+                    return client;
+                }
+            }
+
+            MessageBox.Show("Le client avec l'id " + idRecherche + " n'existe pas");
+            return null;
+
+        }
+
+
     }
 }

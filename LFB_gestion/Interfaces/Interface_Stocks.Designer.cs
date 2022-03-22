@@ -33,8 +33,8 @@ namespace LFB_gestion.Interfaces
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(84, 113);
-            this.clientsPanel.Size = new System.Drawing.Size(890, 455);
+            this.clientsPanel.Location = new System.Drawing.Point(140, 163);
+            this.clientsPanel.Size = new System.Drawing.Size(1473, 653);
             // 
             // ajoutBouton
             // 
@@ -47,11 +47,12 @@ namespace LFB_gestion.Interfaces
             // 
             // Interface_Stocks
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LFB_gestion.Properties.Resources.fondEcran;
-            this.ClientSize = new System.Drawing.Size(1060, 670);
+            this.ClientSize = new System.Drawing.Size(1754, 961);
             this.Location = new System.Drawing.Point(0, 0);
+            this.MinimumSize = new System.Drawing.Size(613, 485);
             this.Name = "Interface_Stocks";
             this.ResumeLayout(false);
 

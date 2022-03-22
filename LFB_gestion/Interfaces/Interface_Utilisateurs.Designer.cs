@@ -41,9 +41,9 @@
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(84, 115);
+            this.clientsPanel.Location = new System.Drawing.Point(148, 172);
             this.clientsPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.clientsPanel.Size = new System.Drawing.Size(891, 460);
+            this.clientsPanel.Size = new System.Drawing.Size(1557, 688);
             // 
             // ajoutBouton
             // 
@@ -59,7 +59,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 677);
+            this.ClientSize = new System.Drawing.Size(1854, 1012);
             this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(1077, 716);

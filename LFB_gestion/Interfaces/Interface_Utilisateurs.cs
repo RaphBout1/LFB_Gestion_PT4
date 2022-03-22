@@ -12,9 +12,11 @@ namespace LFB_gestion.Interfaces
         private SqlConnection connexion = Outils.Connexion();
         public Interface_Utilisateurs()
         {
+            // On redéfini le nom du module
             nomModuleLabel.Text = "Utilisateurs";
-            afficherUsers();
+            //On affiche les utilisateurs présents dans la base
             InitializeComponent();
+            afficherUsers();
         }
 
         #region Événements
@@ -41,27 +43,28 @@ namespace LFB_gestion.Interfaces
 
             formUtilisateur.ShowDialog();
         }
-        #endregion
-
-        #region fonctions
         /// <summary>
         /// Appelle la fonction qui affichera tous les utilisateurs
         /// </summary>
         private void afficherUsers()
         {
-            reader(null);
+            reader("");
         }
+        #endregion
+
+        #region Fonctions
+
 
         /// <summary>
         /// Permet de créer une liste d'Entités_Utilisateur selon un identifiant recherché et appelle la fonction qui les affiche
         /// </summary>
-        /// <param name="idQuery"></param>
+        /// <param name="recherche"></param>
         private void reader(string recherche)
         {
             List<Entite_Utilisateur> listeUtilisateur = new List<Entite_Utilisateur>();
             foreach (Entite_Utilisateur user in Interface_Accueil.users)
             {
-                if (user.login == recherche || recherche == null || recherche == "")
+                if (user.login.Contains(recherche)|| recherche == null || recherche == "")
                 {
                     string nom = user.nom;
                     string prenom = user.prenom;
