@@ -23,20 +23,22 @@ namespace LFB_gestion.Entités
 
         public string user;
 
-        public Entite_Entretien(int id,DateTime date ,string description, int emplacement, string user )
+        public Entite_Entretien(int id, DateTime date, string description, int emplacement, string user)
         {
             this.id = id;
             this.date = date;
             this.description = description;
-           
+
             this.user = user;
             this.emplacement = emplacement;
-
-            descriptionLabel.Text = description;
+            InitializeComponent();
             nomEmployeeLabel.Text = user.ToString();
             nomEmplacementLabel.Text = emplacement.ToString();
+            descriptionLabel.Text = description;
 
-            InitializeComponent();
+
+
+            
         }
 
         private void modifierBouton_Click(object sender, EventArgs e)

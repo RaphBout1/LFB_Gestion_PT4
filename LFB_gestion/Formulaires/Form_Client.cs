@@ -13,7 +13,6 @@ namespace LFB_gestion.Formulaires
 
         private SqlConnection connexion = new SqlConnection(connexionString);
 
-        private int admin = 0;
 
         public Form_Client()
         {

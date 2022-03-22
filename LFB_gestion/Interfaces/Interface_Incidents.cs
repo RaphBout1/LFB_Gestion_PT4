@@ -37,8 +37,8 @@ namespace LFB_gestion.Interfaces
             List<Entités.Entite_Incident> incidents = new List<Entités.Entite_Incident>();
             for (int i = 0; i < 30; i++)
             {
-                Entités.Entite_Incident incident = new Entités.Entite_Incident();
-                incidents.Add(incident);
+               // Entités.Entite_Incident incident = new Entités.Entite_Incident();
+               // incidents.Add(incident);
             }
 
             // Pour tous les clients présents dans la liste, les afficher

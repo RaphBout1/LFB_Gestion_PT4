@@ -32,8 +32,8 @@
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(64, 93);
-            this.clientsPanel.Size = new System.Drawing.Size(672, 373);
+            this.clientsPanel.Location = new System.Drawing.Point(148, 172);
+            this.clientsPanel.Size = new System.Drawing.Size(1557, 688);
             // 
             // ajoutBouton
             // 
@@ -43,12 +43,13 @@
             // rechercheBouton
             // 
             this.rechercheBouton.FlatAppearance.BorderSize = 0;
+            this.rechercheBouton.Click += new System.EventHandler(this.rechercheBouton_Click);
             // 
             // Interface_Entretien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 549);
+            this.ClientSize = new System.Drawing.Size(1854, 1012);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Interface_Entretien";
             this.Text = "Form1";

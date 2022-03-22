@@ -63,12 +63,12 @@ namespace LFB_gestion.Entités
             DbDataReader reader = command.ExecuteReader();
             reader.Read();
 
-            string mdp = reader.GetString(7);
-            string mail = reader.GetString(2);
-            int admin = reader.GetInt32(3);
-            string nom = reader.GetString(5);
-            string prenom = reader.GetString(4);
-            string tel = reader.GetString(6);
+            string mdp = (string)reader["mdp"];
+            string mail = (string)reader["mail"];
+            int admin = (int)reader["admin"];
+            string nom = (string)reader["nom"];
+            string prenom = (string)reader["prenom"];
+            string tel = (string)reader["telephone"];
 
             Entite_Utilisateur courant = new Entite_Utilisateur(login, mdp, mail, admin, nom, prenom, tel);
 
