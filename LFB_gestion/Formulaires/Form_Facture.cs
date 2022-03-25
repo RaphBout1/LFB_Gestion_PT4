@@ -19,6 +19,8 @@ namespace LFB_gestion.Formulaires
     {
         public Entite_Reservation réservation;
 
+        private double totalHt;
+
         private SqlConnection connexion = Outils.Connexion();
 
         public Form_Facture(Entite_Reservation réservation)
@@ -60,6 +62,7 @@ namespace LFB_gestion.Formulaires
             TimeSpan temps = réservation.fin - réservation.début;
             double jours = temps.TotalDays;
             double somme = 50 * jours; //On dit qu'un jour coûte 50€
+            totalHt = somme;
             row.Cells[1].Value = somme + " €";
             dataGridView.Rows.Add(row);
 
@@ -71,17 +74,17 @@ namespace LFB_gestion.Formulaires
         /// </summary>
         private void calculer()
         {
-            double ht = 0;
+            totalHt = 0;
             double tva = 0;
             //somme ht de toutes les désignations
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
-                if (!isLastRow(row))
+                if (!isLastRow(row) && row.Cells[1].Value != null)
                 {
                     string[] tab = row.Cells[1].Value.ToString().Split(' ');
                     try
                     {
-                        ht += double.Parse(tab[0]);
+                        totalHt += double.Parse(tab[0]);
                     }
                     catch (Exception e)
                     {
@@ -89,18 +92,22 @@ namespace LFB_gestion.Formulaires
                     }
                 }
             }
-            totalHtTextBox.Text = ht.ToString();
+            if (acompteCheckBox.Checked)
+            {
+                this.totalHt = 30 * totalHt / 100;
+            }
+            totalHtTextBox.Text = totalHt.ToString();
             //Établir le montant tva
             try
             {
-                tva = ht + (ht * double.Parse(tvaComboBox.SelectedItem.ToString()) / 100);
+                tva = totalHt * double.Parse(tvaComboBox.SelectedItem.ToString()) / 100;
                 tvaTextBox.Text = tva.ToString();
             }
             catch (Exception e)
             {
                 MessageBox.Show("Impossible de convertir la valeur de tva en un numéro");
             }
-            ttcLabel.Text = (ht + tva).ToString();
+            ttcLabel.Text = (totalHt + tva).ToString();
             régléTextBox.Text = ttcLabel.Text;
         }
 
@@ -123,25 +130,12 @@ namespace LFB_gestion.Formulaires
         }
 
         /// <summary>
-        /// Récupére le dernier numéro de facture dans la bd et incrémente
+        /// Le numéro de facture est le même que le numéro de la réservation
         /// </summary>
-        /// <returns>renvoie le numéro de la dernière facture +1</returns>
+        /// <returns>renvoie le numéro de la facture</returns>
         private int numFacture()
         {
-            int numFacture = 0;
-            SqlCommand cmd = new SqlCommand("select count(*) from facture", connexion);
-            try
-            {
-                connexion.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                reader.Read();
-                numFacture = reader.GetInt32(0) + 1;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return numFacture;
+            return réservation.id;
         }
 
         /// <summary>
@@ -154,10 +148,13 @@ namespace LFB_gestion.Formulaires
             if (acompteCheckBox.Checked)
             {
                 acompteCheckBox.Text = "Facture d'acompte";
+                factureLabel.Text = "Facture d'acompte";
+                calculer();
             }
             else
             {
                 acompteCheckBox.Text = "Facture";
+                factureLabel.Text = "Facture";
             }
         }
 
@@ -169,7 +166,7 @@ namespace LFB_gestion.Formulaires
         private void validerButton_Click(object sender, EventArgs e)
         {
             //Création du document
-            string outFile = Environment.CurrentDirectory + "/facture.pdf";
+            string outFile = Environment.CurrentDirectory + "/Facture n°" + numFacture().ToString() + ".pdf"; //Gérer pour facture d'acompte
             Document doc = new Document();
             PdfWriter.GetInstance(doc, new FileStream(outFile, FileMode.Create));
             doc.Open();
@@ -180,10 +177,14 @@ namespace LFB_gestion.Formulaires
             BaseColor gris = new BaseColor(240, 240, 240);
             BaseColor blanc = new BaseColor(255, 255, 255);
             BaseColor noir = BaseColor.BLACK;
+            BaseColor gold = new BaseColor(255, 215, 0);
             //Fonts
             Font titre = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20f, iTextSharp.text.Font.BOLD, blue);
             Font titreRed = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20f, iTextSharp.text.Font.BOLD, red);
             Font policeTh = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16f, 1, blanc);
+            Font policeTotalBlanc= new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12f, 1, blanc);
+            Font policeTotalNoir = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12f, 1, noir);
+            Font policeTotalGold = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12f, 1, gold);
             Font normal = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12f, 1, noir);
 
 
@@ -267,10 +268,60 @@ namespace LFB_gestion.Formulaires
                     }
                 }
             }
+            doc.Add(table);
+
+            doc.Add(new Paragraph("\n"));
 
             //Afficher le total
+            PdfPTable total = new PdfPTable(2);
+            total.WidthPercentage = 30;
+            total.HorizontalAlignment = Element.ALIGN_RIGHT;
+            //Ligne 1
+            //Colonne 1
+            PdfPCell cell1 = new PdfPCell(new Phrase("Total HT", policeTotalBlanc));
+            cell1.BackgroundColor = blue;
+            cell1.BorderColor = blanc;
+            total.AddCell(cell1);
+            //Colonne 2
+            PdfPCell cell11= new PdfPCell(new Phrase(totalHtTextBox.Text + " €", policeTotalNoir));
+            cell11.BackgroundColor = gris;
+            cell11.BorderColor = blanc;
+            total.AddCell(cell11);
+            //Ligne2
+            //Colonne 1
+            PdfPCell cell2 = new PdfPCell(new Phrase("Tva", policeTotalBlanc));
+            cell2.BackgroundColor = blue;
+            cell2.BorderColor = blanc;
+            total.AddCell(cell2);
+            //Colonne 2
+            PdfPCell cell21 = new PdfPCell(new Phrase(tvaTextBox.Text + " €", policeTotalNoir));
+            cell21.BackgroundColor = gris;
+            cell21.BorderColor = blanc;
+            total.AddCell(cell21);
+            //Ligne3
+            //Colonne 1
+            PdfPCell cell3 = new PdfPCell(new Phrase("Total TTC", policeTotalBlanc));
+            cell3.BackgroundColor = blue;
+            cell3.BorderColor = blanc;
+            total.AddCell(cell3);
+            //Colonne 2
+            PdfPCell cell31 = new PdfPCell(new Phrase(ttcLabel.Text + " €", policeTotalNoir));
+            cell31.BackgroundColor = gris;
+            cell31.BorderColor = blanc;
+            total.AddCell(cell31);
+            //Ligne4
+            //Colonne 1
+            PdfPCell cell4 = new PdfPCell(new Phrase("Réglé", policeTotalGold));
+            cell4.BackgroundColor = blue;
+            cell4.BorderColor = blanc;
+            total.AddCell(cell4);
+            //Colonne 2
+            PdfPCell cell41 = new PdfPCell(new Phrase(ttcLabel.Text + " €", policeTotalNoir));
+            cell41.BackgroundColor = gris;
+            cell41.BorderColor = blanc;
+            total.AddCell(cell41);
 
-            doc.Add(table);
+            doc.Add(total);
             #endregion
 
             doc.Close();
@@ -322,6 +373,10 @@ namespace LFB_gestion.Formulaires
         {
             if (e.ColumnIndex == 1)
             {
+                if (dataGridView.Rows[e.RowIndex].Cells[1].Value != null && !dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString().Contains("€"))
+                {
+                    dataGridView.Rows[e.RowIndex].Cells[1].Value += " €";
+                }
                 calculer();
             }
         }
