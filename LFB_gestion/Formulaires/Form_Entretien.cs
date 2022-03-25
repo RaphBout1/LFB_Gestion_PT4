@@ -75,12 +75,12 @@ namespace LFB_gestion.Formulaires
             }
         }
 
-        private void aujouterEntretien(string description, Entite_Client client, ListBox.SelectedObjectCollection entretiens)
+        private void ajouterEntretien(string description, Entite_Client client,  string emplacement)
         {
             SqlConnection connexion = Outils.Connexion();
             connexion.Open();
 
-            string query = "select max(id) from reservation";
+            string query = "select max(id) from entretien";
             SqlCommand command = new SqlCommand(query, connexion);
             DbDataReader reader = command.ExecuteReader();
             int id = 0;
@@ -90,13 +90,12 @@ namespace LFB_gestion.Formulaires
                 id++;
             }
             reader.Close();
-            query = "insert into reservation  values (@id, @emplacement, @client, @dateDebut, @dateFin)";
+            query = "insert into entretien  values (@id, @emplacement, @client, GETDATE())";
             command = new SqlCommand(query, connexion);
             command.Parameters.AddWithValue("@id", id);
             command.Parameters.AddWithValue("@emplacement", emplacement);
             command.Parameters.AddWithValue("@client", client.id);
-            command.Parameters.AddWithValue("@dateDebut", dates.Start);
-            command.Parameters.AddWithValue("@dateFin", dates.End);
+
             try
             {
                 command.ExecuteNonQuery();
