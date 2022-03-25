@@ -1,8 +1,10 @@
 ﻿using LFB_gestion.Entités;
 using LFB_gestion.Interfaces;
 using System;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Text;
+using System.Windows.Forms;
 
 namespace LFB_gestion
 {
@@ -82,5 +84,41 @@ namespace LFB_gestion
             }
             return res;
         }
+        /// <summary>
+        /// Rempli la listBox avec les clients existant dans la basede données
+        /// </summary>
+        public static void remplirClients(ListBox listBox)
+        {
+
+
+            if (Interfaces.Interface_Accueil.clients.Count != 0) //S'il existe des clients
+            {
+                foreach (Entités.Entite_Client client in Interfaces.Interface_Accueil.clients)
+                {
+                    listBox.DisplayMember = "nom";
+                    listBox.ValueMember = "id";
+
+                    listBox.Items.Add(client);
+                        
+                }
+            }
+        }
+
+        public static Entités.Entite_Client afficherClient(int idRecherche)
+        {
+            foreach (Entités.Entite_Client client in Interfaces.Interface_Accueil.clients)
+            {
+                if (client.id == idRecherche)
+                {
+                    return client;
+                }
+            }
+
+            MessageBox.Show("Le client avec l'id " + idRecherche + " n'existe pas");
+            return null;
+
+        }
+
+
     }
 }

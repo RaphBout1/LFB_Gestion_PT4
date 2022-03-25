@@ -24,6 +24,11 @@ namespace LFB_gestion
         /// <param name="e"></param>
         private void seConnecter_button_Click(object sender, EventArgs e)
         {
+            seConnecter();
+        }
+
+        private void seConnecter()
+        {
             connexion = Outils.Connexion();
             //Se connecter à la base de données
             try
@@ -44,7 +49,7 @@ namespace LFB_gestion
                             // Vérifier la correspondance du mot de passe
                             query = "SELECT mdp FROM utilisateur WHERE login = @login";
                             command = new SqlCommand(query, connexion);
-                            string login = reader.GetValue(0).ToString();
+                            string login = (string)reader["login"];
                             command.Parameters.AddWithValue("@login", login);
                             reader.Close();
                             try
@@ -54,7 +59,7 @@ namespace LFB_gestion
                                 if (reader.HasRows)
                                 {
                                     reader.Read();
-                                    if (reader.GetValue(0).ToString() == Outils.crypter(motDePasse_textBox.Text)) // si le mot de passe crypté est égal au mot de passe inséré puis crypté
+                                    if ((string)reader["mdp"] == Outils.crypter(motDePasse_textBox.Text)) // si le mot de passe crypté est égal au mot de passe inséré puis crypté
                                     {
 
 
@@ -124,12 +129,19 @@ namespace LFB_gestion
                 visionMDP.BackgroundImage = Properties.Resources.oeilOuvert;
             }
         }
+
         #endregion
 
         #region Fonctions
 
         #endregion
 
-
+        private void Connexion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                seConnecter();
+            }
+        }
     }
 }

@@ -12,9 +12,11 @@ namespace LFB_gestion.Interfaces
         private SqlConnection connexion = Outils.Connexion();
         public Interface_Utilisateurs()
         {
+            // On redéfini le nom du module
             nomModuleLabel.Text = "Utilisateurs";
-            afficherUsers();
+            //On affiche les utilisateurs présents dans la base
             InitializeComponent();
+            afficherUsers();
         }
 
         #region Événements
@@ -41,27 +43,28 @@ namespace LFB_gestion.Interfaces
 
             formUtilisateur.ShowDialog();
         }
-        #endregion
-
-        #region fonctions
         /// <summary>
         /// Appelle la fonction qui affichera tous les utilisateurs
         /// </summary>
         private void afficherUsers()
         {
-            reader(null);
+            reader("");
         }
+        #endregion
+
+        #region Fonctions
+
 
         /// <summary>
         /// Permet de créer une liste d'Entités_Utilisateur selon un identifiant recherché et appelle la fonction qui les affiche
         /// </summary>
-        /// <param name="idQuery"></param>
+        /// <param name="recherche"></param>
         private void reader(string recherche)
         {
             List<Entite_Utilisateur> listeUtilisateur = new List<Entite_Utilisateur>();
             foreach (Entite_Utilisateur user in Interface_Accueil.users)
             {
-                if (user.login == recherche || recherche == null || recherche == "")
+                if (user.login.Contains(recherche)|| recherche == null || recherche == "")
                 {
                     string nom = user.nom;
                     string prenom = user.prenom;
@@ -81,7 +84,7 @@ namespace LFB_gestion.Interfaces
         /// affiche les entités utilisateur dans l'interface
         /// </summary>
         /// <param name="utilisateurs"></param>
-        private void affichageUtilisateur(List<Entités.Entite_Utilisateur> utilisateurs)
+        private void affichageUtilisateur(List<Entite_Utilisateur> utilisateurs)
         {
             clientsPanel.Controls.Clear();
 
@@ -89,11 +92,11 @@ namespace LFB_gestion.Interfaces
             if (utilisateurs != null)
             {
                 int y = 0;
-                foreach (Entités.Entite_Utilisateur utilisateur in utilisateurs)
+                foreach (Entite_Utilisateur utilisateur in utilisateurs)
                 {
                     if (utilisateur == utilisateurs[0])
                     {
-                        utilisateur.Location = new System.Drawing.Point(0, 0);
+                        utilisateur.Location = new Point(0, 0);
 
                     }
                     else
@@ -109,9 +112,8 @@ namespace LFB_gestion.Interfaces
             }
             else
             {
-                MessageBox.Show("Pas de clients dans la base");
+                MessageBox.Show("Pas d'utilisateur dans la base");
             }
-            connexion.Close();
         }
         #endregion
     }

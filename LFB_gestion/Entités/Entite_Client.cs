@@ -19,7 +19,8 @@ namespace LFB_gestion.Entités
         public string tel;
 
         public string mail;
-       
+
+
         /// <summary>
         /// Constructeur
         /// </summary>

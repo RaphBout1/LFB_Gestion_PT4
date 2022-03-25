@@ -59,6 +59,18 @@
     <Compile Include="Entités\Entite_Reservation.Designer.cs">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entités\Entite_Entretien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entités\Entite_Entretien.Designer.cs">
+      <DependentUpon>Entite_Entretien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\Form_Entretien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\Form_Entretien.Designer.cs">
+      <DependentUpon>Form_Entretien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulaires\Form_Employe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +144,12 @@
     <Compile Include="Interfaces\Interface_Statistiques.Designer.cs">
       <DependentUpon>Interface_Statistiques.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Interface_Entretien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Entretien.Designer.cs">
+      <DependentUpon>Interface_Entretien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Interface_Stocks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +197,9 @@
     <EmbeddedResource Include="Entités\Entite_Produit.resx">
       <DependentUpon>Entite_Produit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Entités\Entite_Entretien.resx">
+      <DependentUpon>Entite_Entretien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Entités\Entite_Reservation.resx">
       <DependentUpon>Entite_Reservation.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -197,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Facture.resx">
       <DependentUpon>Form_Facture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\Form_Entretien.resx">
+      <DependentUpon>Form_Entretien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\Form_Incident.resx">
       <DependentUpon>Form_Incident.cs</DependentUpon>
@@ -221,8 +245,14 @@
     <EmbeddedResource Include="Interfaces\Interface_Abstraite.resx">
       <DependentUpon>Interface_Abstraite.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Interface_Accueil.resx">
+      <DependentUpon>Interface_Accueil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Interface_Clients.resx">
       <DependentUpon>Interface_Clients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Interface_Entretien.resx">
+      <DependentUpon>Interface_Entretien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Interface_Incidents.resx">
       <DependentUpon>Interface_Incidents.cs</DependentUpon>
