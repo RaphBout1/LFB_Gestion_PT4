@@ -73,7 +73,7 @@
             this.tvaComboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.incident = new System.Windows.Forms.Label();
-            this.AcompteTextBox = new System.Windows.Forms.TextBox();
+            this.acompteTextBox = new System.Windows.Forms.TextBox();
             this.acompteLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -500,13 +500,13 @@
             this.incident.TabIndex = 48;
             this.incident.Text = "Description de l\'incident";
             // 
-            // AcompteTextBox
+            // acompteTextBox
             // 
-            this.AcompteTextBox.Location = new System.Drawing.Point(974, 599);
-            this.AcompteTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.AcompteTextBox.Name = "AcompteTextBox";
-            this.AcompteTextBox.Size = new System.Drawing.Size(148, 26);
-            this.AcompteTextBox.TabIndex = 50;
+            this.acompteTextBox.Location = new System.Drawing.Point(974, 599);
+            this.acompteTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.acompteTextBox.Name = "acompteTextBox";
+            this.acompteTextBox.Size = new System.Drawing.Size(148, 26);
+            this.acompteTextBox.TabIndex = 50;
             // 
             // acompteLabel
             // 
@@ -523,7 +523,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1293, 1034);
-            this.Controls.Add(this.AcompteTextBox);
+            this.Controls.Add(this.acompteTextBox);
             this.Controls.Add(this.acompteLabel);
             this.Controls.Add(this.incident);
             this.Controls.Add(this.label9);
@@ -624,7 +624,7 @@
         private System.Windows.Forms.ComboBox tvaComboBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label incident;
-        private System.Windows.Forms.TextBox AcompteTextBox;
+        private System.Windows.Forms.TextBox acompteTextBox;
         private System.Windows.Forms.Label acompteLabel;
     }
 }

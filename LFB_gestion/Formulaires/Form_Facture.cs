@@ -92,19 +92,10 @@ namespace LFB_gestion.Formulaires
                     }
                 }
             }
-            double acompte = 30 * totalHt / 100;
-            double reste = 70 * totalHt / 100;
-            int tvaValue = int.Parse(tvaComboBox.SelectedItem.ToString());
-            if (acompteCheckBox.Checked)
-            {
-                totalHt = acompte;
-            }
-            else
-            {
-                totalHt = reste;
-                AcompteTextBox.Text = (acompte + (tvaValue * acompte / 100)).ToString();
-            }
+
+            // Remplir total Ht, tva, ttc, acompte, réglé dans cet ordre
             totalHtTextBox.Text = totalHt.ToString();
+
             //Établir le montant tva
             try
             {
@@ -115,8 +106,25 @@ namespace LFB_gestion.Formulaires
             {
                 MessageBox.Show("Impossible de convertir la valeur de tva en un numéro");
             }
-            ttcLabel.Text = (totalHt + tva).ToString();
-            régléTextBox.Text = ttcLabel.Text;
+
+            //Remplir ttc
+            double ttc = totalHt + tva;
+            ttcLabel.Text = ttc.ToString();
+           
+            //Remplir acompte
+            double acompte = 30 * ttc / 100;
+            acompteTextBox.Text = acompte.ToString();
+
+            //remplir le montant réglé
+            double reste = 70 * ttc / 100;
+            if (acompteCheckBox.Checked)
+            {
+                régléTextBox.Text = acompte.ToString();
+            }
+            else
+            {
+                régléTextBox.Text = reste.ToString();
+            }
         }
 
         /// <summary>
@@ -158,7 +166,7 @@ namespace LFB_gestion.Formulaires
                 factureLabel.Text = "Facture d'acompte";
                 numFactureTextBox.Text += "A";
                 acompteLabel.Enabled = false;
-                AcompteTextBox.Visible = false;
+                acompteTextBox.Visible = false;
                 calculer();
             }
             else
@@ -166,7 +174,7 @@ namespace LFB_gestion.Formulaires
                 factureLabel.Text = "Facture";
                 numFactureTextBox.Text = réservation.id.ToString();
                 acompteLabel.Enabled = true;
-                AcompteTextBox.Visible = true;
+                acompteTextBox.Visible = true;
                 calculer();
             }
         }
@@ -291,9 +299,10 @@ namespace LFB_gestion.Formulaires
                 }
             }
             doc.Add(table);
-
             doc.Add(new Paragraph("\n"));
+            #endregion
 
+            #region Total
             //Afficher le total
             PdfPTable total = new PdfPTable(2);
             total.WidthPercentage = 30;
@@ -340,7 +349,7 @@ namespace LFB_gestion.Formulaires
                 cell411.BorderColor = blanc;
                 total.AddCell(cell411);
                 //Colonne 2
-                PdfPCell cell412 = new PdfPCell(new Phrase(AcompteTextBox.Text + " €", policeTotalNoir));
+                PdfPCell cell412 = new PdfPCell(new Phrase(acompteTextBox.Text + " €", policeTotalNoir));
                 cell412.BackgroundColor = gris;
                 cell412.BorderColor = blanc;
                 total.AddCell(cell412);
