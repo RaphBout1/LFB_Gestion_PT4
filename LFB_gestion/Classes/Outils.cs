@@ -4,6 +4,7 @@ using System;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace LFB_gestion
@@ -68,6 +69,48 @@ namespace LFB_gestion
             };
             return Result;
         }
+        /// <summary>
+        /// Verifie si le numero de téléphone est correcte
+        /// </summary>
+        /// <param name="tel"></param>
+        /// <returns></returns>
+        public static bool isValidTel(string tel) {
+            int cmpt = 0;
+            foreach (char c in tel)
+            {
+                if (c >= '0' && c <= '9')
+                {
+                    cmpt++;
+                }else
+                {
+                    return false;
+                }
+            }
+            return (cmpt == 10);
+        }
+
+        /// <summary>
+        /// Verifie si le numero du code Postale est correcte
+        /// </summary>
+        /// <param name="CP"></param>
+        /// <returns></returns>
+        public static bool isValidCodePostal(string CP)
+        {
+            int cmpt = 0;
+            foreach (char c in CP)
+            {
+                if (c >= '0' && c <= '9')
+                {
+                    cmpt++;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return (cmpt == 5);
+        }
+
 
         /// <summary>
         /// trouve le client de la liste dans l'interface d'accueil à partir d'un id
@@ -96,7 +139,7 @@ namespace LFB_gestion
                 foreach (Entités.Entite_Client client in Interfaces.Interface_Accueil.clients)
                 {
                     listBox.Items.Add(client.ToString());
-                        
+
                 }
             }
         }
@@ -117,7 +160,7 @@ namespace LFB_gestion
                     listBox.Items.Add(user.ToString());
                     if (user.login == userSelect)
                     {
-                        listBox.SetSelected(i,true);
+                        listBox.SetSelected(i, true);
                     }
 
                     i++;

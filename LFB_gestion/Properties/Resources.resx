@@ -124,6 +124,9 @@
   <data name="fondEcran" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondEcran.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="boutonDeco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boutonDeco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Nouveau projet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Nouveau projet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,6 +151,9 @@
   <data name="fondConnexion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondConnexion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconeIncident" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconeIncident.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconeUtilisateur" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconeUtilisateur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,6 +169,9 @@
   <data name="oeilFermer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\oeilFermer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fondEcran4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondEcran4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fondModule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondModule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,8 +184,8 @@
   <data name="iconeAccueil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconeAccueil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconneSupp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconneSupp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="plan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondEcran3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondEcran3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,13 +202,16 @@
   <data name="iconePlan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconePlan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fondEcran4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondEcran4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconneSupp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconneSupp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boutonDeco1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boutonDeco1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondEcran1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondEcran1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconeIncident" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconeIncident.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="plan1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

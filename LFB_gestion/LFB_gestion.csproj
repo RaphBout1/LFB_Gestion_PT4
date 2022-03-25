@@ -138,6 +138,12 @@
     <Compile Include="Entités\Entite_Incident.Designer.cs">
       <DependentUpon>Entite_Incident.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\Interface_Plan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Interface_Plan.Designer.cs">
+      <DependentUpon>Interface_Plan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Interface_Statistiques.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     <EmbeddedResource Include="Interfaces\Interface_Incidents.resx">
       <DependentUpon>Interface_Incidents.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Interface_Plan.resx">
+      <DependentUpon>Interface_Plan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Interface_Reservations.resx">
       <DependentUpon>Interface_Reservations.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,6 +384,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconeIncident.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boutonDeco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boutonDeco1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plan1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

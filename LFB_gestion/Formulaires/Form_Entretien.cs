@@ -105,7 +105,7 @@ namespace LFB_gestion.Formulaires
                 MessageBox.Show(ex.Message);
             }
 
-            MessageBox.Show("Réservation des emplacements " + s + " effectuée au nom de " + client.ToString());
+            MessageBox.Show("Réservation des emplacements " + " effectuée au nom de " + client.ToString());
             connexion.Close();
         }
     }
