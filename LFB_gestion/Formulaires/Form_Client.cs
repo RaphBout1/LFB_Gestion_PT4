@@ -11,7 +11,7 @@ namespace LFB_gestion.Formulaires
 
         private static string connexionString = "Data Source=info-joyeux;Initial Catalog=PT4_Camping_S4AE2;User Id=ETD;Password=ETD;";
 
-        private SqlConnection connexion = new SqlConnection(connexionString);
+        private static SqlConnection connexion = new SqlConnection(connexionString);
 
 
         public Form_Client()
@@ -91,7 +91,7 @@ namespace LFB_gestion.Formulaires
         /// <param name="nom"></param>
         /// <param name="prenom"></param>
         /// <param name="mail"></param>
-        private void creationDuClient(string nom, string prenom, string mail)
+        public static void creationDuClient(string nom, string prenom, string mail)
         {
             connexion.Open();
             int id = 0;
@@ -150,6 +150,12 @@ namespace LFB_gestion.Formulaires
             connexion.Close();
             return present;
         }
+        public void TestCreationClient(string nom, string prenom, string mail)
+        {
+            creationDuClient(nom, prenom, mail);
+        }
         #endregion
     }
+
+   
 }

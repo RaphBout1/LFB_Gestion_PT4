@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace LFB_gestion
 {
-    internal class Outils
+    public class Outils
     {
         private static string Key = "ENGn*fa}T&39.349&tgS";
 
