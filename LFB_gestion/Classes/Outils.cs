@@ -95,13 +95,64 @@ namespace LFB_gestion
             {
                 foreach (Entités.Entite_Client client in Interfaces.Interface_Accueil.clients)
                 {
-                    listBox.DisplayMember = "nom";
-                    listBox.ValueMember = "id";
-
-                    listBox.Items.Add(client);
+                    listBox.Items.Add(client.ToString());
                         
                 }
             }
+        }
+
+        /// <summary>
+        /// Rempli la listBox avec les utilisateurs existant dans la basede données
+        /// </summary>
+        public static void remplirUtilisateur(ListBox listBox, string userSelect)
+        {
+            int i = 0;
+
+
+            if (Interfaces.Interface_Accueil.users.Count != 0)
+            {
+                foreach (Entités.Entite_Utilisateur user in Interfaces.Interface_Accueil.users)
+                {
+
+                    listBox.Items.Add(user.ToString());
+                    if (user.login == userSelect)
+                    {
+                        listBox.SetSelected(i,true);
+                    }
+
+                    i++;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Rempli la listBox avec les emplacements existant dans la basede données
+        /// </summary>
+        public static void remplirEmplacement(ListBox listBox, string emplacementSelect)
+        {
+            int i = 0;
+            SqlConnection connexion = Connexion();
+
+            listBox.Items.Clear();
+            connexion.Open();
+            string query = "select emplacement.id from emplacement";
+
+            SqlCommand command = new SqlCommand(query, connexion);
+            DbDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    listBox.Items.Add(reader.GetInt32(0));
+                    if (reader.GetInt32(0).ToString() == emplacementSelect)
+                    {
+                        listBox.SetSelected(i, true);
+                    }
+
+                    i++;
+                }
+            }
+
         }
 
         public static Entités.Entite_Client afficherClient(int idRecherche)

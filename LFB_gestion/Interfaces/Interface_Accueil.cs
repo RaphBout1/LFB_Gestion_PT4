@@ -108,7 +108,7 @@ namespace LFB_gestion.Interfaces
                 try
                 {
                     int id = (int)reader["id"];
-                    DateTime date = (DateTime)reader["date"];
+                    string date = reader["date"].ToString();
                     string description = (string)reader["description"];
                     string user = (string)reader["login_user"];
                     int emplacement = (int)reader["id_emplacement"];

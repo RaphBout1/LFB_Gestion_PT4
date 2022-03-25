@@ -92,6 +92,7 @@
             this.validationBouton.TabIndex = 6;
             this.validationBouton.Text = "Valider";
             this.validationBouton.UseVisualStyleBackColor = true;
+            this.validationBouton.Click += new System.EventHandler(this.validationBouton_Click);
             // 
             // utilisateurListBox
             // 

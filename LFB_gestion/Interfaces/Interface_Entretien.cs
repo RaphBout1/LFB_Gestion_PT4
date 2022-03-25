@@ -69,7 +69,7 @@ namespace LFB_gestion.Interfaces
                 if (entretien.description.Contains(recherche) || recherche == null || recherche == "")
                 {
                     int id = entretien.id;
-                    DateTime date = entretien.date; 
+                    string date = entretien.date; 
                     string description = entretien.description;
                     string user = entretien.user;
                     int emplacement = entretien.emplacement;

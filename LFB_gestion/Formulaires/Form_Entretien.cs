@@ -1,7 +1,10 @@
-﻿using System;
+﻿using LFB_gestion.Entités;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,7 +21,95 @@ namespace LFB_gestion.Formulaires
             if (entretien != null)
             {
                 descriptionTextBox.Text = entretien.description;
+                Outils.remplirUtilisateur(utilisateurListBox, entretien.user);
+                Outils.remplirEmplacement(emplacementsListBox, entretien.emplacement.ToString());
             }
+            else
+            {
+                Outils.remplirUtilisateur(utilisateurListBox, null);
+                Outils.remplirEmplacement(emplacementsListBox, null);
+            }
+        }
+
+        /// <summary>
+        /// Vérifie si au moins un user est sélectionné pour la réservation
+        /// </summary>
+        /// <returns>renvoie vrai si au moins un user est sélectionné</returns>
+        private bool auMoinsUnUserSelectionne()
+        {
+            return utilisateurListBox.SelectedItem != null;
+        }
+
+        /// <summary>
+        /// Vérifie si au moins un emplacement est sélectionné pour la réservation
+        /// </summary>
+        /// <returns>renvoie vrai si au moins un emplacement est sélectionné</returns>
+        private bool auMoinsUnEmplacementSelectionne()
+        {
+            return emplacementsListBox.SelectedItem != null;
+        }
+
+        private void validationBouton_Click(object sender, EventArgs e)
+        {
+            if (auMoinsUnUserSelectionne())
+            {
+                if (auMoinsUnEmplacementSelectionne())
+                {
+                    if (descriptionTextBox != null)
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Description vide");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Veuillez selectionner un emplacement.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez selectionner un utilisateur.");
+            }
+        }
+
+        private void aujouterEntretien(string description, Entite_Client client, ListBox.SelectedObjectCollection entretiens)
+        {
+            SqlConnection connexion = Outils.Connexion();
+            connexion.Open();
+
+            string query = "select max(id) from reservation";
+            SqlCommand command = new SqlCommand(query, connexion);
+            DbDataReader reader = command.ExecuteReader();
+            int id = 0;
+            if (reader.Read())
+            {
+                id = reader.GetInt32(0);
+                id++;
+            }
+            reader.Close();
+            query = "insert into reservation  values (@id, @emplacement, @client, @dateDebut, @dateFin)";
+            command = new SqlCommand(query, connexion);
+            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.AddWithValue("@emplacement", emplacement);
+            command.Parameters.AddWithValue("@client", client.id);
+            command.Parameters.AddWithValue("@dateDebut", dates.Start);
+            command.Parameters.AddWithValue("@dateFin", dates.End);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            MessageBox.Show("Réservation des emplacements " + s + " effectuée au nom de " + client.ToString());
+            connexion.Close();
         }
     }
 }
+
+

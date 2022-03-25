@@ -15,7 +15,7 @@ namespace LFB_gestion.Entités
 
         public int id;
 
-        public DateTime date;
+        public string date;
 
         public string description;
 
@@ -23,12 +23,11 @@ namespace LFB_gestion.Entités
 
         public string user;
 
-        public Entite_Entretien(int id, DateTime date, string description, int emplacement, string user)
+        public Entite_Entretien(int id, string date, string description, int emplacement, string user)
         {
             this.id = id;
             this.date = date;
             this.description = description;
-
             this.user = user;
             this.emplacement = emplacement;
             InitializeComponent();

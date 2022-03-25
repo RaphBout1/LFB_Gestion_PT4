@@ -85,5 +85,13 @@ namespace LFB_gestion.Entités
         {
             MessageBox.Show(this.prenom, this.nom);
         }
+
+        /// <summary>
+        /// Affiche le prénom et le nom de l'utilisateur
+        /// </summary>
+        public override string ToString()
+        {
+            return prenom + " " + nom;
+        }
     }
 }
