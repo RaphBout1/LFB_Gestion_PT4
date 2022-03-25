@@ -33,127 +33,7 @@ namespace LFB_gestion.Formulaires
             remplirDonnées();
         }
 
-        /// <summary>
-        /// Instancie les variables nécessaires pour remplir ensuite le form Facture
-        /// </summary>
-        private void remplirDonnées()
-        {
-            numFactureTextBox.Text = numFacture().ToString();
-
-            dateTextBox.Text = date();
-
-            Entite_Client leClient = client();
-
-            clientTextBox.Text = leClient.ToString();
-            adresseTextBox.Text = leClient.adresse;
-            codePostalTextBox.Text = leClient.codePostal;
-            villeTextBox.Text = leClient.ville;
-            telTextBox.Text = leClient.tel;
-            mailTextBox.Text = leClient.mail;
-
-            débutTextBox.Text = réservation.début.ToString("dd/MM/yyyy");
-            finTextBox.Text = réservation.fin.ToString("dd/MM/yyyy");
-
-            emplacementTextBox.Text = réservation.emplacement.ToString();
-
-            //Remplir la première ligne du dataGrid avec la location comme désignaiton
-            DataGridViewRow row = (DataGridViewRow)dataGridView.Rows[0].Clone();
-            row.Cells[0].Value = "Location de l'emplacement" + emplacementTextBox.Text + " du " + débutTextBox.Text + " au " + finTextBox.Text;
-            TimeSpan temps = réservation.fin - réservation.début;
-            double jours = temps.TotalDays;
-            double somme = 50 * jours; //On dit qu'un jour coûte 50€
-            totalHt = somme;
-            row.Cells[1].Value = somme + " €";
-            dataGridView.Rows.Add(row);
-
-            calculer();
-        }
-
-        /// <summary>
-        /// Calcule et met à jour les valeurs des montants ht tva ttc
-        /// </summary>
-        private void calculer()
-        {
-            totalHt = 0;
-            double tva = 0;
-            //somme ht de toutes les désignations
-            foreach (DataGridViewRow row in dataGridView.Rows)
-            {
-                if (!isLastRow(row) && row.Cells[1].Value != null)
-                {
-                    string[] tab = row.Cells[1].Value.ToString().Split(' ');
-                    try
-                    {
-                        totalHt += double.Parse(tab[0]);
-                    }
-                    catch (Exception e)
-                    {
-                        MessageBox.Show("Conversion impossible du montant : " + row.Cells[1].Value.ToString());
-                    }
-                }
-            }
-
-            // Remplir total Ht, tva, ttc, acompte, réglé dans cet ordre
-            totalHtTextBox.Text = totalHt.ToString();
-
-            //Établir le montant tva
-            try
-            {
-                tva = totalHt * double.Parse(tvaComboBox.SelectedItem.ToString()) / 100;
-                tvaTextBox.Text = tva.ToString();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Impossible de convertir la valeur de tva en un numéro");
-            }
-
-            //Remplir ttc
-            double ttc = totalHt + tva;
-            ttcLabel.Text = ttc.ToString();
-           
-            //Remplir acompte
-            double acompte = 30 * ttc / 100;
-            acompteTextBox.Text = acompte.ToString();
-
-            //remplir le montant réglé
-            double reste = 70 * ttc / 100;
-            if (acompteCheckBox.Checked)
-            {
-                régléTextBox.Text = acompte.ToString();
-            }
-            else
-            {
-                régléTextBox.Text = reste.ToString();
-            }
-        }
-
-        /// <summary>
-        /// Retourne un string de la date actuelle
-        /// </summary>
-        /// <returns></returns>
-        private string date()
-        {
-            return DateTime.Now.ToString("dd/MM/yyyy");
-        }
-
-        /// <summary>
-        /// Retourne lentité client selon l'idClient
-        /// </summary>
-        /// <returns></returns>
-        private Entite_Client client()
-        {
-            return Outils.findClient(réservation.idClient);
-        }
-
-        /// <summary>
-        /// Le numéro de facture est le même que le numéro de la réservation
-        /// </summary>
-        /// <returns>renvoie le numéro de la facture</returns>
-        private int numFacture()
-        {
-            return réservation.id;
-        }
-
+        #region Evenements
         /// <summary>
         /// Savoir si la facture est un acompte ou non
         /// </summary>
@@ -201,6 +81,7 @@ namespace LFB_gestion.Formulaires
             PdfWriter.GetInstance(doc, new FileStream(outFile, FileMode.Create));
             doc.Open();
 
+            #region Colors & Fonts
             //Palette de couleurs
             BaseColor blue = new BaseColor(0, 75, 155);
             BaseColor red = BaseColor.RED;
@@ -212,11 +93,11 @@ namespace LFB_gestion.Formulaires
             Font titre = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20f, iTextSharp.text.Font.BOLD, blue);
             Font titreRed = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20f, iTextSharp.text.Font.BOLD, red);
             Font policeTh = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 16f, 1, blanc);
-            Font policeTotalBlanc= new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12f, 1, blanc);
+            Font policeTotalBlanc = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12f, 1, blanc);
             Font policeTotalNoir = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12f, 1, noir);
             Font policeTotalGold = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12f, 1, gold);
             Font normal = new Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12f, 1, noir);
-
+            #endregion
 
             //Page
             //Titre
@@ -314,7 +195,7 @@ namespace LFB_gestion.Formulaires
             cell1.BorderColor = blanc;
             total.AddCell(cell1);
             //Colonne 2
-            PdfPCell cell11= new PdfPCell(new Phrase(totalHtTextBox.Text + " €", policeTotalNoir));
+            PdfPCell cell11 = new PdfPCell(new Phrase(totalHtTextBox.Text + " €", policeTotalNoir));
             cell11.BackgroundColor = gris;
             cell11.BorderColor = blanc;
             total.AddCell(cell11);
@@ -373,6 +254,149 @@ namespace LFB_gestion.Formulaires
         }
 
         /// <summary>
+        /// Actualise les calucls des montants ht tva ttc
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridView_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 1)
+            {
+                if (dataGridView.Rows[e.RowIndex].Cells[1].Value != null && !dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString().Contains("€"))
+                {
+                    dataGridView.Rows[e.RowIndex].Cells[1].Value += " €";
+                }
+                calculer();
+            }
+        }
+        #endregion
+
+        #region Fonctions
+        /// <summary>
+        /// Instancie les variables nécessaires pour remplir ensuite le form Facture
+        /// </summary>
+        private void remplirDonnées()
+        {
+            numFactureTextBox.Text = numFacture().ToString();
+
+            dateTextBox.Text = date();
+
+            Entite_Client leClient = client();
+
+            clientTextBox.Text = leClient.ToString();
+            adresseTextBox.Text = leClient.adresse;
+            codePostalTextBox.Text = leClient.codePostal;
+            villeTextBox.Text = leClient.ville;
+            telTextBox.Text = leClient.tel;
+            mailTextBox.Text = leClient.mail;
+
+            débutTextBox.Text = réservation.début.ToString("dd/MM/yyyy");
+            finTextBox.Text = réservation.fin.ToString("dd/MM/yyyy");
+
+            emplacementTextBox.Text = réservation.emplacement.ToString();
+
+            //Aller chercher la description de l'incident
+            //TODO
+
+            //Remplir la première ligne du dataGrid avec la location comme désignaiton
+            DataGridViewRow row = (DataGridViewRow)dataGridView.Rows[0].Clone();
+            row.Cells[0].Value = "Location de l'emplacement" + emplacementTextBox.Text + " du " + débutTextBox.Text + " au " + finTextBox.Text;
+            TimeSpan temps = réservation.fin - réservation.début;
+            double jours = temps.TotalDays;
+            double somme = 50 * jours; //On dit qu'un jour coûte 50€
+            totalHt = somme;
+            row.Cells[1].Value = somme + " €";
+            dataGridView.Rows.Add(row);
+
+            calculer();
+        }
+
+        /// <summary>
+        /// Calcule et met à jour les valeurs des montants ht tva ttc
+        /// </summary>
+        private void calculer()
+        {
+            totalHt = 0;
+            double tva = 0;
+            //somme ht de toutes les désignations
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                if (!isLastRow(row) && row.Cells[1].Value != null)
+                {
+                    string[] tab = row.Cells[1].Value.ToString().Split(' ');
+                    try
+                    {
+                        totalHt += double.Parse(tab[0]);
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show("Conversion impossible du montant : " + row.Cells[1].Value.ToString());
+                    }
+                }
+            }
+
+            // Remplir total Ht, tva, ttc, acompte, réglé dans cet ordre
+            totalHtTextBox.Text = totalHt.ToString();
+
+            //Établir le montant tva
+            try
+            {
+                tva = totalHt * double.Parse(tvaComboBox.SelectedItem.ToString()) / 100;
+                tvaTextBox.Text = tva.ToString();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Impossible de convertir la valeur de tva en un numéro");
+            }
+
+            //Remplir ttc
+            double ttc = totalHt + tva;
+            ttcLabel.Text = ttc.ToString();
+
+            //Remplir acompte
+            double acompte = 30 * ttc / 100;
+            acompteTextBox.Text = acompte.ToString();
+
+            //remplir le montant réglé
+            double reste = 70 * ttc / 100;
+            if (acompteCheckBox.Checked)
+            {
+                régléTextBox.Text = acompte.ToString();
+            }
+            else
+            {
+                régléTextBox.Text = reste.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Retourne un string de la date actuelle
+        /// </summary>
+        /// <returns></returns>
+        private string date()
+        {
+            return DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+        /// <summary>
+        /// Retourne lentité client selon l'idClient
+        /// </summary>
+        /// <returns></returns>
+        private Entite_Client client()
+        {
+            return Outils.findClient(réservation.idClient);
+        }
+
+        /// <summary>
+        /// Le numéro de facture est le même que le numéro de la réservation
+        /// </summary>
+        /// <returns>renvoie le numéro de la facture</returns>
+        private int numFacture()
+        {
+            return réservation.id;
+        }
+
+        /// <summary>
         /// Ajoute une cellule dans un tableau
         /// </summary>
         /// <param name="s">le texte à mettre deans la cellule</param>
@@ -408,22 +432,6 @@ namespace LFB_gestion.Formulaires
         {
             return (row.Index == dataGridView.Rows.Count - 1);
         }
-
-        /// <summary>
-        /// Actualise les calucls des montants ht tva ttc
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dataGridView_CellValidated(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 1)
-            {
-                if (dataGridView.Rows[e.RowIndex].Cells[1].Value != null && !dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString().Contains("€"))
-                {
-                    dataGridView.Rows[e.RowIndex].Cells[1].Value += " €";
-                }
-                calculer();
-            }
-        }
+        #endregion
     }
 }

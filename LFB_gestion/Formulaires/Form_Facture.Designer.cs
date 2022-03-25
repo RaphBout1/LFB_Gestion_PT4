@@ -72,7 +72,7 @@
             this.tvaTextBox = new System.Windows.Forms.TextBox();
             this.tvaComboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.incident = new System.Windows.Forms.Label();
+            this.incidentLabel = new System.Windows.Forms.Label();
             this.acompteTextBox = new System.Windows.Forms.TextBox();
             this.acompteLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -490,15 +490,15 @@
             this.label9.TabIndex = 47;
             this.label9.Text = "Incident : ";
             // 
-            // incident
+            // incidentLabel
             // 
-            this.incident.AutoSize = true;
-            this.incident.Location = new System.Drawing.Point(140, 375);
-            this.incident.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.incident.Name = "incident";
-            this.incident.Size = new System.Drawing.Size(176, 20);
-            this.incident.TabIndex = 48;
-            this.incident.Text = "Description de l\'incident";
+            this.incidentLabel.AutoSize = true;
+            this.incidentLabel.Location = new System.Drawing.Point(140, 375);
+            this.incidentLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.incidentLabel.Name = "incidentLabel";
+            this.incidentLabel.Size = new System.Drawing.Size(176, 20);
+            this.incidentLabel.TabIndex = 48;
+            this.incidentLabel.Text = "Description de l\'incident";
             // 
             // acompteTextBox
             // 
@@ -525,7 +525,7 @@
             this.ClientSize = new System.Drawing.Size(1293, 1034);
             this.Controls.Add(this.acompteTextBox);
             this.Controls.Add(this.acompteLabel);
-            this.Controls.Add(this.incident);
+            this.Controls.Add(this.incidentLabel);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tvaComboBox);
             this.Controls.Add(this.tvaTextBox);
@@ -623,7 +623,7 @@
         private System.Windows.Forms.TextBox tvaTextBox;
         private System.Windows.Forms.ComboBox tvaComboBox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label incident;
+        private System.Windows.Forms.Label incidentLabel;
         private System.Windows.Forms.TextBox acompteTextBox;
         private System.Windows.Forms.Label acompteLabel;
     }
