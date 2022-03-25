@@ -92,9 +92,17 @@ namespace LFB_gestion.Formulaires
                     }
                 }
             }
+            double acompte = 30 * totalHt / 100;
+            double reste = 70 * totalHt / 100;
+            int tvaValue = int.Parse(tvaComboBox.SelectedItem.ToString());
             if (acompteCheckBox.Checked)
             {
-                this.totalHt = 30 * totalHt / 100;
+                totalHt = acompte;
+            }
+            else
+            {
+                totalHt = reste;
+                AcompteTextBox.Text = (acompte + (tvaValue * acompte / 100)).ToString();
             }
             totalHtTextBox.Text = totalHt.ToString();
             //Établir le montant tva
@@ -147,14 +155,19 @@ namespace LFB_gestion.Formulaires
         {
             if (acompteCheckBox.Checked)
             {
-                acompteCheckBox.Text = "Facture d'acompte";
                 factureLabel.Text = "Facture d'acompte";
+                numFactureTextBox.Text += "A";
+                acompteLabel.Enabled = false;
+                AcompteTextBox.Visible = false;
                 calculer();
             }
             else
             {
-                acompteCheckBox.Text = "Facture";
                 factureLabel.Text = "Facture";
+                numFactureTextBox.Text = réservation.id.ToString();
+                acompteLabel.Enabled = true;
+                AcompteTextBox.Visible = true;
+                calculer();
             }
         }
 
@@ -166,7 +179,16 @@ namespace LFB_gestion.Formulaires
         private void validerButton_Click(object sender, EventArgs e)
         {
             //Création du document
-            string outFile = Environment.CurrentDirectory + "/Facture n°" + numFacture().ToString() + ".pdf"; //Gérer pour facture d'acompte
+            string outFile = "";
+            if (!acompteCheckBox.Checked)
+            {
+                outFile = Environment.CurrentDirectory + "/Facture n°" + numFacture().ToString() + ".pdf";
+            }
+            else
+            {
+                outFile = Environment.CurrentDirectory + "/Facture d'acompte n°" + numFacture().ToString() + "A.pdf";
+            }
+
             Document doc = new Document();
             PdfWriter.GetInstance(doc, new FileStream(outFile, FileMode.Create));
             doc.Open();
@@ -309,6 +331,20 @@ namespace LFB_gestion.Formulaires
             cell31.BackgroundColor = gris;
             cell31.BorderColor = blanc;
             total.AddCell(cell31);
+            //Ligne pour l'acompte
+            if (!acompteCheckBox.Checked)
+            {
+                //Colonne 1
+                PdfPCell cell411 = new PdfPCell(new Phrase("Acompte", policeTotalBlanc));
+                cell411.BackgroundColor = blue;
+                cell411.BorderColor = blanc;
+                total.AddCell(cell411);
+                //Colonne 2
+                PdfPCell cell412 = new PdfPCell(new Phrase(AcompteTextBox.Text + " €", policeTotalNoir));
+                cell412.BackgroundColor = gris;
+                cell412.BorderColor = blanc;
+                total.AddCell(cell412);
+            }
             //Ligne4
             //Colonne 1
             PdfPCell cell4 = new PdfPCell(new Phrase("Réglé", policeTotalGold));
