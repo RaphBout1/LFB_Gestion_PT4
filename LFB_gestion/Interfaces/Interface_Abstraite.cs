@@ -13,7 +13,6 @@ namespace LFB_gestion.Interfaces
 {
     public partial class Interface_Abstraite : Form
     {
-        private Entite_Utilisateur u;
 
         public Interface_Abstraite()
         {

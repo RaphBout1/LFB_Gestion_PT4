@@ -181,6 +181,15 @@ namespace LFB_gestion.Formulaires
             return clientsListBox.SelectedItem != null;
         }
 
+        /// <summary>
+        /// Rempli la listBox avec les clients existant dans la base de données
+        /// </summary>
+        private void remplirClients() {
+            connexion.Open();
+            string query = "SELECT * from client";
+            SqlCommand command = new SqlCommand(query, connexion);
+            DbDataReader reader = command.ExecuteReader();
+
 
             if (reader.HasRows) //S'il existe des clients
             {

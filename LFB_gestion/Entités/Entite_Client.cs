@@ -19,10 +19,7 @@ namespace LFB_gestion.Entités
         public string tel;
 
         public string mail;
-        public string adresse;
-        public string codePostal;
-        public string ville;
-        public string tel;
+
 
         /// <summary>
         /// Constructeur
