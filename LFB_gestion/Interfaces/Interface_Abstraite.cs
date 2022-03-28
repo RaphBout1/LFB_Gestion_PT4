@@ -156,12 +156,14 @@ namespace LFB_gestion.Interfaces
                 {
                     utilisateursToolStripMenuItem.Visible = true;
                     statistiquesToolStripMenuItem.Visible = true;
+                    logsToolStripButton.Visible = true;
                 }
                 //Au contraire les caché
                 else
                 {
                     utilisateursToolStripMenuItem.Visible = false;
                     statistiquesToolStripMenuItem.Visible = false;
+                    logsToolStripButton.Visible = false;
                 }
             }
         }
