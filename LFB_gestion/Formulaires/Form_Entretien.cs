@@ -1,4 +1,5 @@
 ﻿using LFB_gestion.Entités;
+using LFB_gestion.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,9 @@ namespace LFB_gestion.Formulaires
 {
     public partial class Form_Entretien : Form
     {
-        public Form_Entretien(Entités.Entite_Entretien entretien)
+        Entite_Entretien entretien;
+
+        public Form_Entretien(Entite_Entretien entretien)
         {
             InitializeComponent();
             if (entretien != null)
@@ -23,11 +26,14 @@ namespace LFB_gestion.Formulaires
                 descriptionTextBox.Text = entretien.description;
                 Outils.remplirUtilisateur(utilisateurListBox, entretien.user);
                 Outils.remplirEmplacement(emplacementsListBox, entretien.emplacement.ToString());
+                this.entretien = entretien;
+
             }
             else
             {
                 Outils.remplirUtilisateur(utilisateurListBox, null);
                 Outils.remplirEmplacement(emplacementsListBox, null);
+
             }
         }
 
@@ -58,6 +64,9 @@ namespace LFB_gestion.Formulaires
                     if (descriptionTextBox != null)
                     {
 
+
+                        ajouterEntretien(descriptionTextBox.Text, utilisateurListBox.SelectedItem.ToString(), emplacementsListBox.SelectedItem.ToString());
+
                     }
                     else
                     {
@@ -75,38 +84,70 @@ namespace LFB_gestion.Formulaires
             }
         }
 
-        private void ajouterEntretien(string description, Entite_Client client,  string emplacement)
+
+        private void ajouterEntretien(string description, string utilisateur, string emplacement)
         {
             SqlConnection connexion = Outils.Connexion();
             connexion.Open();
 
-            string query = "select max(id) from entretien";
-            SqlCommand command = new SqlCommand(query, connexion);
-            DbDataReader reader = command.ExecuteReader();
-            int id = 0;
-            if (reader.Read())
+            if (entretien == null)
             {
-                id = reader.GetInt32(0);
-                id++;
-            }
-            reader.Close();
-            query = "insert into entretien  values (@id, @emplacement, @client, GETDATE())";
-            command = new SqlCommand(query, connexion);
-            command.Parameters.AddWithValue("@id", id);
-            command.Parameters.AddWithValue("@emplacement", emplacement);
-            command.Parameters.AddWithValue("@client", client.id);
 
-            try
-            {
-                command.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                string query = "select max(id) from entretien";
+                SqlCommand command = new SqlCommand(query, connexion);
+                DbDataReader reader = command.ExecuteReader();
+                int id = 0;
+                if (reader.Read())
+                {
+                    id = reader.GetInt32(0);
+                    id++;
+                }
+                reader.Close();
+                query = "insert into entretien  values (@id,@description, @utilisateur,@emplacement, GETDATE())";
+                command = new SqlCommand(query, connexion);
+                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@description", description);
+                command.Parameters.AddWithValue("@emplacement", emplacement);
+                command.Parameters.AddWithValue("@utilisateur", utilisateur);
 
-            MessageBox.Show("Réservation des emplacements " + " effectuée au nom de " + client.ToString());
-            connexion.Close();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                MessageBox.Show("Entretien rajouté");
+                connexion.Close();
+            }
+            else
+            {
+                string requete = " UPDATE entretien SET id = @id, description = @description, login_user = @user, id_emplacement = @emplacement, date = @date WHERE id = @condition";
+                SqlCommand command = new SqlCommand(requete, connexion);
+                command.Parameters.AddWithValue("@id", entretien.id);
+                command.Parameters.AddWithValue("@description", description);
+                command.Parameters.AddWithValue("@emplacement", emplacement);
+                command.Parameters.AddWithValue("@user", utilisateur);
+                command.Parameters.AddWithValue("@date", entretien.date);
+                command.Parameters.AddWithValue("@condition", entretien.id);
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                MessageBox.Show("Entretien modifié");
+                connexion.Close();
+
+            }
+            
+            this.Close();
         }
     }
 }

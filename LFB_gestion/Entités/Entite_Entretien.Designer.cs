@@ -113,6 +113,7 @@ namespace LFB_gestion.Entités
             this.supprimerBouton.Size = new System.Drawing.Size(39, 41);
             this.supprimerBouton.TabIndex = 4;
             this.supprimerBouton.UseVisualStyleBackColor = false;
+            this.supprimerBouton.Click += new System.EventHandler(this.supprimerBouton_Click);
             // 
             // nomEmployeeLabel
             // 

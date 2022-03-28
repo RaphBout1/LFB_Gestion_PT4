@@ -76,12 +76,13 @@ namespace LFB_gestion.Entités
             return courant;
         }
 
-        /// <summary>
-        /// Supprimer l'utilisateur
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void supprimerBouton_Click(object sender, EventArgs e)
+
+            /// <summary>
+            /// Supprimer l'utilisateur
+            /// </summary>
+            /// <param name="sender"></param>
+            /// <param name="e"></param>
+            private void supprimerBouton_Click(object sender, EventArgs e)
         {
             MessageBox.Show(this.prenom, this.nom);
         }

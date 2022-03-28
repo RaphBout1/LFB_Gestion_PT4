@@ -157,7 +157,7 @@ namespace LFB_gestion
                 foreach (Entités.Entite_Utilisateur user in Interfaces.Interface_Accueil.users)
                 {
 
-                    listBox.Items.Add(user.ToString());
+                    listBox.Items.Add(user.login);
                     if (user.login == userSelect)
                     {
                         listBox.SetSelected(i, true);
