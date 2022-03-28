@@ -29,9 +29,6 @@ namespace LFB_gestion.Interfaces
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.plusGrosConsoLabel = new System.Windows.Forms.Label();
-            this.clientsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // nomModuleLabel
@@ -40,8 +37,6 @@ namespace LFB_gestion.Interfaces
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Controls.Add(this.plusGrosConsoLabel);
-            this.clientsPanel.Controls.Add(this.label1);
             this.clientsPanel.Location = new System.Drawing.Point(64, 94);
             this.clientsPanel.Size = new System.Drawing.Size(672, 376);
             // 
@@ -53,24 +48,6 @@ namespace LFB_gestion.Interfaces
             // 
             this.rechercheBouton.FlatAppearance.BorderSize = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(223, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Le plus gros consomateur";
-            // 
-            // plusGrosConsoLabel
-            // 
-            this.plusGrosConsoLabel.AutoSize = true;
-            this.plusGrosConsoLabel.Location = new System.Drawing.Point(247, 66);
-            this.plusGrosConsoLabel.Name = "plusGrosConsoLabel";
-            this.plusGrosConsoLabel.Size = new System.Drawing.Size(72, 13);
-            this.plusGrosConsoLabel.TabIndex = 10;
-            this.plusGrosConsoLabel.Text = "Nom du client";
-            // 
             // Interface_Statistiques
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -79,15 +56,10 @@ namespace LFB_gestion.Interfaces
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Interface_Statistiques";
             this.Text = "Interface_Statistiques";
-            this.clientsPanel.ResumeLayout(false);
-            this.clientsPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label plusGrosConsoLabel;
     }
 }
