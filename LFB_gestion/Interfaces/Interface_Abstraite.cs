@@ -156,12 +156,14 @@ namespace LFB_gestion.Interfaces
                 {
                     utilisateursToolStripMenuItem.Visible = true;
                     statistiquesToolStripMenuItem.Visible = true;
+                    logsToolStripButton.Visible = true;
                 }
                 //Au contraire les caché
                 else
                 {
                     utilisateursToolStripMenuItem.Visible = false;
                     statistiquesToolStripMenuItem.Visible = false;
+                    logsToolStripButton.Visible = false;
                 }
             }
         }
@@ -206,6 +208,14 @@ namespace LFB_gestion.Interfaces
             formEntretien.ShowDialog();
             Close();
 
+        }
+
+        private void logsToolStripButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Interface_Logs logs = new Interface_Logs();
+            logs.ShowDialog();
+            Close();
         }
 
         #endregion

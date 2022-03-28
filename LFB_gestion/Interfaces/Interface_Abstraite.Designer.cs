@@ -47,6 +47,7 @@
             this.panelRecherche = new System.Windows.Forms.Panel();
             this.panelNomModule = new System.Windows.Forms.Panel();
             this.ajoutBouton = new System.Windows.Forms.Button();
+            this.logsToolStripButton = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelRecherche.SuspendLayout();
@@ -71,7 +72,7 @@
             // 
             this.rechercheTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.rechercheTextBox.Location = new System.Drawing.Point(2, 9);
-            this.rechercheTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rechercheTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.rechercheTextBox.Name = "rechercheTextBox";
             this.rechercheTextBox.Size = new System.Drawing.Size(236, 20);
             this.rechercheTextBox.TabIndex = 4;
@@ -86,7 +87,7 @@
             this.rechercheBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rechercheBouton.ForeColor = System.Drawing.Color.Transparent;
             this.rechercheBouton.Location = new System.Drawing.Point(242, 2);
-            this.rechercheBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rechercheBouton.Margin = new System.Windows.Forms.Padding(2);
             this.rechercheBouton.Name = "rechercheBouton";
             this.rechercheBouton.Size = new System.Drawing.Size(32, 33);
             this.rechercheBouton.TabIndex = 5;
@@ -98,7 +99,7 @@
             this.clientsPanel.BackColor = System.Drawing.Color.Transparent;
             this.clientsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.clientsPanel.Location = new System.Drawing.Point(92, 139);
-            this.clientsPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clientsPanel.Margin = new System.Windows.Forms.Padding(2);
             this.clientsPanel.Name = "clientsPanel";
             this.clientsPanel.Size = new System.Drawing.Size(407, 310);
             this.clientsPanel.TabIndex = 6;
@@ -120,6 +121,7 @@
             this.entretienToolStripMenuItem,
             this.planToolStripMenuItem,
             this.reservationsToolStripMenuItem,
+            this.logsToolStripButton,
             this.clientsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 942);
             this.menuStrip1.Name = "menuStrip1";
@@ -247,7 +249,7 @@
             this.pictureBox1.ErrorImage = global::LFB_gestion.Properties.Resources.logoDuHAut;
             this.pictureBox1.InitialImage = global::LFB_gestion.Properties.Resources.logoDuHAut;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(205, 65);
             this.pictureBox1.TabIndex = 7;
@@ -259,7 +261,7 @@
             this.panelRecherche.Controls.Add(this.rechercheBouton);
             this.panelRecherche.Controls.Add(this.rechercheTextBox);
             this.panelRecherche.Location = new System.Drawing.Point(431, 92);
-            this.panelRecherche.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelRecherche.Margin = new System.Windows.Forms.Padding(2);
             this.panelRecherche.Name = "panelRecherche";
             this.panelRecherche.Size = new System.Drawing.Size(286, 37);
             this.panelRecherche.TabIndex = 0;
@@ -270,7 +272,7 @@
             this.panelNomModule.Controls.Add(this.ajoutBouton);
             this.panelNomModule.Controls.Add(this.nomModuleLabel);
             this.panelNomModule.Location = new System.Drawing.Point(26, 92);
-            this.panelNomModule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelNomModule.Margin = new System.Windows.Forms.Padding(2);
             this.panelNomModule.Name = "panelNomModule";
             this.panelNomModule.Size = new System.Drawing.Size(372, 37);
             this.panelNomModule.TabIndex = 8;
@@ -282,11 +284,23 @@
             this.ajoutBouton.FlatAppearance.BorderSize = 0;
             this.ajoutBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ajoutBouton.Location = new System.Drawing.Point(288, 0);
-            this.ajoutBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ajoutBouton.Margin = new System.Windows.Forms.Padding(2);
             this.ajoutBouton.Name = "ajoutBouton";
             this.ajoutBouton.Size = new System.Drawing.Size(42, 37);
             this.ajoutBouton.TabIndex = 1;
             this.ajoutBouton.UseVisualStyleBackColor = true;
+            // 
+            // logsToolStripButton
+            // 
+            this.logsToolStripButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logsToolStripButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
+            this.logsToolStripButton.Image = global::LFB_gestion.Properties.Resources.iconeClients;
+            this.logsToolStripButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logsToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.logsToolStripButton.Name = "logsToolStripButton";
+            this.logsToolStripButton.Size = new System.Drawing.Size(119, 66);
+            this.logsToolStripButton.Text = "Logs";
+            this.logsToolStripButton.Click += new System.EventHandler(this.logsToolStripButton_Click);
             // 
             // Interface_Abstraite
             // 
@@ -303,7 +317,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(812, 588);
             this.Name = "Interface_Abstraite";
             this.Text = "Connexion";
@@ -343,6 +357,7 @@
         public System.Windows.Forms.Button ajoutBouton;
         public System.Windows.Forms.Button rechercheBouton;
         private System.Windows.Forms.ToolStripMenuItem incidentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logsToolStripButton;
     }
 }
 
