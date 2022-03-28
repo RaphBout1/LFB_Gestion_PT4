@@ -8,10 +8,7 @@ namespace LFB_gestion.Entités
 
         public int id;
         public string description;
-        public Boolean status;
-        public int idClient;
-        public int idEmplacement;
-        public DateTime date;
+        public int id_réservation;
         /// <summary>
         /// Constructeur
         /// </summary>
@@ -21,25 +18,13 @@ namespace LFB_gestion.Entités
         /// <param name="idClient"></param>
         /// <param name="idEmplacement"></param>
         /// <param name="date"></param>
-        public Entite_Incident(int id, string description , Boolean status, int idClient,int idEmplacement, DateTime date )
+        public Entite_Incident(int id, string description, int id_réservation)
         {
             this.id = id;
             this.description = description;
-            this.status = status;
-            this.idClient = idClient;
-            this.idEmplacement = idEmplacement;
+            this.id_réservation = id_réservation;
             InitializeComponent();
             descriptionLabel.Text = description;
-            nomClientLabel.Text = Outils.afficherClient(idClient).ToString();
-            nomEmplacementLabel.Text = idEmplacement.ToString();
-
-
-        }
-
-
-        private void statutBox_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
