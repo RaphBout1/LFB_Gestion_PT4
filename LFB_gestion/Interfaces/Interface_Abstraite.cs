@@ -208,6 +208,14 @@ namespace LFB_gestion.Interfaces
 
         }
 
+        private void logsToolStripButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Interface_Logs logs = new Interface_Logs();
+            logs.ShowDialog();
+            Close();
+        }
+
         #endregion
     }
 }
