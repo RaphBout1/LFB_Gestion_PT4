@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
@@ -296,7 +297,28 @@ namespace LFB_gestion.Formulaires
             emplacementTextBox.Text = réservation.emplacement.ToString();
 
             //Aller chercher la description de l'incident
-            //TODO
+            connexion.Open();
+            string desc = "";
+            string query = "select incident.description " +
+                            "from incident " +
+                            "inner join reservation on incident.id_reservation = reservation.id " +
+                            "where reservation.id = @id";
+            SqlCommand command = new SqlCommand(query, connexion);
+            command.Parameters.AddWithValue("@id", réservation.id);
+            DbDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    incidentsListBox.Items.Add(reader.GetString(0));
+                }
+            }
+            else
+            {
+                incidentsListBox.Items.Add("Pas d'incidents");
+            }
+            reader.Close();
+            connexion.Close();
 
             //Remplir la première ligne du dataGrid avec la location comme désignaiton
             DataGridViewRow row = (DataGridViewRow)dataGridView.Rows[0].Clone();
