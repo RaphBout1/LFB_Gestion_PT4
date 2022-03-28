@@ -31,10 +31,9 @@ namespace LFB_gestion.Formulaires
         #endregion
 
 
-        /*
-        * Méthode permettant de remplir les listes clients et emplacements
-        * A MODIFIER AVEC LA BASE DE DONNEES
-        */
+        /// <summary>
+        /// Rempli les données par défaut
+        /// </summary>
         private void remplirDonnées()
         {
             clientlabel.Text = (Interface_Accueil.clients.Find(client => client.id == réservation.idClient)).ToString();
@@ -55,11 +54,10 @@ namespace LFB_gestion.Formulaires
             {
                 try
                 {
-                    query = "insert into incident values (@id, @desc, @date, @id_réservation)";
+                    query = "insert into incident values (@id, @desc, @id_réservation)";
                     cmd = new SqlCommand(query, connexion);
                     cmd.Parameters.AddWithValue("@id", id);
                     cmd.Parameters.AddWithValue("@desc", descriptionTextBox.Text);
-                    cmd.Parameters.AddWithValue("@date", DateTime.Now);
                     cmd.Parameters.AddWithValue("@id_réservation", réservation.id);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Incident signalé");
