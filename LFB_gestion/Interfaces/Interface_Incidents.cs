@@ -13,7 +13,7 @@ namespace LFB_gestion.Interfaces
         private SqlConnection connexion = Outils.Connexion();
         public Interface_Incidents()
         {
-
+            ajoutBouton.Visible = false;
             // On redéfini le nom du module
             nomModuleLabel.Text = "Incidents";
             InitializeComponent();
@@ -40,7 +40,7 @@ namespace LFB_gestion.Interfaces
         /// <param name="e"></param>
         private void ajoutBouton_Click(object sender, EventArgs e)
         {
-            Form formIncident = new Formulaires.Form_Incident();
+            Form formIncident = new Formulaires.Form_Incident(null);
             formIncident.ShowDialog();
         }
 
@@ -100,12 +100,9 @@ namespace LFB_gestion.Interfaces
                 if (incident.description.Contains(recherche) || recherche == null || recherche == "")
                 {
                     int id = incident.id;
-                    DateTime date = incident.date;
                     string description = incident.description;
-                    Boolean status = incident.status;
-                    int client = incident.idClient;
-                    int emplacement = incident.idEmplacement;
-                    Entite_Incident inci = new Entite_Incident(id, description, status, client, emplacement, date);
+                    int id_réservation = incident.id_réservation;
+                    Entite_Incident inci = new Entite_Incident(id, description, id_réservation);
                     listeIncidents.Add(inci);
                 }
             }

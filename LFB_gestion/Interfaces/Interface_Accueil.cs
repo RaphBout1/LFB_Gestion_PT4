@@ -108,7 +108,7 @@ namespace LFB_gestion.Interfaces
                 try
                 {
                     int id = (int)reader["id"];
-                    DateTime date = (DateTime)reader["date"];
+                    string date = reader["date"].ToString();
                     string description = (string)reader["description"];
                     string user = (string)reader["login_user"];
                     int emplacement = (int)reader["id_emplacement"];
@@ -118,7 +118,7 @@ namespace LFB_gestion.Interfaces
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message);
+                    MessageBox.Show(e.Message + " selectEntretien");
                 }
             }
             reader.Close();
@@ -140,14 +140,9 @@ namespace LFB_gestion.Interfaces
                 try
                 {
                     int id = (int)reader["id"];
-                    DateTime date = (DateTime)reader["date"];
                     string description = (string)reader["description"];
-                    var status = reader["status"];
-                    int client = (int)reader["id_client"];
-                    int emplacement = (int)reader["id_emplacement"];
-
-
-                    incidents.Add(new Entite_Incident(id, description, Convert.ToBoolean(status), client, emplacement, date));
+                    int id_réservation = (int)reader["id_reservation"];
+                    incidents.Add(new Entite_Incident(id, description, id_réservation));
                 }
                 catch (Exception e)
                 {

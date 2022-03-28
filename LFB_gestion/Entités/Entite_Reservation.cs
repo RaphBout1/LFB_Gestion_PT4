@@ -44,5 +44,11 @@ namespace LFB_gestion.Entités
             Form_Facture facture = new Form_Facture(this);
             facture.ShowDialog();
         }
+
+        private void créerIncident_Click(object sender, EventArgs e)
+        {
+            Form_Incident incident = new Form_Incident(this);
+            incident.ShowDialog();
+        }
     }
 }

@@ -37,6 +37,7 @@
             this.modifierBouton = new System.Windows.Forms.Button();
             this.buttonFacturer = new System.Windows.Forms.Button();
             this.labelAu = new System.Windows.Forms.Label();
+            this.créerIncident = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nomClientLabel
@@ -156,11 +157,22 @@
             this.labelAu.TabIndex = 10;
             this.labelAu.Text = "Au :";
             // 
+            // créerIncident
+            // 
+            this.créerIncident.Location = new System.Drawing.Point(434, 22);
+            this.créerIncident.Name = "créerIncident";
+            this.créerIncident.Size = new System.Drawing.Size(40, 37);
+            this.créerIncident.TabIndex = 15;
+            this.créerIncident.Text = "!";
+            this.créerIncident.UseVisualStyleBackColor = true;
+            this.créerIncident.Click += new System.EventHandler(this.créerIncident_Click);
+            // 
             // Entite_Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.créerIncident);
             this.Controls.Add(this.buttonFacturer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelAu);
@@ -188,5 +200,6 @@
         private System.Windows.Forms.Button modifierBouton;
         private System.Windows.Forms.Button buttonFacturer;
         private System.Windows.Forms.Label labelAu;
+        private System.Windows.Forms.Button créerIncident;
     }
 }

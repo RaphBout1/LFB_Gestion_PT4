@@ -442,11 +442,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(33, 244);
+            this.label9.Location = new System.Drawing.Point(22, 228);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 13);
+            this.label9.Size = new System.Drawing.Size(59, 13);
             this.label9.TabIndex = 47;
-            this.label9.Text = "Incident : ";
+            this.label9.Text = "Incidents : ";
             // 
             // acompteTextBox
             // 
@@ -467,9 +467,9 @@
             // incidentsListBox
             // 
             this.incidentsListBox.FormattingEnabled = true;
-            this.incidentsListBox.Location = new System.Drawing.Point(82, 244);
+            this.incidentsListBox.Location = new System.Drawing.Point(82, 228);
             this.incidentsListBox.Name = "incidentsListBox";
-            this.incidentsListBox.Size = new System.Drawing.Size(427, 17);
+            this.incidentsListBox.Size = new System.Drawing.Size(427, 30);
             this.incidentsListBox.TabIndex = 51;
             // 
             // Form_Facture
