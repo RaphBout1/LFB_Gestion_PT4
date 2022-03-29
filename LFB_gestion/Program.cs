@@ -14,8 +14,8 @@ namespace LFB_gestion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Connexion());
-            Application.Run(new Interface_Accueil());
+            Application.Run(new Interfaces.Interface_Plan());
+            //Application.Run(new Interface_Accueil());
         }
     }
 }

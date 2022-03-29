@@ -15,7 +15,7 @@ namespace LFB_gestion.Interfaces
         {
             
             // On redéfini le nom du module
-            nomModuleLabel.Text = "Entretients";
+            nomModuleLabel.Text = "Entretiens";
 
             InitializeComponent();
 
@@ -61,7 +61,7 @@ namespace LFB_gestion.Interfaces
         /// Permet de créer une liste d'Entités_Entretien selon un identifiant recherché et appelle la fonction qui les affiche
         /// </summary>
         /// <param name="recherche"></param>
-        private void reader(string recherche)
+        public void reader(string recherche)
         {
             List<Entite_Entretien> listeEntretien = new List<Entite_Entretien>();
             foreach (Entite_Entretien entretien in Interface_Accueil.entretiens)

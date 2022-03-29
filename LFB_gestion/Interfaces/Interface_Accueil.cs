@@ -97,8 +97,10 @@ namespace LFB_gestion.Interfaces
         /// <summary>
         /// Charge tous les entretiens depuis la base de données dans la liste users
         /// </summary>
-        private void selectEntretien()
+        public static void selectEntretien()
         {
+
+            SqlConnection connexion = Outils.Connexion();
             entretiens.Clear();
             connexion.Open();
             SqlCommand command = new SqlCommand("SELECT * FROM entretien", connexion);

@@ -42,17 +42,34 @@ namespace LFB_gestion.Formulaires
 
         private void creerBouton_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(prenomTextBox.Text) && !String.IsNullOrEmpty(nomTextBox.Text) && !String.IsNullOrEmpty(emailTextBox.Text))
+            if (!String.IsNullOrEmpty(prenomTextBox.Text) && !String.IsNullOrEmpty(nomTextBox.Text) && !String.IsNullOrEmpty(emailTextBox.Text) && !String.IsNullOrEmpty(textBoxAdresse.Text)
+                && !String.IsNullOrEmpty(textBoxCodePostal.Text) && !String.IsNullOrEmpty(textBoxVille.Text) && !String.IsNullOrEmpty(textBoxTel.Text))
             {
                 if (Outils.isValidMail(emailTextBox.Text))
                 {
-                    if (!clientDejaPresent(prenomTextBox.Text, nomTextBox.Text))
+                    if (Outils.isValidCodePostal(textBoxCodePostal.Text))
                     {
-                        creationDuClient(nomTextBox.Text, prenomTextBox.Text, emailTextBox.Text);
+                        if (Outils.isValidTel(textBoxTel.Text))
+                        {
+                            if (!clientDejaPresent(prenomTextBox.Text, nomTextBox.Text))
+                            {
+                                creationDuClient(nomTextBox.Text, prenomTextBox.Text, emailTextBox.Text, textBoxAdresse.Text, textBoxCodePostal.Text, textBoxVille.Text, textBoxTel.Text);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Le client existe déjà");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Le numéros de téléphone est inconnu");
+
+                        }
                     }
+
                     else
                     {
-                        MessageBox.Show("Le client existe déjà");
+                        MessageBox.Show("Le code Postal est incorrect");
                     }
                 }
                 else
@@ -91,7 +108,7 @@ namespace LFB_gestion.Formulaires
         /// <param name="nom"></param>
         /// <param name="prenom"></param>
         /// <param name="mail"></param>
-        public static void creationDuClient(string nom, string prenom, string mail)
+        private void creationDuClient(string nom, string prenom, string mail, string adresse, string codePostal, string ville, string tel)
         {
             connexion.Open();
             int id = 0;
@@ -106,12 +123,16 @@ namespace LFB_gestion.Formulaires
             }
             try
             {
-                query = "insert into client values (@id, @nom, @prenom, @mail)";
+                query = "insert into client values (@id, @nom, @prenom, @mail, @adresse,@codePostal,@ville,@tel)";
                 command = new SqlCommand(query, connexion);
                 command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@nom", nom);
                 command.Parameters.AddWithValue("@prenom", prenom);
                 command.Parameters.AddWithValue("@mail", mail);
+                command.Parameters.AddWithValue("@mail", adresse);
+                command.Parameters.AddWithValue("@mail", codePostal);
+                command.Parameters.AddWithValue("@mail", ville);
+                command.Parameters.AddWithValue("@mail", tel);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Client bien ajouté");
             }

@@ -37,6 +37,14 @@
             this.prenomLabel = new System.Windows.Forms.Label();
             this.emailLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxVille = new System.Windows.Forms.TextBox();
+            this.textBoxAdresse = new System.Windows.Forms.TextBox();
+            this.textBoxCodePostal = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxTel = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +57,7 @@
             this.creerBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.creerBouton.Font = new System.Drawing.Font("Barlow Condensed Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.creerBouton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
-            this.creerBouton.Location = new System.Drawing.Point(123, 550);
+            this.creerBouton.Location = new System.Drawing.Point(471, 550);
             this.creerBouton.Margin = new System.Windows.Forms.Padding(4);
             this.creerBouton.Name = "creerBouton";
             this.creerBouton.Size = new System.Drawing.Size(268, 39);
@@ -64,7 +72,7 @@
             this.emailTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.emailTextBox.Font = new System.Drawing.Font("Barlow Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.emailTextBox.Location = new System.Drawing.Point(123, 442);
+            this.emailTextBox.Location = new System.Drawing.Point(283, 444);
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(268, 31);
@@ -77,7 +85,7 @@
             this.prenomTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.prenomTextBox.Font = new System.Drawing.Font("Barlow Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prenomTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.prenomTextBox.Location = new System.Drawing.Point(123, 213);
+            this.prenomTextBox.Location = new System.Drawing.Point(283, 215);
             this.prenomTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.prenomTextBox.Name = "prenomTextBox";
             this.prenomTextBox.Size = new System.Drawing.Size(268, 31);
@@ -90,7 +98,7 @@
             this.nomTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.nomTextBox.Font = new System.Drawing.Font("Barlow Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.nomTextBox.Location = new System.Drawing.Point(123, 323);
+            this.nomTextBox.Location = new System.Drawing.Point(283, 325);
             this.nomTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nomTextBox.Name = "nomTextBox";
             this.nomTextBox.Size = new System.Drawing.Size(268, 31);
@@ -104,7 +112,7 @@
             this.nomLabel.BackColor = System.Drawing.Color.Transparent;
             this.nomLabel.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.nomLabel.Location = new System.Drawing.Point(116, 277);
+            this.nomLabel.Location = new System.Drawing.Point(276, 279);
             this.nomLabel.Name = "nomLabel";
             this.nomLabel.Size = new System.Drawing.Size(71, 35);
             this.nomLabel.TabIndex = 8;
@@ -117,7 +125,7 @@
             this.prenomLabel.BackColor = System.Drawing.Color.Transparent;
             this.prenomLabel.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prenomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.prenomLabel.Location = new System.Drawing.Point(116, 167);
+            this.prenomLabel.Location = new System.Drawing.Point(276, 169);
             this.prenomLabel.Name = "prenomLabel";
             this.prenomLabel.Size = new System.Drawing.Size(100, 35);
             this.prenomLabel.TabIndex = 9;
@@ -130,7 +138,7 @@
             this.emailLabel.BackColor = System.Drawing.Color.Transparent;
             this.emailLabel.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.emailLabel.Location = new System.Drawing.Point(116, 396);
+            this.emailLabel.Location = new System.Drawing.Point(276, 398);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(148, 35);
             this.emailLabel.TabIndex = 10;
@@ -141,12 +149,112 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::LFB_gestion.Properties.Resources.logoDuHAut;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(360, 28);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(481, 123);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
+            this.label1.Location = new System.Drawing.Point(848, 325);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 35);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Ville :";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
+            this.label2.Location = new System.Drawing.Point(814, 176);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 35);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Adresse :";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
+            this.label3.Location = new System.Drawing.Point(776, 250);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(138, 35);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Code Postal :";
+            // 
+            // textBoxVille
+            // 
+            this.textBoxVille.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxVille.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
+            this.textBoxVille.Font = new System.Drawing.Font("Barlow Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxVille.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
+            this.textBoxVille.Location = new System.Drawing.Point(646, 364);
+            this.textBoxVille.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxVille.Name = "textBoxVille";
+            this.textBoxVille.Size = new System.Drawing.Size(268, 31);
+            this.textBoxVille.TabIndex = 14;
+            // 
+            // textBoxAdresse
+            // 
+            this.textBoxAdresse.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxAdresse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
+            this.textBoxAdresse.Font = new System.Drawing.Font("Barlow Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAdresse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
+            this.textBoxAdresse.Location = new System.Drawing.Point(646, 215);
+            this.textBoxAdresse.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxAdresse.Name = "textBoxAdresse";
+            this.textBoxAdresse.Size = new System.Drawing.Size(268, 31);
+            this.textBoxAdresse.TabIndex = 12;
+            // 
+            // textBoxCodePostal
+            // 
+            this.textBoxCodePostal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxCodePostal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
+            this.textBoxCodePostal.Font = new System.Drawing.Font("Barlow Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCodePostal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
+            this.textBoxCodePostal.Location = new System.Drawing.Point(646, 289);
+            this.textBoxCodePostal.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCodePostal.Name = "textBoxCodePostal";
+            this.textBoxCodePostal.Size = new System.Drawing.Size(268, 31);
+            this.textBoxCodePostal.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Barlow Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
+            this.label4.Location = new System.Drawing.Point(789, 405);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(125, 35);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Téléphone :";
+            // 
+            // textBoxTel
+            // 
+            this.textBoxTel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBoxTel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
+            this.textBoxTel.Font = new System.Drawing.Font("Barlow Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
+            this.textBoxTel.Location = new System.Drawing.Point(646, 444);
+            this.textBoxTel.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxTel.Name = "textBoxTel";
+            this.textBoxTel.Size = new System.Drawing.Size(268, 31);
+            this.textBoxTel.TabIndex = 18;
             // 
             // Form_Client
             // 
@@ -154,7 +262,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LFB_gestion.Properties.Resources.fondEcran;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(505, 647);
+            this.ClientSize = new System.Drawing.Size(1201, 647);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBoxTel);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBoxVille);
+            this.Controls.Add(this.textBoxAdresse);
+            this.Controls.Add(this.textBoxCodePostal);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.prenomLabel);
@@ -184,5 +300,13 @@
         private System.Windows.Forms.Label prenomLabel;
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxVille;
+        private System.Windows.Forms.TextBox textBoxAdresse;
+        private System.Windows.Forms.TextBox textBoxCodePostal;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxTel;
     }
 }

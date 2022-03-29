@@ -86,7 +86,11 @@ namespace LFB_gestion.Interfaces
         /// <param name="e"></param>
         private void planToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Form formPlan = new Interface_Plan();
 
+            formPlan.ShowDialog();
+            this.Close();
         }
 
         /// <summary>
@@ -101,6 +105,20 @@ namespace LFB_gestion.Interfaces
 
             formReservation.ShowDialog();
             this.Close();
+        }
+
+        /// <summary>
+        /// Ouvrir onglet incident
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void incidentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Form formEntretien = new Interface_Incidents();
+            formEntretien.ShowDialog();
+            Close();
+
         }
 
         /// <summary>
@@ -181,6 +199,7 @@ namespace LFB_gestion.Interfaces
             clientsPanel.Location = new Point(xlocationPanel, ylocationPanel);
             panelNomModule.Location = new Point(xlocationPanel, ylocationPanel - 44);
             panelRecherche.Location = new Point(ClientSize.Width - 500, ylocationPanel - 44);
+            buttonDeconnexion.Location = new Point(ClientSize.Width - 210, 0);
             if (ClientSize.Height < 550)
             {
                 pictureBox1.Location = new Point(ClientSize.Width / 2 - 136, 0);
@@ -201,13 +220,16 @@ namespace LFB_gestion.Interfaces
 
         }
 
-        private void incidentsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Hide();
-            Form formEntretien = new Interface_Incidents();
-            formEntretien.ShowDialog();
-            Close();
+        #endregion
 
+        private void buttonDeconnexion_Click(object sender, EventArgs e)
+        {
+            Entite_Utilisateur.courant = null;
+            this.Hide();
+            Form formConnexion = new Connexion();
+
+            formConnexion.ShowDialog();
+            this.Close();
         }
 
         private void logsToolStripButton_Click(object sender, EventArgs e)

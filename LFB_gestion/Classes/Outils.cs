@@ -4,6 +4,7 @@ using System;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace LFB_gestion
@@ -68,6 +69,48 @@ namespace LFB_gestion
             };
             return Result;
         }
+        /// <summary>
+        /// Verifie si le numero de téléphone est correcte
+        /// </summary>
+        /// <param name="tel"></param>
+        /// <returns></returns>
+        public static bool isValidTel(string tel) {
+            int cmpt = 0;
+            foreach (char c in tel)
+            {
+                if (c >= '0' && c <= '9')
+                {
+                    cmpt++;
+                }else
+                {
+                    return false;
+                }
+            }
+            return (cmpt == 10);
+        }
+
+        /// <summary>
+        /// Verifie si le numero du code Postale est correcte
+        /// </summary>
+        /// <param name="CP"></param>
+        /// <returns></returns>
+        public static bool isValidCodePostal(string CP)
+        {
+            int cmpt = 0;
+            foreach (char c in CP)
+            {
+                if (c >= '0' && c <= '9')
+                {
+                    cmpt++;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return (cmpt == 5);
+        }
+
 
         /// <summary>
         /// trouve le client de la liste dans l'interface d'accueil à partir d'un id
@@ -95,13 +138,64 @@ namespace LFB_gestion
             {
                 foreach (Entités.Entite_Client client in Interfaces.Interface_Accueil.clients)
                 {
-                    listBox.DisplayMember = "nom";
-                    listBox.ValueMember = "id";
+                    listBox.Items.Add(client.ToString());
 
-                    listBox.Items.Add(client);
-                        
                 }
             }
+        }
+
+        /// <summary>
+        /// Rempli la listBox avec les utilisateurs existant dans la basede données
+        /// </summary>
+        public static void remplirUtilisateur(ListBox listBox, string userSelect)
+        {
+            int i = 0;
+
+
+            if (Interfaces.Interface_Accueil.users.Count != 0)
+            {
+                foreach (Entités.Entite_Utilisateur user in Interfaces.Interface_Accueil.users)
+                {
+
+                    listBox.Items.Add(user.login);
+                    if (user.login == userSelect)
+                    {
+                        listBox.SetSelected(i, true);
+                    }
+
+                    i++;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Rempli la listBox avec les emplacements existant dans la basede données
+        /// </summary>
+        public static void remplirEmplacement(ListBox listBox, string emplacementSelect)
+        {
+            int i = 0;
+            SqlConnection connexion = Connexion();
+
+            listBox.Items.Clear();
+            connexion.Open();
+            string query = "select emplacement.id from emplacement";
+
+            SqlCommand command = new SqlCommand(query, connexion);
+            DbDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    listBox.Items.Add(reader.GetInt32(0));
+                    if (reader.GetInt32(0).ToString() == emplacementSelect)
+                    {
+                        listBox.SetSelected(i, true);
+                    }
+
+                    i++;
+                }
+            }
+
         }
 
         public static Entités.Entite_Client afficherClient(int idRecherche)

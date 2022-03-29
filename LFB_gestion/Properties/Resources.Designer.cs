@@ -63,6 +63,26 @@ namespace LFB_gestion.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boutonDeco {
+            get {
+                object obj = ResourceManager.GetObject("boutonDeco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap boutonDeco1 {
+            get {
+                object obj = ResourceManager.GetObject("boutonDeco1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondBouton {
             get {
                 object obj = ResourceManager.GetObject("fondBouton", resourceCulture);
@@ -326,6 +346,26 @@ namespace LFB_gestion.Properties {
         internal static System.Drawing.Bitmap oeilOuvert {
             get {
                 object obj = ResourceManager.GetObject("oeilOuvert", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plan {
+            get {
+                object obj = ResourceManager.GetObject("plan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plan1 {
+            get {
+                object obj = ResourceManager.GetObject("plan1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,7 +1,9 @@
-﻿using System;
+﻿using LFB_gestion.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,7 +30,6 @@ namespace LFB_gestion.Entités
             this.id = id;
             this.date = date;
             this.description = description;
-
             this.user = user;
             this.emplacement = emplacement;
             InitializeComponent();
@@ -45,6 +46,20 @@ namespace LFB_gestion.Entités
         {
             Form formEntretien = new Formulaires.Form_Entretien(this);
             formEntretien.ShowDialog();
+        }
+
+        private void supprimerBouton_Click(object sender, EventArgs e)
+        {
+            SqlConnection connexion = Outils.Connexion();
+            connexion.Open();
+            string query = "delete from entretien where id = @id";
+            SqlCommand command = new SqlCommand(query, connexion);
+            command.Parameters.AddWithValue("@id", this.id);
+            command.ExecuteNonQuery();
+            Interface_Accueil.selectEntretien();
+            MessageBox.Show("Entretien supprimer");
+            connexion.Close();
+
         }
     }
 }
