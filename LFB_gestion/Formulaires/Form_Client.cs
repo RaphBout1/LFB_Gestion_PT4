@@ -63,11 +63,10 @@ namespace LFB_gestion.Formulaires
                         }
                         else
                         {
-                            MessageBox.Show("Le numéros de téléphone est inconnu");
+                            MessageBox.Show("Le numéro de téléphone n'est pas valide");
 
                         }
                     }
-
                     else
                     {
                         MessageBox.Show("Le code Postal est incorrect");
