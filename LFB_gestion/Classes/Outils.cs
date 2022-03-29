@@ -3,6 +3,7 @@ using LFB_gestion.Interfaces;
 using System;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -20,9 +21,9 @@ namespace LFB_gestion
         /// <summary>
         /// Crypte un string
         /// </summary>
-        /// <param name="text">Le string à crypter</param>
+        /// <param name="text">Le string à chiffrer</param>
         /// <returns>Renvoie un string crypté</returns>
-        public static string crypter(string text)
+        public static string chiffrer(string text)
         {
             if (string.IsNullOrEmpty(text)) return "";
             string res = text + Key;
@@ -54,20 +55,43 @@ namespace LFB_gestion
         /// </summary>
         /// <param name="eMail"></param>
         /// <returns>renvoie vrai si l'adresse mail est valide</returns>
-        public static bool isValidMail(string eMail)
+        public static bool mailEstValide(string email)
         {
-            bool Result = false;
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
             try
             {
-                var eMailValidator = new System.Net.Mail.MailAddress(eMail);
+                email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
+                                      RegexOptions.None, TimeSpan.FromMilliseconds(200));
 
-                Result = (eMail.LastIndexOf(".") > eMail.LastIndexOf("@"));
+                string DomainMapper(Match match)
+                {
+                    var idn = new IdnMapping();
+                    string domainName = idn.GetAscii(match.Groups[2].Value);
+
+                    return match.Groups[1].Value + domainName;
+                }
             }
-            catch
+            catch (RegexMatchTimeoutException e)
             {
-                Result = false;
-            };
-            return Result;
+                return false;
+            }
+            catch (ArgumentException e)
+            {
+                return false;
+            }
+
+            try
+            {
+                return Regex.IsMatch(email,
+                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
+                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                return false;
+            }
         }
         /// <summary>
         /// Verifie si le numero de téléphone est correcte
@@ -117,7 +141,7 @@ namespace LFB_gestion
         /// </summary>
         /// <param name="idClient"></param>
         /// <returns>Renvoie l'entité client correspondant à l'id</returns>
-        public static Entite_Client findClient(int idClient)
+        public static Entite_Client trouverClient(int idClient)
         {
             Entite_Client res = null;
             foreach (Entite_Client client in Interface_Accueil.clients)
@@ -127,6 +151,7 @@ namespace LFB_gestion
             }
             return res;
         }
+
         /// <summary>
         /// Rempli la listBox avec les clients existant dans la basede données
         /// </summary>

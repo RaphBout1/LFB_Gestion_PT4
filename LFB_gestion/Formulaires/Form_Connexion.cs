@@ -59,7 +59,7 @@ namespace LFB_gestion
                                 if (reader.HasRows)
                                 {
                                     reader.Read();
-                                    if ((string)reader["mdp"] == Outils.crypter(motDePasse_textBox.Text)) // si le mot de passe crypté est égal au mot de passe inséré puis crypté
+                                    if ((string)reader["mdp"] == Outils.chiffrer(motDePasse_textBox.Text)) // si le mot de passe crypté est égal au mot de passe inséré puis crypté
                                     {
 
 
