@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.32014.148
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LFB_gestion", "LFB_gestion\LFB_gestion.csproj", "{B1DF5453-0275-490B-A15D-8FC85C5B8F25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEST_LFB_gestion", "TEST_LFB_gestion\TEST_LFB_gestion.csproj", "{C0F04E28-1607-444B-8EAD-DD675D880991}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEST_LFB_gestion", "TEST_LFB_gestion\TEST_LFB_gestion.csproj", "{C0F04E28-1607-444B-8EAD-DD675D880991}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
