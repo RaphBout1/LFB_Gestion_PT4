@@ -9,10 +9,12 @@ namespace TEST_LFB_gestion
     public class Clients_Test
     {
         SqlConnection connexion = LFB_gestion.Outils.Connexion();
+
         [TestMethod]
         public void testAjoutClient()
         {
-            LFB_gestion.Classes.ClientMéthodes.creationDuClient("nom", "prénom", "mail", "adresse", "code postal", "ville", "telephone");
+            connexion.Open();
+            ClientMéthodes.creationDuClient("nom", "prénom", "mail", "adresse", "code postal", "ville", "telephone");
             string query = "select * from client " +
                 "where nom='nom' and prenom='prenom' and mail='mail' and adresse='adresse' and codePostal='code postal' and ville='ville' and telephone='telephone'";
             SqlCommand cmd = new SqlCommand(query, connexion);
