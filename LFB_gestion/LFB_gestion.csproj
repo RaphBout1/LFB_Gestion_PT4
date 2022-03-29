@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ClientMéthodes.cs" />
+    <Compile Include="Classes\dataBase.cs" />
     <Compile Include="Entités\Entite_Utilisateur.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -1,4 +1,5 @@
-﻿using LFB_gestion.Interfaces;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,9 +57,17 @@ namespace LFB_gestion.Entités
             SqlCommand command = new SqlCommand(query, connexion);
             command.Parameters.AddWithValue("@id", this.id);
             command.ExecuteNonQuery();
-            Interface_Accueil.selectEntretien();
-            MessageBox.Show("Entretien supprimer");
+            MessageBox.Show("Entretien supprimé");
             connexion.Close();
+            dataBase.refreshDataBase();
+            Form.ActiveForm.Close();
+            Form entretien = new Interface_Entretien();
+
+            entretien.ShowDialog();
+            
+
+
+
 
         }
     }

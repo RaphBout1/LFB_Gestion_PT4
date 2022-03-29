@@ -1,4 +1,5 @@
-﻿using LFB_gestion.Entités;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Entités;
 using LFB_gestion.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -147,7 +148,10 @@ namespace LFB_gestion.Formulaires
 
             }
             
+            dataBase.refreshDataBase();
             this.Close();
+            
+
         }
     }
 }

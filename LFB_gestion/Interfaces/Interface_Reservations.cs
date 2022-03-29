@@ -1,4 +1,5 @@
-﻿using LFB_gestion.Entités;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Entités;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -119,7 +120,7 @@ namespace LFB_gestion.Interfaces
         private void reader(string recherche)
         {
             List<Entite_Reservation> listeréservations = new List<Entite_Reservation>();
-            foreach (Entite_Reservation reservation in Interface_Accueil.reservations)
+            foreach (Entite_Reservation reservation in dataBase.reservations)
             {
                 if (Outils.afficherClient(reservation.idClient).ToString().Contains(recherche) || recherche == null || recherche == "")
                 {
