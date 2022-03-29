@@ -220,7 +220,6 @@ namespace LFB_gestion.Interfaces
 
         }
 
-        #endregion
 
         private void buttonDeconnexion_Click(object sender, EventArgs e)
         {

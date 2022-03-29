@@ -128,8 +128,7 @@
             this.planToolStripMenuItem,
             this.reservationsToolStripMenuItem,
             this.logsToolStripButton,
-            this.clientsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 942);
+            this.clientsToolStripMenuItem,
             this.utilisateursToolStripMenuItem,
             this.statistiquesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 969);

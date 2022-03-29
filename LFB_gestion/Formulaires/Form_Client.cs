@@ -173,7 +173,7 @@ namespace LFB_gestion.Formulaires
         }
         public void TestCreationClient(string nom, string prenom, string mail)
         {
-            creationDuClient(nom, prenom, mail);
+           // creationDuClient(nom, prenom, mail);
         }
         #endregion
     }
