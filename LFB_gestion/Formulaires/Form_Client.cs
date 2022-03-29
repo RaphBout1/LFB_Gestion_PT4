@@ -44,7 +44,7 @@ namespace LFB_gestion.Formulaires
         {
             if (!String.IsNullOrEmpty(prenomTextBox.Text) && !String.IsNullOrEmpty(nomTextBox.Text) && !String.IsNullOrEmpty(emailTextBox.Text))
             {
-                if (Outils.isValidMail(emailTextBox.Text))
+                if (Outils.mailEstValide(emailTextBox.Text))
                 {
                     if (!clientDejaPresent(prenomTextBox.Text, nomTextBox.Text))
                     {
@@ -73,7 +73,7 @@ namespace LFB_gestion.Formulaires
         /// <param name="e"></param>
         private void emailTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!Outils.isValidMail(emailTextBox.Text))
+            if (!Outils.mailEstValide(emailTextBox.Text))
             {
                 emailTextBox.ForeColor = Color.Red;
             }

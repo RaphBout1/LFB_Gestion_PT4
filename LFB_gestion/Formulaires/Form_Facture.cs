@@ -406,7 +406,7 @@ namespace LFB_gestion.Formulaires
         /// <returns></returns>
         private Entite_Client client()
         {
-            return Outils.findClient(réservation.idClient);
+            return Outils.trouverClient(réservation.idClient);
         }
 
         /// <summary>

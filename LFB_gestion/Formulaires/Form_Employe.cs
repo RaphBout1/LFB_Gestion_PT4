@@ -31,7 +31,7 @@ namespace LFB_gestion.Formulaires
             {
                 if (tel_textBox.Text.Length > 9)
                 {
-                    if (Outils.isValidMail(mail_textBox.Text))
+                    if (Outils.mailEstValide(mail_textBox.Text))
                     {
                         try
                         {
@@ -44,7 +44,7 @@ namespace LFB_gestion.Formulaires
                             command.Parameters.AddWithValue("@prenom", prénom_TextBox.Text);
                             command.Parameters.AddWithValue("@nom", nom_textBox.Text);
                             command.Parameters.AddWithValue("@tel", tel_textBox.Text);
-                            command.Parameters.AddWithValue("@mdp", Outils.crypter(mdp_textBox.Text));
+                            command.Parameters.AddWithValue("@mdp", Outils.chiffrer(mdp_textBox.Text));
                             command.ExecuteNonQuery();
                             MessageBox.Show("Utilisateur crée avec succés");
                             connexion.Close();
@@ -117,7 +117,7 @@ namespace LFB_gestion.Formulaires
         /// <param name="e"></param>
         private void mail_textBox_TextChanged(object sender, EventArgs e)
         {
-            if (!Outils.isValidMail(mail_textBox.Text))
+            if (!Outils.mailEstValide(mail_textBox.Text))
             {
                 mail_textBox.ForeColor = Color.Red;
             }
