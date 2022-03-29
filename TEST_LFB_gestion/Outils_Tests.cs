@@ -6,7 +6,7 @@ using static LFB_gestion.Formulaires.Form_Client;
 namespace TEST_LFB_gestion
 {
     [TestClass]
-    public class Clients_Test
+    public class Outils_Tests
     {
         [TestMethod]
         public void testsChiffrage()
