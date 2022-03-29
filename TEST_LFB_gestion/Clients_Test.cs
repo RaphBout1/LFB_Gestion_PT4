@@ -8,6 +8,7 @@ namespace TEST_LFB_gestion
     [TestClass]
     public class Clients_Test
     {
+        SqlConnection connexion = LFB_gestion.Outils.Connexion();
         [TestMethod]
         public void testsChiffrage()
         {
