@@ -1,4 +1,5 @@
-﻿using LFB_gestion.Entités;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Entités;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -107,7 +108,7 @@ namespace LFB_gestion.Interfaces
         {
 
             List<Entite_Client> listeClients = new List<Entite_Client>();
-            foreach (Entite_Client client in Interface_Accueil.clients)
+            foreach (Entite_Client client in dataBase.clients)
             {
                 if (client.nom.Contains(recherche) || client.prenom.Contains(recherche) || recherche == null || recherche == "")
                 {

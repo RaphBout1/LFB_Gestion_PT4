@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using LFB_gestion.Classes;
 
 namespace LFB_gestion.Interfaces
 {
@@ -18,7 +19,7 @@ namespace LFB_gestion.Interfaces
             nomModuleLabel.Text = "Entretiens";
 
             InitializeComponent();
-
+            dataBase.refreshDataBase();
             afficherEntretien();
         }
 
@@ -26,10 +27,12 @@ namespace LFB_gestion.Interfaces
         /// <summary>
         /// Appelle la fonction qui affichera tous les utilisateurs
         /// </summary>
-        private void afficherEntretien()
+        public void afficherEntretien()
         {
             reader("");
         }
+
+
 
         /// <summary>
         /// Méthode permettant de construire une liste d'entretien présents dans la base en fonction d'une chaine de caractères. Elle appelle ensuite le méthode d'affichage en passant cette liste en paramètres
@@ -52,6 +55,7 @@ namespace LFB_gestion.Interfaces
         {
             Form formEntretien = new Formulaires.Form_Entretien(null);
             formEntretien.ShowDialog();
+            
         }
         #endregion
 
@@ -64,7 +68,7 @@ namespace LFB_gestion.Interfaces
         public void reader(string recherche)
         {
             List<Entite_Entretien> listeEntretien = new List<Entite_Entretien>();
-            foreach (Entite_Entretien entretien in Interface_Accueil.entretiens)
+            foreach (Entite_Entretien entretien in dataBase.entretiens)
             {
                 if (entretien.description.Contains(recherche) || recherche == null || recherche == "")
                 {

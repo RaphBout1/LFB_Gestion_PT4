@@ -1,4 +1,5 @@
-﻿using LFB_gestion.Entités;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Entités;
 using LFB_gestion.Interfaces;
 using System;
 using System.Data.Common;
@@ -36,7 +37,7 @@ namespace LFB_gestion.Formulaires
         /// </summary>
         private void remplirDonnées()
         {
-            clientlabel.Text = (Interface_Accueil.clients.Find(client => client.id == réservation.idClient)).ToString();
+            clientlabel.Text = (dataBase.clients.Find(client => client.id == réservation.idClient)).ToString();
             débutLabel.Text = réservation.début.ToString();
             emplacementlabel.Text = réservation.emplacement.ToString();
         }
