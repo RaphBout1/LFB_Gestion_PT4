@@ -34,16 +34,16 @@ namespace LFB_gestion.Classes
             }
             try
             {
-                query = "insert into client values (@id, @nom, @prenom, @mail, @adresse,@codePostal,@ville,@tel)";
+                query = "insert into client values (@id, @nom, @prenom, @mail, @adresse, @codePostal, @ville, @tel)";
                 command = new SqlCommand(query, connexion);
                 command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@nom", nom);
                 command.Parameters.AddWithValue("@prenom", prenom);
                 command.Parameters.AddWithValue("@mail", mail);
-                command.Parameters.AddWithValue("@mail", adresse);
-                command.Parameters.AddWithValue("@mail", codePostal);
-                command.Parameters.AddWithValue("@mail", ville);
-                command.Parameters.AddWithValue("@mail", tel);
+                command.Parameters.AddWithValue("@adresse", adresse);
+                command.Parameters.AddWithValue("@codePostal", codePostal);
+                command.Parameters.AddWithValue("@ville", ville);
+                command.Parameters.AddWithValue("@tel", tel);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Client bien ajouté");
             }
