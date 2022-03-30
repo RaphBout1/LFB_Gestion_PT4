@@ -29,6 +29,7 @@ namespace LFB_gestion.Interfaces
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Interface_Stocks));
             this.SuspendLayout();
             // 
             // clientsPanel
@@ -44,12 +45,18 @@ namespace LFB_gestion.Interfaces
             // rechercheBouton
             // 
             this.rechercheBouton.FlatAppearance.BorderSize = 0;
+            this.rechercheBouton.Click += new System.EventHandler(this.rechercheBouton_Click);
+            // 
+            // buttonDeconnexion
+            // 
+            this.buttonDeconnexion.FlatAppearance.BorderSize = 0;
+            this.buttonDeconnexion.Location = new System.Drawing.Point(1544, 0);
             // 
             // Interface_Stocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::LFB_gestion.Properties.Resources.fondEcran;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1754, 961);
             this.Location = new System.Drawing.Point(0, 0);
             this.MinimumSize = new System.Drawing.Size(613, 485);

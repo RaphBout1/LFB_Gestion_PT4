@@ -46,11 +46,13 @@ namespace LFB_gestion.Entités
             this.supprimerBouton.FlatAppearance.BorderSize = 0;
             this.supprimerBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.supprimerBouton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.supprimerBouton.Location = new System.Drawing.Point(651, 41);
+            this.supprimerBouton.Location = new System.Drawing.Point(488, 33);
+            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.supprimerBouton.Name = "supprimerBouton";
-            this.supprimerBouton.Size = new System.Drawing.Size(52, 50);
+            this.supprimerBouton.Size = new System.Drawing.Size(39, 41);
             this.supprimerBouton.TabIndex = 4;
             this.supprimerBouton.UseVisualStyleBackColor = false;
+            this.supprimerBouton.Click += new System.EventHandler(this.supprimerBouton_Click);
             // 
             // modifierBouton
             // 
@@ -60,9 +62,10 @@ namespace LFB_gestion.Entités
             this.modifierBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modifierBouton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modifierBouton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
-            this.modifierBouton.Location = new System.Drawing.Point(537, 43);
+            this.modifierBouton.Location = new System.Drawing.Point(403, 35);
+            this.modifierBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.modifierBouton.Name = "modifierBouton";
-            this.modifierBouton.Size = new System.Drawing.Size(81, 46);
+            this.modifierBouton.Size = new System.Drawing.Size(61, 37);
             this.modifierBouton.TabIndex = 5;
             this.modifierBouton.Text = "Modifier";
             this.modifierBouton.UseVisualStyleBackColor = false;
@@ -72,9 +75,10 @@ namespace LFB_gestion.Entités
             this.nomClientLabel.AutoSize = true;
             this.nomClientLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomClientLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.nomClientLabel.Location = new System.Drawing.Point(23, 55);
+            this.nomClientLabel.Location = new System.Drawing.Point(17, 45);
+            this.nomClientLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nomClientLabel.Name = "nomClientLabel";
-            this.nomClientLabel.Size = new System.Drawing.Size(130, 25);
+            this.nomClientLabel.Size = new System.Drawing.Size(105, 20);
             this.nomClientLabel.TabIndex = 7;
             this.nomClientLabel.Text = "Nom du client";
             // 
@@ -83,9 +87,10 @@ namespace LFB_gestion.Entités
             this.nomEmplacementLabel.AutoSize = true;
             this.nomEmplacementLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomEmplacementLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.nomEmplacementLabel.Location = new System.Drawing.Point(212, 55);
+            this.nomEmplacementLabel.Location = new System.Drawing.Point(159, 45);
+            this.nomEmplacementLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nomEmplacementLabel.Name = "nomEmplacementLabel";
-            this.nomEmplacementLabel.Size = new System.Drawing.Size(131, 25);
+            this.nomEmplacementLabel.Size = new System.Drawing.Size(107, 20);
             this.nomEmplacementLabel.TabIndex = 8;
             this.nomEmplacementLabel.Text = "Emplacement";
             // 
@@ -95,9 +100,10 @@ namespace LFB_gestion.Entités
             this.descriptionLabel.AutoSize = true;
             this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descriptionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.descriptionLabel.Location = new System.Drawing.Point(336, 55);
+            this.descriptionLabel.Location = new System.Drawing.Point(252, 45);
+            this.descriptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(109, 25);
+            this.descriptionLabel.Size = new System.Drawing.Size(89, 20);
             this.descriptionLabel.TabIndex = 10;
             this.descriptionLabel.Text = "Description";
             // 
@@ -112,16 +118,17 @@ namespace LFB_gestion.Entités
             this.checkBoxRésolu.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
             this.checkBoxRésolu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxRésolu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.checkBoxRésolu.Location = new System.Drawing.Point(733, 50);
+            this.checkBoxRésolu.Location = new System.Drawing.Point(550, 41);
+            this.checkBoxRésolu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBoxRésolu.Name = "checkBoxRésolu";
-            this.checkBoxRésolu.Size = new System.Drawing.Size(118, 36);
+            this.checkBoxRésolu.Size = new System.Drawing.Size(88, 29);
             this.checkBoxRésolu.TabIndex = 11;
             this.checkBoxRésolu.Text = "Résolu :";
             this.checkBoxRésolu.UseVisualStyleBackColor = false;
             // 
             // Entite_Incident
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.checkBoxRésolu);
@@ -130,8 +137,9 @@ namespace LFB_gestion.Entités
             this.Controls.Add(this.nomClientLabel);
             this.Controls.Add(this.modifierBouton);
             this.Controls.Add(this.supprimerBouton);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Entite_Incident";
-            this.Size = new System.Drawing.Size(875, 135);
+            this.Size = new System.Drawing.Size(656, 110);
             this.ResumeLayout(false);
             this.PerformLayout();
 
