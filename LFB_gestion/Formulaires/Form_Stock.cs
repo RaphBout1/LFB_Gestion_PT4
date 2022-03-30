@@ -9,7 +9,7 @@ namespace LFB_gestion.Formulaires
         public Form_Stock()
         {
             InitializeComponent();
-            remplirProduits();
+
         }
 
         #region Événements
@@ -23,41 +23,8 @@ namespace LFB_gestion.Formulaires
             e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (int)Keys.Back);
         }
 
-        /// <summary>
-        /// Affiche le petit formulaire interne pour créer un nouveau produit
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void nouveauProduitBouton_Click(object sender, EventArgs e)
-        {
-            panelNewProduit.Visible = !panelNewProduit.Visible;
-            validerBouton.Visible = !validerBouton.Visible;
-        }
 
-        /// <summary>
-        /// Valide la création d'un nouveau produit en stock
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void validerBouton_Click(object sender, EventArgs e)
-        {
-            if (!auMoinsUnProduitSelectionne() || string.IsNullOrEmpty(nombreTextBox.Text))
-            {
-                Label nonValideLabel = new Label();
-                nonValideLabel.Size = this.Size;
-                nonValideLabel.Text = "Les champs du formulaires ont mal été remplis";
-                nonValideLabel.Location = new Point(validerBouton.Location.X, (validerBouton.Location.Y - 15));
-                this.Controls.Add(nonValideLabel);
-            }
-            else
-            {
-                creationStock();
-                this.Controls.Clear();
-                InitializeComponent();
-                remplirProduits();
-                MessageBox.Show("Stock ajouté à la base avec succès !");
-            }
-        }
+
 
         /// <summary>
         /// Permet de sélectionner et donner une image à un produit
@@ -66,13 +33,13 @@ namespace LFB_gestion.Formulaires
         /// <param name="e"></param>
         private void imageBouton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (UrlTextBox.Text != null)
             {
-
-                Image img = new Bitmap(openFileDialog1.FileName);
-                Image img1 = (new Bitmap(img, new Size(90, 90)));
-                imagePictureBox.Image = img1;
+                Outils.afficherImage(UrlTextBox.Text, imageBox);
+            }
+            else
+            {
+                MessageBox.Show("Veuillez entrer un url");
             }
         }
 
@@ -93,17 +60,25 @@ namespace LFB_gestion.Formulaires
         /// <param name="e"></param>
         private void validerBoutonProduit_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(nomProduitTextBox.Text))
+            if(nomProduitTextBox.Text != null)
             {
-                Label nonValideLabel = new Label();
-                nonValideLabel.Size = this.Size;
-                nonValideLabel.Text = "Veuillez entrer un nom pour le produit";
-                nonValideLabel.Location = new Point(validerBouton.Location.X, (validerBouton.Location.Y - 15));
-                this.Controls.Add(nonValideLabel);
+
+                if(imageBox.BackgroundImage != null)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("L'image n'est pas ajouté");
+                }
+
             }
             else
             {
-                creationProduit();
+                MessageBox.Show("Le nom du produit n'est pas rentré");
+            };
+
+                //creationProduit();
                 // this.stock.produitsListBox.Items.Add(nomProduitTextBox.Text);
                 this.Controls.Clear();
                 InitializeComponent();
@@ -113,42 +88,11 @@ namespace LFB_gestion.Formulaires
         #endregion
 
         #region Fonctions
-        /// <summary>
-        /// Vérifie si au moins un produit est sélectionné
-        /// </summary>
-        /// <returns>renvoie vrai si un produit est sélectionné</returns>
-        private bool auMoinsUnProduitSelectionne()
-        {
-            return produitsListBox.SelectedItems.Count == 0;
-        }
+       
         #endregion
 
-        /* MANIPULATION DE LA BASE */
 
-        /*
-         * Méthode permettant la création d'un emplacement dans la base
-         * A FAIRE
-         */
-        private void creationStock()
-        {
-        }
 
-        public void remplirProduits()
-        {
-            for (int i = 0; i < 30; i++)
-            {
-                produitsListBox.Items.Add("produit " + i);
-            }
-        }
 
-        /* MANIPULATION DE LA BASE */
-
-        /*
-         * Méthode permettant la création d'un produit dans la base
-         * A FAIRE
-         */
-        private void creationProduit()
-        {
-        }
-    }
+    
 }

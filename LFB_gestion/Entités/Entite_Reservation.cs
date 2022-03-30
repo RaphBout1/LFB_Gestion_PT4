@@ -1,6 +1,8 @@
-﻿using LFB_gestion.Formulaires;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Formulaires;
 using LFB_gestion.Interfaces;
 using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace LFB_gestion.Entités
@@ -49,6 +51,23 @@ namespace LFB_gestion.Entités
         {
             Form_Incident incident = new Form_Incident(this);
             incident.ShowDialog();
+        }
+
+        private void supprimerBouton_Click(object sender, EventArgs e)
+        {
+            SqlConnection connexion = Outils.Connexion();
+            connexion.Open();
+            string query = "delete from reservation where id = @id";
+            SqlCommand command = new SqlCommand(query, connexion);
+            command.Parameters.AddWithValue("@id", this.id);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Reservation supprimée");
+            connexion.Close();
+            dataBase.refreshDataBase();
+            Form.ActiveForm.Close();
+            Form formrefresh = new Interface_Reservations();
+
+            formrefresh.ShowDialog();
         }
     }
 }

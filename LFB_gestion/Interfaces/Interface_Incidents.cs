@@ -1,4 +1,5 @@
-﻿using LFB_gestion.Entités;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Entités;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -15,6 +16,7 @@ namespace LFB_gestion.Interfaces
         {
             ajoutBouton.Visible = false;
             // On redéfini le nom du module
+            dataBase.refreshDataBase();
             nomModuleLabel.Text = "Incidents";
             InitializeComponent();
             afficherIncidents();
@@ -95,7 +97,7 @@ namespace LFB_gestion.Interfaces
         private void reader(string recherche)
         {
             List<Entite_Incident> listeIncidents = new List<Entite_Incident>();
-            foreach (Entite_Incident incident in Interface_Accueil.incidents)
+            foreach (Entite_Incident incident in dataBase.incidents)
             {
                 if (incident.description.Contains(recherche) || recherche == null || recherche == "")
                 {

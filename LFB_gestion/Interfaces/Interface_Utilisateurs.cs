@@ -1,4 +1,5 @@
-﻿using LFB_gestion.Entités;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Entités;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -14,6 +15,7 @@ namespace LFB_gestion.Interfaces
         {
             // On redéfini le nom du module
             nomModuleLabel.Text = "Utilisateurs";
+            dataBase.refreshDataBase();
             //On affiche les utilisateurs présents dans la base
             InitializeComponent();
             afficherUsers();
@@ -62,7 +64,7 @@ namespace LFB_gestion.Interfaces
         private void reader(string recherche)
         {
             List<Entite_Utilisateur> listeUtilisateur = new List<Entite_Utilisateur>();
-            foreach (Entite_Utilisateur user in Interface_Accueil.users)
+            foreach (Entite_Utilisateur user in dataBase.users)
             {
                 if (user.login.Contains(recherche)|| recherche == null || recherche == "")
                 {

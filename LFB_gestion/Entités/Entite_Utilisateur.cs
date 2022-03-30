@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Interfaces;
+using System;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -24,7 +26,7 @@ namespace LFB_gestion.Entités
         public static Entite_Utilisateur courant;
 
         /// <summary>
-        /// Constructeur
+        /// Constructeur de l'entité utilisateur
         /// </summary>
         /// <param name="login"></param>
         /// <param name="mdp"></param>
@@ -84,7 +86,19 @@ namespace LFB_gestion.Entités
             /// <param name="e"></param>
             private void supprimerBouton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this.prenom, this.nom);
+            SqlConnection connexion = Outils.Connexion();
+            connexion.Open();
+            string query = "delete from client where id = @id";
+            SqlCommand command = new SqlCommand(query, connexion);
+            command.Parameters.AddWithValue("@id", this.login);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Client supprimé");
+            connexion.Close();
+            dataBase.refreshDataBase();
+            Form.ActiveForm.Close();
+            Form formrefresh = new Interface_Utilisateurs();
+
+            formrefresh.ShowDialog();
         }
 
         /// <summary>
