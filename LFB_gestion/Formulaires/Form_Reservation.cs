@@ -44,11 +44,21 @@ namespace LFB_gestion.Formulaires
         {
             if (auMoinsUnClientSelectionne())
             {
+                Entite_Client client = null;
+                try
+                {
+                    string[] tab = clientsListBox.SelectedItem.ToString().Split(' ');
+                    client = Outils.trouverClient(Int32.Parse(tab[0]));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Client non retrouvé depuis l'élément sélectionné");
+                }
                 if (auMoinsUnEmplacementSelectionne())
                 {
                     if (datesLogiques())
                     {
-                        ajouterRéservation(calendrier.SelectionRange, (Entite_Client)clientsListBox.SelectedItem, emplacementsListBox.SelectedItems);
+                        ajouterRéservation(calendrier.SelectionRange, client, emplacementsListBox.SelectedItems);
                     }
                     else
                     {
