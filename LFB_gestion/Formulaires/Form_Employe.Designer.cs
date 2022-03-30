@@ -48,7 +48,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.loginValue_label = new System.Windows.Forms.Label();
             this.admin_checkBox = new System.Windows.Forms.CheckBox();
-            this.modifierBouton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // prénom_TextBox
@@ -57,10 +56,9 @@
             this.prénom_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.prénom_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prénom_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.prénom_TextBox.Location = new System.Drawing.Point(187, 266);
-            this.prénom_TextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.prénom_TextBox.Location = new System.Drawing.Point(140, 216);
             this.prénom_TextBox.Name = "prénom_TextBox";
-            this.prénom_TextBox.Size = new System.Drawing.Size(228, 30);
+            this.prénom_TextBox.Size = new System.Drawing.Size(172, 26);
             this.prénom_TextBox.TabIndex = 0;
             this.prénom_TextBox.TextChanged += new System.EventHandler(this.prénom_TextBox_TextChanged);
             // 
@@ -71,10 +69,9 @@
             this.prénom_label.BackColor = System.Drawing.Color.Transparent;
             this.prénom_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prénom_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.prénom_label.Location = new System.Drawing.Point(183, 238);
-            this.prénom_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.prénom_label.Location = new System.Drawing.Point(137, 193);
             this.prénom_label.Name = "prénom_label";
-            this.prénom_label.Size = new System.Drawing.Size(80, 25);
+            this.prénom_label.Size = new System.Drawing.Size(64, 20);
             this.prénom_label.TabIndex = 1;
             this.prénom_label.Text = "Prénom";
             // 
@@ -85,10 +82,9 @@
             this.nom_label.BackColor = System.Drawing.Color.Transparent;
             this.nom_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nom_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.nom_label.Location = new System.Drawing.Point(183, 304);
-            this.nom_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nom_label.Location = new System.Drawing.Point(137, 247);
             this.nom_label.Name = "nom_label";
-            this.nom_label.Size = new System.Drawing.Size(53, 25);
+            this.nom_label.Size = new System.Drawing.Size(42, 20);
             this.nom_label.TabIndex = 3;
             this.nom_label.Text = "Nom";
             // 
@@ -98,10 +94,9 @@
             this.nom_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.nom_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nom_textBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.nom_textBox.Location = new System.Drawing.Point(187, 334);
-            this.nom_textBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nom_textBox.Location = new System.Drawing.Point(140, 271);
             this.nom_textBox.Name = "nom_textBox";
-            this.nom_textBox.Size = new System.Drawing.Size(228, 30);
+            this.nom_textBox.Size = new System.Drawing.Size(172, 26);
             this.nom_textBox.TabIndex = 2;
             this.nom_textBox.TextChanged += new System.EventHandler(this.nom_textBox_TextChanged);
             // 
@@ -112,10 +107,9 @@
             this.adresse_label.BackColor = System.Drawing.Color.Transparent;
             this.adresse_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adresse_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.adresse_label.Location = new System.Drawing.Point(724, 238);
-            this.adresse_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.adresse_label.Location = new System.Drawing.Point(543, 193);
             this.adresse_label.Name = "adresse_label";
-            this.adresse_label.Size = new System.Drawing.Size(85, 25);
+            this.adresse_label.Size = new System.Drawing.Size(68, 20);
             this.adresse_label.TabIndex = 5;
             this.adresse_label.Text = "Adresse";
             // 
@@ -125,10 +119,9 @@
             this.adresse_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.adresse_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adresse_textBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.adresse_textBox.Location = new System.Drawing.Point(561, 266);
-            this.adresse_textBox.Margin = new System.Windows.Forms.Padding(4);
+            this.adresse_textBox.Location = new System.Drawing.Point(421, 216);
             this.adresse_textBox.Name = "adresse_textBox";
-            this.adresse_textBox.Size = new System.Drawing.Size(228, 30);
+            this.adresse_textBox.Size = new System.Drawing.Size(172, 26);
             this.adresse_textBox.TabIndex = 4;
             // 
             // tel_label
@@ -138,10 +131,9 @@
             this.tel_label.BackColor = System.Drawing.Color.Transparent;
             this.tel_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tel_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.tel_label.Location = new System.Drawing.Point(757, 304);
-            this.tel_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tel_label.Location = new System.Drawing.Point(568, 247);
             this.tel_label.Name = "tel_label";
-            this.tel_label.Size = new System.Drawing.Size(40, 25);
+            this.tel_label.Size = new System.Drawing.Size(30, 20);
             this.tel_label.TabIndex = 7;
             this.tel_label.Text = "Tel";
             // 
@@ -151,10 +143,9 @@
             this.tel_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.tel_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tel_textBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.tel_textBox.Location = new System.Drawing.Point(561, 334);
-            this.tel_textBox.Margin = new System.Windows.Forms.Padding(4);
+            this.tel_textBox.Location = new System.Drawing.Point(421, 271);
             this.tel_textBox.Name = "tel_textBox";
-            this.tel_textBox.Size = new System.Drawing.Size(228, 30);
+            this.tel_textBox.Size = new System.Drawing.Size(172, 26);
             this.tel_textBox.TabIndex = 6;
             // 
             // label1
@@ -163,10 +154,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.label1.Location = new System.Drawing.Point(557, 330);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(418, 268);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 25);
+            this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 9;
             // 
             // mail_label
@@ -176,10 +166,9 @@
             this.mail_label.BackColor = System.Drawing.Color.Transparent;
             this.mail_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mail_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.mail_label.Location = new System.Drawing.Point(751, 373);
-            this.mail_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.mail_label.Location = new System.Drawing.Point(563, 303);
             this.mail_label.Name = "mail_label";
-            this.mail_label.Size = new System.Drawing.Size(48, 25);
+            this.mail_label.Size = new System.Drawing.Size(37, 20);
             this.mail_label.TabIndex = 11;
             this.mail_label.Text = "Mail";
             // 
@@ -189,10 +178,9 @@
             this.mail_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.mail_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mail_textBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.mail_textBox.Location = new System.Drawing.Point(561, 402);
-            this.mail_textBox.Margin = new System.Windows.Forms.Padding(4);
+            this.mail_textBox.Location = new System.Drawing.Point(421, 327);
             this.mail_textBox.Name = "mail_textBox";
-            this.mail_textBox.Size = new System.Drawing.Size(228, 30);
+            this.mail_textBox.Size = new System.Drawing.Size(172, 26);
             this.mail_textBox.TabIndex = 10;
             this.mail_textBox.TextChanged += new System.EventHandler(this.mail_textBox_TextChanged);
             // 
@@ -204,10 +192,9 @@
             this.créer_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.créer_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.créer_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
-            this.créer_button.Location = new System.Drawing.Point(407, 501);
-            this.créer_button.Margin = new System.Windows.Forms.Padding(4);
+            this.créer_button.Location = new System.Drawing.Point(305, 407);
             this.créer_button.Name = "créer_button";
-            this.créer_button.Size = new System.Drawing.Size(151, 39);
+            this.créer_button.Size = new System.Drawing.Size(113, 32);
             this.créer_button.TabIndex = 12;
             this.créer_button.Text = "Créer";
             this.créer_button.UseVisualStyleBackColor = false;
@@ -220,10 +207,9 @@
             this.login_label.BackColor = System.Drawing.Color.Transparent;
             this.login_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.login_label.Location = new System.Drawing.Point(183, 454);
-            this.login_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.login_label.Location = new System.Drawing.Point(137, 369);
             this.login_label.Name = "login_label";
-            this.login_label.Size = new System.Drawing.Size(60, 25);
+            this.login_label.Size = new System.Drawing.Size(48, 20);
             this.login_label.TabIndex = 15;
             this.login_label.Text = "Login";
             // 
@@ -233,10 +219,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.label3.Location = new System.Drawing.Point(709, 190);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(532, 154);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 25);
+            this.label3.Size = new System.Drawing.Size(0, 20);
             this.label3.TabIndex = 13;
             // 
             // mdp_label
@@ -246,10 +231,9 @@
             this.mdp_label.BackColor = System.Drawing.Color.Transparent;
             this.mdp_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mdp_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.mdp_label.Location = new System.Drawing.Point(181, 373);
-            this.mdp_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.mdp_label.Location = new System.Drawing.Point(136, 303);
             this.mdp_label.Name = "mdp_label";
-            this.mdp_label.Size = new System.Drawing.Size(98, 25);
+            this.mdp_label.Size = new System.Drawing.Size(78, 20);
             this.mdp_label.TabIndex = 18;
             this.mdp_label.Text = "Password";
             // 
@@ -259,10 +243,9 @@
             this.mdp_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.mdp_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mdp_textBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.mdp_textBox.Location = new System.Drawing.Point(187, 402);
-            this.mdp_textBox.Margin = new System.Windows.Forms.Padding(4);
+            this.mdp_textBox.Location = new System.Drawing.Point(140, 327);
             this.mdp_textBox.Name = "mdp_textBox";
-            this.mdp_textBox.Size = new System.Drawing.Size(228, 30);
+            this.mdp_textBox.Size = new System.Drawing.Size(172, 26);
             this.mdp_textBox.TabIndex = 17;
             // 
             // label5
@@ -271,10 +254,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.label5.Location = new System.Drawing.Point(709, 222);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(532, 180);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 25);
+            this.label5.Size = new System.Drawing.Size(0, 20);
             this.label5.TabIndex = 16;
             // 
             // loginValue_label
@@ -284,10 +266,9 @@
             this.loginValue_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.loginValue_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginValue_label.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.loginValue_label.Location = new System.Drawing.Point(245, 454);
-            this.loginValue_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.loginValue_label.Location = new System.Drawing.Point(184, 369);
             this.loginValue_label.Name = "loginValue_label";
-            this.loginValue_label.Size = new System.Drawing.Size(53, 25);
+            this.loginValue_label.Size = new System.Drawing.Size(42, 20);
             this.loginValue_label.TabIndex = 19;
             this.loginValue_label.Text = "login";
             // 
@@ -298,41 +279,21 @@
             this.admin_checkBox.BackColor = System.Drawing.Color.Transparent;
             this.admin_checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.admin_checkBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.admin_checkBox.Location = new System.Drawing.Point(665, 449);
-            this.admin_checkBox.Margin = new System.Windows.Forms.Padding(4);
+            this.admin_checkBox.Location = new System.Drawing.Point(499, 365);
             this.admin_checkBox.Name = "admin_checkBox";
-            this.admin_checkBox.Size = new System.Drawing.Size(156, 29);
+            this.admin_checkBox.Size = new System.Drawing.Size(129, 24);
             this.admin_checkBox.TabIndex = 20;
             this.admin_checkBox.Text = "administrateur";
             this.admin_checkBox.UseVisualStyleBackColor = false;
             this.admin_checkBox.CheckedChanged += new System.EventHandler(this.admin_checkBox_CheckedChanged);
             // 
-            // modifierBouton
-            // 
-            this.modifierBouton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.modifierBouton.BackColor = System.Drawing.Color.Transparent;
-            this.modifierBouton.BackgroundImage = global::LFB_gestion.Properties.Resources.fondBouton;
-            this.modifierBouton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.modifierBouton.FlatAppearance.BorderSize = 0;
-            this.modifierBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modifierBouton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modifierBouton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
-            this.modifierBouton.Location = new System.Drawing.Point(407, 500);
-            this.modifierBouton.Margin = new System.Windows.Forms.Padding(4);
-            this.modifierBouton.Name = "modifierBouton";
-            this.modifierBouton.Size = new System.Drawing.Size(151, 39);
-            this.modifierBouton.TabIndex = 21;
-            this.modifierBouton.Text = "Modifier";
-            this.modifierBouton.UseVisualStyleBackColor = false;
-            // 
             // Form_Employe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LFB_gestion.Properties.Resources.fondConnexion;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(973, 554);
-            this.Controls.Add(this.modifierBouton);
+            this.ClientSize = new System.Drawing.Size(730, 450);
             this.Controls.Add(this.admin_checkBox);
             this.Controls.Add(this.loginValue_label);
             this.Controls.Add(this.mdp_label);
@@ -354,7 +315,6 @@
             this.Controls.Add(this.prénom_TextBox);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form_Employe";
             this.Text = "Créer un nouvel utilisateur";
             this.ResumeLayout(false);
@@ -383,6 +343,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label loginValue_label;
         public System.Windows.Forms.CheckBox admin_checkBox;
-        public System.Windows.Forms.Button modifierBouton;
     }
 }
