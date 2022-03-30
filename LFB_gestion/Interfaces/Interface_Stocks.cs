@@ -1,5 +1,8 @@
-﻿using System;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Entités;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,12 +10,17 @@ namespace LFB_gestion.Interfaces
 {
     public partial class Interface_Stocks : Interface_Abstraite
     {
+
+        private SqlConnection connexion = Outils.Connexion();
         public Interface_Stocks()
         {
-            InitialisationStocks();
+            dataBase.refreshDataBase();
             nomModuleLabel.Text = "Stocks";
             InitializeComponent();
+            afficherStock();
         }
+
+      
 
         #region Événements
         /// <summary>
@@ -25,58 +33,92 @@ namespace LFB_gestion.Interfaces
             Form formStock = new Formulaires.Form_Stock();
             formStock.ShowDialog();
         }
+
+        private void rechercheBouton_Click(object sender, EventArgs e)
+        {
+            connexion.Open();
+            // On récupère le texte dans le label rechercheLabel
+            reader(rechercheTextBox.Text);
+            connexion.Close();
+        }
+
+
         #endregion
 
         #region Fonctions
-        /// <summary>
-        /// Initialise quelques stocks et affiche les clients
-        /// </summary>
-        private void InitialisationStocks()
+        private void reader(string text)
         {
-            // Génération de 30 modèles de clients pour tester (à supprimer)
-            List<Entités.Entite_Stock> stocks = new List<Entités.Entite_Stock>();
-            for (int i = 0; i < 30; i++)
+            List<Entite_Stock> listeStock = new List<Entite_Stock>();
+            foreach (Entite_Stock stock in dataBase.stocks)
             {
-                Entités.Entite_Stock stock = new Entités.Entite_Stock();
-                stocks.Add(stock);
-            }
-
-            // Pour tous les clients présents dans la liste, les afficher
-            int y = 0;
-            int x = 0;
-
-            foreach (Entités.Entite_Stock stock in stocks)
-            {
-                if (stock == stocks[0])
+                if (stock.name.Contains(text) || text == null || text == "")
                 {
-                    stock.Location = new System.Drawing.Point(0, 0);
-                    
-                    
+                    int id = stock.id;
+                    string nom = stock.name;
+                    string image = stock.image;
+                    int quantite = stock.quantite;
+                    Entite_Stock c = new Entite_Stock(id, nom, image, quantite);
+                    listeStock.Add(c);
+
                 }
-                else
+
+            }
+            affichageStock(listeStock);
+        }
+
+        private void affichageStock(List<Entite_Stock> listeStock)
+        {
+            clientsPanel.Controls.Clear();
+            if (listeStock != null)
+            {
+                int y = 0;
+                int x = 0;
+
+                foreach (Entités.Entite_Stock stock in listeStock)
                 {
-                    if ((x*stock.Width+ 170) + stock.Width + 170 < clientsPanel.Width)
+                    if (stock == listeStock[0])
                     {
-                        stock.Location = new Point(x*(stock.Width +170) + stock.Width + 170, y* (stock.Height + 100));
-                        x++;                    }
+                        stock.Location = new System.Drawing.Point(0, 0);
+
+
+                    }
                     else
                     {
-                        y++;
-                        stock.Location = new Point(0, y*(stock.Height + 100));
+                        if ((x * stock.Width + 170) + stock.Width + 170 < clientsPanel.Width)
+                        {
+                            stock.Location = new Point(x * (stock.Width + 170) + stock.Width + 170, y * (stock.Height + 100));
+                            x++;
+                        }
+                        else
+                        {
+                            y++;
+                            stock.Location = new Point(0, y * (stock.Height + 100));
 
-                        x = 0;
+                            x = 0;
+                        }
+
                     }
+                    this.clientsPanel.Controls.Add(stock);
+
+                    clientsPanel.AutoScroll = true;
 
                 }
-                this.clientsPanel.Controls.Add(stock);
-
-                clientsPanel.AutoScroll = true;
-
             }
+            else
+            {
+                MessageBox.Show("Pas de stock dans la base");
+            }
+           
         }
+
+        private void afficherStock()
+        {
+            reader("");
+        }
+
+
         #endregion
 
 
-        
     }
 }

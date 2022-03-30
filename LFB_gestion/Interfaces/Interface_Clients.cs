@@ -17,6 +17,7 @@ namespace LFB_gestion.Interfaces
         {
             // On redéfini le nom du module
             nomModuleLabel.Text = "Clients";
+            dataBase.refreshDataBase();
             // On initialise les clients présents dans la base et on les affiche
             InitializeComponent();
             afficherClients();

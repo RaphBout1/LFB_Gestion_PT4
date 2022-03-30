@@ -4,6 +4,8 @@ using LFB_gestion.Interfaces;
 using System;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -75,14 +77,16 @@ namespace LFB_gestion
         /// </summary>
         /// <param name="tel"></param>
         /// <returns></returns>
-        public static bool isValidTel(string tel) {
+        public static bool isValidTel(string tel)
+        {
             int cmpt = 0;
             foreach (char c in tel)
             {
                 if (c >= '0' && c <= '9')
                 {
                     cmpt++;
-                }else
+                }
+                else
                 {
                     return false;
                 }
@@ -212,6 +216,25 @@ namespace LFB_gestion
             MessageBox.Show("Le client avec l'id " + idRecherche + " n'existe pas");
             return null;
 
+        }
+
+        public static void afficherImage(string image, PictureBox box)
+        {
+            try
+            {
+                WebRequest request = WebRequest.Create(image);
+                using (var response = request.GetResponse())
+                {
+                    using (var str = response.GetResponseStream())
+                    {
+                        box.BackgroundImage = Bitmap.FromStream(str);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Url incorrecte");
+            }
         }
 
 

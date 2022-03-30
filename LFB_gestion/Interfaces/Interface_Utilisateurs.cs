@@ -15,6 +15,7 @@ namespace LFB_gestion.Interfaces
         {
             // On redéfini le nom du module
             nomModuleLabel.Text = "Utilisateurs";
+            dataBase.refreshDataBase();
             //On affiche les utilisateurs présents dans la base
             InitializeComponent();
             afficherUsers();

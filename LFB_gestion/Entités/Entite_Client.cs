@@ -1,4 +1,7 @@
-﻿using System.Windows.Forms;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Interfaces;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace LFB_gestion.Entités
 {
@@ -51,6 +54,23 @@ namespace LFB_gestion.Entités
         public override string ToString()
         {
             return prenom + " " + nom;
+        }
+
+        private void supprimerBouton_Click(object sender, System.EventArgs e)
+        {
+            SqlConnection connexion = Outils.Connexion();
+            connexion.Open();
+            string query = "delete from client where id = @id";
+            SqlCommand command = new SqlCommand(query, connexion);
+            command.Parameters.AddWithValue("@id", this.id);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Client supprimé");
+            connexion.Close();
+            dataBase.refreshDataBase();
+            Form.ActiveForm.Close();
+            Form formrefresh = new Interface_Clients();
+
+            formrefresh.ShowDialog();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace LFB_gestion.Interfaces
         {
             ajoutBouton.Visible = false;
             // On redéfini le nom du module
+            dataBase.refreshDataBase();
             nomModuleLabel.Text = "Incidents";
             InitializeComponent();
             afficherIncidents();

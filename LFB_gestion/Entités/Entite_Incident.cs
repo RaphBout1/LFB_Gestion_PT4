@@ -1,4 +1,7 @@
-﻿using System;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Interfaces;
+using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace LFB_gestion.Entités
@@ -25,6 +28,23 @@ namespace LFB_gestion.Entités
             this.id_réservation = id_réservation;
             InitializeComponent();
             descriptionLabel.Text = description;
+        }
+
+        private void supprimerBouton_Click(object sender, EventArgs e)
+        {
+            SqlConnection connexion = Outils.Connexion();
+            connexion.Open();
+            string query = "delete from incident where id = @id";
+            SqlCommand command = new SqlCommand(query, connexion);
+            command.Parameters.AddWithValue("@id", this.id);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Incident supprimé");
+            connexion.Close();
+            dataBase.refreshDataBase();
+            Form.ActiveForm.Close();
+            Form formrefresh = new Interface_Incidents();
+
+            formrefresh.ShowDialog();
         }
     }
 }

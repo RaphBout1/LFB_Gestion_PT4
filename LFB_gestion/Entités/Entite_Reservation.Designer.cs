@@ -99,6 +99,7 @@
             this.supprimerBouton.Size = new System.Drawing.Size(44, 37);
             this.supprimerBouton.TabIndex = 1;
             this.supprimerBouton.UseVisualStyleBackColor = false;
+            this.supprimerBouton.Click += new System.EventHandler(this.supprimerBouton_Click);
             // 
             // label2
             // 

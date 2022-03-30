@@ -23,6 +23,8 @@ namespace LFB_gestion.Classes
 
         public static List<Entite_Reservation> reservations = new List<Entite_Reservation>();
 
+        public static List<Entite_Stock> stocks = new List<Entite_Stock>();
+
         public static void refreshDataBase()
         {
             selectClients();
@@ -30,6 +32,7 @@ namespace LFB_gestion.Classes
             selectEntretien();
             selectIncident();
             selectReservation();
+            selectStock();
 
         }
 
@@ -55,6 +58,28 @@ namespace LFB_gestion.Classes
                 string ville = (string)reader["ville"];
 
                 clients.Add(new Entite_Client(id, nom, prenom, mail, adresse, codePostal, ville, tel));
+            }
+            reader.Close();
+            connexion.Close();
+        }
+
+        /// <summary>
+        /// charge tous le stock depuis la base de données
+        /// </summary>
+        private static void selectStock()
+        {
+            stocks.Clear();
+            connexion.Open();
+            SqlCommand command = new SqlCommand("SELECT * FROM produit", connexion);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int id = (int)reader["id"];
+                string nom = (string)reader["nom"];
+                string image = (string)reader["image"];
+                int quantite = (int)reader["quantite"];
+
+                stocks.Add(new Entite_Stock(id, nom, image, quantite));
             }
             reader.Close();
             connexion.Close();
