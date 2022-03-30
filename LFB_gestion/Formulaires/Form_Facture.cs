@@ -282,7 +282,7 @@ namespace LFB_gestion.Formulaires
 
             dateTextBox.Text = date();
 
-            Entite_Client leClient = client();
+            Entite_Client leClient = Outils.trouverClient(réservation.idClient);
 
             clientTextBox.Text = leClient.ToString();
             adresseTextBox.Text = leClient.adresse;
@@ -398,15 +398,6 @@ namespace LFB_gestion.Formulaires
         private string date()
         {
             return DateTime.Now.ToString("dd/MM/yyyy");
-        }
-
-        /// <summary>
-        /// Retourne lentité client selon l'idClient
-        /// </summary>
-        /// <returns></returns>
-        private Entite_Client client()
-        {
-            return Outils.trouverClient(réservation.idClient);
         }
 
         /// <summary>

@@ -163,7 +163,7 @@ namespace LFB_gestion
             {
                 foreach (Entités.Entite_Client client in Interfaces.Interface_Accueil.clients)
                 {
-                    listBox.Items.Add(client.ToString());
+                    listBox.Items.Add(client.id + " " + client.ToString());
 
                 }
             }

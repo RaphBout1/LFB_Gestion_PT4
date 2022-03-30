@@ -38,7 +38,7 @@ namespace LFB_gestion.Formulaires
         {
             clientlabel.Text = (Interface_Accueil.clients.Find(client => client.id == réservation.idClient)).ToString();
             débutLabel.Text = réservation.début.ToString();
-            emplacementlabel.Text = réservation.emplacement.ToString();
+            emplacementlabel.Text += " " + réservation.emplacement.ToString();
         }
 
         private void validationBouton_Click(object sender, EventArgs e)
