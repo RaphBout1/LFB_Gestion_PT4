@@ -11,58 +11,67 @@ namespace TEST_LFB_gestion
     {
         private static SqlConnection connexion = LFB_gestion.Outils.Connexion();
 
-        /// <summary>
-        /// Création d'un nouveau client
-        /// </summary>
-        /// <param name="nom"></param>
-        /// <param name="prenom"></param>
-        /// <param name="mail"></param>
-        public static void creationDuClient(string nom, string prenom, string mail, string adresse, string codePostal, string ville, string tel)
-        {
-            connexion.Open();
-            int id = 0;
-            string query = "select max (id) from client";
-            SqlCommand command = new SqlCommand(query, connexion);
-            DbDataReader reader = command.ExecuteReader();
-            if (reader.Read())
-            {
-                id = reader.GetInt32(0);
-                id++;
-                reader.Close();
-            }
-            query = "insert into client values (@id, @nom, @prenom, @mail, @adresse, @codePostal, @ville, @tel)";
-            command = new SqlCommand(query, connexion);
-            command.Parameters.AddWithValue("@id", id);
-            command.Parameters.AddWithValue("@nom", nom);
-            command.Parameters.AddWithValue("@prenom", prenom);
-            command.Parameters.AddWithValue("@mail", mail);
-            command.Parameters.AddWithValue("@adresse", adresse);
-            command.Parameters.AddWithValue("@codePostal", codePostal);
-            command.Parameters.AddWithValue("@ville", ville);
-            command.Parameters.AddWithValue("@tel", tel);
-            command.ExecuteNonQuery();
-            connexion.Close();
+            // On vérifie si le chiffrage fonctionne sur une chaine complexe
+            string sComplexe = "aMoR78_@&é'==SSi, P";
+            sCrypte = LFB_gestion.Outils.chiffrer(sComplexe);
+            Assert.AreNotEqual(sComplexe, sCrypte);
+
+
         }
 
         [TestMethod]
-        public void testAjoutClient()
+        public void testsMailEstValide()
         {
-            bool vrai = true;
-            bool faux = false;
-            creationDuClient("nomt", "prénomt", "mail@qsd.comt", "adresset", "code postalt", "villet", "telephonet");
-            connexion.Open();
-            string query = "select * from client " +
-                "where nom='nomt' and prenom='prénomt' and mail='mail@qsd.comt' and adresse='adresset' and codePostal='code postalt' and ville='villet' and telephone='telephonet'";
-            SqlCommand cmd = new SqlCommand(query, connexion);
-            DbDataReader reader = cmd.ExecuteReader();
+            // Sur adresse mail valide
+            // On créer plusieurs adresses mails valide
+            string valide = "tonyStark@gmail.com";
+            string valideAvecTiret = "tony-stark@gmail.com";
+            string valideAvecPoint = "tony-stark@gmail.com";
+            string valideAvecChiffre = "tony2-stark@gmail.com";
+            Assert.IsTrue(LFB_gestion.Outils.mailEstValide(valide));
+            Assert.IsTrue(LFB_gestion.Outils.mailEstValide(valideAvecTiret));
+            Assert.IsTrue(LFB_gestion.Outils.mailEstValide(valideAvecChiffre));
+            Assert.IsTrue(LFB_gestion.Outils.mailEstValide(valideAvecPoint));
+
+            // sur adresse mail invalide
+            string nonValideAvecEspace = "tony stark@gmail.com";
+            string nonValideSansArobase = "tonystarkgmail.com";
+            string nonValideSansDomaine = "tonystark@gmail";
+            Assert.IsFalse(LFB_gestion.Outils.mailEstValide(nonValideAvecEspace));
+           // Assert.IsFalse(LFB_gestion.Outils.mailEstValide(nonValideAvecCaractereSpecial));
+            Assert.IsFalse(LFB_gestion.Outils.mailEstValide(nonValideSansArobase));
+           // Assert.IsFalse(LFB_gestion.Outils.mailEstValide(nonValideAvecTiretApresArobase));
+            Assert.IsFalse(LFB_gestion.Outils.mailEstValide(nonValideSansDomaine));
+
+
+        }
+
+        [TestMethod]
+        public void trouverClient()
+        {
+            // On créé un client dans la base
+            string nom = "bob";
+            string prenom = "dupont";
+            string mail = "bob.dupont@laposte.net";
+            int id = 0;
+            SqlConnection conn = LFB_gestion.Outils.Connexion();
+            string query = "select max (id) from client";
+            SqlCommand command = new SqlCommand(query, conn);
+            DbDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {
-                Assert.IsTrue(vrai);
+                Assert.IsTrue(false);
             }
-            else
-            {
-                Assert.IsTrue(faux);
-            }
+                query = "insert into client values (@id, @nom, @prenom, @mail)";
+                command = new SqlCommand(query, conn);
+                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@nom", nom);
+                command.Parameters.AddWithValue("@prenom", prenom);
+                command.Parameters.AddWithValue("@mail", mail);
+                command.ExecuteNonQuery();
+
+            // Une fois le client créé on teste la méthode trouverClient
+            Assert.AreEqual(LFB_gestion.Outils.trouverClient(id).nom, "nom");
         }
     }
 }
