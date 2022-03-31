@@ -45,19 +45,12 @@ namespace LFB_gestion.Formulaires
         private void validationBouton_Click(object sender, EventArgs e)
         {
             connexion.Open();
-            string query = "select max(id) from incident";
-            SqlCommand cmd = new SqlCommand(query, connexion);
-            DbDataReader reader = cmd.ExecuteReader();
-            reader.Read();
-            int id = reader.GetInt32(0) + 1;
-            reader.Close();
             if (descriptionTextBox.Text != null)
             {
                 try
                 {
-                    query = "insert into incident values (@id, @desc, @id_réservation)";
-                    cmd = new SqlCommand(query, connexion);
-                    cmd.Parameters.AddWithValue("@id", id);
+                    string query = "insert into incident values ((select coalesce(MAX(id),0) from incident)+1, @id_réservation, @desc)";
+                    SqlCommand cmd = new SqlCommand(query, connexion);
                     cmd.Parameters.AddWithValue("@desc", descriptionTextBox.Text);
                     cmd.Parameters.AddWithValue("@id_réservation", réservation.id);
                     cmd.ExecuteNonQuery();
@@ -68,6 +61,8 @@ namespace LFB_gestion.Formulaires
                     MessageBox.Show(ex.Message);
                 }
             }
+            connexion.Close();
+            this.Close();
         }
     }
 }
