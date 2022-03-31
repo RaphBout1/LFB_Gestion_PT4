@@ -1,4 +1,5 @@
-﻿using LFB_gestion.Entités;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Entités;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -13,10 +14,7 @@ namespace LFB_gestion.Interfaces
         public Interface_Accueil()
         {
             InitializeComponent();
+            dataBase.refreshDataBase();
         }
-
-
-
-
     }
 }

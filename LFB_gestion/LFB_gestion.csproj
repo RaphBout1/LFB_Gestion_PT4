@@ -277,6 +277,9 @@
     <EmbeddedResource Include="Interfaces\Interface_Incidents.resx">
       <DependentUpon>Interface_Incidents.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Interface_Logs.resx">
+      <DependentUpon>Interface_Logs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\Interface_Plan.resx">
       <DependentUpon>Interface_Plan.cs</DependentUpon>
     </EmbeddedResource>

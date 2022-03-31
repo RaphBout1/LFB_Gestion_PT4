@@ -32,9 +32,8 @@ namespace LFB_gestion.Interfaces
         {
             this.Hide();
             Form formAccueil = new Interface_Accueil();
-
-            formAccueil.ShowDialog();
-            this.Close();
+            formAccueil.FormClosed += (s, args) => this.Close();
+            formAccueil.Show();
         }
 
         /// <summary>
@@ -46,9 +45,8 @@ namespace LFB_gestion.Interfaces
         {
             this.Hide();
             Form formStocks = new Interface_Stocks();
-
-            formStocks.ShowDialog();
-            this.Close();
+            formStocks.FormClosed += (s, args) => this.Close();
+            formStocks.Show();
         }
 
         /// <summary>
@@ -60,9 +58,8 @@ namespace LFB_gestion.Interfaces
         {
             this.Hide();
             Form formStat = new Interfaces.Interface_Statistiques();
-
-            formStat.ShowDialog();
-            this.Close();
+            formStat.FormClosed += (s, args) => this.Close();
+            formStat.Show();
         }
 
         /// <summary>
@@ -74,9 +71,8 @@ namespace LFB_gestion.Interfaces
         {
             this.Hide();
             Form formEntretien = new Interface_Entretien();
-
-            formEntretien.ShowDialog();
-            this.Close();
+            formEntretien.FormClosed += (s, args) => this.Close();
+            formEntretien.Show();
         }
 
         /// <summary>
@@ -88,9 +84,8 @@ namespace LFB_gestion.Interfaces
         {
             this.Hide();
             Form formPlan = new Interface_Plan();
-
-            formPlan.ShowDialog();
-            this.Close();
+            formPlan.FormClosed += (s, args) => this.Close();
+            formPlan.Show();
         }
 
         /// <summary>
@@ -102,9 +97,8 @@ namespace LFB_gestion.Interfaces
         {
             this.Hide();
             Form formReservation = new Interface_Reservations();
-
-            formReservation.ShowDialog();
-            this.Close();
+            formReservation.FormClosed += (s, args) => this.Close();
+            formReservation.Show();
         }
 
         /// <summary>
@@ -114,10 +108,10 @@ namespace LFB_gestion.Interfaces
         /// <param name="e"></param>
         private void incidentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Hide();
+            this.Hide();
             Form formEntretien = new Interface_Incidents();
-            formEntretien.ShowDialog();
-            Close();
+            formEntretien.FormClosed += (s, args) => this.Close();
+            formEntretien.Show();
 
         }
 
@@ -130,9 +124,8 @@ namespace LFB_gestion.Interfaces
         {
             this.Hide();
             Form formClients = new Interface_Clients();
-
-            formClients.ShowDialog();
-            this.Close();
+            formClients.FormClosed += (s, args) => this.Close();
+            formClients.Show();
         }
 
         /// <summary>
@@ -144,9 +137,21 @@ namespace LFB_gestion.Interfaces
         {
             this.Hide();
             Form formUtilisateur = new Interface_Utilisateurs();
+            formUtilisateur.FormClosed += (s, args) => this.Close();
+            formUtilisateur.Show();
+        }
 
-            formUtilisateur.ShowDialog();
-            this.Close();
+        /// <summary>
+        /// Ouvrir l'onglet Logs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void logsToolStripButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Interface_Logs logs = new Interface_Logs();
+            logs.FormClosed += (s, args) => this.Close();
+            logs.Show();
         }
         #endregion
 
@@ -220,23 +225,18 @@ namespace LFB_gestion.Interfaces
 
         }
 
-
+        /// <summary>
+        /// Se déconnecter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonDeconnexion_Click(object sender, EventArgs e)
         {
             Entite_Utilisateur.courant = null;
             this.Hide();
             Form formConnexion = new Connexion();
-
+            formConnexion.FormClosed += (s, args) => this.Close();
             formConnexion.ShowDialog();
-            this.Close();
-        }
-
-        private void logsToolStripButton_Click(object sender, EventArgs e)
-        {
-            Hide();
-            Interface_Logs logs = new Interface_Logs();
-            logs.ShowDialog();
-            Close();
         }
 
         #endregion
