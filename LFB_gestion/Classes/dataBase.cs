@@ -57,7 +57,7 @@ namespace LFB_gestion.Classes
                 string tel = (string)reader["telephone"];
                 string ville = (string)reader["ville"];
 
-                clients.Add(new Entite_Client(id, nom, prenom, mail, adresse, codePostal, ville, tel));
+                clients.Add(new Entite_Client(id, nom, prenom, adresse, codePostal, ville, tel, mail));
             }
             reader.Close();
             connexion.Close();
