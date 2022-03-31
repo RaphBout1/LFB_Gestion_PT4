@@ -115,10 +115,11 @@ namespace LFB_gestion.Interfaces
         {
             reader("");
         }
-
-
         #endregion
 
-
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            afficherStock();
+        }
     }
 }

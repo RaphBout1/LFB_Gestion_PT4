@@ -34,14 +34,14 @@
             this.ImageLabel = new System.Windows.Forms.Label();
             this.validerBoutonProduit = new System.Windows.Forms.Button();
             this.panelNewProduit = new System.Windows.Forms.Panel();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.quantiteLabel = new System.Windows.Forms.Label();
             this.imageBox = new System.Windows.Forms.PictureBox();
             this.UrlTextBox = new System.Windows.Forms.TextBox();
             this.imageBouton = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.panelNewProduit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.SuspendLayout();
             // 
             // nomLabel
@@ -51,7 +51,7 @@
             this.nomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
             this.nomLabel.Location = new System.Drawing.Point(3, 14);
             this.nomLabel.Name = "nomLabel";
-            this.nomLabel.Size = new System.Drawing.Size(104, 16);
+            this.nomLabel.Size = new System.Drawing.Size(105, 16);
             this.nomLabel.TabIndex = 0;
             this.nomLabel.Text = "Nom du produit :";
             // 
@@ -70,7 +70,7 @@
             this.ImageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
             this.ImageLabel.Location = new System.Drawing.Point(3, 126);
             this.ImageLabel.Name = "ImageLabel";
-            this.ImageLabel.Size = new System.Drawing.Size(158, 16);
+            this.ImageLabel.Size = new System.Drawing.Size(159, 16);
             this.ImageLabel.TabIndex = 3;
             this.ImageLabel.Text = "Url de l\'image du produit :";
             // 
@@ -110,6 +110,18 @@
             this.panelNewProduit.Size = new System.Drawing.Size(278, 414);
             this.panelNewProduit.TabIndex = 6;
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(113, 66);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 9;
+            // 
             // quantiteLabel
             // 
             this.quantiteLabel.AutoSize = true;
@@ -117,7 +129,7 @@
             this.quantiteLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
             this.quantiteLabel.Location = new System.Drawing.Point(27, 66);
             this.quantiteLabel.Name = "quantiteLabel";
-            this.quantiteLabel.Size = new System.Drawing.Size(62, 16);
+            this.quantiteLabel.Size = new System.Drawing.Size(63, 16);
             this.quantiteLabel.TabIndex = 8;
             this.quantiteLabel.Text = "Quantité :";
             // 
@@ -154,13 +166,6 @@
             this.imageBouton.UseVisualStyleBackColor = false;
             this.imageBouton.Click += new System.EventHandler(this.imageBouton_Click);
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(113, 66);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 9;
-            // 
             // Form_Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,8 +178,8 @@
             this.Text = "Nouveau Produit";
             this.panelNewProduit.ResumeLayout(false);
             this.panelNewProduit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
             this.ResumeLayout(false);
 
         }

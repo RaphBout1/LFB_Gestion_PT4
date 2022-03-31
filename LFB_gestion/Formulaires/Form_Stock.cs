@@ -150,8 +150,7 @@ namespace LFB_gestion.Formulaires
                 connexion.Close();
 
             }
-
-            dataBase.refreshDataBase();
+            dataBase.selectStock();
             this.Close();
         }
 

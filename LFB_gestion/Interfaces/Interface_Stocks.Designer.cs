@@ -52,6 +52,10 @@ namespace LFB_gestion.Interfaces
             this.buttonDeconnexion.FlatAppearance.BorderSize = 0;
             this.buttonDeconnexion.Location = new System.Drawing.Point(1544, 0);
             // 
+            // refreshButton
+            // 
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
             // Interface_Stocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
