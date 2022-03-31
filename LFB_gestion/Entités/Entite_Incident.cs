@@ -29,7 +29,7 @@ namespace LFB_gestion.Entités
             this.id_réservation = id_réservation;
             InitializeComponent();
             descriptionLabel.Text = description;
-            nomClientLabel.Text = Outils.recupererClient(Outils.recupererReservation(id_réservation).idClient).ToString();
+            //nomClientLabel.Text = Outils.recupererClient(Outils.recupererReservation(id_réservation).idClient).ToString();
         }
 
         private void supprimerBouton_Click(object sender, EventArgs e)
