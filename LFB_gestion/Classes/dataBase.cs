@@ -25,6 +25,8 @@ namespace LFB_gestion.Classes
 
         public static List<Entite_Stock> stocks = new List<Entite_Stock>();
 
+        public static List<Entite_Entretien> entretiensCourants = new List<Entite_Entretien>();
+
         public static void refreshDataBase()
         {
             selectClients();
@@ -138,6 +140,39 @@ namespace LFB_gestion.Classes
 
 
                     entretiens.Add(new Entite_Entretien(id, date, description, emplacement, user));
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message + " selectEntretien");
+                }
+            }
+            reader.Close();
+            connexion.Close();
+        }
+
+        /// <summary>
+        /// Charge tous les entretiens depuis la base de données dans la liste users
+        /// </summary>
+        private static void selectEntretienCourant()
+        {
+
+            SqlConnection connexion = Outils.Connexion();
+            entretiens.Clear();
+            connexion.Open();
+            SqlCommand command = new SqlCommand("SELECT * FROM entretien where login_user like '" + Entite_Utilisateur.courant.login + "'", connexion);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                try
+                {
+                    int id = (int)reader["id"];
+                    string date = reader["date"].ToString();
+                    string description = (string)reader["description"];
+                    string user = (string)reader["login_user"];
+                    int emplacement = (int)reader["id_emplacement"];
+
+
+                    entretiensCourants.Add(new Entite_Entretien(id, date, description, emplacement, user));
                 }
                 catch (Exception e)
                 {
