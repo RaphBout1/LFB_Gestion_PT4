@@ -25,7 +25,14 @@ namespace LFB_gestion.Entités
         public int emplacement;
 
         public string user;
-
+        /// <summary>
+        /// Constructeur de l'entité entretien
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="date"></param>
+        /// <param name="description"></param>
+        /// <param name="emplacement"></param>
+        /// <param name="user"></param>
         public Entite_Entretien(int id, string date, string description, int emplacement, string user)
         {
             this.id = id;
@@ -43,12 +50,22 @@ namespace LFB_gestion.Entités
             
         }
 
+        /// <summary>
+        /// affiche la page de modification d'un entretien
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void modifierBouton_Click(object sender, EventArgs e)
         {
             Form formEntretien = new Formulaires.Form_Entretien(this);
             formEntretien.ShowDialog();
         }
 
+        /// <summary>
+        /// supprimem un entretien
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void supprimerBouton_Click(object sender, EventArgs e)
         {
             SqlConnection connexion = Outils.Connexion();

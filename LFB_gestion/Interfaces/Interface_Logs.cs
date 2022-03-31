@@ -18,7 +18,9 @@ namespace LFB_gestion.Interfaces
             InitializeComponent();
             afficherLogs();
         }
-
+        /// <summary>
+        /// affiche les logs qui sont stockées dans la base de données
+        /// </summary>
         private void afficherLogs()
         {
             SqlConnection connexion = Outils.Connexion();

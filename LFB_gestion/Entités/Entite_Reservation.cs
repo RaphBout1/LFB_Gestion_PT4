@@ -20,7 +20,7 @@ namespace LFB_gestion.Entités
         public DateTime fin;
 
         /// <summary>
-        /// Constructeur
+        /// Constructeur de l'entité reservation
         /// </summary>
         /// <param name="id"></param>
         /// <param name="emplacement"></param>
@@ -40,19 +40,31 @@ namespace LFB_gestion.Entités
             debutLabel.Text = this.début.ToString("dd/MM/yyyy");
             finLabel.Text = this.fin.ToString("dd/MM/yyyy");
         }
-
+        /// <summary>
+        /// affiche le formulaire pour créer une facture
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonFacturer_Click(object sender, EventArgs e)
         {
             Form_Facture facture = new Form_Facture(this);
             facture.ShowDialog();
         }
-
+        /// <summary>
+        /// affiche le formulaire pour créer un incident
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void créerIncident_Click(object sender, EventArgs e)
         {
             Form_Incident incident = new Form_Incident(this);
             incident.ShowDialog();
         }
-
+        /// <summary>
+        /// supprime une reservation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void supprimerBouton_Click(object sender, EventArgs e)
         {
             SqlConnection connexion = Outils.Connexion();

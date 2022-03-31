@@ -227,7 +227,9 @@ namespace LFB_gestion
             }
 
         }
-
+        /// <summary>
+        /// affiche un client selon la recherche
+        /// </summary>
         public static Entités.Entite_Client afficherClient(int idRecherche)
         {
             foreach (Entités.Entite_Client client in dataBase.clients)
@@ -243,6 +245,10 @@ namespace LFB_gestion
 
         }
 
+
+        /// <summary>
+        /// affiche l'image dans une picture box depuis le lien stocké dans las base de donnée
+        /// </summary>
         public static void afficherImage(string image, PictureBox box)
         {
             try

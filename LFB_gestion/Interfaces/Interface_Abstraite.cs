@@ -220,7 +220,11 @@ namespace LFB_gestion.Interfaces
 
         }
 
-
+        /// <summary>
+        /// se deconnecte et affiche la page de connection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonDeconnexion_Click(object sender, EventArgs e)
         {
             Entite_Utilisateur.courant = null;

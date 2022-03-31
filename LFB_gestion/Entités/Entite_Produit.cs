@@ -15,6 +15,11 @@ namespace LFB_gestion.Entités
         private Image img;
         private String nbVentes;
         private String nomProduit;
+        /// <summary>
+        /// Constructeur de l'entité produit
+        /// </summary>
+        /// <param name="nomProduit"></param>
+        /// <param name="nbVentes"></param>
         public Entite_Produit(String nomProduit, String nbVentes)
         {
             this.img = img;

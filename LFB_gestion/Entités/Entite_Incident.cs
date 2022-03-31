@@ -13,7 +13,7 @@ namespace LFB_gestion.Entités
         public string description;
         public int id_réservation;
         /// <summary>
-        /// Constructeur
+        /// Constructeur de l'entité incident
         /// </summary>
         /// <param name="id"></param>
         /// <param name="description"></param>
@@ -30,6 +30,11 @@ namespace LFB_gestion.Entités
             descriptionLabel.Text = description;
         }
 
+        /// <summary>
+        /// supprime un incident
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void supprimerBouton_Click(object sender, EventArgs e)
         {
             SqlConnection connexion = Outils.Connexion();

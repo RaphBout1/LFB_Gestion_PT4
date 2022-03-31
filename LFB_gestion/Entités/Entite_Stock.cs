@@ -15,7 +15,7 @@ namespace LFB_gestion.Entités
         public string image;
         public int quantite;
         /// <summary>
-        /// Constructeur entité stock
+        /// Constructeur de l'entité stock
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
@@ -34,7 +34,11 @@ namespace LFB_gestion.Entités
             
         }
 
-
+        /// <summary>
+        /// supprime un produit du stock
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void supprimerBouton_Click(object sender, System.EventArgs e)
         {
             SqlConnection connexion = Outils.Connexion();
