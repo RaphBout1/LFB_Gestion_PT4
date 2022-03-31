@@ -33,7 +33,7 @@ namespace LFB_gestion.Interfaces
             this.Hide();
             Form formAccueil = new Interface_Accueil();
             formAccueil.FormClosed += (s, args) => this.Close();
-            formAccueil.Show();
+            formAccueil.ShowDialog();
         }
 
         /// <summary>
@@ -45,8 +45,8 @@ namespace LFB_gestion.Interfaces
         {
             this.Hide();
             Form formStocks = new Interface_Stocks();
-            formStocks.FormClosed += (s, args) => this.Close();
-            formStocks.Show();
+           // formStocks.FormClosed += (s, args) => this.Close();
+            formStocks.ShowDialog();
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace LFB_gestion.Interfaces
             this.Hide();
             Form formStat = new Interfaces.Interface_Statistiques();
             formStat.FormClosed += (s, args) => this.Close();
-            formStat.Show();
+            formStat.ShowDialog();
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace LFB_gestion.Interfaces
             this.Hide();
             Form formEntretien = new Interface_Entretien();
             formEntretien.FormClosed += (s, args) => this.Close();
-            formEntretien.Show();
+            formEntretien.ShowDialog();
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace LFB_gestion.Interfaces
             this.Hide();
             Form formPlan = new Interface_Plan();
             formPlan.FormClosed += (s, args) => this.Close();
-            formPlan.Show();
+            formPlan.ShowDialog();
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace LFB_gestion.Interfaces
             this.Hide();
             Form formReservation = new Interface_Reservations();
             formReservation.FormClosed += (s, args) => this.Close();
-            formReservation.Show();
+            formReservation.ShowDialog();
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace LFB_gestion.Interfaces
             this.Hide();
             Form formEntretien = new Interface_Incidents();
             formEntretien.FormClosed += (s, args) => this.Close();
-            formEntretien.Show();
+            formEntretien.ShowDialog();
 
         }
 
@@ -125,7 +125,7 @@ namespace LFB_gestion.Interfaces
             this.Hide();
             Form formClients = new Interface_Clients();
             formClients.FormClosed += (s, args) => this.Close();
-            formClients.Show();
+            formClients.ShowDialog();
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace LFB_gestion.Interfaces
             this.Hide();
             Form formUtilisateur = new Interface_Utilisateurs();
             formUtilisateur.FormClosed += (s, args) => this.Close();
-            formUtilisateur.Show();
+            formUtilisateur.ShowDialog();
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace LFB_gestion.Interfaces
             this.Hide();
             Interface_Logs logs = new Interface_Logs();
             logs.FormClosed += (s, args) => this.Close();
-            logs.Show();
+            logs.ShowDialog();
         }
         #endregion
 

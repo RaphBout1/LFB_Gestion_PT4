@@ -1,4 +1,5 @@
 ﻿using LFB_gestion.Entités;
+using LFB_gestion.Interfaces;
 using System;
 using System.Data.Common;
 using System.Data.SqlClient;
@@ -68,10 +69,9 @@ namespace LFB_gestion
 
 
                                         this.Hide();
-                                        Form formAcceuil = new Interfaces.Interface_Accueil();
-
+                                        Interface_Accueil formAcceuil = new Interface_Accueil();
+                                        formAcceuil.FormClosed += (s, args) => this.Close();
                                         formAcceuil.ShowDialog();
-                                        this.Close();
                                     }
                                     else
                                     {
