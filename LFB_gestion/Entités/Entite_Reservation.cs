@@ -63,11 +63,7 @@ namespace LFB_gestion.Entités
             command.ExecuteNonQuery();
             MessageBox.Show("Reservation supprimée");
             connexion.Close();
-            dataBase.refreshDataBase();
-            Form.ActiveForm.Close();
-            Form formrefresh = new Interface_Reservations();
-
-            formrefresh.ShowDialog();
+            dataBase.selectReservation();
         }
 
         private void modifierBouton_Click(object sender, EventArgs e)
@@ -77,6 +73,7 @@ namespace LFB_gestion.Entités
             selectClientAModifier(form);
             selectEmplacementAModifier(form);
             form.ShowDialog();
+            dataBase.selectReservation();
         }
 
         private void selectDatesAModifier(Form_Reservation form)
