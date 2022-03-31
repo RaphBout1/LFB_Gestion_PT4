@@ -38,12 +38,14 @@ namespace LFB_gestion.Interfaces
             // rechercheTextBox
             // 
             this.rechercheTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.rechercheTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.rechercheTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rechercheTextBox_KeyDown);
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(152, 176);
-            this.clientsPanel.Size = new System.Drawing.Size(1599, 707);
+            this.clientsPanel.Location = new System.Drawing.Point(204, 220);
+            this.clientsPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.clientsPanel.Size = new System.Drawing.Size(2155, 882);
             // 
             // ajoutBouton
             // 
@@ -59,22 +61,26 @@ namespace LFB_gestion.Interfaces
             // buttonDeconnexion
             // 
             this.buttonDeconnexion.FlatAppearance.BorderSize = 0;
-            this.buttonDeconnexion.Location = new System.Drawing.Point(1644, 0);
+            this.buttonDeconnexion.Location = new System.Drawing.Point(2285, 0);
+            this.buttonDeconnexion.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             // 
             // refreshButton
             // 
+            this.refreshButton.FlatAppearance.BorderSize = 0;
+            this.refreshButton.Location = new System.Drawing.Point(1220, 159);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // Interface_Reservations
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1854, 1012);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(614, 487);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MinimumSize = new System.Drawing.Size(813, 589);
             this.Name = "Interface_Reservations";
-            this.Text = "Interface_Reservations";
+            this.Text = "Reservations";
             this.Load += new System.EventHandler(this.Interface_Reservations_Load);
             this.ResumeLayout(false);
 

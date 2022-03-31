@@ -32,10 +32,15 @@ namespace LFB_gestion.Interfaces
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Interface_Stocks));
             this.SuspendLayout();
             // 
+            // rechercheTextBox
+            // 
+            this.rechercheTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(140, 163);
-            this.clientsPanel.Size = new System.Drawing.Size(1473, 653);
+            this.clientsPanel.Location = new System.Drawing.Point(204, 220);
+            this.clientsPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.clientsPanel.Size = new System.Drawing.Size(2155, 882);
             // 
             // ajoutBouton
             // 
@@ -50,21 +55,27 @@ namespace LFB_gestion.Interfaces
             // buttonDeconnexion
             // 
             this.buttonDeconnexion.FlatAppearance.BorderSize = 0;
-            this.buttonDeconnexion.Location = new System.Drawing.Point(1544, 0);
+            this.buttonDeconnexion.Location = new System.Drawing.Point(2285, 0);
+            this.buttonDeconnexion.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             // 
             // refreshButton
             // 
+            this.refreshButton.FlatAppearance.BorderSize = 0;
+            this.refreshButton.Location = new System.Drawing.Point(1220, 159);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // Interface_Stocks
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1754, 961);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Location = new System.Drawing.Point(0, 0);
-            this.MinimumSize = new System.Drawing.Size(613, 485);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MinimumSize = new System.Drawing.Size(811, 586);
             this.Name = "Interface_Stocks";
+            this.Text = "Stocks";
             this.ResumeLayout(false);
 
         }

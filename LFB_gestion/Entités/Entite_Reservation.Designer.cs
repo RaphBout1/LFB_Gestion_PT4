@@ -32,12 +32,12 @@
             this.emplacementLabel = new System.Windows.Forms.Label();
             this.debutLabel = new System.Windows.Forms.Label();
             this.finLabel = new System.Windows.Forms.Label();
-            this.supprimerBouton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.modifierBouton = new System.Windows.Forms.Button();
             this.buttonFacturer = new System.Windows.Forms.Button();
             this.labelAu = new System.Windows.Forms.Label();
             this.créerIncident = new System.Windows.Forms.Button();
+            this.supprimerBouton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nomClientLabel
@@ -45,9 +45,10 @@
             this.nomClientLabel.AutoSize = true;
             this.nomClientLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomClientLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.nomClientLabel.Location = new System.Drawing.Point(15, 33);
+            this.nomClientLabel.Location = new System.Drawing.Point(20, 41);
+            this.nomClientLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nomClientLabel.Name = "nomClientLabel";
-            this.nomClientLabel.Size = new System.Drawing.Size(72, 17);
+            this.nomClientLabel.Size = new System.Drawing.Size(87, 20);
             this.nomClientLabel.TabIndex = 0;
             this.nomClientLabel.Text = "NomClient";
             // 
@@ -56,9 +57,10 @@
             this.emplacementLabel.AutoSize = true;
             this.emplacementLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emplacementLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.emplacementLabel.Location = new System.Drawing.Point(105, 33);
+            this.emplacementLabel.Location = new System.Drawing.Point(140, 41);
+            this.emplacementLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.emplacementLabel.Name = "emplacementLabel";
-            this.emplacementLabel.Size = new System.Drawing.Size(93, 17);
+            this.emplacementLabel.Size = new System.Drawing.Size(111, 20);
             this.emplacementLabel.TabIndex = 1;
             this.emplacementLabel.Text = "Emplacement";
             // 
@@ -67,9 +69,10 @@
             this.debutLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.debutLabel.AutoSize = true;
             this.debutLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.debutLabel.Location = new System.Drawing.Point(245, 36);
+            this.debutLabel.Location = new System.Drawing.Point(376, 44);
+            this.debutLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.debutLabel.Name = "debutLabel";
-            this.debutLabel.Size = new System.Drawing.Size(75, 13);
+            this.debutLabel.Size = new System.Drawing.Size(98, 17);
             this.debutLabel.TabIndex = 2;
             this.debutLabel.Text = "Date de début";
             // 
@@ -78,28 +81,12 @@
             this.finLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.finLabel.AutoSize = true;
             this.finLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.finLabel.Location = new System.Drawing.Point(366, 36);
+            this.finLabel.Location = new System.Drawing.Point(537, 44);
+            this.finLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.finLabel.Name = "finLabel";
-            this.finLabel.Size = new System.Drawing.Size(62, 13);
+            this.finLabel.Size = new System.Drawing.Size(81, 17);
             this.finLabel.TabIndex = 3;
             this.finLabel.Text = "Date de Fin";
-            // 
-            // supprimerBouton
-            // 
-            this.supprimerBouton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.supprimerBouton.BackColor = System.Drawing.Color.Transparent;
-            this.supprimerBouton.BackgroundImage = global::LFB_gestion.Properties.Resources.iconneSupp;
-            this.supprimerBouton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.supprimerBouton.FlatAppearance.BorderSize = 0;
-            this.supprimerBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.supprimerBouton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.supprimerBouton.Location = new System.Drawing.Point(567, 21);
-            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(2);
-            this.supprimerBouton.Name = "supprimerBouton";
-            this.supprimerBouton.Size = new System.Drawing.Size(44, 37);
-            this.supprimerBouton.TabIndex = 1;
-            this.supprimerBouton.UseVisualStyleBackColor = false;
-            this.supprimerBouton.Click += new System.EventHandler(this.supprimerBouton_Click);
             // 
             // label2
             // 
@@ -107,9 +94,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.label2.Location = new System.Drawing.Point(208, 33);
+            this.label2.Location = new System.Drawing.Point(326, 41);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.Size = new System.Drawing.Size(41, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Du :";
             // 
@@ -121,10 +109,10 @@
             this.modifierBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modifierBouton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modifierBouton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
-            this.modifierBouton.Location = new System.Drawing.Point(480, 21);
-            this.modifierBouton.Margin = new System.Windows.Forms.Padding(2);
+            this.modifierBouton.Location = new System.Drawing.Point(726, 26);
+            this.modifierBouton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.modifierBouton.Name = "modifierBouton";
-            this.modifierBouton.Size = new System.Drawing.Size(61, 37);
+            this.modifierBouton.Size = new System.Drawing.Size(81, 46);
             this.modifierBouton.TabIndex = 0;
             this.modifierBouton.Text = "Modifier";
             this.modifierBouton.UseVisualStyleBackColor = false;
@@ -138,10 +126,10 @@
             this.buttonFacturer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFacturer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFacturer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.buttonFacturer.Location = new System.Drawing.Point(634, 21);
-            this.buttonFacturer.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonFacturer.Location = new System.Drawing.Point(969, 27);
+            this.buttonFacturer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonFacturer.Name = "buttonFacturer";
-            this.buttonFacturer.Size = new System.Drawing.Size(103, 37);
+            this.buttonFacturer.Size = new System.Drawing.Size(137, 46);
             this.buttonFacturer.TabIndex = 13;
             this.buttonFacturer.Text = "Facturer >";
             this.buttonFacturer.UseVisualStyleBackColor = false;
@@ -153,25 +141,49 @@
             this.labelAu.AutoSize = true;
             this.labelAu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.labelAu.Location = new System.Drawing.Point(331, 33);
+            this.labelAu.Location = new System.Drawing.Point(490, 41);
+            this.labelAu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAu.Name = "labelAu";
-            this.labelAu.Size = new System.Drawing.Size(33, 17);
+            this.labelAu.Size = new System.Drawing.Size(39, 20);
             this.labelAu.TabIndex = 10;
             this.labelAu.Text = "Au :";
             // 
             // créerIncident
             // 
-            this.créerIncident.Location = new System.Drawing.Point(434, 22);
+            this.créerIncident.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.créerIncident.BackgroundImage = global::LFB_gestion.Properties.Resources.boutonIncident;
+            this.créerIncident.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.créerIncident.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.créerIncident.FlatAppearance.BorderSize = 0;
+            this.créerIncident.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.créerIncident.Location = new System.Drawing.Point(909, 27);
+            this.créerIncident.Margin = new System.Windows.Forms.Padding(4);
             this.créerIncident.Name = "créerIncident";
-            this.créerIncident.Size = new System.Drawing.Size(40, 37);
+            this.créerIncident.Size = new System.Drawing.Size(53, 46);
             this.créerIncident.TabIndex = 15;
-            this.créerIncident.Text = "!";
             this.créerIncident.UseVisualStyleBackColor = true;
             this.créerIncident.Click += new System.EventHandler(this.créerIncident_Click);
             // 
+            // supprimerBouton
+            // 
+            this.supprimerBouton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.supprimerBouton.BackColor = System.Drawing.Color.Transparent;
+            this.supprimerBouton.BackgroundImage = global::LFB_gestion.Properties.Resources.iconneSupp;
+            this.supprimerBouton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.supprimerBouton.FlatAppearance.BorderSize = 0;
+            this.supprimerBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.supprimerBouton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.supprimerBouton.Location = new System.Drawing.Point(831, 27);
+            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.supprimerBouton.Name = "supprimerBouton";
+            this.supprimerBouton.Size = new System.Drawing.Size(59, 46);
+            this.supprimerBouton.TabIndex = 1;
+            this.supprimerBouton.UseVisualStyleBackColor = false;
+            this.supprimerBouton.Click += new System.EventHandler(this.supprimerBouton_Click);
+            // 
             // Entite_Reservation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.créerIncident);
@@ -184,8 +196,9 @@
             this.Controls.Add(this.debutLabel);
             this.Controls.Add(this.emplacementLabel);
             this.Controls.Add(this.nomClientLabel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Entite_Reservation";
-            this.Size = new System.Drawing.Size(758, 83);
+            this.Size = new System.Drawing.Size(1109, 102);
             this.ResumeLayout(false);
             this.PerformLayout();
 

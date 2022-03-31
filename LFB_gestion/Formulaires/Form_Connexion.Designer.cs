@@ -40,25 +40,29 @@
             this.nomUtilisateur_textBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.nomUtilisateur_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nomUtilisateur_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomUtilisateur_textBox.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.nomUtilisateur_textBox.Location = new System.Drawing.Point(294, 244);
+            this.nomUtilisateur_textBox.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.nomUtilisateur_textBox.Location = new System.Drawing.Point(392, 300);
+            this.nomUtilisateur_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.nomUtilisateur_textBox.Name = "nomUtilisateur_textBox";
-            this.nomUtilisateur_textBox.Size = new System.Drawing.Size(264, 25);
+            this.nomUtilisateur_textBox.Size = new System.Drawing.Size(352, 31);
             this.nomUtilisateur_textBox.TabIndex = 0;
             this.nomUtilisateur_textBox.Text = "Nom d\'utilisateur";
+            this.nomUtilisateur_textBox.Click += new System.EventHandler(this.nomUtilisateur_textBox_Click);
             // 
             // motDePasse_textBox
             // 
             this.motDePasse_textBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.motDePasse_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.motDePasse_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.motDePasse_textBox.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.motDePasse_textBox.Location = new System.Drawing.Point(294, 302);
+            this.motDePasse_textBox.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.motDePasse_textBox.Location = new System.Drawing.Point(392, 372);
+            this.motDePasse_textBox.Margin = new System.Windows.Forms.Padding(4);
             this.motDePasse_textBox.Name = "motDePasse_textBox";
-            this.motDePasse_textBox.Size = new System.Drawing.Size(264, 25);
+            this.motDePasse_textBox.Size = new System.Drawing.Size(352, 31);
             this.motDePasse_textBox.TabIndex = 1;
             this.motDePasse_textBox.Text = "Mot de passe";
             this.motDePasse_textBox.UseSystemPasswordChar = true;
+            this.motDePasse_textBox.Click += new System.EventHandler(this.motDePasse_textBox_Click);
             // 
             // seConnecter_button
             // 
@@ -72,9 +76,10 @@
             this.seConnecter_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.seConnecter_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seConnecter_button.ForeColor = System.Drawing.Color.Transparent;
-            this.seConnecter_button.Location = new System.Drawing.Point(350, 350);
+            this.seConnecter_button.Location = new System.Drawing.Point(467, 431);
+            this.seConnecter_button.Margin = new System.Windows.Forms.Padding(4);
             this.seConnecter_button.Name = "seConnecter_button";
-            this.seConnecter_button.Size = new System.Drawing.Size(143, 35);
+            this.seConnecter_button.Size = new System.Drawing.Size(191, 43);
             this.seConnecter_button.TabIndex = 5;
             this.seConnecter_button.Text = "Se connecter";
             this.seConnecter_button.UseVisualStyleBackColor = false;
@@ -88,21 +93,21 @@
             this.visionMDP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.visionMDP.FlatAppearance.BorderSize = 0;
             this.visionMDP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.visionMDP.Location = new System.Drawing.Point(564, 302);
-            this.visionMDP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.visionMDP.Location = new System.Drawing.Point(752, 372);
+            this.visionMDP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.visionMDP.Name = "visionMDP";
-            this.visionMDP.Size = new System.Drawing.Size(32, 25);
+            this.visionMDP.Size = new System.Drawing.Size(43, 31);
             this.visionMDP.TabIndex = 6;
             this.visionMDP.UseVisualStyleBackColor = false;
             this.visionMDP.Click += new System.EventHandler(this.visionMDP_Click);
             // 
             // Connexion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LFB_gestion.Properties.Resources.fondConnexion;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(829, 480);
+            this.ClientSize = new System.Drawing.Size(1105, 591);
             this.Controls.Add(this.visionMDP);
             this.Controls.Add(this.seConnecter_button);
             this.Controls.Add(this.motDePasse_textBox);
@@ -110,6 +115,7 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Connexion";
             this.Text = "Connexion";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Connexion_KeyPress);

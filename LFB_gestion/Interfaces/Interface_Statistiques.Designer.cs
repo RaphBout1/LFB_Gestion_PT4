@@ -33,12 +33,18 @@ namespace LFB_gestion.Interfaces
             // 
             // nomModuleLabel
             // 
-            this.nomModuleLabel.Location = new System.Drawing.Point(220, 20);
+            this.nomModuleLabel.Location = new System.Drawing.Point(293, 25);
+            this.nomModuleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            // 
+            // rechercheTextBox
+            // 
+            this.rechercheTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(64, 94);
-            this.clientsPanel.Size = new System.Drawing.Size(672, 376);
+            this.clientsPanel.Location = new System.Drawing.Point(149, 171);
+            this.clientsPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.clientsPanel.Size = new System.Drawing.Size(1581, 684);
             // 
             // ajoutBouton
             // 
@@ -51,20 +57,26 @@ namespace LFB_gestion.Interfaces
             // buttonDeconnexion
             // 
             this.buttonDeconnexion.FlatAppearance.BorderSize = 0;
-            this.buttonDeconnexion.Location = new System.Drawing.Point(590, 0);
+            this.buttonDeconnexion.Location = new System.Drawing.Point(1603, 0);
+            this.buttonDeconnexion.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             // 
             // refreshButton
             // 
+            this.refreshButton.FlatAppearance.BorderSize = 0;
+            this.refreshButton.Location = new System.Drawing.Point(879, 110);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // Interface_Statistiques
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 553);
+            this.ClientSize = new System.Drawing.Size(1412, 818);
             this.Location = new System.Drawing.Point(0, 0);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MinimumSize = new System.Drawing.Size(1430, 865);
             this.Name = "Interface_Statistiques";
-            this.Text = "Interface_Statistiques";
+            this.Text = "Statistiques";
             this.ResumeLayout(false);
 
         }

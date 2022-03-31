@@ -204,6 +204,7 @@ namespace LFB_gestion.Interfaces
             clientsPanel.Location = new Point(xlocationPanel, ylocationPanel);
             panelNomModule.Location = new Point(xlocationPanel, ylocationPanel - 44);
             panelRecherche.Location = new Point(ClientSize.Width - 500, ylocationPanel - 44);
+            refreshButton.Location = new Point(ClientSize.Width / 2 - refreshButton.Width, ylocationPanel - 50);
             buttonDeconnexion.Location = new Point(ClientSize.Width - 210, 0);
             if (ClientSize.Height < 550)
             {
