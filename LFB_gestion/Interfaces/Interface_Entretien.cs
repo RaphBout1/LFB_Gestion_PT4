@@ -14,7 +14,7 @@ namespace LFB_gestion.Interfaces
         private SqlConnection connexion = Outils.Connexion();
         public Interface_Entretien()
         {
-            
+
             // On redéfini le nom du module
             nomModuleLabel.Text = "Entretiens";
 
@@ -55,7 +55,7 @@ namespace LFB_gestion.Interfaces
         {
             Form formEntretien = new Formulaires.Form_Entretien(null);
             formEntretien.ShowDialog();
-            
+
         }
         #endregion
 
@@ -73,7 +73,7 @@ namespace LFB_gestion.Interfaces
                 if (entretien.description.Contains(recherche) || recherche == null || recherche == "")
                 {
                     int id = entretien.id;
-                    string date = entretien.date; 
+                    string date = entretien.date;
                     string description = entretien.description;
                     string user = entretien.user;
                     int emplacement = entretien.emplacement;
@@ -119,8 +119,8 @@ namespace LFB_gestion.Interfaces
             connexion.Close();
         }
 
-       
-        
+
+
         #endregion
 
 

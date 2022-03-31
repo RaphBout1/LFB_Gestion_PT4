@@ -19,20 +19,19 @@ namespace LFB_gestion.Classes
 
         public static List<Entite_Entretien> entretiens = new List<Entite_Entretien>();
 
-        public static List<Entite_Entretien> entretiensCourants = new List<Entite_Entretien>();
-
         public static List<Entite_Incident> incidents = new List<Entite_Incident>();
 
         public static List<Entite_Reservation> reservations = new List<Entite_Reservation>();
 
         public static List<Entite_Stock> stocks = new List<Entite_Stock>();
 
+        public static List<Entite_Entretien> entretiensCourants = new List<Entite_Entretien>();
+
         public static void refreshDataBase()
         {
             selectClients();
             selectUsers();
             selectEntretien();
-            selectEntretienUtilisateurCourant();
             selectIncident();
             selectReservation();
             selectStock();
@@ -60,7 +59,7 @@ namespace LFB_gestion.Classes
                 string tel = (string)reader["telephone"];
                 string ville = (string)reader["ville"];
 
-                clients.Add(new Entite_Client(id, nom, prenom, mail, adresse, codePostal, ville, tel));
+                clients.Add(new Entite_Client(id, nom, prenom, adresse, codePostal, ville, tel, mail));
             }
             reader.Close();
             connexion.Close();
@@ -153,15 +152,15 @@ namespace LFB_gestion.Classes
         }
 
         /// <summary>
-        /// Charge les tâches d'entretiens de l'utilisateur courant
+        /// Charge tous les entretiens depuis la base de données dans la liste users
         /// </summary>
-        private static void selectEntretienUtilisateurCourant()
+        private static void selectEntretienCourant()
         {
 
             SqlConnection connexion = Outils.Connexion();
             entretiens.Clear();
             connexion.Open();
-            SqlCommand command = new SqlCommand("SELECT * FROM entretien where login_user like " + Entite_Utilisateur.courant, connexion);
+            SqlCommand command = new SqlCommand("SELECT * FROM entretien where login_user like '" + Entite_Utilisateur.courant.login + "'", connexion);
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
