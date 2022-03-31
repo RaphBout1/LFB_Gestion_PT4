@@ -39,7 +39,6 @@ namespace LFB_gestion.Interfaces
             // ajoutBouton
             // 
             this.ajoutBouton.FlatAppearance.BorderSize = 0;
-            this.ajoutBouton.Click += new System.EventHandler(this.ajoutBouton_Click);
             // 
             // rechercheBouton
             // 

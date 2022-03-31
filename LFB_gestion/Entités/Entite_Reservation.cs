@@ -35,7 +35,7 @@ namespace LFB_gestion.Entités
             this.début = début;
             this.fin = fin;
             InitializeComponent();
-            nomClientLabel.Text = Outils.afficherClient(idClient).ToString();
+            nomClientLabel.Text = Outils.recupererClient(idClient).ToString();
             emplacementLabel.Text = "emplacement " + this.emplacement.ToString();
             debutLabel.Text = this.début.ToString("dd/MM/yyyy");
             finLabel.Text = this.fin.ToString("dd/MM/yyyy");
@@ -49,7 +49,7 @@ namespace LFB_gestion.Entités
 
         private void créerIncident_Click(object sender, EventArgs e)
         {
-            Form_Incident incident = new Form_Incident(this);
+            Form_Incident incident = new Form_Incident(this, null);
             incident.ShowDialog();
         }
 

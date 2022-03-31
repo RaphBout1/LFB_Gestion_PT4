@@ -34,12 +34,13 @@
             this.ImageLabel = new System.Windows.Forms.Label();
             this.validerBoutonProduit = new System.Windows.Forms.Button();
             this.panelNewProduit = new System.Windows.Forms.Panel();
-            this.imageBouton = new System.Windows.Forms.Button();
-            this.UrlTextBox = new System.Windows.Forms.TextBox();
-            this.imageBox = new System.Windows.Forms.PictureBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.quantiteLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.imageBox = new System.Windows.Forms.PictureBox();
+            this.UrlTextBox = new System.Windows.Forms.TextBox();
+            this.imageBouton = new System.Windows.Forms.Button();
             this.panelNewProduit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.nomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
             this.nomLabel.Location = new System.Drawing.Point(3, 14);
             this.nomLabel.Name = "nomLabel";
-            this.nomLabel.Size = new System.Drawing.Size(104, 16);
+            this.nomLabel.Size = new System.Drawing.Size(105, 16);
             this.nomLabel.TabIndex = 0;
             this.nomLabel.Text = "Nom du produit :";
             // 
@@ -69,7 +70,7 @@
             this.ImageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
             this.ImageLabel.Location = new System.Drawing.Point(3, 126);
             this.ImageLabel.Name = "ImageLabel";
-            this.ImageLabel.Size = new System.Drawing.Size(158, 16);
+            this.ImageLabel.Size = new System.Drawing.Size(159, 16);
             this.ImageLabel.TabIndex = 3;
             this.ImageLabel.Text = "Url de l\'image du produit :";
             // 
@@ -94,7 +95,7 @@
             // panelNewProduit
             // 
             this.panelNewProduit.BackColor = System.Drawing.Color.Transparent;
-            this.panelNewProduit.Controls.Add(this.textBox1);
+            this.panelNewProduit.Controls.Add(this.numericUpDown1);
             this.panelNewProduit.Controls.Add(this.quantiteLabel);
             this.panelNewProduit.Controls.Add(this.imageBox);
             this.panelNewProduit.Controls.Add(this.UrlTextBox);
@@ -108,6 +109,45 @@
             this.panelNewProduit.Name = "panelNewProduit";
             this.panelNewProduit.Size = new System.Drawing.Size(278, 414);
             this.panelNewProduit.TabIndex = 6;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(113, 66);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 9;
+            // 
+            // quantiteLabel
+            // 
+            this.quantiteLabel.AutoSize = true;
+            this.quantiteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantiteLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
+            this.quantiteLabel.Location = new System.Drawing.Point(27, 66);
+            this.quantiteLabel.Name = "quantiteLabel";
+            this.quantiteLabel.Size = new System.Drawing.Size(63, 16);
+            this.quantiteLabel.TabIndex = 8;
+            this.quantiteLabel.Text = "Quantité :";
+            // 
+            // imageBox
+            // 
+            this.imageBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imageBox.Location = new System.Drawing.Point(15, 171);
+            this.imageBox.Name = "imageBox";
+            this.imageBox.Size = new System.Drawing.Size(154, 192);
+            this.imageBox.TabIndex = 7;
+            this.imageBox.TabStop = false;
+            // 
+            // UrlTextBox
+            // 
+            this.UrlTextBox.Location = new System.Drawing.Point(3, 145);
+            this.UrlTextBox.Name = "UrlTextBox";
+            this.UrlTextBox.Size = new System.Drawing.Size(269, 20);
+            this.UrlTextBox.TabIndex = 6;
             // 
             // imageBouton
             // 
@@ -126,40 +166,6 @@
             this.imageBouton.UseVisualStyleBackColor = false;
             this.imageBouton.Click += new System.EventHandler(this.imageBouton_Click);
             // 
-            // UrlTextBox
-            // 
-            this.UrlTextBox.Location = new System.Drawing.Point(3, 145);
-            this.UrlTextBox.Name = "UrlTextBox";
-            this.UrlTextBox.Size = new System.Drawing.Size(269, 20);
-            this.UrlTextBox.TabIndex = 6;
-            // 
-            // imageBox
-            // 
-            this.imageBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imageBox.Location = new System.Drawing.Point(15, 171);
-            this.imageBox.Name = "imageBox";
-            this.imageBox.Size = new System.Drawing.Size(154, 192);
-            this.imageBox.TabIndex = 7;
-            this.imageBox.TabStop = false;
-            // 
-            // quantiteLabel
-            // 
-            this.quantiteLabel.AutoSize = true;
-            this.quantiteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantiteLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.quantiteLabel.Location = new System.Drawing.Point(3, 66);
-            this.quantiteLabel.Name = "quantiteLabel";
-            this.quantiteLabel.Size = new System.Drawing.Size(62, 16);
-            this.quantiteLabel.TabIndex = 8;
-            this.quantiteLabel.Text = "Quantite :";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(113, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(162, 20);
-            this.textBox1.TabIndex = 9;
-            // 
             // Form_Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,6 +178,7 @@
             this.Text = "Nouveau Produit";
             this.panelNewProduit.ResumeLayout(false);
             this.panelNewProduit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -187,7 +194,7 @@
         private System.Windows.Forms.PictureBox imageBox;
         private System.Windows.Forms.TextBox UrlTextBox;
         private System.Windows.Forms.Button imageBouton;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label quantiteLabel;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

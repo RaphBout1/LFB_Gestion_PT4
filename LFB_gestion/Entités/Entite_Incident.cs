@@ -1,4 +1,5 @@
 ﻿using LFB_gestion.Classes;
+using LFB_gestion.Formulaires;
 using LFB_gestion.Interfaces;
 using System;
 using System.Data.SqlClient;
@@ -28,6 +29,7 @@ namespace LFB_gestion.Entités
             this.id_réservation = id_réservation;
             InitializeComponent();
             descriptionLabel.Text = description;
+            //nomClientLabel.Text = Outils.recupererClient(Outils.recupererReservation(id_réservation).idClient).ToString();
         }
 
         private void supprimerBouton_Click(object sender, EventArgs e)
@@ -45,6 +47,13 @@ namespace LFB_gestion.Entités
             Form formrefresh = new Interface_Incidents();
 
             formrefresh.ShowDialog();
+        }
+
+        private void modifierBouton_Click(object sender, EventArgs e)
+        {
+            
+            Form form = new Form_Incident(Outils.recupererReservation(id_réservation), this);
+            form.ShowDialog();
         }
     }
 }

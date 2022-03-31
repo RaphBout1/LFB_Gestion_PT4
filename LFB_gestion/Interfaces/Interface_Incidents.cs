@@ -34,16 +34,6 @@ namespace LFB_gestion.Interfaces
             connexion.Close();
         }
 
-        /// <summary>
-        /// Ouvre un formulaire pour créer un nouveau incident
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ajoutBouton_Click(object sender, EventArgs e)
-        {
-            Form formIncident = new Formulaires.Form_Incident(null);
-            formIncident.ShowDialog();
-        }
 
         /// <summary>
         /// Affiche tout les incidents
@@ -76,7 +66,7 @@ namespace LFB_gestion.Interfaces
                     {
                         incidents[y].Location = new Point(0, y * (incident.Height + 10));
                     }
-                    incident.Width = this.clientsPanel.Width;
+                    incident.Width = this.clientsPanel.Width -15;
                     this.clientsPanel.Controls.Add(incident);
                     clientsPanel.AutoScroll = true;
                     y++;

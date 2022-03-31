@@ -105,7 +105,7 @@ namespace LFB_gestion.Interfaces
                         utilisateurs[y].Location = new Point(0, y * (utilisateur.Height + 30));
                     }
 
-                    utilisateur.Width = this.clientsPanel.Width;
+                    utilisateur.Width = this.clientsPanel.Width-15;
                     this.clientsPanel.Controls.Add(utilisateur);
                     clientsPanel.AutoScroll = true;
                     y++;

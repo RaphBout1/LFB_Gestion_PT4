@@ -51,5 +51,11 @@ namespace LFB_gestion.Entités
 
             formrefresh.ShowDialog();
         }
+
+        private void modifierBouton_Click(object sender, EventArgs e)
+        {
+            Form form = new Formulaires.Form_Stock(this);
+            form.ShowDialog();
+        }
     }
 }

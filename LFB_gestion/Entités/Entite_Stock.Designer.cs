@@ -70,11 +70,12 @@ namespace LFB_gestion.Entités
             this.modifierBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modifierBouton.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.modifierBouton.Location = new System.Drawing.Point(158, 51);
-            this.modifierBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modifierBouton.Margin = new System.Windows.Forms.Padding(2);
             this.modifierBouton.Name = "modifierBouton";
             this.modifierBouton.Size = new System.Drawing.Size(74, 70);
             this.modifierBouton.TabIndex = 5;
             this.modifierBouton.UseVisualStyleBackColor = false;
+            this.modifierBouton.Click += new System.EventHandler(this.modifierBouton_Click);
             // 
             // supprimerBouton
             // 
@@ -85,7 +86,7 @@ namespace LFB_gestion.Entités
             this.supprimerBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.supprimerBouton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.supprimerBouton.Location = new System.Drawing.Point(158, 132);
-            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(2);
             this.supprimerBouton.Name = "supprimerBouton";
             this.supprimerBouton.Size = new System.Drawing.Size(74, 70);
             this.supprimerBouton.TabIndex = 6;
@@ -114,7 +115,7 @@ namespace LFB_gestion.Entités
             this.Controls.Add(this.quantiteProduitLabel);
             this.Controls.Add(this.nomProduitLabel);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Entite_Stock";
             this.Size = new System.Drawing.Size(256, 268);
             ((System.ComponentModel.ISupportInitialize)(this.imageProduitBox)).EndInit();
