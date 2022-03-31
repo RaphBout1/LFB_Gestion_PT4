@@ -36,7 +36,7 @@ namespace LFB_gestion.Formulaires
                         try
                         {
                             connexion.Open();
-                            string query = "INSERT INTO utilisateur VALUES (@login, null, @mail, @admin, @prenom, @nom, @tel, @mdp)";
+                            string query = "INSERT INTO utilisateur VALUES (@login, @mail, @admin, @prenom, @nom, @tel, @mdp)";
                             SqlCommand command = new SqlCommand(query, connexion);
                             command.Parameters.AddWithValue("@login", prénom_TextBox.Text.ToLower()[0] + nom_textBox.Text.ToLower());
                             command.Parameters.AddWithValue("@mail", mail_textBox.Text);

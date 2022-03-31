@@ -97,7 +97,7 @@
             this.nom_textBox.Location = new System.Drawing.Point(140, 271);
             this.nom_textBox.Name = "nom_textBox";
             this.nom_textBox.Size = new System.Drawing.Size(172, 26);
-            this.nom_textBox.TabIndex = 2;
+            this.nom_textBox.TabIndex = 1;
             this.nom_textBox.TextChanged += new System.EventHandler(this.nom_textBox_TextChanged);
             // 
             // adresse_label
@@ -146,7 +146,7 @@
             this.tel_textBox.Location = new System.Drawing.Point(421, 271);
             this.tel_textBox.Name = "tel_textBox";
             this.tel_textBox.Size = new System.Drawing.Size(172, 26);
-            this.tel_textBox.TabIndex = 6;
+            this.tel_textBox.TabIndex = 5;
             // 
             // label1
             // 
@@ -181,7 +181,7 @@
             this.mail_textBox.Location = new System.Drawing.Point(421, 327);
             this.mail_textBox.Name = "mail_textBox";
             this.mail_textBox.Size = new System.Drawing.Size(172, 26);
-            this.mail_textBox.TabIndex = 10;
+            this.mail_textBox.TabIndex = 6;
             this.mail_textBox.TextChanged += new System.EventHandler(this.mail_textBox_TextChanged);
             // 
             // créer_button
@@ -195,7 +195,7 @@
             this.créer_button.Location = new System.Drawing.Point(305, 407);
             this.créer_button.Name = "créer_button";
             this.créer_button.Size = new System.Drawing.Size(113, 32);
-            this.créer_button.TabIndex = 12;
+            this.créer_button.TabIndex = 8;
             this.créer_button.Text = "Créer";
             this.créer_button.UseVisualStyleBackColor = false;
             this.créer_button.Click += new System.EventHandler(this.créer_button_Click);
@@ -246,7 +246,7 @@
             this.mdp_textBox.Location = new System.Drawing.Point(140, 327);
             this.mdp_textBox.Name = "mdp_textBox";
             this.mdp_textBox.Size = new System.Drawing.Size(172, 26);
-            this.mdp_textBox.TabIndex = 17;
+            this.mdp_textBox.TabIndex = 3;
             // 
             // label5
             // 
@@ -282,7 +282,7 @@
             this.admin_checkBox.Location = new System.Drawing.Point(499, 365);
             this.admin_checkBox.Name = "admin_checkBox";
             this.admin_checkBox.Size = new System.Drawing.Size(129, 24);
-            this.admin_checkBox.TabIndex = 20;
+            this.admin_checkBox.TabIndex = 7;
             this.admin_checkBox.Text = "administrateur";
             this.admin_checkBox.UseVisualStyleBackColor = false;
             this.admin_checkBox.CheckedChanged += new System.EventHandler(this.admin_checkBox_CheckedChanged);

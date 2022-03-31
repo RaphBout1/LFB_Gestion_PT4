@@ -88,7 +88,7 @@ namespace LFB_gestion.Entités
         {
             SqlConnection connexion = Outils.Connexion();
             connexion.Open();
-            string query = "delete from utilisateur where login like @id";
+            string query = "delete from entretien where login_user like @id ;delete from utilisateur where login like @id";
             SqlCommand command = new SqlCommand(query, connexion);
             command.Parameters.AddWithValue("@id", this.login);
             command.ExecuteNonQuery();
