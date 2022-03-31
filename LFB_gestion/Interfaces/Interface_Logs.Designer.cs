@@ -35,8 +35,8 @@
             // clientsPanel
             // 
             this.clientsPanel.Controls.Add(this.listBoxLog);
-            this.clientsPanel.Location = new System.Drawing.Point(64, 93);
-            this.clientsPanel.Size = new System.Drawing.Size(672, 372);
+            this.clientsPanel.Location = new System.Drawing.Point(152, 176);
+            this.clientsPanel.Size = new System.Drawing.Size(1599, 707);
             // 
             // ajoutBouton
             // 
@@ -49,25 +49,26 @@
             // buttonDeconnexion
             // 
             this.buttonDeconnexion.FlatAppearance.BorderSize = 0;
-            this.buttonDeconnexion.Location = new System.Drawing.Point(590, 0);
+            this.buttonDeconnexion.Location = new System.Drawing.Point(1694, 0);
             // 
             // listBoxLog
             // 
             this.listBoxLog.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.listBoxLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBoxLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxLog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
             this.listBoxLog.FormattingEnabled = true;
             this.listBoxLog.ItemHeight = 20;
-            this.listBoxLog.Location = new System.Drawing.Point(3, 3);
+            this.listBoxLog.Location = new System.Drawing.Point(0, 24);
             this.listBoxLog.Name = "listBoxLog";
-            this.listBoxLog.Size = new System.Drawing.Size(120, 80);
+            this.listBoxLog.Size = new System.Drawing.Size(820, 80);
             this.listBoxLog.TabIndex = 0;
             // 
             // Interface_Logs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 548);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Interface_Logs";
             this.Text = "Interface_Logs";

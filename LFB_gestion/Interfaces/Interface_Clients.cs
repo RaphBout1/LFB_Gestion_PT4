@@ -90,7 +90,7 @@ namespace LFB_gestion.Interfaces
                     {
                         clients[y].Location = new Point(0, y * (client.Height + 30));
                     }
-                    client.Width = clientsPanel.Width;
+                    client.Width = clientsPanel.Width -15;
                     clientsPanel.Controls.Add(client);
                     clientsPanel.AutoScroll = true;
                     y++;
@@ -123,7 +123,7 @@ namespace LFB_gestion.Interfaces
                     string prenom = client.prenom;
                     string tel = client.tel;
                     string ville = client.ville;
-                    Entite_Client c = new Entite_Client(id, nom, prenom, mail, adresse, codePostal, ville, tel);
+                    Entite_Client c = new Entite_Client(id, nom, prenom, adresse, codePostal, ville, tel, mail);
                     listeClients.Add(c);
 
                 }

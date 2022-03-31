@@ -226,18 +226,42 @@ namespace LFB_gestion
 
         }
 
-        public static Entités.Entite_Client afficherClient(int idRecherche)
+        /// <summary>
+        /// Recupère client a partir d'une id
+        /// </summary>
+        /// <param name="idRecherche"></param>
+        /// <returns></returns>
+        public static Entite_Client recupererClient(int idRecherche)
         {
-            foreach (Entités.Entite_Client client in dataBase.clients)
+            Entite_Client clienRecherche = null;
+            try
             {
-                if (client.id == idRecherche)
-                {
-                    return client;
-                }
+                clienRecherche = (dataBase.clients.Find(client => client.id == idRecherche));
+            }catch (Exception ex)
+            {
+                MessageBox.Show("client non trouvé");
             }
 
-            MessageBox.Show("Le client avec l'id " + idRecherche + " n'existe pas");
-            return null;
+            return(clienRecherche);
+
+        }
+
+        /// <summary>
+        /// Recupère reservation a partir d'une id
+        /// </summary>
+        /// <param name="idRecherche"></param>
+        /// <returns></returns>
+        public static Entite_Reservation recupererReservation(int idRecherche)
+        {
+            Entite_Reservation reservation = null;
+            try
+            {
+                 reservation = (dataBase.reservations.Find(resa => resa.id == idRecherche));
+            }catch(Exception ex)
+            {
+                MessageBox.Show("réservation non trouvé");
+            }
+            return (reservation);
 
         }
 

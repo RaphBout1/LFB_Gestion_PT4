@@ -84,7 +84,7 @@ namespace LFB_gestion.Interfaces
                     }
                     else
                     {
-                        if ((x * stock.Width + 170) + stock.Width + 170 < clientsPanel.Width)
+                        if ((x * stock.Width + 170) + stock.Width + 170 < clientsPanel.Width-200)
                         {
                             stock.Location = new Point(x * (stock.Width + 170) + stock.Width + 170, y * (stock.Height + 100));
                             x++;

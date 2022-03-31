@@ -121,7 +121,7 @@ namespace LFB_gestion.Interfaces
             List<Entite_Reservation> listeréservations = new List<Entite_Reservation>();
             foreach (Entite_Reservation reservation in dataBase.reservations)
             {
-                if (Outils.afficherClient(reservation.idClient).ToString().Contains(recherche) || recherche == null || recherche == "")
+                if (Outils.recupererClient(reservation.idClient).ToString().Contains(recherche) || recherche == null || recherche == "")
                 {
                     int id = reservation.id;
                     int idEmplacement = reservation.emplacement;
@@ -158,7 +158,7 @@ namespace LFB_gestion.Interfaces
                     {
                         réservations[y].Location = new Point(0, y * (réservation.Height + 30));
                     }
-                    réservation.Width = clientsPanel.Width;
+                    réservation.Width = clientsPanel.Width-15;
                     clientsPanel.Controls.Add(réservation);
                     clientsPanel.AutoScroll = true;
                     y++;

@@ -22,8 +22,8 @@ namespace LFB_gestion.Interfaces
 
         public void resizeList()
         {
-            listBoxLog.Width = ClientSize.Width * 84 / 100;
-            listBoxLog.Height = ClientSize.Height * 68 / 100;
+            listBoxLog.Width = clientsPanel.Width;
+            listBoxLog.Height = clientsPanel.Height;
         }
 
         private void afficherLogs()

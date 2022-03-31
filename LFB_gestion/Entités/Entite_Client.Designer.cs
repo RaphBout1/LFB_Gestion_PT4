@@ -34,6 +34,7 @@ namespace LFB_gestion.Entités
             this.emailLabel = new System.Windows.Forms.Label();
             this.modifierBouton = new System.Windows.Forms.Button();
             this.supprimerBouton = new System.Windows.Forms.Button();
+            this.labelTel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nomLabel
@@ -50,11 +51,11 @@ namespace LFB_gestion.Entités
             // 
             // prenomLabel
             // 
-            this.prenomLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.prenomLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.prenomLabel.AutoSize = true;
             this.prenomLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prenomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.prenomLabel.Location = new System.Drawing.Point(40, 37);
+            this.prenomLabel.Location = new System.Drawing.Point(149, 37);
             this.prenomLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.prenomLabel.Name = "prenomLabel";
             this.prenomLabel.Size = new System.Drawing.Size(57, 17);
@@ -67,7 +68,7 @@ namespace LFB_gestion.Entités
             this.emailLabel.AutoSize = true;
             this.emailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.emailLabel.Location = new System.Drawing.Point(134, 37);
+            this.emailLabel.Location = new System.Drawing.Point(362, 37);
             this.emailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(115, 17);
@@ -82,8 +83,8 @@ namespace LFB_gestion.Entités
             this.modifierBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modifierBouton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modifierBouton.ForeColor = System.Drawing.Color.AliceBlue;
-            this.modifierBouton.Location = new System.Drawing.Point(274, 27);
-            this.modifierBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modifierBouton.Location = new System.Drawing.Point(846, 27);
+            this.modifierBouton.Margin = new System.Windows.Forms.Padding(2);
             this.modifierBouton.Name = "modifierBouton";
             this.modifierBouton.Size = new System.Drawing.Size(61, 37);
             this.modifierBouton.TabIndex = 4;
@@ -99,27 +100,41 @@ namespace LFB_gestion.Entités
             this.supprimerBouton.FlatAppearance.BorderSize = 0;
             this.supprimerBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.supprimerBouton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.supprimerBouton.Location = new System.Drawing.Point(373, 24);
-            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.supprimerBouton.Location = new System.Drawing.Point(951, 24);
+            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(2);
             this.supprimerBouton.Name = "supprimerBouton";
             this.supprimerBouton.Size = new System.Drawing.Size(50, 46);
             this.supprimerBouton.TabIndex = 3;
             this.supprimerBouton.UseVisualStyleBackColor = false;
             this.supprimerBouton.Click += new System.EventHandler(this.supprimerBouton_Click);
             // 
+            // labelTel
+            // 
+            this.labelTel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelTel.AutoSize = true;
+            this.labelTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
+            this.labelTel.Location = new System.Drawing.Point(542, 37);
+            this.labelTel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTel.Name = "labelTel";
+            this.labelTel.Size = new System.Drawing.Size(88, 17);
+            this.labelTel.TabIndex = 5;
+            this.labelTel.Text = "0123456789";
+            // 
             // Entite_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.labelTel);
             this.Controls.Add(this.modifierBouton);
             this.Controls.Add(this.supprimerBouton);
             this.Controls.Add(this.emailLabel);
             this.Controls.Add(this.prenomLabel);
             this.Controls.Add(this.nomLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Entite_Client";
-            this.Size = new System.Drawing.Size(463, 83);
+            this.Size = new System.Drawing.Size(1041, 83);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,5 +147,6 @@ namespace LFB_gestion.Entités
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Button supprimerBouton;
         private System.Windows.Forms.Button modifierBouton;
+        private System.Windows.Forms.Label labelTel;
     }
 }

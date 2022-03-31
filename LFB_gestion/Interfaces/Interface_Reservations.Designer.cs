@@ -42,8 +42,8 @@ namespace LFB_gestion.Interfaces
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(148, 172);
-            this.clientsPanel.Size = new System.Drawing.Size(1557, 688);
+            this.clientsPanel.Location = new System.Drawing.Point(152, 176);
+            this.clientsPanel.Size = new System.Drawing.Size(1599, 707);
             // 
             // ajoutBouton
             // 
