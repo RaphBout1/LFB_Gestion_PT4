@@ -19,6 +19,8 @@ namespace LFB_gestion.Classes
 
         public static List<Entite_Entretien> entretiens = new List<Entite_Entretien>();
 
+        public static List<Entite_Entretien> entretiensCourants = new List<Entite_Entretien>();
+
         public static List<Entite_Incident> incidents = new List<Entite_Incident>();
 
         public static List<Entite_Reservation> reservations = new List<Entite_Reservation>();
@@ -30,6 +32,7 @@ namespace LFB_gestion.Classes
             selectClients();
             selectUsers();
             selectEntretien();
+            selectEntretienUtilisateurCourant();
             selectIncident();
             selectReservation();
             selectStock();
@@ -139,6 +142,39 @@ namespace LFB_gestion.Classes
 
 
                     entretiens.Add(new Entite_Entretien(id, date, description, emplacement, user));
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message + " selectEntretien");
+                }
+            }
+            reader.Close();
+            connexion.Close();
+        }
+
+        /// <summary>
+        /// Charge les tâches d'entretiens de l'utilisateur courant
+        /// </summary>
+        private static void selectEntretienUtilisateurCourant()
+        {
+
+            SqlConnection connexion = Outils.Connexion();
+            entretiens.Clear();
+            connexion.Open();
+            SqlCommand command = new SqlCommand("SELECT * FROM entretien where login_user like " + Entite_Utilisateur.courant, connexion);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                try
+                {
+                    int id = (int)reader["id"];
+                    string date = reader["date"].ToString();
+                    string description = (string)reader["description"];
+                    string user = (string)reader["login_user"];
+                    int emplacement = (int)reader["id_emplacement"];
+
+
+                    entretiensCourants.Add(new Entite_Entretien(id, date, description, emplacement, user));
                 }
                 catch (Exception e)
                 {
