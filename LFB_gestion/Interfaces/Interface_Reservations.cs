@@ -36,8 +36,7 @@ namespace LFB_gestion.Interfaces
         /// <param name="e"></param>
         private void ajoutBouton_Click(object sender, EventArgs e)
         {
-            Form formResa = new Formulaires.Form_Reservation();
-
+            Form formResa = new Formulaires.Form_Reservation(false, null);
             formResa.ShowDialog();
         }
 

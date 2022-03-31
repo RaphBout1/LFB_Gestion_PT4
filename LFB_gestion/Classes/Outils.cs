@@ -162,11 +162,9 @@ namespace LFB_gestion
         /// </summary>
         public static void remplirClients(ListBox listBox)
         {
-
-
             if (dataBase.clients.Count != 0) //S'il existe des clients
             {
-                foreach (Entités.Entite_Client client in dataBase.clients)
+                foreach (Entite_Client client in dataBase.clients)
                 {
                     listBox.Items.Add(client.id + " " + client.ToString());
 

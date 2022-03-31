@@ -47,7 +47,7 @@
             this.clientsListBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
             this.clientsListBox.FormattingEnabled = true;
             this.clientsListBox.Location = new System.Drawing.Point(57, 267);
-            this.clientsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clientsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.clientsListBox.Name = "clientsListBox";
             this.clientsListBox.Size = new System.Drawing.Size(227, 56);
             this.clientsListBox.TabIndex = 8;
@@ -59,9 +59,9 @@
             this.emplacementsListBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
             this.emplacementsListBox.FormattingEnabled = true;
             this.emplacementsListBox.Location = new System.Drawing.Point(58, 371);
-            this.emplacementsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emplacementsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.emplacementsListBox.Name = "emplacementsListBox";
-            this.emplacementsListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.emplacementsListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.emplacementsListBox.Size = new System.Drawing.Size(226, 52);
             this.emplacementsListBox.TabIndex = 9;
             // 
@@ -96,7 +96,7 @@
             this.calendrier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.calendrier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
             this.calendrier.Location = new System.Drawing.Point(57, 52);
-            this.calendrier.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.calendrier.Margin = new System.Windows.Forms.Padding(7);
             this.calendrier.MaxSelectionCount = 365;
             this.calendrier.Name = "calendrier";
             this.calendrier.TabIndex = 12;
@@ -126,7 +126,7 @@
             this.validerBouton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validerBouton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.validerBouton.Location = new System.Drawing.Point(110, 449);
-            this.validerBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.validerBouton.Margin = new System.Windows.Forms.Padding(2);
             this.validerBouton.Name = "validerBouton";
             this.validerBouton.Size = new System.Drawing.Size(114, 42);
             this.validerBouton.TabIndex = 17;
@@ -144,7 +144,7 @@
             this.nouveauClientBouton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nouveauClientBouton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.nouveauClientBouton.Location = new System.Drawing.Point(177, 235);
-            this.nouveauClientBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nouveauClientBouton.Margin = new System.Windows.Forms.Padding(2);
             this.nouveauClientBouton.Name = "nouveauClientBouton";
             this.nouveauClientBouton.Size = new System.Drawing.Size(107, 28);
             this.nouveauClientBouton.TabIndex = 18;
@@ -186,7 +186,7 @@
             this.Controls.Add(this.clientsListBox);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form_Reservation";
             this.Text = "Nouvelle réservation";
             this.ResumeLayout(false);
@@ -195,15 +195,14 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox clientsListBox;
-        private System.Windows.Forms.ListBox emplacementsListBox;
         private System.Windows.Forms.Label emplacementLabel;
         private System.Windows.Forms.Label clientLabel;
-        private System.Windows.Forms.MonthCalendar calendrier;
         private System.Windows.Forms.Label dateDebutLabel;
         private System.Windows.Forms.Button validerBouton;
         private System.Windows.Forms.Button nouveauClientBouton;
         private System.Windows.Forms.Button infoDate;
+        public System.Windows.Forms.ListBox clientsListBox;
+        public System.Windows.Forms.ListBox emplacementsListBox;
+        public System.Windows.Forms.MonthCalendar calendrier;
     }
 }

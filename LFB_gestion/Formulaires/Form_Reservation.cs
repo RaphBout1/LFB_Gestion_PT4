@@ -8,12 +8,16 @@ namespace LFB_gestion.Formulaires
 {
     public partial class Form_Reservation : Form
     {
+        public bool modification;
 
+        public Entite_Reservation réservation;
 
         private SqlConnection connexion = Outils.Connexion();
 
-        public Form_Reservation()
+        public Form_Reservation(bool modification, Entite_Reservation réservation)
         {
+            this.modification = modification;
+            this.réservation = réservation;
             InitializeComponent();
             Outils.remplirClients(clientsListBox);
             emplacementsListBox.Items.Add("Sélectionner les dates");
@@ -54,20 +58,27 @@ namespace LFB_gestion.Formulaires
                 {
                     MessageBox.Show("Client non retrouvé depuis l'élément sélectionné");
                 }
-                if (auMoinsUnEmplacementSelectionne())
+                if (datesLogiques())
                 {
-                    if (datesLogiques())
+                    if (!modification)
                     {
-                        ajouterRéservation(calendrier.SelectionRange, client, emplacementsListBox.SelectedItems);
+                        if (auMoinsUnEmplacementSelectionne())
+                        {
+                            ajouterRéservation(calendrier.SelectionRange, client, emplacementsListBox.SelectedItems);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Veuillez selectionner un emplacement.");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Les dates sélectionnées ne sont pas logiques");
+                        modifierRéservation(calendrier.SelectionRange, client, réservation.emplacement);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Veuillez selectionner un emplacement.");
+                    MessageBox.Show("Les dates sélectionnées ne sont pas logiques");
                 }
             }
             else
@@ -116,7 +127,9 @@ namespace LFB_gestion.Formulaires
         /// <param name="e"></param>
         private void infoDate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Pour sélectionner cliquer sur la date de début et faite glisser la souris tout en maintenant le clique sur la date de fin");
+            MessageBox.Show("Pour sélectionner une date cliquez sur la date du début et glissez sur la date de fin de réservation, " +
+                "si la date de fin n'est pas visible sur le calendrier alors cliquez sur la date de début, appuyez sur 'Shift/MAJ' " +
+                "et en maintenant la touche shift appuyée dirigez la zone de sélection avec les flèches du clavier");
         }
         #endregion
 
@@ -134,19 +147,9 @@ namespace LFB_gestion.Formulaires
             foreach (int emplacement in emplacements)
             {
                 s += emplacement + " ";
-                string query = "select max(id) from reservation";
+                
+                string query = "insert into reservation  values ((select coalesce(MAX(id),0) from reservation)+1, @emplacement, @client, @dateDebut, @dateFin)";
                 SqlCommand command = new SqlCommand(query, connexion);
-                DbDataReader reader = command.ExecuteReader();
-                int id = 0;
-                if (reader.Read())
-                {
-                    id = reader.GetInt32(0);
-                    id++;
-                }
-                reader.Close();
-                query = "insert into reservation  values (@id, @emplacement, @client, @dateDebut, @dateFin)";
-                command = new SqlCommand(query, connexion);
-                command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@emplacement", emplacement);
                 command.Parameters.AddWithValue("@client", client.id);
                 command.Parameters.AddWithValue("@dateDebut", dates.Start);
@@ -160,7 +163,40 @@ namespace LFB_gestion.Formulaires
                     MessageBox.Show(ex.Message);
                 }
             }
-            MessageBox.Show("Réservation des emplacements " + s + " effectuée au nom de " + client.ToString());
+            MessageBox.Show("Réservation des emplacements " + s + " effectuée au nom de " + client.ToString()
+                + " pour les dates " + dates.Start.ToString("dd - MM - yyyy") + " au " + dates.End.ToString("dd - MM - yyyy"));
+            connexion.Close();
+        }
+
+        /// <summary>
+        /// Modifier une réservation
+        /// </summary>
+        /// <param name="dates">dates auxquelles le client veut réserver un ou des emplacements</param>
+        /// <param name="client">le client qui veut réserver</param>
+        /// <param name="emplacements">L'emplacement que le client veut réserver</param>
+        private void modifierRéservation(SelectionRange dates, Entite_Client client, int emplacement)
+        {
+            connexion.Open();
+
+            string query = "update reservation " +
+                "set id_emplacement = @emplacement, id_client = @client, date_debut = @dateDebut, date_fin = @dateFin " +
+                "where id = @id";
+            SqlCommand command = new SqlCommand(query, connexion);
+            command.Parameters.AddWithValue("@id", réservation.id);
+            command.Parameters.AddWithValue("@emplacement", emplacement);
+            command.Parameters.AddWithValue("@client", client.id);
+            command.Parameters.AddWithValue("@dateDebut", dates.Start);
+            command.Parameters.AddWithValue("@dateFin", dates.End);
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Réservation bien modifiée sur l'emplacement " + emplacement + " effectuée au nom de " + client.ToString()
+                + " pour les dates " + dates.Start.ToString("dd - MM - yyyy") + " au " + dates.End.ToString("dd - MM - yyyy"));
             connexion.Close();
         }
 
