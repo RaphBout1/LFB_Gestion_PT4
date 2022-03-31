@@ -45,6 +45,15 @@
             this.rechercheBouton.FlatAppearance.BorderSize = 0;
             this.rechercheBouton.Click += new System.EventHandler(this.rechercheBouton_Click);
             // 
+            // buttonDeconnexion
+            // 
+            this.buttonDeconnexion.FlatAppearance.BorderSize = 0;
+            this.buttonDeconnexion.Location = new System.Drawing.Point(1644, 0);
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
             // Interface_Entretien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

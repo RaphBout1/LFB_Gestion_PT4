@@ -17,12 +17,9 @@ namespace LFB_gestion.Interfaces
         {
             // On redéfini le nom du module
             nomModuleLabel.Text = "Clients";
-            dataBase.refreshDataBase();
             // On initialise les clients présents dans la base et on les affiche
             InitializeComponent();
             afficherClients();
-
-
         }
 
 
@@ -53,14 +50,20 @@ namespace LFB_gestion.Interfaces
         {
             Form formClient = new Formulaires.Form_Client();
             formClient.ShowDialog();
+            dataBase.selectClients();
         }
 
         /// <summary>
         /// Appelle la fonction qui affichera tous les clients
         /// </summary>
-        private void afficherClients()
+        public void afficherClients()
         {
             reader("");
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            afficherClients();
         }
         #endregion
 
@@ -128,18 +131,8 @@ namespace LFB_gestion.Interfaces
             }
             affichageClients(listeClients);
         }
+
         #endregion
-
-
-
-
-
-
-
-
-
-
-
     }
 
 }

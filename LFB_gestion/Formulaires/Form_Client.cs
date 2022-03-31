@@ -55,6 +55,7 @@ namespace LFB_gestion.Formulaires
                             if (!ClientMéthodes.clientDejaPresent(prenomTextBox.Text, nomTextBox.Text))
                             {
                                 ClientMéthodes.creationDuClient(nomTextBox.Text, prenomTextBox.Text, emailTextBox.Text, textBoxAdresse.Text, textBoxCodePostal.Text, textBoxVille.Text, textBoxTel.Text);
+                                this.DialogResult = DialogResult.OK;
                             }
                             else
                             {
@@ -64,7 +65,6 @@ namespace LFB_gestion.Formulaires
                         else
                         {
                             MessageBox.Show("Le numéro de téléphone n'est pas valide");
-
                         }
                     }
                     else

@@ -17,9 +17,7 @@ namespace LFB_gestion.Interfaces
 
             // On redéfini le nom du module
             nomModuleLabel.Text = "Entretiens";
-
             InitializeComponent();
-            dataBase.refreshDataBase();
             afficherEntretien();
         }
 
@@ -121,10 +119,14 @@ namespace LFB_gestion.Interfaces
 
 
 
+
+
+
         #endregion
 
-
-
-
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            afficherEntretien();
+        }
     }
 }

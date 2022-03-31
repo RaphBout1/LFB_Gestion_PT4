@@ -128,6 +128,7 @@
             this.modifierBouton.TabIndex = 0;
             this.modifierBouton.Text = "Modifier";
             this.modifierBouton.UseVisualStyleBackColor = false;
+            this.modifierBouton.Click += new System.EventHandler(this.modifierBouton_Click);
             // 
             // buttonFacturer
             // 

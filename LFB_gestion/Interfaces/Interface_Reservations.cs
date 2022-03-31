@@ -16,7 +16,6 @@ namespace LFB_gestion.Interfaces
         public Interface_Reservations()
         {
             nomModuleLabel.Text = "Réservations";
-            dataBase.refreshDataBase();
             placeHolder();
             afficherReservations();
             InitializeComponent();
@@ -37,8 +36,7 @@ namespace LFB_gestion.Interfaces
         /// <param name="e"></param>
         private void ajoutBouton_Click(object sender, EventArgs e)
         {
-            Form formResa = new Formulaires.Form_Reservation();
-
+            Form formResa = new Formulaires.Form_Reservation(false, null);
             formResa.ShowDialog();
         }
 
@@ -172,5 +170,10 @@ namespace LFB_gestion.Interfaces
             }
         }
         #endregion
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            afficherReservations();
+        }
     }
 }

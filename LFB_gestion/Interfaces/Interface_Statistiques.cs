@@ -136,5 +136,10 @@ namespace LFB_gestion.Interfaces
         {
 
         }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

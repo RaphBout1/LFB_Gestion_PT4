@@ -69,5 +69,64 @@ namespace LFB_gestion.Entités
 
             formrefresh.ShowDialog();
         }
+
+        private void modifierBouton_Click(object sender, EventArgs e)
+        {
+            Form_Reservation form = new Form_Reservation(true, this);
+            selectDatesAModifier(form);
+            selectClientAModifier(form);
+            selectEmplacementAModifier(form);
+            form.ShowDialog();
+        }
+
+        private void selectDatesAModifier(Form_Reservation form)
+        {
+            SelectionRange sr = new SelectionRange();
+            sr.Start = this.début;
+            sr.End = this.fin;
+            form.calendrier.SelectionRange = sr;
+        }
+
+        /// <summary>
+        /// Trouver le numéro de l'item de la liste client qui correspond au client qu'il y a sur la réservation à modifier
+        /// </summary>
+        private void selectClientAModifier(Form_Reservation form)
+        {
+            int i = 0;
+            int index = -1;
+            foreach (string s in form.clientsListBox.Items)
+            {
+                if (s.Contains(Outils.trouverClient(this.idClient).ToString()))
+                {
+                    index = i;
+                }
+                i++;
+            }
+            form.clientsListBox.SelectedIndex = index;
+        }
+
+        private void selectEmplacementAModifier(Form_Reservation form)
+        {
+            int i = 0;
+            int index = -1;
+            foreach (var x in form.emplacementsListBox.Items)
+            {
+                int emplacement = -1;
+                try
+                {
+                    emplacement = (int)x;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Convertion impossible de l'objet dans la liste d'emplacements en 'int'");
+                }
+                if (emplacement == this.emplacement)
+                {
+                    index = i;
+                }
+                i++;
+            }
+            form.emplacementsListBox.SelectedIndex = index;
+        }
     }
 }

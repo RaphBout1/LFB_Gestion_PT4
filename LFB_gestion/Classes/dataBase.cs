@@ -35,14 +35,13 @@ namespace LFB_gestion.Classes
             selectIncident();
             selectReservation();
             selectStock();
-
         }
 
 
         /// <summary>
         /// charge tous les clients depuis la base de données
         /// </summary>
-        private static void selectClients()
+        public static void selectClients()
         {
             clients.Clear();
             connexion.Open();
@@ -68,7 +67,7 @@ namespace LFB_gestion.Classes
         /// <summary>
         /// charge tous le stock depuis la base de données
         /// </summary>
-        private static void selectStock()
+        public static void selectStock()
         {
             stocks.Clear();
             connexion.Open();
@@ -90,7 +89,7 @@ namespace LFB_gestion.Classes
         /// <summary>
         /// Charge tous les utilisateurs depuis la base de données dans la liste users
         /// </summary>
-        private static void selectUsers()
+        public static void selectUsers()
         {
             users.Clear();
             connexion.Open();
@@ -121,7 +120,7 @@ namespace LFB_gestion.Classes
         /// <summary>
         /// Charge tous les entretiens depuis la base de données dans la liste users
         /// </summary>
-        private static void selectEntretien()
+        public static void selectEntretien()
         {
 
             SqlConnection connexion = Outils.Connexion();
@@ -188,7 +187,7 @@ namespace LFB_gestion.Classes
         /// <summary>
         /// Charge tous les incidents depuis la base de données dans la liste users
         /// </summary>
-        private static void selectIncident()
+        public static void selectIncident()
         {
             incidents.Clear();
             connexion.Open();
@@ -215,7 +214,7 @@ namespace LFB_gestion.Classes
         /// <summary>
         /// Charge tous les réservations depuis la base de données dans la liste users
         /// </summary>
-        private static void selectReservation()
+        public static void selectReservation()
         {
             reservations.Clear();
             connexion.Open();

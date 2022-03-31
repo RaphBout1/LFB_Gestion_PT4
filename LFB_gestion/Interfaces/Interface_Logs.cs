@@ -44,5 +44,10 @@ namespace LFB_gestion.Interfaces
             }
             this.clientsPanel.Controls.Add(listBox);
         }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            afficherLogs();
+        }
     }
 }

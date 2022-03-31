@@ -16,7 +16,6 @@ namespace LFB_gestion.Interfaces
         {
             ajoutBouton.Visible = false;
             // On redéfini le nom du module
-            dataBase.refreshDataBase();
             nomModuleLabel.Text = "Incidents";
             InitializeComponent();
             afficherIncidents();
@@ -110,10 +109,14 @@ namespace LFB_gestion.Interfaces
             }
             affichageIncident(listeIncidents);
         }
+
+
+
         #endregion
 
-
-
-
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            afficherIncidents();
+        }
     }
 }

@@ -66,11 +66,7 @@ namespace LFB_gestion.Entités
             command.ExecuteNonQuery();
             MessageBox.Show("Client supprimé");
             connexion.Close();
-            dataBase.refreshDataBase();
-            Form.ActiveForm.Close();
-            Form formrefresh = new Interface_Clients();
-
-            formrefresh.ShowDialog();
+            dataBase.selectClients();
         }
     }
 }

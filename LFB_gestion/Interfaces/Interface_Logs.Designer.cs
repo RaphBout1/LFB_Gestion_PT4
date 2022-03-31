@@ -28,10 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // clientsPanel
+            // 
+            this.clientsPanel.Location = new System.Drawing.Point(64, 93);
+            this.clientsPanel.Size = new System.Drawing.Size(672, 372);
+            // 
+            // ajoutBouton
+            // 
+            this.ajoutBouton.FlatAppearance.BorderSize = 0;
+            // 
+            // rechercheBouton
+            // 
+            this.rechercheBouton.FlatAppearance.BorderSize = 0;
+            // 
+            // buttonDeconnexion
+            // 
+            this.buttonDeconnexion.FlatAppearance.BorderSize = 0;
+            this.buttonDeconnexion.Location = new System.Drawing.Point(590, 0);
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
+            // Interface_Logs
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 548);
+            this.Location = new System.Drawing.Point(0, 0);
+            this.Name = "Interface_Logs";
             this.Text = "Interface_Logs";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

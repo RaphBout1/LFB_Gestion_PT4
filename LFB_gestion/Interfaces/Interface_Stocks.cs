@@ -14,7 +14,6 @@ namespace LFB_gestion.Interfaces
         private SqlConnection connexion = Outils.Connexion();
         public Interface_Stocks()
         {
-            dataBase.refreshDataBase();
             nomModuleLabel.Text = "Stocks";
             InitializeComponent();
             afficherStock();
