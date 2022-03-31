@@ -1,4 +1,5 @@
-﻿using LFB_gestion.Entités;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Entités;
 using System;
 using System.Data.Common;
 using System.Data.SqlClient;
@@ -65,6 +66,8 @@ namespace LFB_gestion.Formulaires
                         if (auMoinsUnEmplacementSelectionne())
                         {
                             ajouterRéservation(calendrier.SelectionRange, client, emplacementsListBox.SelectedItems);
+                            dataBase.selectReservation();
+                            this.Close();
                         }
                         else
                         {
@@ -74,6 +77,7 @@ namespace LFB_gestion.Formulaires
                     else
                     {
                         modifierRéservation(calendrier.SelectionRange, client, réservation.emplacement);
+                        dataBase.selectReservation();
                     }
                 }
                 else
