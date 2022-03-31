@@ -17,32 +17,39 @@ namespace LFB_gestion.Interfaces
         {
             InitializeComponent();
             afficherLogs();
+            resizeList();
+        }
+
+        public void resizeList()
+        {
+            listBoxLog.Width = ClientSize.Width * 84 / 100;
+            listBoxLog.Height = ClientSize.Height * 68 / 100;
         }
 
         private void afficherLogs()
         {
+
             SqlConnection connexion = Outils.Connexion();
             connexion.Open();
             SqlCommand idQuery = new SqlCommand("select * from log", connexion);
             SqlDataReader rd;
             rd = idQuery.ExecuteReader();
-            ListBox listBox = new ListBox();
-            listBox.Size = new Size(900, 500);
+
 
             while (rd.Read())
             {
                 try
                 {
                     String elem = "utilisateur : " + rd["login_user"].ToString() + " | date : " + rd["date"].ToString() + " | action : " + rd["action"].ToString() + " | table modifié : " + rd["table_modifiée"].ToString();
-                    listBox.Items.Add(elem);
+                    listBoxLog.Items.Add(elem);
                 }
                 catch (Exception e)
                 {
                     String elem = "log indisponible";
-                    listBox.Items.Add(elem);
+                    listBoxLog.Items.Add(elem);
                 }
             }
-            this.clientsPanel.Controls.Add(listBox);
+            this.clientsPanel.Controls.Add(listBoxLog);
         }
 
         private void refreshButton_Click(object sender, EventArgs e)

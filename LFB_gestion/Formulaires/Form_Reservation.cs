@@ -202,6 +202,7 @@ namespace LFB_gestion.Formulaires
             MessageBox.Show("Réservation bien modifiée sur l'emplacement " + emplacement + " effectuée au nom de " + client.ToString()
                 + " pour les dates " + dates.Start.ToString("dd - MM - yyyy") + " au " + dates.End.ToString("dd - MM - yyyy"));
             connexion.Close();
+            this.Close();   
         }
 
         /// <summary>

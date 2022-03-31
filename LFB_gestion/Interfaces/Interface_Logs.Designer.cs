@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.listBoxLog = new System.Windows.Forms.ListBox();
+            this.clientsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // clientsPanel
             // 
+            this.clientsPanel.Controls.Add(this.listBoxLog);
             this.clientsPanel.Location = new System.Drawing.Point(64, 93);
             this.clientsPanel.Size = new System.Drawing.Size(672, 372);
             // 
@@ -48,9 +51,17 @@
             this.buttonDeconnexion.FlatAppearance.BorderSize = 0;
             this.buttonDeconnexion.Location = new System.Drawing.Point(590, 0);
             // 
-            // refreshButton
+            // listBoxLog
             // 
-            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            this.listBoxLog.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.listBoxLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxLog.FormattingEnabled = true;
+            this.listBoxLog.ItemHeight = 20;
+            this.listBoxLog.Location = new System.Drawing.Point(3, 3);
+            this.listBoxLog.Name = "listBoxLog";
+            this.listBoxLog.Size = new System.Drawing.Size(120, 80);
+            this.listBoxLog.TabIndex = 0;
             // 
             // Interface_Logs
             // 
@@ -60,10 +71,13 @@
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Interface_Logs";
             this.Text = "Interface_Logs";
+            this.clientsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox listBoxLog;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using LFB_gestion.Classes;
 using LFB_gestion.Entités;
+using LFB_gestion.Formulaires;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -29,7 +30,7 @@ namespace LFB_gestion.Interfaces
         /// <param name="e"></param>
         private void ajoutBouton_Click(object sender, EventArgs e)
         {
-            Form formStock = new Formulaires.Form_Stock();
+            Form formStock = new Form_Stock(null);
             formStock.ShowDialog();
         }
 

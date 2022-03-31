@@ -1,4 +1,8 @@
-﻿using System;
+﻿using LFB_gestion.Classes;
+using LFB_gestion.Entités;
+using System;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,9 +10,19 @@ namespace LFB_gestion.Formulaires
 {
     public partial class Form_Stock : Form
     {
-        public Form_Stock()
+        Entite_Stock produit;
+        public Form_Stock(Entite_Stock produit)
         {
+            this.produit = produit;
             InitializeComponent();
+            if (produit != null)
+            {
+                validerBoutonProduit.Text = "Modifier";
+                UrlTextBox.Text = produit.image;
+                numericUpDown1.Value = produit.quantite;
+                nomProduitTextBox.Text = produit.name;
+
+            }
 
         }
 
@@ -60,12 +74,12 @@ namespace LFB_gestion.Formulaires
         /// <param name="e"></param>
         private void validerBoutonProduit_Click(object sender, EventArgs e)
         {
-            if(nomProduitTextBox.Text != null)
+            if (nomProduitTextBox.Text != null)
             {
 
-                if(imageBox.BackgroundImage != null)
-                {
-
+                if (imageBox.BackgroundImage != null)
+                { 
+                    AjouterStock(nomProduitTextBox.Text, UrlTextBox.Text, Int32.Parse(numericUpDown1.Value.ToString()));
                 }
                 else
                 {
@@ -78,21 +92,73 @@ namespace LFB_gestion.Formulaires
                 MessageBox.Show("Le nom du produit n'est pas rentré");
             };
 
-                //creationProduit();
-                // this.stock.produitsListBox.Items.Add(nomProduitTextBox.Text);
-                this.Controls.Clear();
-                InitializeComponent();
-                MessageBox.Show("Produit ajouté à la base avec succès !");
-            }
+            
         }
+
         #endregion
 
         #region Fonctions
-       
+
+        /// <summary>
+        /// Ajouter un produit au stock
+        /// </summary>
+        private void AjouterStock(string name, string urlImage, int quantite)
+        {
+            SqlConnection connexion = Outils.Connexion();
+            connexion.Open();
+
+            if (produit == null)
+            {
+
+                string query = "insert into produit values ((select coalesce(MAX(id),0)+1 from produit), @nom, @image, @quantite)";
+                SqlCommand command = new SqlCommand(query, connexion);
+                command.Parameters.AddWithValue("@nom", name);
+                command.Parameters.AddWithValue("@image", urlImage);
+                command.Parameters.AddWithValue("@quantite", quantite);
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                MessageBox.Show("Produit rajouté");
+                connexion.Close();
+            }
+            else
+            {
+                string requete = " UPDATE produit SET id = @id, nom = @name, image = @image, quantite = @quantite where id = @id";
+                SqlCommand command = new SqlCommand(requete, connexion);
+                command.Parameters.AddWithValue("@id", produit.id);
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@image", urlImage);
+                command.Parameters.AddWithValue("@quantite", quantite);
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                MessageBox.Show("Produit modifié");
+                connexion.Close();
+
+            }
+
+            dataBase.refreshDataBase();
+            this.Close();
+        }
+
         #endregion
 
 
 
+    }
 
-    
 }
