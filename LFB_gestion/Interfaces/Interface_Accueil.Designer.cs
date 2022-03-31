@@ -33,38 +33,44 @@ namespace LFB_gestion.Interfaces
             // 
             // nomModuleLabel
             // 
-            this.nomModuleLabel.Location = new System.Drawing.Point(368, 86);
-            this.nomModuleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nomModuleLabel.Location = new System.Drawing.Point(276, 70);
+            this.nomModuleLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             // 
             // rechercheTextBox
             // 
-            this.rechercheTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.rechercheTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            // 
+            // clientsPanel
+            // 
+            this.clientsPanel.Location = new System.Drawing.Point(86, 118);
+            this.clientsPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clientsPanel.Size = new System.Drawing.Size(909, 473);
             // 
             // ajoutBouton
             // 
+            this.ajoutBouton.BackColor = System.Drawing.Color.Transparent;
             this.ajoutBouton.FlatAppearance.BorderSize = 0;
+            this.ajoutBouton.UseVisualStyleBackColor = false;
             // 
             // rechercheBouton
             // 
             this.rechercheBouton.FlatAppearance.BorderSize = 0;
             // 
-            // clientsPanel
+            // buttonDeconnexion
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(128, 129);
-            this.clientsPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.clientsPanel.Size = new System.Drawing.Size(2308, 908);
+            this.buttonDeconnexion.FlatAppearance.BorderSize = 0;
+            this.buttonDeconnexion.Location = new System.Drawing.Point(925, 0);
             // 
             // Interface_Accueil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.ClientSize = new System.Drawing.Size(1443, 857);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.MinimumSize = new System.Drawing.Size(1433, 873);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1079, 717);
             this.Name = "Interface_Accueil";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

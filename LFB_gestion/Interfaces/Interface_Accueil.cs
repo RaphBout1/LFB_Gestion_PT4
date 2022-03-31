@@ -104,6 +104,7 @@ namespace LFB_gestion.Interfaces
             bonjourLabel.Text = "Bonjour " + Entite_Utilisateur.courant.prenom + "\n" + "Il est " + DateTime.Now.Hour.ToString() + "h" + DateTime.Now.Minute;
             bonjourLabel.Location = new Point(nomModuleLabel.Location.X + nomModuleLabel.Size.Width + 50, nomModuleLabel.Location.Y);
             bonjourLabel.Size = new Size(600, 300);
+            bonjourLabel.BackColor = Color.Transparent;
             bonjourLabel.ForeColor = Color.FromArgb(94, 139, 47);
             bonjourLabel.Font = nomModuleLabel.Font;
             this.Controls.Add(bonjourLabel);
