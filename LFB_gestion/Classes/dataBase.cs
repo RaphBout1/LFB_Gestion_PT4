@@ -35,6 +35,7 @@ namespace LFB_gestion.Classes
             selectIncident();
             selectReservation();
             selectStock();
+            selectEntretienCourant();
         }
 
 

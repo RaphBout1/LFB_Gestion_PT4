@@ -75,6 +75,7 @@ namespace LFB_gestion.Entités
         {
             Form form = new Form_Client(this);
             form.ShowDialog();
+            dataBase.selectClients();
         }
     }
 }

@@ -35,7 +35,7 @@ namespace LFB_gestion.Interfaces
         public void reader(string recherche)
         {
             List<Entite_Entretien> listeEntretien = new List<Entite_Entretien>();
-            foreach (Entite_Entretien entretien in dataBase.entretiens)
+            foreach (Entite_Entretien entretien in dataBase.entretiensCourants)
             {
                 if (entretien.description.Contains(recherche) || recherche == null || recherche == "")
                 {

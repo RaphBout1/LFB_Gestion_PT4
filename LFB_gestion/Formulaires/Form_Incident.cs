@@ -55,13 +55,10 @@ namespace LFB_gestion.Formulaires
                 {
                     MessageBox.Show(ex.Message);
                 } 
-                MessageBox.Show("Entretien modifié");
-
+                MessageBox.Show("Incident modifié");
             }
             else
             {
-               
-
                 try
                 {
                     string query = "insert into incident values ((select coalesce(MAX(id),0)+1 from incident),@id_réservation, @desc )";
@@ -75,9 +72,6 @@ namespace LFB_gestion.Formulaires
                 {
                     MessageBox.Show(ex.Message);
                 }
-
-                MessageBox.Show("Incident ajouté");
-
             }
                 connexion.Close();
             dataBase.refreshDataBase();
