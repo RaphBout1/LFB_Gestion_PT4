@@ -76,7 +76,7 @@ namespace LFB_gestion.Formulaires
                     }
                     else
                     {
-                        modifierRéservation(calendrier.SelectionRange, client, réservation.emplacement);
+                        modifierRéservation(calendrier.SelectionRange, client, Int32.Parse(emplacementsListBox.SelectedItem.ToString()));
                         dataBase.selectReservation();
                     }
                 }
