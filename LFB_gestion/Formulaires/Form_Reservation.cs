@@ -32,7 +32,7 @@ namespace LFB_gestion.Formulaires
         /// <param name="e"></param>
         private void nouveauClientBouton_Click(object sender, EventArgs e)
         {
-            Form_Client formNouveauClient = new Form_Client();
+            Form_Client formNouveauClient = new Form_Client(null);
             if (formNouveauClient.ShowDialog() == DialogResult.OK)
             {
                 clientsListBox.Items.Clear();

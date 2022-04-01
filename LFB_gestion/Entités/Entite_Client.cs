@@ -1,4 +1,5 @@
 ﻿using LFB_gestion.Classes;
+using LFB_gestion.Formulaires;
 using LFB_gestion.Interfaces;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -46,6 +47,7 @@ namespace LFB_gestion.Entités
             nomLabel.Text = nom;
             prenomLabel.Text = prenom;
             emailLabel.Text = mail;
+            labelTel.Text = tel;
         }
 
         /// <summary>
@@ -67,6 +69,12 @@ namespace LFB_gestion.Entités
             MessageBox.Show("Client supprimé");
             connexion.Close();
             dataBase.selectClients();
+        }
+
+        private void modifierBouton_Click(object sender, System.EventArgs e)
+        {
+            Form form = new Form_Client(this);
+            form.ShowDialog();
         }
     }
 }
