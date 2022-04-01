@@ -42,11 +42,7 @@ namespace LFB_gestion.Entités
             command.ExecuteNonQuery();
             MessageBox.Show("Incident supprimé");
             connexion.Close();
-            dataBase.refreshDataBase();
-            Form.ActiveForm.Close();
-            Form formrefresh = new Interface_Incidents();
-
-            formrefresh.ShowDialog();
+            dataBase.selectIncident();
         }
 
         private void modifierBouton_Click(object sender, EventArgs e)
