@@ -40,7 +40,7 @@ namespace LFB_gestion.Interfaces
         /// <param name="e"></param>
         private void ajoutBouton_Click_1(object sender, EventArgs e)
         {
-            Form formUtilisateur = new Formulaires.Form_Employe();
+            Form formUtilisateur = new Formulaires.Form_Employe(null);
 
             formUtilisateur.ShowDialog();
         }

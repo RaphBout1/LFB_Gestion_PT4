@@ -24,6 +24,7 @@ namespace LFB_gestion.Formulaires
             remplirDonnées();
 
 
+
         }
 
 
@@ -41,25 +42,6 @@ namespace LFB_gestion.Formulaires
             if (incident != null)
             {
 
-                try
-                {
-                    string query = "insert into incident values ((select coalesce(MAX(id),0)+1 from produit),@id_réservation, @desc )";
-                    SqlCommand cmd = new SqlCommand(query, connexion);
-                    cmd.Parameters.AddWithValue("@desc", description);
-                    cmd.Parameters.AddWithValue("@id_réservation", réservation.id);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Incident signalé");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-                MessageBox.Show("Incident ajouté");
-
-            }
-            else
-            {
                 string requete = " UPDATE incident SET description = @description WHERE id = @condition";
                 SqlCommand command = new SqlCommand(requete, connexion);
                 command.Parameters.AddWithValue("@description", description);
@@ -75,7 +57,26 @@ namespace LFB_gestion.Formulaires
                 } 
                 MessageBox.Show("Entretien modifié");
 
+            }
+            else
+            {
                
+
+                try
+                {
+                    string query = "insert into incident values ((select coalesce(MAX(id),0)+1 from incident),@id_réservation, @desc )";
+                    SqlCommand cmd = new SqlCommand(query, connexion);
+                    cmd.Parameters.AddWithValue("@desc", description);
+                    cmd.Parameters.AddWithValue("@id_réservation", réservation.id);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Incident signalé");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                MessageBox.Show("Incident ajouté");
 
             }
                 connexion.Close();
@@ -100,6 +101,7 @@ namespace LFB_gestion.Formulaires
             if (incident != null)
             {
                 descriptionTextBox.Text = incident.description;
+                validationBouton.Text = "Modifier";
             }
             }
 

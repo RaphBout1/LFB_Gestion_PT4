@@ -90,6 +90,7 @@ namespace LFB_gestion.Entités
             this.modifierBouton.TabIndex = 4;
             this.modifierBouton.Text = "Modifier";
             this.modifierBouton.UseVisualStyleBackColor = false;
+            this.modifierBouton.Click += new System.EventHandler(this.modifierBouton_Click);
             // 
             // supprimerBouton
             // 

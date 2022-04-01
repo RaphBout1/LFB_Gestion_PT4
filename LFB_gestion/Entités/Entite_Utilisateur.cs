@@ -1,4 +1,5 @@
 ﻿using LFB_gestion.Classes;
+using LFB_gestion.Formulaires;
 using LFB_gestion.Interfaces;
 using System;
 using System.Data.Common;
@@ -103,6 +104,12 @@ namespace LFB_gestion.Entités
         public override string ToString()
         {
             return prenom + " " + nom;
+        }
+
+        private void modifierBouton_Click(object sender, EventArgs e)
+        {
+            Form form = new Form_Employe(this);
+            form.ShowDialog();
         }
     }
 }
