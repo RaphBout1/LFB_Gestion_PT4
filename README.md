@@ -20,3 +20,13 @@ Communication : Discord, Instagram
 ## Liens vers l'installeur
 
 https://mega.nz/file/QJtjWbaa#G3nFN4FFYNSe4rUfd4a6628CDIeoiph94iM5hnPhmXY
+
+## nom d'utilisateur et mot de passe de l'administrateur
+
+username : admin
+password : admin
+
+## nom d'utilisateur et mot de passe d'un utilisateur simple
+
+username : user1
+password : user1
