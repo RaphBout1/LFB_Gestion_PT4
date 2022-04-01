@@ -41,9 +41,10 @@
             this.prenomLabel.BackColor = System.Drawing.Color.Transparent;
             this.prenomLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prenomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.prenomLabel.Location = new System.Drawing.Point(-5, 36);
+            this.prenomLabel.Location = new System.Drawing.Point(-4, 29);
+            this.prenomLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.prenomLabel.Name = "prenomLabel";
-            this.prenomLabel.Size = new System.Drawing.Size(96, 29);
+            this.prenomLabel.Size = new System.Drawing.Size(76, 24);
             this.prenomLabel.TabIndex = 1;
             this.prenomLabel.Text = "prénom";
             // 
@@ -55,13 +56,14 @@
             this.modifierBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modifierBouton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modifierBouton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
-            this.modifierBouton.Location = new System.Drawing.Point(229, 30);
-            this.modifierBouton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.modifierBouton.Location = new System.Drawing.Point(172, 24);
+            this.modifierBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.modifierBouton.Name = "modifierBouton";
-            this.modifierBouton.Size = new System.Drawing.Size(81, 46);
+            this.modifierBouton.Size = new System.Drawing.Size(61, 37);
             this.modifierBouton.TabIndex = 5;
             this.modifierBouton.Text = "Modifier";
             this.modifierBouton.UseVisualStyleBackColor = false;
+            this.modifierBouton.Click += new System.EventHandler(this.modifierBouton_Click);
             // 
             // supprimerBouton
             // 
@@ -72,10 +74,10 @@
             this.supprimerBouton.FlatAppearance.BorderSize = 0;
             this.supprimerBouton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.supprimerBouton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.supprimerBouton.Location = new System.Drawing.Point(359, 30);
-            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.supprimerBouton.Location = new System.Drawing.Point(269, 24);
+            this.supprimerBouton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.supprimerBouton.Name = "supprimerBouton";
-            this.supprimerBouton.Size = new System.Drawing.Size(58, 46);
+            this.supprimerBouton.Size = new System.Drawing.Size(44, 37);
             this.supprimerBouton.TabIndex = 6;
             this.supprimerBouton.UseVisualStyleBackColor = false;
             this.supprimerBouton.Click += new System.EventHandler(this.supprimerBouton_Click);
@@ -87,24 +89,25 @@
             this.nomLabel.BackColor = System.Drawing.Color.Transparent;
             this.nomLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.nomLabel.Location = new System.Drawing.Point(125, 36);
+            this.nomLabel.Location = new System.Drawing.Point(94, 29);
+            this.nomLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nomLabel.Name = "nomLabel";
-            this.nomLabel.Size = new System.Drawing.Size(60, 29);
+            this.nomLabel.Size = new System.Drawing.Size(48, 24);
             this.nomLabel.TabIndex = 8;
             this.nomLabel.Text = "nom";
             // 
             // Entite_Utilisateur
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.nomLabel);
             this.Controls.Add(this.supprimerBouton);
             this.Controls.Add(this.modifierBouton);
             this.Controls.Add(this.prenomLabel);
-            this.Margin = new System.Windows.Forms.Padding(20, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(15, 2, 2, 2);
             this.Name = "Entite_Utilisateur";
-            this.Size = new System.Drawing.Size(461, 100);
+            this.Size = new System.Drawing.Size(346, 81);
             this.ResumeLayout(false);
             this.PerformLayout();
 

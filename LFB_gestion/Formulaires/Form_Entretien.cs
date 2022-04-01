@@ -104,7 +104,7 @@ namespace LFB_gestion.Formulaires
                     id++;
                 }
                 reader.Close();
-                query = "insert into entretien  values (@id,@description, @utilisateur,@emplacement, GETDATE())";
+                query = "insert into entretien  values ((select coalesce(MAX(id),0)+1 from entretien),@description, @utilisateur,@emplacement, GETDATE())";
                 command = new SqlCommand(query, connexion);
                 command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@description", description);

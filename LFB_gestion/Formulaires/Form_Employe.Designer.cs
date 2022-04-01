@@ -33,8 +33,6 @@
             this.prénom_label = new System.Windows.Forms.Label();
             this.nom_label = new System.Windows.Forms.Label();
             this.nom_textBox = new System.Windows.Forms.TextBox();
-            this.adresse_label = new System.Windows.Forms.Label();
-            this.adresse_textBox = new System.Windows.Forms.TextBox();
             this.tel_label = new System.Windows.Forms.Label();
             this.tel_textBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -100,30 +98,6 @@
             this.nom_textBox.TabIndex = 1;
             this.nom_textBox.TextChanged += new System.EventHandler(this.nom_textBox_TextChanged);
             // 
-            // adresse_label
-            // 
-            this.adresse_label.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.adresse_label.AutoSize = true;
-            this.adresse_label.BackColor = System.Drawing.Color.Transparent;
-            this.adresse_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adresse_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.adresse_label.Location = new System.Drawing.Point(543, 193);
-            this.adresse_label.Name = "adresse_label";
-            this.adresse_label.Size = new System.Drawing.Size(68, 20);
-            this.adresse_label.TabIndex = 5;
-            this.adresse_label.Text = "Adresse";
-            // 
-            // adresse_textBox
-            // 
-            this.adresse_textBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.adresse_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
-            this.adresse_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adresse_textBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.adresse_textBox.Location = new System.Drawing.Point(421, 216);
-            this.adresse_textBox.Name = "adresse_textBox";
-            this.adresse_textBox.Size = new System.Drawing.Size(172, 26);
-            this.adresse_textBox.TabIndex = 4;
-            // 
             // tel_label
             // 
             this.tel_label.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -131,7 +105,7 @@
             this.tel_label.BackColor = System.Drawing.Color.Transparent;
             this.tel_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tel_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.tel_label.Location = new System.Drawing.Point(568, 247);
+            this.tel_label.Location = new System.Drawing.Point(569, 192);
             this.tel_label.Name = "tel_label";
             this.tel_label.Size = new System.Drawing.Size(30, 20);
             this.tel_label.TabIndex = 7;
@@ -143,7 +117,7 @@
             this.tel_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.tel_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tel_textBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.tel_textBox.Location = new System.Drawing.Point(421, 271);
+            this.tel_textBox.Location = new System.Drawing.Point(422, 216);
             this.tel_textBox.Name = "tel_textBox";
             this.tel_textBox.Size = new System.Drawing.Size(172, 26);
             this.tel_textBox.TabIndex = 5;
@@ -166,7 +140,7 @@
             this.mail_label.BackColor = System.Drawing.Color.Transparent;
             this.mail_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mail_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.mail_label.Location = new System.Drawing.Point(563, 303);
+            this.mail_label.Location = new System.Drawing.Point(564, 248);
             this.mail_label.Name = "mail_label";
             this.mail_label.Size = new System.Drawing.Size(37, 20);
             this.mail_label.TabIndex = 11;
@@ -178,7 +152,7 @@
             this.mail_textBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
             this.mail_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mail_textBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.mail_textBox.Location = new System.Drawing.Point(421, 327);
+            this.mail_textBox.Location = new System.Drawing.Point(422, 272);
             this.mail_textBox.Name = "mail_textBox";
             this.mail_textBox.Size = new System.Drawing.Size(172, 26);
             this.mail_textBox.TabIndex = 6;
@@ -279,7 +253,7 @@
             this.admin_checkBox.BackColor = System.Drawing.Color.Transparent;
             this.admin_checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.admin_checkBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(139)))), ((int)(((byte)(47)))));
-            this.admin_checkBox.Location = new System.Drawing.Point(499, 365);
+            this.admin_checkBox.Location = new System.Drawing.Point(422, 329);
             this.admin_checkBox.Name = "admin_checkBox";
             this.admin_checkBox.Size = new System.Drawing.Size(129, 24);
             this.admin_checkBox.TabIndex = 7;
@@ -307,8 +281,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tel_label);
             this.Controls.Add(this.tel_textBox);
-            this.Controls.Add(this.adresse_label);
-            this.Controls.Add(this.adresse_textBox);
             this.Controls.Add(this.nom_label);
             this.Controls.Add(this.nom_textBox);
             this.Controls.Add(this.prénom_label);
@@ -328,8 +300,6 @@
         private System.Windows.Forms.Label prénom_label;
         private System.Windows.Forms.Label nom_label;
         public System.Windows.Forms.TextBox nom_textBox;
-        private System.Windows.Forms.Label adresse_label;
-        public System.Windows.Forms.TextBox adresse_textBox;
         private System.Windows.Forms.Label tel_label;
         public System.Windows.Forms.TextBox tel_textBox;
         private System.Windows.Forms.Label label1;

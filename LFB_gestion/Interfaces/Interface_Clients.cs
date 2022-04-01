@@ -13,8 +13,10 @@ namespace LFB_gestion.Interfaces
 
         private SqlConnection connexion = Outils.Connexion();
 
+
         public Interface_Clients()
         {
+
             // On redéfini le nom du module
             nomModuleLabel.Text = "Clients";
             // On initialise les clients présents dans la base et on les affiche
@@ -48,7 +50,7 @@ namespace LFB_gestion.Interfaces
         /// <param name="e"></param>
         private void ajoutBouton_Click_1(object sender, EventArgs e)
         {
-            Form formClient = new Formulaires.Form_Client();
+            Form formClient = new Formulaires.Form_Client(null);
             formClient.ShowDialog();
             dataBase.selectClients();
         }

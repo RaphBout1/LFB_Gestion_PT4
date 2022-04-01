@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LFB_gestion.Entités;
+using System;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
@@ -7,15 +8,28 @@ namespace LFB_gestion.Formulaires
 {
     public partial class Form_Employe : Form
     {
-        private static string connexionString = "Data Source=info-joyeux;Initial Catalog=PT4_Camping_S4AE2;User Id=ETD;Password=ETD;";
 
-        private SqlConnection connexion = new SqlConnection(connexionString);
+        private SqlConnection connexion = Outils.Connexion();
 
         private int admin = 0;
 
-        public Form_Employe()
+        Entite_Utilisateur user;
+
+        public Form_Employe(Entite_Utilisateur utilisateur )
         {
+            this.user = utilisateur;
             InitializeComponent();
+
+            if (utilisateur != null)
+            {
+                prénom_TextBox.Text = utilisateur.prenom;
+                nom_textBox.Text = utilisateur.nom;
+                tel_textBox.Text = utilisateur.tel;
+                mail_textBox.Text = utilisateur.mail;
+                mdp_textBox.Text = utilisateur.mdp;
+                admin_checkBox.Checked = Convert.ToBoolean(utilisateur.admin);
+                
+            }
         }
 
         #region Événements
@@ -27,31 +41,19 @@ namespace LFB_gestion.Formulaires
         private void créer_button_Click(object sender, EventArgs e)
         {
             // Si tous les champs sont remplis
-            if (prénom_TextBox.Text != "" && nom_textBox.Text != "" && adresse_textBox.Text != "" && mdp_textBox.Text != "")
+            if (prénom_TextBox.Text != "" && nom_textBox.Text != "" && mdp_textBox.Text != "")
             {
-                if (tel_textBox.Text.Length > 9)
+                if (tel_textBox.Text.Length < 9)
                 {
                     if (Outils.mailEstValide(mail_textBox.Text))
                     {
-                        try
+                       if(user != null)
                         {
-                            connexion.Open();
-                            string query = "INSERT INTO utilisateur VALUES (@login, @mail, @admin, @prenom, @nom, @tel, @mdp)";
-                            SqlCommand command = new SqlCommand(query, connexion);
-                            command.Parameters.AddWithValue("@login", prénom_TextBox.Text.ToLower()[0] + nom_textBox.Text.ToLower());
-                            command.Parameters.AddWithValue("@mail", mail_textBox.Text);
-                            command.Parameters.AddWithValue("@admin", admin);
-                            command.Parameters.AddWithValue("@prenom", prénom_TextBox.Text);
-                            command.Parameters.AddWithValue("@nom", nom_textBox.Text);
-                            command.Parameters.AddWithValue("@tel", tel_textBox.Text);
-                            command.Parameters.AddWithValue("@mdp", Outils.chiffrer(mdp_textBox.Text));
-                            command.ExecuteNonQuery();
-                            MessageBox.Show("Utilisateur crée avec succés");
-                            connexion.Close();
+                            modificationUser(prénom_TextBox.Text.ToLower()[0] + nom_textBox.Text.ToLower(), mail_textBox.Text, admin, prénom_TextBox.Text, nom_textBox.Text, tel_textBox.Text, Outils.chiffrer(mdp_textBox.Text), user);
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            MessageBox.Show(ex.Message);
+                            creerUser(prénom_TextBox.Text.ToLower()[0] + nom_textBox.Text.ToLower(), mail_textBox.Text, admin, prénom_TextBox.Text, nom_textBox.Text, tel_textBox.Text, Outils.chiffrer(mdp_textBox.Text));
                         }
                     }
                     else
@@ -126,6 +128,55 @@ namespace LFB_gestion.Formulaires
                 mail_textBox.ForeColor = Color.Black;
             }
         }
+
+        private void creerUser(string login, string mail , int admin, string prenom, string nom,string tel, string mdp  )
+        {
+            try
+            {
+                connexion.Open();
+                string query = "INSERT INTO utilisateur VALUES (@login, @mail, @admin, @prenom, @nom, @tel, @mdp)";
+                SqlCommand command = new SqlCommand(query, connexion);
+                command.Parameters.AddWithValue("@login", login);
+                command.Parameters.AddWithValue("@mail", mail);
+                command.Parameters.AddWithValue("@admin", admin);
+                command.Parameters.AddWithValue("@prenom", prenom);
+                command.Parameters.AddWithValue("@nom",nom);
+                command.Parameters.AddWithValue("@tel", tel);
+                command.Parameters.AddWithValue("@mdp", mdp);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Utilisateur crée avec succés");
+                connexion.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void modificationUser(string login, string mail, int admin, string prenom, string nom, string tel, string mdp, Entite_Utilisateur userModif)
+        {
+            string requete = " UPDATE utilisateur SET login = @login, mail = @mail, admin = @admin, prenom = @prenom, nom = @nom, telephone = @tel, mdp = @mdp WHERE login = @condition";
+            SqlCommand command = new SqlCommand(requete, connexion);
+            command.Parameters.AddWithValue("@login", login);
+            command.Parameters.AddWithValue("@mail", mail);
+            command.Parameters.AddWithValue("@admin", admin);
+            command.Parameters.AddWithValue("@prenom", prenom);
+            command.Parameters.AddWithValue("@nom", nom);
+            command.Parameters.AddWithValue("@tel", tel);
+            command.Parameters.AddWithValue("@mdp", mdp);
+            command.Parameters.AddWithValue("@condition", userModif.login);
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            MessageBox.Show("Entretien modifié");
+        }
+
         #endregion
     }
 }

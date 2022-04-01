@@ -96,27 +96,6 @@ namespace LFB_gestion
                 return false;
             }
         }
-        /// <summary>
-        /// Verifie si le numero de téléphone est correcte
-        /// </summary>
-        /// <param name="tel"></param>
-        /// <returns></returns>
-        public static bool isValidTel(string tel)
-        {
-            int cmpt = 0;
-            foreach (char c in tel)
-            {
-                if (c >= '0' && c <= '9')
-                {
-                    cmpt++;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            return (cmpt == 10);
-        }
 
         /// <summary>
         /// Verifie si le numero du code Postale est correcte
