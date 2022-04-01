@@ -12,13 +12,13 @@ namespace LFB_gestion.Formulaires
     public partial class Form_Incident : Form
     {
         private Entite_Reservation réservation;
-        private Entite_Incident Incident;
+        private Entite_Incident incident;
 
         SqlConnection connexion = Outils.Connexion();
 
         public Form_Incident(Entite_Reservation réservation, Entite_Incident incident)
         {
-            this.Incident = incident;
+            this.incident = incident;
             this.réservation = réservation;
             InitializeComponent();
             remplirDonnées();
@@ -35,13 +35,15 @@ namespace LFB_gestion.Formulaires
 
         private void ajouterIncident(string description)
         {
+            SqlConnection connexion = Outils.Connexion();
+
             connexion.Open();
-            if (Incident != null)
+            if (incident != null)
             {
 
                 try
                 {
-                    string query = "insert into incident values ((select coalesce(MAX(id),0)+1 from produit), @desc, @id_réservation)";
+                    string query = "insert into incident values ((select coalesce(MAX(id),0)+1 from produit),@id_réservation, @desc )";
                     SqlCommand cmd = new SqlCommand(query, connexion);
                     cmd.Parameters.AddWithValue("@desc", description);
                     cmd.Parameters.AddWithValue("@id_réservation", réservation.id);
@@ -53,12 +55,15 @@ namespace LFB_gestion.Formulaires
                     MessageBox.Show(ex.Message);
                 }
 
+                MessageBox.Show("Incident ajouté");
+
             }
             else
             {
                 string requete = " UPDATE incident SET description = @description WHERE id = @condition";
                 SqlCommand command = new SqlCommand(requete, connexion);
                 command.Parameters.AddWithValue("@description", description);
+                command.Parameters.AddWithValue("@condition", incident.id);
 
                 try
                 {
@@ -67,12 +72,16 @@ namespace LFB_gestion.Formulaires
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                }
-
+                } 
                 MessageBox.Show("Entretien modifié");
-                connexion.Close();
+
+               
 
             }
+                connexion.Close();
+            dataBase.refreshDataBase();
+            this.Close();
+
         }
 
 
@@ -88,9 +97,9 @@ namespace LFB_gestion.Formulaires
                 débutLabel.Text = réservation.début.ToString();
                 emplacementlabel.Text += " " + réservation.emplacement.ToString();
 
-            if (Incident != null)
+            if (incident != null)
             {
-                descriptionTextBox.Text = Incident.description;
+                descriptionTextBox.Text = incident.description;
             }
             }
 
