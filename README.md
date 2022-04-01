@@ -16,3 +16,7 @@ Back-End :
     - Serveur : C#
 Versionning : GitLab
 Communication : Discord, Instagram
+
+## Liens vers l'installeur
+
+https://mega.nz/file/QJtjWbaa#G3nFN4FFYNSe4rUfd4a6628CDIeoiph94iM5hnPhmXY
