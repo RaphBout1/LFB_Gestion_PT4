@@ -26,8 +26,10 @@ namespace LFB_gestion.Formulaires
                 nom_textBox.Text = utilisateur.nom;
                 tel_textBox.Text = utilisateur.tel;
                 mail_textBox.Text = utilisateur.mail;
-                mdp_textBox.Text = utilisateur.mdp;
+                mdp_textBox.Text = Outils.chiffrer(utilisateur.mdp);
                 admin_checkBox.Checked = Convert.ToBoolean(utilisateur.admin);
+                créer_button.Text = "Modifié";
+                
                 
             }
         }
