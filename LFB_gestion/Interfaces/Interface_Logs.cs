@@ -16,6 +16,10 @@ namespace LFB_gestion.Interfaces
         public Interface_Logs()
         {
             InitializeComponent();
+            nomModuleLabel.Text = "Logs";
+            ajoutBouton.Hide();
+            panelRecherche.Hide();
+            refreshButton.Hide();
             afficherLogs();
             resizeList();
         }

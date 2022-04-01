@@ -29,11 +29,12 @@ namespace LFB_gestion.Interfaces
         /// </summary>
         private void InitializeComponent()
         {
+            this.panelRecherche.SuspendLayout();
             this.SuspendLayout();
             // 
             // nomModuleLabel
             // 
-            this.nomModuleLabel.Location = new System.Drawing.Point(220, 20);
+            this.nomModuleLabel.Location = new System.Drawing.Point(3, 4);
             this.nomModuleLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             // 
             // rechercheTextBox
@@ -64,8 +65,12 @@ namespace LFB_gestion.Interfaces
             // 
             this.refreshButton.FlatAppearance.BorderSize = 0;
             this.refreshButton.Location = new System.Drawing.Point(917, 126);
-            this.refreshButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(4);
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
+            // panelRecherche
+            // 
+            this.panelRecherche.Location = new System.Drawing.Point(1404, 132);
             // 
             // Interface_Statistiques
             // 
@@ -77,6 +82,8 @@ namespace LFB_gestion.Interfaces
             this.MinimumSize = new System.Drawing.Size(1076, 710);
             this.Name = "Interface_Statistiques";
             this.Text = "Statistiques";
+            this.panelRecherche.ResumeLayout(false);
+            this.panelRecherche.PerformLayout();
             this.ResumeLayout(false);
 
         }
