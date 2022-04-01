@@ -93,6 +93,7 @@ namespace LFB_gestion.Formulaires
             {
                 MessageBox.Show("Remplissez tous les champs.");
             }
+            dataBase.selectClients();
         }
 
         /// <summary>

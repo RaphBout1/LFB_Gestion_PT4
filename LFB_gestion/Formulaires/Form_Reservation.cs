@@ -262,8 +262,7 @@ namespace LFB_gestion.Formulaires
             }
             connexion.Close();
         }
+
         #endregion
-
-
     }
 }

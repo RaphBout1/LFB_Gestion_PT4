@@ -266,6 +266,7 @@ namespace LFB_gestion.Formulaires
             #endregion
 
             doc.Close();
+            MessageBox.Show("Facture générée dans : " + Environment.CurrentDirectory);
         }
 
         /// <summary>
