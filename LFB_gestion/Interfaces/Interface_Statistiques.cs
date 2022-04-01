@@ -18,6 +18,7 @@ namespace LFB_gestion.Interfaces
         {
             nomModuleLabel.Text = "Module statistiques";
             InitializeComponent();
+            ajoutBouton.Hide();
             afficherProduitLePlusVendu();
             afficherPlusGrosConsommateur();
             afficherEmplacementAvecLePlusIncidents();
@@ -32,8 +33,10 @@ namespace LFB_gestion.Interfaces
             SqlCommand idQuery = new SqlCommand("select nom,COUNT(id_emplacement) as nb_reserves from emplacement inner join reservation on emplacement.id = reservation.id_emplacement GROUP BY nom  ORDER BY nb_reserves DESC OFFSET 0 ROWS FETCH FIRST 1 ROWS ONLY", connexion);
             SqlDataReader rd;
             Label label = new Label();
-            label.Size = new Size(200, 50);
             label.Location = new Point(500, 50);
+            label.Size = new Size(600, 300);
+            label.BackColor = Color.Transparent;
+            label.ForeColor = Color.FromArgb(94, 139, 47);
             rd = idQuery.ExecuteReader();
 
             while (rd.Read())
@@ -47,11 +50,13 @@ namespace LFB_gestion.Interfaces
         private void afficherEmplacementAvecLePlusIncidents()
         {
             connexion.Open();
-            SqlCommand idQuery = new SqlCommand("select emplacement.nom,COUNT(incident.id) as nb_incidents from emplacement inner join incident on emplacement.id = incident.id_emplacement group by emplacement.nom ORDER BY nb_incidents DESC OFFSET 0 ROWS FETCH FIRST 1 ROWS ONLY", connexion);
+            SqlCommand idQuery = new SqlCommand("select emplacement.nom, COUNT(incident.id) as nb_incidents from emplacement inner join reservation on emplacement.id = reservation.id_emplacement inner join incident on reservation.id = incident.id_reservation group by emplacement.nom ORDER BY nb_incidents DESC OFFSET 0 ROWS FETCH FIRST 1 ROWS ONLY", connexion);
             SqlDataReader rd;
             Label label = new Label();
-            label.Size = new Size(200, 50);
             label.Location = new Point(900, 50);
+            label.Size = new Size(600, 300);
+            label.BackColor = Color.Transparent;
+            label.ForeColor = Color.FromArgb(94, 139, 47);
             rd = idQuery.ExecuteReader();
 
             while (rd.Read())
@@ -68,8 +73,10 @@ namespace LFB_gestion.Interfaces
             SqlCommand idQuery = new SqlCommand("select client.nom,client.prenom,COUNT(vente.id) as nb_vente from client inner join vente on client.id = vente.id_client group by client.nom, client.prenom ORDER BY nb_vente DESC OFFSET 0 ROWS FETCH FIRST 1 ROWS ONLY", connexion);
             SqlDataReader rd;
             Label label = new Label();
-            label.Size = new Size(200, 50);
             label.Location = new Point(1200, 50);
+            label.Size = new Size(600, 300);
+            label.BackColor = Color.Transparent;
+            label.ForeColor = Color.FromArgb(94, 139, 47);
             rd = idQuery.ExecuteReader();
 
             while (rd.Read())
