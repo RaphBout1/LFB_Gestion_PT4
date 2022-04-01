@@ -19,6 +19,9 @@ namespace LFB_gestion.Interfaces
             nomModuleLabel.Text = "Module statistiques";
             InitializeComponent();
             ajoutBouton.Hide();
+            refreshButton.Hide();
+            panelRecherche.Hide();
+            
             afficherProduitLePlusVendu();
             afficherPlusGrosConsommateur();
             afficherEmplacementAvecLePlusIncidents();
@@ -90,14 +93,14 @@ namespace LFB_gestion.Interfaces
         private void afficherProduitLePlusVendu()
         {
             connexion.Open();
-            SqlCommand idQuery = new SqlCommand("select produit.nom,COUNT(vente.id) as nb_vente from produit inner join vente on produit.id = vente.id_produit group by produit.nom ORDER BY nb_vente DESC OFFSET 0 ROWS FETCH FIRST 1 ROWS ONLY", connexion);
+            SqlCommand idQuery = new SqlCommand("Select Top 1 * from produit where produit.quantite = (Select max(produit.quantite) from produit)", connexion);
             SqlDataReader rd;
             rd = idQuery.ExecuteReader();
             List<Control> elements = new List<Control>();
 
             while (rd.Read())
             {
-                Entités.Entite_Produit produit = new Entités.Entite_Produit(rd["nom"].ToString(), rd["nb_vente"].ToString());
+                Entités.Entite_Produit produit = new  Entités.Entite_Produit(rd["nom"].ToString(), rd["quantite"].ToString(), rd["image"].ToString());
                 elements.Add(produit);
             }
             affichageStats(elements);

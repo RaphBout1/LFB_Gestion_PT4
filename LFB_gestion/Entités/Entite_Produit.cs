@@ -12,16 +12,16 @@ namespace LFB_gestion.Entités
 {
     public partial class Entite_Produit : UserControl
     {
-        private Image img;
+        private string img;
         private String nbVentes;
         private String nomProduit;
-        public Entite_Produit(String nomProduit, String nbVentes)
+        public Entite_Produit(String nomProduit, String nbVentes, string img)
         {
             this.img = img;
             this.nomProduit = nomProduit;
             this.nbVentes = nbVentes;
             InitializeComponent();
-            produitPictureBox.Image = img;
+            Outils.afficherImage(img, produitPictureBox);
             venteLabel.Text = nbVentes;
             nomProduitLabel.Text = nomProduit;
         }
