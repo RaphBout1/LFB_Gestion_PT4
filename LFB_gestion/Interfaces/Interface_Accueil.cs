@@ -83,7 +83,7 @@ namespace LFB_gestion.Interfaces
                     {
                         entretiens[y].Location = new Point(0, y * (entretien.Height + 30));
                     }
-                    entretien.Width = clientsPanel.Width;
+                    entretien.Width = clientsPanel.Width-15;
                     clientsPanel.Controls.Add(entretien);
                     clientsPanel.AutoScroll = true;
                     y++;

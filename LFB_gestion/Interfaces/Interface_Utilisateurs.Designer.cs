@@ -32,18 +32,18 @@
             // 
             // nomModuleLabel
             // 
-            this.nomModuleLabel.Location = new System.Drawing.Point(4, 2);
-            this.nomModuleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nomModuleLabel.Location = new System.Drawing.Point(3, 2);
+            this.nomModuleLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             // 
             // rechercheTextBox
             // 
-            this.rechercheTextBox.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.rechercheTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(204, 220);
-            this.clientsPanel.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.clientsPanel.Size = new System.Drawing.Size(2155, 882);
+            this.clientsPanel.Location = new System.Drawing.Point(152, 176);
+            this.clientsPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clientsPanel.Size = new System.Drawing.Size(1599, 707);
             // 
             // ajoutBouton
             // 
@@ -58,24 +58,24 @@
             // buttonDeconnexion
             // 
             this.buttonDeconnexion.FlatAppearance.BorderSize = 0;
-            this.buttonDeconnexion.Location = new System.Drawing.Point(2285, 0);
-            this.buttonDeconnexion.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.buttonDeconnexion.Location = new System.Drawing.Point(1694, 0);
+            this.buttonDeconnexion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             // 
             // refreshButton
             // 
             this.refreshButton.FlatAppearance.BorderSize = 0;
-            this.refreshButton.Location = new System.Drawing.Point(1220, 159);
-            this.refreshButton.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.refreshButton.Location = new System.Drawing.Point(917, 126);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // Interface_Utilisateurs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.MinimumSize = new System.Drawing.Size(1430, 870);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1076, 714);
             this.Name = "Interface_Utilisateurs";
             this.Text = "Utilisateurs";
             this.ResumeLayout(false);

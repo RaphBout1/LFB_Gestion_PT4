@@ -34,8 +34,8 @@ namespace LFB_gestion.Interfaces
             // clientsPanel
             // 
             this.clientsPanel.BackgroundImage = global::LFB_gestion.Properties.Resources.plan1;
-            this.clientsPanel.Location = new System.Drawing.Point(152, 175);
-            this.clientsPanel.Size = new System.Drawing.Size(1597, 702);
+            this.clientsPanel.Location = new System.Drawing.Point(152, 176);
+            this.clientsPanel.Size = new System.Drawing.Size(1599, 707);
             // 
             // ajoutBouton
             // 
@@ -48,15 +48,22 @@ namespace LFB_gestion.Interfaces
             // buttonDeconnexion
             // 
             this.buttonDeconnexion.FlatAppearance.BorderSize = 0;
-            this.buttonDeconnexion.Location = new System.Drawing.Point(1692, 0);
+            this.buttonDeconnexion.Location = new System.Drawing.Point(1694, 0);
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.FlatAppearance.BorderSize = 0;
+            this.refreshButton.Location = new System.Drawing.Point(917, 126);
+            this.refreshButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             // 
             // Interface_Plan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LFB_gestion.Properties.Resources.fondEcran;
-            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Location = new System.Drawing.Point(0, 0);
+            this.MinimumSize = new System.Drawing.Size(613, 483);
             this.Name = "Interface_Plan";
             this.Text = "Plan";
             this.ResumeLayout(false);

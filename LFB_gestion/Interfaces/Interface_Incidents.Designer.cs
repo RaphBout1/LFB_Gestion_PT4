@@ -33,8 +33,8 @@ namespace LFB_gestion.Interfaces
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(148, 172);
-            this.clientsPanel.Size = new System.Drawing.Size(1557, 688);
+            this.clientsPanel.Location = new System.Drawing.Point(152, 176);
+            this.clientsPanel.Size = new System.Drawing.Size(1599, 707);
             // 
             // ajoutBouton
             // 
@@ -47,17 +47,19 @@ namespace LFB_gestion.Interfaces
             // buttonDeconnexion
             // 
             this.buttonDeconnexion.FlatAppearance.BorderSize = 0;
-            this.buttonDeconnexion.Location = new System.Drawing.Point(1644, 0);
+            this.buttonDeconnexion.Location = new System.Drawing.Point(1694, 0);
             // 
             // refreshButton
             // 
+            this.refreshButton.FlatAppearance.BorderSize = 0;
+            this.refreshButton.Location = new System.Drawing.Point(917, 126);
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // Interface_Incidents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1854, 1012);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Location = new System.Drawing.Point(0, 0);
             this.MinimumSize = new System.Drawing.Size(613, 487);
             this.Name = "Interface_Incidents";

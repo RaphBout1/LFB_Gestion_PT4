@@ -42,9 +42,9 @@ namespace LFB_gestion.Interfaces
             // 
             // clientsPanel
             // 
-            this.clientsPanel.Location = new System.Drawing.Point(86, 118);
+            this.clientsPanel.Location = new System.Drawing.Point(152, 176);
             this.clientsPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.clientsPanel.Size = new System.Drawing.Size(909, 473);
+            this.clientsPanel.Size = new System.Drawing.Size(1599, 707);
             // 
             // ajoutBouton
             // 
@@ -59,13 +59,18 @@ namespace LFB_gestion.Interfaces
             // buttonDeconnexion
             // 
             this.buttonDeconnexion.FlatAppearance.BorderSize = 0;
-            this.buttonDeconnexion.Location = new System.Drawing.Point(925, 0);
+            this.buttonDeconnexion.Location = new System.Drawing.Point(1694, 0);
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.FlatAppearance.BorderSize = 0;
+            this.refreshButton.Location = new System.Drawing.Point(917, 126);
             // 
             // Interface_Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 857);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimumSize = new System.Drawing.Size(1079, 717);
