@@ -14,7 +14,7 @@ namespace LFB_gestion.Interfaces
         private SqlConnection connexion = Outils.Connexion();
         public Interface_Entretien()
         {
-
+            dataBase.selectEntretien();
             // On redéfini le nom du module
             nomModuleLabel.Text = "Entretiens";
             InitializeComponent();
@@ -126,6 +126,7 @@ namespace LFB_gestion.Interfaces
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
+            dataBase.selectEntretien();
             afficherEntretien();
         }
     }

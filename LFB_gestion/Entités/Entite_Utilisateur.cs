@@ -110,6 +110,7 @@ namespace LFB_gestion.Entités
         {
             Form form = new Form_Employe(this);
             form.ShowDialog();
+            dataBase.selectUsers();
         }
     }
 }

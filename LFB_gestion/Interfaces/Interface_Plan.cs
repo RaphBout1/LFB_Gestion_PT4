@@ -19,7 +19,7 @@ namespace LFB_gestion.Interfaces
             rechercheBouton.Hide();
             ajoutBouton.Hide();
             InitializeComponent();
-            
+            refreshButton.Visible = false;
         }
     }
 }

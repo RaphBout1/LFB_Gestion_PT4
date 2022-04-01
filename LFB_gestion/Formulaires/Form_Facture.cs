@@ -223,7 +223,7 @@ namespace LFB_gestion.Formulaires
             cell31.BorderColor = blanc;
             total.AddCell(cell31);
             //Ligne pour l'acompte
-            if (!acompteCheckBox.Checked)
+            if (acompteCheckBox.Checked)
             {
                 //Colonne 1
                 PdfPCell cell411 = new PdfPCell(new Phrase("Acompte", policeTotalBlanc));
@@ -235,18 +235,32 @@ namespace LFB_gestion.Formulaires
                 cell412.BackgroundColor = gris;
                 cell412.BorderColor = blanc;
                 total.AddCell(cell412);
+                //Ligne4
+                //Colonne 1
+                PdfPCell cell413 = new PdfPCell(new Phrase("Réglé", policeTotalGold));
+                cell413.BackgroundColor = blue;
+                cell413.BorderColor = blanc;
+                total.AddCell(cell413);
+                //Colonne 2
+                PdfPCell cell414 = new PdfPCell(new Phrase(acompteTextBox.Text + " €", policeTotalNoir));
+                cell414.BackgroundColor = gris;
+                cell414.BorderColor = blanc;
+                total.AddCell(cell414);
             }
-            //Ligne4
-            //Colonne 1
-            PdfPCell cell4 = new PdfPCell(new Phrase("Réglé", policeTotalGold));
-            cell4.BackgroundColor = blue;
-            cell4.BorderColor = blanc;
-            total.AddCell(cell4);
-            //Colonne 2
-            PdfPCell cell41 = new PdfPCell(new Phrase(ttcLabel.Text + " €", policeTotalNoir));
-            cell41.BackgroundColor = gris;
-            cell41.BorderColor = blanc;
-            total.AddCell(cell41);
+            else
+            {
+                //Ligne4
+                //Colonne 1
+                PdfPCell cell4 = new PdfPCell(new Phrase("Réglé", policeTotalGold));
+                cell4.BackgroundColor = blue;
+                cell4.BorderColor = blanc;
+                total.AddCell(cell4);
+                //Colonne 2
+                PdfPCell cell41 = new PdfPCell(new Phrase(régléTextBox.Text + " €", policeTotalNoir));
+                cell41.BackgroundColor = gris;
+                cell41.BorderColor = blanc;
+                total.AddCell(cell41);
+            }
 
             doc.Add(total);
             #endregion

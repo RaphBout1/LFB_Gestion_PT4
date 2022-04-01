@@ -29,6 +29,7 @@ namespace LFB_gestion.Interfaces
         /// </summary>
         private void InitializeComponent()
         {
+            this.panelRecherche.SuspendLayout();
             this.SuspendLayout();
             // 
             // clientsPanel
@@ -43,6 +44,7 @@ namespace LFB_gestion.Interfaces
             // rechercheBouton
             // 
             this.rechercheBouton.FlatAppearance.BorderSize = 0;
+            this.rechercheBouton.Click += new System.EventHandler(this.rechercheBouton_Click_1);
             // 
             // buttonDeconnexion
             // 
@@ -55,6 +57,10 @@ namespace LFB_gestion.Interfaces
             this.refreshButton.Location = new System.Drawing.Point(917, 126);
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
+            // panelRecherche
+            // 
+            this.panelRecherche.Location = new System.Drawing.Point(1404, 132);
+            // 
             // Interface_Incidents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -64,6 +70,8 @@ namespace LFB_gestion.Interfaces
             this.MinimumSize = new System.Drawing.Size(613, 487);
             this.Name = "Interface_Incidents";
             this.Text = "Interface_Incidents";
+            this.panelRecherche.ResumeLayout(false);
+            this.panelRecherche.PerformLayout();
             this.ResumeLayout(false);
 
         }

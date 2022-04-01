@@ -18,6 +18,7 @@ namespace LFB_gestion.Interfaces
             afficherLabelBonjour();
             dataBase.refreshDataBase();
             afficherEntretienCourant();
+            panelRecherche.Visible = false;
         }
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace LFB_gestion.Interfaces
         /// Méthode affichant la liste de entretient qu'elle reçoit en paramètres.
         /// </summary>
         /// <param name="entretiens"></param>
-        private void affichageEntretien(List<Entités.Entite_Entretien> entretiens)
+        private void affichageEntretien(List<Entite_Entretien> entretiens)
         {
             // Affichage petite phrase avant les entités
             Label entretienLabel = new Label();

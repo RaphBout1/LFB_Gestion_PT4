@@ -31,6 +31,7 @@ namespace LFB_gestion.Formulaires
                 textBoxCodePostal.Text = client.codePostal.ToString();
                 textBoxVille.Text = client.ville;
                 textBoxTel.Text = client.tel.ToString();
+                creerBouton.Text = "Modifier";
             }
         }
 
@@ -107,7 +108,7 @@ namespace LFB_gestion.Formulaires
             }
             else
             {
-                emailTextBox.ForeColor = Color.Black;
+                emailTextBox.ForeColor = Color.Green;
             }
         }
 
@@ -181,7 +182,7 @@ namespace LFB_gestion.Formulaires
                 MessageBox.Show(ex.Message);
             }
 
-            MessageBox.Show("Entretien modifié");
+            MessageBox.Show("Client modifié");
             connexion.Close();
             this.Close();
 

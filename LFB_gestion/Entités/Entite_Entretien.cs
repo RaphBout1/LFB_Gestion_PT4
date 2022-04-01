@@ -35,7 +35,7 @@ namespace LFB_gestion.Entités
             this.emplacement = emplacement;
             InitializeComponent();
             nomEmployeeLabel.Text = user.ToString();
-            nomEmplacementLabel.Text = emplacement.ToString();
+            nomEmplacementLabel.Text = "Emplacement: " + emplacement.ToString();
             descriptionLabel.Text = description;
 
 

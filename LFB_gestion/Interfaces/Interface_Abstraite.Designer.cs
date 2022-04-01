@@ -381,7 +381,6 @@
         protected System.Windows.Forms.Label nomModuleLabel;
         protected System.Windows.Forms.TextBox rechercheTextBox;
         protected System.Windows.Forms.Panel clientsPanel;
-        private System.Windows.Forms.Panel panelRecherche;
         private System.Windows.Forms.Panel panelNomModule;
 
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -402,6 +401,7 @@
         private System.Windows.Forms.ToolStripMenuItem incidentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logsToolStripButton;
         public System.Windows.Forms.Button refreshButton;
+        public System.Windows.Forms.Panel panelRecherche;
     }
 }
 

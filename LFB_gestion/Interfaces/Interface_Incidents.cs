@@ -108,5 +108,10 @@ namespace LFB_gestion.Interfaces
         {
             afficherIncidents();
         }
+
+        private void rechercheBouton_Click_1(object sender, EventArgs e)
+        {
+            reader(rechercheTextBox.Text);
+        }
     }
 }

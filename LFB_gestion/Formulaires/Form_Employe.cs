@@ -26,7 +26,8 @@ namespace LFB_gestion.Formulaires
                 nom_textBox.Text = utilisateur.nom;
                 tel_textBox.Text = utilisateur.tel;
                 mail_textBox.Text = utilisateur.mail;
-                mdp_textBox.Text = Outils.chiffrer(utilisateur.mdp);
+                mdp_textBox.Text = utilisateur.mdp;
+                mdp_textBox.Enabled = false;
                 admin_checkBox.Checked = Convert.ToBoolean(utilisateur.admin);
                 créer_button.Text = "Modifié";
                 
@@ -45,13 +46,13 @@ namespace LFB_gestion.Formulaires
             // Si tous les champs sont remplis
             if (prénom_TextBox.Text != "" && nom_textBox.Text != "" && mdp_textBox.Text != "")
             {
-                if (tel_textBox.Text.Length < 9)
+                if (tel_textBox.Text.Length > 9)
                 {
                     if (Outils.mailEstValide(mail_textBox.Text))
                     {
                        if(user != null)
                         {
-                            modificationUser(prénom_TextBox.Text.ToLower()[0] + nom_textBox.Text.ToLower(), mail_textBox.Text, admin, prénom_TextBox.Text, nom_textBox.Text, tel_textBox.Text, Outils.chiffrer(mdp_textBox.Text), user);
+                            modificationUser(prénom_TextBox.Text.ToLower()[0] + nom_textBox.Text.ToLower(), mail_textBox.Text, admin, prénom_TextBox.Text, nom_textBox.Text, tel_textBox.Text, mdp_textBox.Text, user);
                         }
                         else
                         {
@@ -157,6 +158,7 @@ namespace LFB_gestion.Formulaires
 
         private void modificationUser(string login, string mail, int admin, string prenom, string nom, string tel, string mdp, Entite_Utilisateur userModif)
         {
+            connexion.Open();
             string requete = " UPDATE utilisateur SET login = @login, mail = @mail, admin = @admin, prenom = @prenom, nom = @nom, telephone = @tel, mdp = @mdp WHERE login = @condition";
             SqlCommand command = new SqlCommand(requete, connexion);
             command.Parameters.AddWithValue("@login", login);
@@ -171,12 +173,13 @@ namespace LFB_gestion.Formulaires
             try
             {
                 command.ExecuteNonQuery();
+                MessageBox.Show("Utilisateur modifié");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            MessageBox.Show("Entretien modifié");
+            connexion.Close();
         }
 
         #endregion
