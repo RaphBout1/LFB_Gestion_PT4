@@ -45,11 +45,7 @@ namespace LFB_gestion.Entités
             command.ExecuteNonQuery();
             MessageBox.Show("Produit supprimée");
             connexion.Close();
-            dataBase.refreshDataBase();
-            Form.ActiveForm.Close();
-            Form formrefresh = new Interface_Stocks();
-
-            formrefresh.ShowDialog();
+            dataBase.selectStock();
         }
 
         private void modifierBouton_Click(object sender, EventArgs e)

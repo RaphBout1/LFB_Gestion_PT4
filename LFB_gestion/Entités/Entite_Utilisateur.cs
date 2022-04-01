@@ -79,12 +79,12 @@ namespace LFB_gestion.Entités
         }
 
 
-            /// <summary>
-            /// Supprimer l'utilisateur
-            /// </summary>
-            /// <param name="sender"></param>
-            /// <param name="e"></param>
-            private void supprimerBouton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Supprimer l'utilisateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void supprimerBouton_Click(object sender, EventArgs e)
         {
             SqlConnection connexion = Outils.Connexion();
             connexion.Open();
@@ -94,11 +94,7 @@ namespace LFB_gestion.Entités
             command.ExecuteNonQuery();
             MessageBox.Show("Client supprimé");
             connexion.Close();
-            dataBase.refreshDataBase();
-            Form.ActiveForm.Close();
-            Form formrefresh = new Interface_Utilisateurs();
-
-            formrefresh.ShowDialog();
+            dataBase.selectUsers();
         }
 
         /// <summary>

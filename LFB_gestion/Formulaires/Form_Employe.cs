@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LFB_gestion.Classes;
+using System;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
@@ -47,6 +48,7 @@ namespace LFB_gestion.Formulaires
                             command.Parameters.AddWithValue("@mdp", Outils.chiffrer(mdp_textBox.Text));
                             command.ExecuteNonQuery();
                             MessageBox.Show("Utilisateur crée avec succés");
+                            dataBase.selectUsers();
                             connexion.Close();
                         }
                         catch (Exception ex)

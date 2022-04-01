@@ -47,6 +47,7 @@ namespace LFB_gestion.Entités
         {
             Form formEntretien = new Formulaires.Form_Entretien(this);
             formEntretien.ShowDialog();
+            dataBase.selectEntretien();
         }
 
         private void supprimerBouton_Click(object sender, EventArgs e)
@@ -59,16 +60,7 @@ namespace LFB_gestion.Entités
             command.ExecuteNonQuery();
             MessageBox.Show("Entretien supprimé");
             connexion.Close();
-            dataBase.refreshDataBase();
-            Form.ActiveForm.Close();
-            Form entretien = new Interface_Entretien();
-
-            entretien.ShowDialog();
-            
-
-
-
-
+            dataBase.selectEntretien();
         }
     }
 }
